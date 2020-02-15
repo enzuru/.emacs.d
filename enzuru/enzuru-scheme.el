@@ -2,4 +2,4 @@
 (add-to-list 'auto-mode-alist '("\.scm$" . scheme-mode))
 (add-to-list 'auto-mode-alist '("\.scm$" . geiser-mode))
 
-;;(run-geiser)
+(add-hook 'scheme-mode-hook (lambda () (lispy-mode 1)))
