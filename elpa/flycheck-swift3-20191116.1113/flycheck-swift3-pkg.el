@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "flycheck-swift3" "20191116.1113" "Flycheck: Swift support for Apple swift-mode" '((emacs "24.4") (flycheck "26")) :commit "62c93add8ff65d335f6ef8a3123d2d4f53339df5" :keywords '("convenience" "languages" "tools") :authors '(("Goichi Hirakawa" . "gooichi@gyazsquare.com")) :maintainer '("Goichi Hirakawa" . "gooichi@gyazsquare.com") :url "https://github.com/GyazSquare/flycheck-swift3")

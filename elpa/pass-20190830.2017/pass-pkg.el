@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "pass" "20190830.2017" "Major mode for password-store.el" '((emacs "25") (password-store "2.1.0") (password-store-otp "0.1.5") (f "0.17")) :commit "919d8e3826d556433ab67d4ee21a509d209d1baa" :keywords '("password-store" "password" "keychain") :authors '(("Nicolas Petton" . "petton.nicolas@gmail.com") ("Damien Cassou" . "damien@cassou.me")) :maintainer '("Nicolas Petton" . "petton.nicolas@gmail.com"))

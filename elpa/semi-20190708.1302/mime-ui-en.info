@@ -1,0 +1,789 @@
+This is mime-ui-en.info, produced by makeinfo version 6.5 from
+mime-ui-en.texi.
+
+INFO-DIR-SECTION GNU Emacs Lisp
+START-INFO-DIR-ENTRY
+* SEMI (en): (mime-ui-en).      MIME user interface.
+END-INFO-DIR-ENTRY
+
+
+File: mime-ui-en.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+
+SEMI 1.14 Manual
+****************
+
+This file documents SEMI, a MIME user interface for GNU Emacs.
+
+* Menu:
+
+* Introduction::                What is SEMI?
+* MIME-View::                   MIME message viewing
+* MIME-Edit::                   MIME message editing
+* Various::                     Miscellaneous
+* Concept Index::
+* Function Index::
+* Variable Index::
+
+
+File: mime-ui-en.info,  Node: Introduction,  Next: MIME-View,  Prev: Top,  Up: Top
+
+1 What is SEMI?
+***************
+
+SEMI is a package for GNU Emacs to provide features related with MIME
+user interface.
+
+   SEMI provides two user interfaces: MIME-View and MIME-Edit.
+
+   MIME-View is a kernel of user interface to display or operate MIME
+messages, STD 11 messages or "localized RFC 822" messages.
+
+   MIME-Edit is a user interface to compose MIME messages.
+
+   Each MUA can use powerful MIME features to combine these features.
+
+
+File: mime-ui-en.info,  Node: MIME-View,  Next: MIME-Edit,  Prev: Introduction,  Up: Top
+
+2 MIME message viewing
+**********************
+
+MIME-View is a MIME viewer for wide use that runs on GNU Emacs.
+
+   MIME-View is the kernel of the user interface for browsing MIME
+messages.  You can start some presentation-method which is a program for
+creating some representation, or some acting-method which is a program
+for processing the entity.  Then you can deal with a variety of
+entities.
+
+* Menu:
+
+* Overview of MIME-View::       Basic design
+* MIME-Preview::                Presentation of mime-preview-buffer
+* mime-view-mode::              Operation in mime-preview-buffer
+
+
+File: mime-ui-en.info,  Node: Overview of MIME-View,  Next: MIME-Preview,  Prev: MIME-View,  Up: MIME-View
+
+2.1 Basic design
+================
+
+The representation form of the internet messages in electric letters or
+in net news is based on STD 11.  The STD 11 message body is a plain text
+which consists of lines as its only structure, and the character code is
+fixed as us-ascii.  Actually, there are "localized STD 11" messages that
+use some character code in their linguistic range instead of using
+us-ascii.  Even in that case, the character code in the message is
+single.  Therefore, Message User Agents have considered (byte row) =
+(us-ascii string), or (byte row) = (string in the character code in the
+linguistic range).
+
+   Although, the MIME message has the tree structure in entity unit.
+And one message can contain multiple character codes.  The content of an
+entity can be not only a letter or an image that can be displayed
+simply, but also can be a voice or an animation that are played for some
+time interval, a data for some specific application, a source code of
+some program, or an external reference that consists of the usage of ftp
+or mail service, or some URL. Therefore the simple extension of STD 11
+user interface, which only consider displaying the message, cannot treat
+all of the MIME functionalities.  Then it is not sufficient to decode
+message along its MIME type, but it is also required to consider a
+playback processing through some dialogue with the user.  The format of
+MIME messages is designed to easily be passed to automatic processing.
+But some contents in the MIME message should not be passed to automatic
+processing for security reasons.  So it should be designed to ask user
+in such cases.  After all, in order to deal with MIME message, it is
+required to distinguish the representation for information exchange
+which is written in STD 11 or MIME construction, and its result after
+some interpretation which is a display screen or a playback process.  It
+is also needed to converse with user for playback processing.
+
+   Therefore, MIME-View uses two buffers for one document, one is the
+mime-raw-buffer that stores the representation for information exchange,
+and the other is the mime-preview-buffer that stores the representation
+for displaying.
+
+   MIME-View provides a mode in the mime-preview-buffer for reading MIME
+message, which is called as mime-view-mode.  User can manipulate each
+entity there.
+
+
+File: mime-ui-en.info,  Node: MIME-Preview,  Next: mime-view-mode,  Prev: Overview of MIME-View,  Up: MIME-View
+
+2.2 Presentation of mime-preview-buffer
+=======================================
+
+mime-view-mode displays information about each entity as
+
+     	[entity-button]
+     	(header)
+
+     	(body)
+     	(separator)
+
+You can change their design or inhibit showing some of them, according
+to some condition.
+
+   See following example
+
+     From: morioka@jaist.ac.jp (MORIOKA Tomohiko)
+     Subject: Re: question?
+     Newsgroups: zxr.message.mime
+     Date: 22 Oct 93 11:02:44
+     Mime-Version: 1.0
+     Organization: Japan Advanced Institute of Science and Technology,
+             Ishikawa, Japan
+
+     [1  (text/plain)]
+       How to compose MIME message in MIME-Edit mode.
+
+       C-c C-x ? shows its help.
+
+     C-c C-x C-t	insert a text message.
+     C-c C-x TAB	insert a (binary) file.
+     C-c C-x C-e	insert a reference to external body.
+     C-c C-x C-v	insert a voice message.
+     C-c C-x C-y	insert a mail or news message.
+     C-c C-x RET	insert a mail message.
+     C-c C-x C-s	insert a signature file at end.
+     C-c C-x t	insert a new MIME tag.
+     C-c C-m C-a	enclose as multipart/alternative.
+     C-c C-m C-p	enclose as multipart/parallel.
+     C-c C-m C-m	enclose as multipart/mixed.
+     C-c C-m C-d	enclose as multipart/digest.
+     C-c C-m C-s	enclose as PGP signed.
+     C-c C-m C-e	enclose as PGP encrypted.
+     C-c C-x C-k	insert PGP public key.
+     C-c C-x p	preview editing MIME message.
+     ...
+
+     therefore, you should type C-c C-x C-i and specify the binary file
+     which you want to insert.
+
+       You should select Base64 as MIME encoding for binary file.
+
+     [2  (image/gif)]
+
+     [3  (text/plain)]
+
+       Like above, you can compose the message with image.
+
+     ==================== Take A Cup Of Russian Tea  ======================
+     =========  ** Not With Jam Nor Marmalade But With Honey **  ==========
+     =========                 MORIOKA TOMOHIKO                  ==========
+     ==============  Internet E-mail: <morioka@jaist.ac.jp>  ==============
+
+* Menu:
+
+* entity-button::
+* entity-header::
+* entity-body::
+
+
+File: mime-ui-en.info,  Node: entity-button,  Next: entity-header,  Prev: MIME-Preview,  Up: MIME-Preview
+
+2.2.1 entity-button
+-------------------
+
+*entity-button* is a tag on the top of the entity which shows brief
+information of the part.
+
+   Normally, it appears as
+
+             [1.3 test (text/plain)]
+
+
+   The number on the head describes the place of the entity in the
+message (like the section number) and it is called as *entity-number*.
+
+   The string in the next describes its title.  This information is
+taken from
+
+  1. Title described in Content-Description field or Subject field
+  2. File name specified by filename parameter in Content-Disposition
+     field
+  3. File name specified by name parameter in Content-Type field
+  4. File name for uuencode'ing
+
+If none of them are specified, displays a blank.
+
+   The 3rd item in the parenthesis describes media-type/subtype of the
+entity.  If it is is not MIME entity, it displays 'nil'.
+
+   This entity-button plays a role like icon that symbolically shows the
+content of the entity.  For example, push 'v' on
+
+             [2  (image/gif)]
+
+shows up the image contained there.
+
+   If the mouse operation is possible, you can display the image by
+pushing 2nd button (the middle button for 3 button mouse) too.
+
+
+File: mime-ui-en.info,  Node: entity-header,  Next: entity-body,  Prev: entity-button,  Up: MIME-Preview
+
+2.2.2 entity-header
+-------------------
+
+*entity-header* is the header of the entity.  (Don't blame me as "You
+say nothing more than as it is", It is no more than that.)
+
+
+File: mime-ui-en.info,  Node: entity-body,  Prev: entity-header,  Up: MIME-Preview
+
+2.2.3 entity-body
+-----------------
+
+*entity-body* is the content of the part.
+
+   Sophistication does not seem enough here also, but it is really such
+a thing.
+
+   Though, it actually be twisted a little.
+
+   The text entity is passed to code conversion according to its
+charset, and the image entity should be converted on XEmacs.
+
+   Details will be described later.
+
+
+File: mime-ui-en.info,  Node: mime-view-mode,  Prev: MIME-Preview,  Up: MIME-View
+
+2.3 Operation in mime-preview-buffer
+====================================
+
+mime-preview-buffer posesses following functionalities.
+
+'<u>'
+     go back to upper part (in the first part of the message, go back to
+     the Summary mode (*1))
+
+'<p>'
+     go to previous part
+
+'<M-TAB>'
+     go to previous part
+
+'<n>'
+     go to next part
+
+'<TAB>'
+     go to next part
+
+'<SPC>'
+     scroll up
+
+'<M-SPC>'
+     scroll down
+
+'<DEL>'
+     scroll down
+
+'<RET>'
+     go to next line
+
+'<M-RET>'
+     go to previous line
+
+'<v>'
+     play current part (*2)
+
+'<e>'
+     extract file from current part (*2)
+
+'<C-c C-p>'
+     print current part (*2)
+
+'<mouse-button-2>'
+     start the mouse button in preview-buffer
+
+     on content-button, play current part (*2)
+
+     on URL-button, start WWW browser
+
+*[Notice]*
+
+     (*1) Do not go back to Summary mode unless appropriately configured
+     for mime-view in the MUA.
+
+     (*2) actual behavior depends on the associated method
+
+
+File: mime-ui-en.info,  Node: MIME-Edit,  Next: Various,  Prev: MIME-View,  Up: Top
+
+3 MIME message editing
+**********************
+
+*MIME-Edit* is a general MIME composer for GNU Emacs.
+
+* Menu:
+
+* mime-edit-mode::              Minor-mode to edit MIME message
+* single-part tags::            Operations for single-part
+* enclosure tags::              Operations for enclosure
+* other MIME-Edit operations::  Other operations
+* file-type specification::     How to detect tag for inserted file
+* transfer level::
+* message/partial sending::     Splitting
+
+
+File: mime-ui-en.info,  Node: mime-edit-mode,  Next: single-part tags,  Prev: MIME-Edit,  Up: MIME-Edit
+
+3.1 Minor-mode to edit MIME message
+===================================
+
+*mime-edit-mode* is a minor mode to compose MIME message.  In this mode,
+*tag* represents various kinds of data, so you can edit multi part
+message consists of various kinds of data, such as text, image, audio,
+etc.
+
+   There are 2 kinds of tags:
+
+   * single-part tag
+   * multi-part tag
+
+   single-part tag represents single part, this form is following:
+
+             --[[TYPE/SUBTYPE;PARAMETERS][ENCODING]
+             OPTIONAL-FIELDS]
+
+   TYPE/SUBTYPE and PARAMETERS indicates type/subtype and parameters of
+Content-Type (*note (mime-en)Content-Type::) field.  TYPE/SUBTYPE is
+required, PARAMETERS is optional.
+
+   ENCODING indicates Content-Transfer-Encoding (*note
+(mime-en)Content-Transfer-Encoding::) field.  It is optional too.
+
+   OPTIONAL-FIELDS is to represent another fields except Content-Type
+field and Content-Transfer-Encoding field.
+
+   multi-part tags represent multi part.  They consist of a pair of
+*multi-part beginning tag* and *multi-part ending tag*.
+
+   multi-part beginning tag's form is following:
+
+             --<<TYPE>>-{
+
+   multi-part ending tag's form is following:
+
+             --}-<<TYPE>>
+
+   A region from multi-part beginning tag to multi-part ending tag is
+called as *enclosure*.
+
+
+File: mime-ui-en.info,  Node: single-part tags,  Next: enclosure tags,  Prev: mime-edit-mode,  Up: MIME-Edit
+
+3.2 Operations for single-part
+==============================
+
+Operations to make single-part are following:
+
+'<C-c C-x C-t>'
+     Insert single-part tag indicates text part.
+
+'<C-c C-x C-i>'
+     Insert file as a MIME attachment.  If 'C-u' is followed by it, it
+     asks media-type, subtype or encoding even if their default values
+     are specified.  (cf.  *note file-type specification::)
+
+'<C-c C-x C-e>'
+     Insert external part.
+
+'<C-c C-x C-v>'
+     Record audio input until 'C-g' is pressed, and insert as a audio
+     part.  (It requires /dev/audio in default.)
+
+'<C-c C-x C-y>'
+     Insert current (mail or news) message.  (It is MUA depended.)
+
+'<C-c C-x C-m>'
+     Insert mail message.  (It is MUA depended.)
+
+'<C-c C-x C-w>, <C-c C-x C-s>'
+     Insert signature.
+
+'<C-c C-x C-k>'
+     Insert PGP (*note PGP::) public key.  (It requires Mailcrypt
+     package.)
+
+'<C-c C-x t>'
+     Insert any single-part tag.
+
+
+File: mime-ui-en.info,  Node: enclosure tags,  Next: other MIME-Edit operations,  Prev: single-part tags,  Up: MIME-Edit
+
+3.3 Operations for enclosure
+============================
+
+Operations to make enclosure are following:
+
+'<C-c C-m C-a>'
+     Enclose specified region as multipart/alternative.
+
+'<C-c C-m C-p>'
+     Enclose specified region as multipart/parallel.
+
+'<C-c C-m C-m>'
+     Enclose specified region as multipart/mixed.
+
+'<C-c C-m C-d>'
+     Enclose specified region as multipart/digest.
+
+'<C-c C-m C-s>'
+     Digital-sign to specified region.  (cf.  *note PGP::)
+
+'<C-c C-m C-e>'
+     Encrypt to specified region.  (cf.  *note PGP::)
+
+'<C-c C-m C-q>'
+     avoid to encode tags in specified region.  In other words, tags is
+     interpreted as such string.  (In current version, it may be
+     incomplete.  Maybe PGP-signature does not work for this enclosure.)
+
+
+File: mime-ui-en.info,  Node: other MIME-Edit operations,  Next: file-type specification,  Prev: enclosure tags,  Up: MIME-Edit
+
+3.4 Other operations
+====================
+
+There are another operations in mime-edit-mode.
+
+'<C-c C-c>'
+     Send current editing message.
+
+'<C-c C-x p>'
+     Preview current editing message.  (cf.  *note MIME-View::)
+
+'<C-c C-x C-z>'
+     Exit mime-edit-mode without sending.
+
+'<C-c C-x />'
+     Set current editing message to enable automatic splitting or not.
+     Form of automatic split messages is message/partial.
+
+'<C-c C-x 7>'
+     Set 7bit (*note (mime-en)7bit::) to transfer level (*note transfer
+     level::).
+
+'<C-c C-x 8>'
+     Set 8bit (*note (mime-en)8bit::) to transfer level (*note transfer
+     level::).
+
+'<C-c C-x v>'
+     Set current editing message to digital-sign or not.  (cf.  *note
+     PGP::)
+
+'<C-c C-x h>'
+     Set current editing message to encrypt or not.  (cf.  *note PGP::)
+
+'<C-c C-x ?>'
+     Display help message.
+
+
+File: mime-ui-en.info,  Node: file-type specification,  Next: transfer level,  Prev: other MIME-Edit operations,  Up: MIME-Edit
+
+3.5 How to detect tag for inserted file
+=======================================
+
+When 'C-c C-x C-i' ('mime-edit-insert-file') is pressed, tag parameters
+for inserted file, such as media-type or encoding, are detected by
+variable 'mime-file-types'.
+
+   When 'C-u' is followed by it or parameter is not found from the
+variable, it asks from user.  (When 'C-u' is followed by it, detected
+value is used as default value)
+
+   If you want to change default value for file names, please change
+variable 'mime-file-types'.
+
+ -- Variable: mime-file-types
+
+     Specification of default value of tag for file name of inserted
+     file.
+
+     It is a list of following list:
+
+          	(FILE_PAT TYPE SUBTYPE PARAMS ENCODING
+          	 DISPOSITION_TYPE DISPOSITION_PARAMS)
+
+     Each element of the list is following:
+
+     'FILE_PAT'
+          regular expression of file name
+
+     'TYPE'
+          primary-type of media-type
+
+     'SUBTYPE'
+          subtype of media-type
+
+     'PARAMS'
+          parameters of Content-Type field
+
+     'ENCODING'
+          Content-Transfer-Encoding
+
+     'DISPOSITION_TYPE'
+          disposition-type
+
+     'DISPOSITION_PARAMS'
+          parameters of Content-Disposition field
+
+     Example: Specify application/rtf as default media type for '*.rtf'
+
+          (eval-after-load
+              "mime-edit"
+            '(set-alist 'mime-file-types
+          	      "\\.rtf$"
+          	      '("application" "rtf" nil nil
+          		"attachment" (("filename" . file)))
+          	      ))
+
+
+File: mime-ui-en.info,  Node: transfer level,  Next: message/partial sending,  Prev: file-type specification,  Up: MIME-Edit
+
+3.6 transfer level
+==================
+
+Each content inserted in a message is represented by 7bit (*note
+(mime-en)7bit::), 8bit (*note (mime-en)8bit::) or binary (*note
+(mime-en)binary::).
+
+   If a message is translated by 7bit-through MTA (*note
+(mime-en)MTA::), there is no need to encode 7bit data, but 8bit and
+binary data must be encoded to 7bit data.
+
+   Similarly, if a message is translated by 8bit-through MTA, there is
+no need to encode 7bit or 8bit data, but binary data must be encoded to
+7bit or 8bit data.
+
+*[Memo]*
+     EBCDIC MTA breaks 7bit data, so in this case, 7bit data must be
+     encoded by base64.  But I don't know EBCDIC. (^_^;
+
+     Similarly, I wish ASCII-printable only MTA and code-conversion MTA
+     disappeared.  (^_^;
+
+     Maybe there are binary-through MTA, but I think it is not major.
+
+   *transfer level* represents how range data are available.  mime-edit
+has a variable 'mime-transfer-level' to represent transfer level.
+
+ -- Variable: mime-transfer-level
+
+     transfer level.
+
+     If transfer level of a data is over it, a data is encoded to 7bit.
+
+     Currently, 7 or 8 is available.  Default value is 7.
+
+     In extension plan, EBCDIC will be 5, ASCII printable only will be
+     6, binary will be 9.  But it will not be implemented.
+
+*[Memo]*
+     transfer level is only for body, not for message header (*note
+     entity-header::).  MIME extends RFC 822 (*note (mime-en)RFC 822::)
+     to use 8bit data in body, but it requires to use us-ascii (*note
+     (mime-en)us-ascii::) in header.
+
+
+File: mime-ui-en.info,  Node: message/partial sending,  Prev: transfer level,  Up: MIME-Edit
+
+3.7 Splitting
+=============
+
+ -- Variable: mime-edit-split-message
+
+     Split large message if it is non-nil.
+
+ -- Variable: mime-edit-message-default-max-lines
+
+     Default maximum lines of a message.
+
+ -- Variable: mime-edit-message-max-lines-alist
+
+     Alist of major-mode vs maximum lines of a message.
+
+     If it is not specified for a major-mode,
+     'mime-edit-message-default-max-lines' is used.
+
+ -- Variable: mime-edit-split-blind-field-regexp
+
+     Regular expression to match field-name to be ignored when split
+     sending.
+
+
+File: mime-ui-en.info,  Node: Various,  Next: Concept Index,  Prev: MIME-Edit,  Up: Top
+
+4 Miscellaneous
+***************
+
+* Menu:
+
+* PGP::                         Encryption, Sign
+* Buttons::                     Mouse button
+* Acting-condition configuration::  Utility for configuration
+
+
+File: mime-ui-en.info,  Node: PGP,  Next: Buttons,  Prev: Various,  Up: Various
+
+4.1 PGP
+=======
+
+mime-edit provides PGP encryption, signature and inserting public-key
+features based on *PGP/MIME* (RFC 2015) or *PGP-kazu*
+(draft-kazu-pgp-mime-00.txt).
+
+   This feature requires your pgp command.
+
+ -- Variable: pgg-default-scheme
+
+     Version of PGP or GnuPG command to be used for encryption or sign.
+     The value should be a symbol.  Allowed versions are 'gpg', 'pgp' or
+     'pgp5'.
+
+ -- Variable: pgg-scheme
+
+     Version of PGP or GnuPG command to be used for decryption or
+     verification.  The value should be a symbol.  Allowed versions are
+     'gpg', 'pgp' or 'pgp5'.
+
+ -- Variable: pgg-insert-url-function
+
+     The function to fetch public key from the keyserver.  Use Emacs/W3
+     by the default setting.  To use emacs-w3m instead, set as follows:
+          (setq pgg-insert-url-function #'w3m-retrieve)
+
+
+File: mime-ui-en.info,  Node: Buttons,  Next: Acting-condition configuration,  Prev: PGP,  Up: Various
+
+4.2 Mouse button
+================
+
+ -- Variable: mime-button-face
+
+     Face used for content-button or URL-button of MIME-Preview buffer.
+
+ -- Variable: mime-button-mouse-face
+
+     Face used for MIME-preview buffer mouse highlighting.
+
+ -- Variable: mime-browse-url-function
+
+     Function to browse URL.
+
+
+File: mime-ui-en.info,  Node: Acting-condition configuration,  Prev: Buttons,  Up: Various
+
+4.3 Utility for configuration
+=============================
+
+ -- Function: mime-add-condition target-type condition &optional mode
+          file
+
+     Add CONDITION to database specified by TARGET-TYPE.
+
+     TARGET-TYPE must be 'preview' or 'action'.
+
+     If optional argument MODE is 'strict' or 'nil' (omitted), CONDITION
+     is added strictly.
+
+     If optional argument MODE is 'with-default', CONDITION is added
+     with default rule.
+
+     If optional argument FILE is specified, it is loaded when CONDITION
+     is activate.
+
+
+File: mime-ui-en.info,  Node: Concept Index,  Next: Function Index,  Prev: Various,  Up: Top
+
+5 Concept Index
+***************
+
+ [index ]
+* Menu:
+
+* enclosure:                             mime-edit-mode.        (line 6)
+* entity-body:                           entity-body.           (line 6)
+* entity-button:                         entity-button.         (line 6)
+* entity-header:                         entity-header.         (line 6)
+* entity-number:                         entity-button.         (line 6)
+* MIME-Edit:                             MIME-Edit.             (line 6)
+* mime-edit-mode:                        mime-edit-mode.        (line 6)
+* multi-part beginning tag:              mime-edit-mode.        (line 6)
+* multi-part ending tag:                 mime-edit-mode.        (line 6)
+* PGP-kazu:                              PGP.                   (line 6)
+* PGP/MIME:                              PGP.                   (line 6)
+* tag:                                   mime-edit-mode.        (line 6)
+* transfer level:                        transfer level.        (line 6)
+
+
+File: mime-ui-en.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+
+6 Function Index
+****************
+
+ [index ]
+* Menu:
+
+* mime-add-condition:                    Acting-condition configuration.
+                                                                (line 6)
+
+
+File: mime-ui-en.info,  Node: Variable Index,  Prev: Function Index,  Up: Top
+
+7 Variable Index
+****************
+
+ [index ]
+* Menu:
+
+* mime-browse-url-function:              Buttons.              (line 14)
+* mime-button-face:                      Buttons.              (line  6)
+* mime-button-mouse-face:                Buttons.              (line 10)
+* mime-edit-message-default-max-lines:   message/partial sending.
+                                                               (line 10)
+* mime-edit-message-max-lines-alist:     message/partial sending.
+                                                               (line 14)
+* mime-edit-split-blind-field-regexp:    message/partial sending.
+                                                               (line 21)
+* mime-edit-split-message:               message/partial sending.
+                                                               (line  6)
+* mime-file-types:                       file-type specification.
+                                                               (line 17)
+* mime-transfer-level:                   transfer level.       (line 30)
+* pgg-default-scheme:                    PGP.                  (line 12)
+* pgg-insert-url-function:               PGP.                  (line 24)
+* pgg-scheme:                            PGP.                  (line 18)
+
+
+
+Tag Table:
+Node: Top207
+Node: Introduction654
+Node: MIME-View1185
+Node: Overview of MIME-View1863
+Node: MIME-Preview4318
+Node: entity-button6501
+Node: entity-header7779
+Node: entity-body8058
+Node: mime-view-mode8515
+Node: MIME-Edit9565
+Node: mime-edit-mode10122
+Node: single-part tags11525
+Node: enclosure tags12563
+Node: other MIME-Edit operations13443
+Node: file-type specification14426
+Node: transfer level16076
+Node: message/partial sending17744
+Node: Various18384
+Node: PGP18674
+Node: Buttons19600
+Node: Acting-condition configuration20014
+Node: Concept Index20646
+Node: Function Index21746
+Node: Variable Index22052
+
+End Tag Table

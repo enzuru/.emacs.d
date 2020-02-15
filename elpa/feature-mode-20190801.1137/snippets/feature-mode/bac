@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: bac
+# name: Background
+# expand-env: ((yas-indent-line 'fixed))
+# --
+Background:
+  giv$0

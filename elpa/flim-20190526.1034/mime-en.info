@@ -1,0 +1,1619 @@
+This is mime-en.info, produced by makeinfo version 6.5 from
+mime-en.texi.
+
+INFO-DIR-SECTION GNU Emacs Lisp
+START-INFO-DIR-ENTRY
+* FLIM (en): (mime-en).         Internet message library.
+END-INFO-DIR-ENTRY
+
+
+File: mime-en.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+
+FLIM 1.14 Reference Manual about MIME Features
+**********************************************
+
+This file documents MIME features of FLIM, a fundamental library to
+process Internet Messages for GNU Emacsen.
+
+* Menu:
+
+* Introduction::                What is FLIM?
+* How to use::                  How to use MIME features
+* Entity::                      Message and Entity
+* Content-Type::                Information of Content-Type field
+* Content-Disposition::         Information of Content-Disposition field
+* Content-Transfer-Encoding::   Encoding Method
+* encoded-word::                Network representation of header
+* custom::                      Various Customization
+* Appendix::
+* Concept Index::
+* Function Index::
+* Variable Index::
+
+
+File: mime-en.info,  Node: Introduction,  Next: How to use,  Prev: Top,  Up: Top
+
+1 What is FLIM?
+***************
+
+FLIM is a library to provide basic features about message representation
+or encoding.
+
+
+File: mime-en.info,  Node: How to use,  Next: Entity,  Prev: Introduction,  Up: Top
+
+2 How to use MIME features
+**************************
+
+Please eval following to use MIME features provided by FLIM:
+
+     (require 'mime)
+
+
+File: mime-en.info,  Node: Entity,  Next: Content-Type,  Prev: How to use,  Up: Top
+
+3 Message and Entity
+********************
+
+According to RFC 2045 (*note RFC 2045::), 'The term "entity", refers
+specifically to the MIME-defined header fields and contents of either a
+message or one of the parts in the body of a multipart entity.'  In this
+document, the term *entity* indicates all of header fields and body.
+
+   The definition of RFC 2045 indicates that a MIME message is a tree,
+and each node of the tree is an entity.  Namely MIME extends message to
+tree structure.
+
+   FLIM uses *mime-entity* structure to represent information of entity.
+In this document, it is called simply 'mime-entity'.
+
+* Menu:
+
+* Entity creation::             Functions to create mime-entity
+* Entity hierarchy::            Features about message tree
+* Entity Search::               Find Entity
+* Entity Attributes::           Functions about attributes of mime-entity
+* Entity-header::               Information of entity header
+* entity formatting::           Text presentation of entity
+* Entity-content::              Contents of Entity
+* Entity-network-representation::  Network representation of Entity
+* Entity buffer::               Entity as buffer representation
+* mm-backend::                  Entity representations and implementations
+
+
+File: mime-en.info,  Node: Entity creation,  Next: Entity hierarchy,  Prev: Entity,  Up: Entity
+
+3.1 Functions to create mime-entity
+===================================
+
+ -- Function: mime-open-entity &optional type location
+
+     Open an entity and return it.
+
+     TYPE is representation-type.  (cf.  *note mm-backend::)
+
+     LOCATION is location of entity.  Specification of it is depended on
+     representation-type.
+
+ -- Function: mime-parse-buffer &optional buffer type
+
+     Parse BUFFER as message, and set the result to buffer local
+     variable 'mime-message-structure' of BUFFER as mime-entity.
+
+     If BUFFER is omitted, current buffer is used.
+
+     TYPE is representation-type of created mime-entity.  (cf.  *note
+     mm-backend::) Default value is BUFFER.
+
+
+File: mime-en.info,  Node: Entity hierarchy,  Next: Entity Search,  Prev: Entity creation,  Up: Entity
+
+3.2 Features about message tree
+===============================
+
+Structure of a MIME message is tree.
+
+   In the tree, root node is the entity indicates all of the message.
+In this document, it is called *root-entity* or *message*.  In FLIM, it
+is indicated by buffer local variable 'mime-message-structure'.
+
+   Each entity except root-entity has a parent.  An entity may have
+children.  We can indicate an entity by relative position from a base
+entity, based on the parent-child relationship.
+
+   In addition, we can indicate an entity by absolute position of the
+message.
+
+   Each entity, which is a node of the tree, can be numbered by depth
+and left-to-right order of the depth.
+
+                                   +-------+
+                                   |  nil  |
+                                   +---+---+
+                   +-------------------+-------------------+
+                 +-+-+               +-+-+               +-+-+
+                 | 0 |               | 1 |               | 2 |
+                 +-+-+               +-+-+               +-+-+
+                   |         +---------+---------+         |
+                +--+--+   +--+--+   +--+--+   +--+--+   +--+--+
+                | 0.0 |   | 1.0 |   | 1.1 |   | 1.2 |   | 2.0 |
+                +-----+   +-----+   +-----+   +-----+   +-----+
+
+   Namely, if depth of a node is n, the node has a node-number, which is
+consists of n integers.  In this document, it is called *entity-number*.
+An entity-number is represented by list of integer, like '(1 2 3)'.
+
+   mime-entity has also *node-id*.  A node-id is represented by reversed
+list of entity-number.  For example, node-id corresponding with 1.2.3 is
+'(3 2 1)'.
+
+   Each entity can be indicated by entity-number or node-id in
+'mime-message-structure'.
+
+ -- Variable: mime-message-structure
+
+     Buffer local variable to store mime-entity structure of message.
+
+ -- Function: mime-entity-children entity
+
+     Return list of entities included in the ENTITY.
+
+ -- Function: mime-entity-parent entity &optional message
+
+     Return parent entity of the ENTITY.
+
+     If MESSAGE is specified, it is regarded as root instead of
+     'mime-message-structure'.
+
+ -- Function: mime-root-entity-p entity
+
+     Return non-'nil' if ENTITY is root entity (message).
+
+ -- Function: mime-entity-node-id entity
+
+     Return node-id of ENTITY.
+
+ -- Function: mime-entity-number entity
+
+     Return entity-number of ENTITY.
+
+
+File: mime-en.info,  Node: Entity Search,  Next: Entity Attributes,  Prev: Entity hierarchy,  Up: Entity
+
+3.3 Find Entity
+===============
+
+ -- Function: mime-find-entity-from-number entity-number &optional
+          message
+
+     Return entity from ENTITY-NUMBER in MESSAGE.
+
+     If MESSAGE is not specified, 'mime-message-structure' is used.
+
+ -- Function: mime-find-entity-from-node-id entity-node-id &optional
+          message
+
+     Return entity from ENTITY-NODE-ID in MESSAGE.
+
+     If MESSAGE is not specified, 'mime-message-structure' is used.
+
+ -- Function: mime-find-entity-from-content-id cid &optional message
+
+     Return entity from CID in MESSAGE.
+
+     If MESSAGE is not specified, 'mime-message-structure' is used.
+
+
+File: mime-en.info,  Node: Entity Attributes,  Next: Entity-header,  Prev: Entity Search,  Up: Entity
+
+3.4 Functions about attributes of mime-entity
+=============================================
+
+ -- Function: mime-entity-content-type entity
+
+     Return content-type of ENTITY.  (cf.  *note mime-content-type::)
+
+ -- Function: mime-entity-content-disposition entity
+
+     Return content-disposition of ENTITY.  (cf.  *note
+     mime-content-disposition::)
+
+ -- Function: mime-entity-filename entity
+
+     Return file name of ENTITY.
+
+ -- Function: mime-entity-encoding entity &optional default-encoding
+
+     Return content-transfer-encoding of ENTITY.  (cf.  *note
+     Content-Transfer-Encoding::)
+
+     If the ENTITY does not have Content-Transfer-Encoding field, this
+     function returns DEFAULT-ENCODING.  If it is nil, '"7bit"' is used
+     as default value.
+
+ -- Function: mime-entity-cooked-p entity
+
+     Return non-nil if contents of ENTITY has been already
+     code-converted.
+
+
+File: mime-en.info,  Node: Entity-header,  Next: entity formatting,  Prev: Entity Attributes,  Up: Entity
+
+3.5 Information of entity header
+================================
+
+ -- Function: mime-fetch-field field-name &optional entity
+
+     Return field-body of FIELD-NAME field in header of ENTITY.
+
+     The results is network representation.
+
+     If ENTITY is omitted, 'mime-message-structure' is used as default
+     value.
+
+     If FIELD-NAME field is not found, this function returns 'nil'.
+
+ -- Function: mime-read-field field-name &optional entity
+
+     Parse FIELD-NAME field in header of ENTITY, and return the result.
+
+     Format of result is depended on kind of field.  For non-structured
+     field, this function returns string.  For structured field, it
+     returns list corresponding with structure of the field.
+
+     Strings in the result will be converted to internal representation
+     of Emacs.
+
+     If ENTITY is omitted, 'mime-message-structure' is used as default
+     value.
+
+     If FIELD-NAME field is not found, this function returns 'nil'.
+
+
+File: mime-en.info,  Node: entity formatting,  Next: Entity-content,  Prev: Entity-header,  Up: Entity
+
+3.6 Text presentation of entity
+===============================
+
+ -- Function: mime-insert-header entity &optional invisible-fields
+          visible-fields
+
+     Insert before point a decoded contents of header of ENTITY.
+
+     INVISIBLE-FIELDS is list of regexps to match field-name to hide.
+     VISIBLE-FIELDS is list of regexps to match field-name to hide.
+
+     If a field-name is matched with some elements of INVISIBLE-FIELDS
+     and matched with none of VISIBLE-FIELDS, this function don't insert
+     the field.
+
+     Each encoded-word (*note encoded-word::) in the header is decoded.
+     "Raw non us-ascii characters" are also decoded as
+     'default-mime-charset'.
+
+ -- Function: mime-insert-text-content entity
+
+     Insert before point a contents of ENTITY as text entity.
+
+     Contents of the ENTITY are decoded as MIME charset (*note MIME
+     charset::).  If the ENTITY does not have charset parameter of
+     Content-Type field, 'default-mime-charset' is used as default
+     value.
+
+ -- Variable: default-mime-charset
+
+     Symbol to indicate default value of MIME charset (*note MIME
+     charset::).
+
+     It is used when MIME charset is not specified.
+
+     It is originally variable of APEL.
+
+
+File: mime-en.info,  Node: Entity-content,  Next: Entity-network-representation,  Prev: entity formatting,  Up: Entity
+
+3.7 Contents of Entity
+======================
+
+ -- Function: mime-entity-content entity
+
+     Return content of ENTITY as byte sequence.
+
+ -- Function: mime-insert-entity-content entity
+
+     Insert content of ENTITY at point.
+
+ -- Function: mime-write-entity-content entity filename
+
+     Write content of ENTITY into FILENAME.
+
+
+File: mime-en.info,  Node: Entity-network-representation,  Next: Entity buffer,  Prev: Entity-content,  Up: Entity
+
+3.8 Network representation of Entity
+====================================
+
+ -- Function: mime-insert-entity entity
+
+     Insert header and body of ENTITY at point.
+
+ -- Function: mime-write-entity entity filename
+
+     Write representation of ENTITY into FILENAME.
+
+ -- Function: mime-write-entity-body entity filename
+
+     Write body of ENTITY into FILENAME.
+
+
+File: mime-en.info,  Node: Entity buffer,  Next: mm-backend,  Prev: Entity-network-representation,  Up: Entity
+
+3.9 Entity as buffer representation
+===================================
+
+ -- Function: mime-entity-buffer entity
+
+     Return buffer, which contains ENTITY.
+
+ -- Function: mime-entity-point-min entity
+
+     Return the start point of ENTITY in the buffer which contains
+     ENTITY.
+
+ -- Function: mime-entity-point-max entity
+
+     Return the end point of ENTITY in the buffer which contains ENTITY.
+
+ -- Function: mime-entity-header-start entity
+
+     Return the start point of header of ENTITY in the buffer which
+     contains ENTITY.
+
+ -- Function: mime-entity-header-end entity
+
+     Return the end point of header of ENTITY in the buffer which
+     contains ENTITY.
+
+ -- Function: mime-entity-body-start entity
+
+     Return the start point of body of ENTITY in the buffer which
+     contains ENTITY.
+
+ -- Function: mime-entity-body-end entity
+
+     Return the end point of body of ENTITY in the buffer which contains
+     ENTITY.
+
+
+File: mime-en.info,  Node: mm-backend,  Prev: Entity buffer,  Up: Entity
+
+3.10 Entity representations and implementations
+===============================================
+
+Entity is an abstraction.  It is designed to use various data
+representations for their purposes.
+
+   Each entity has *representation-type*.  It must be specified when an
+entity is created.  (cf.  *note Entity creation::)
+
+   Functions about entity are implemented by request processing to the
+entity.  Each entity knows its representation-type.  Each entity calls
+processing function corresponding with the representation-type.  Such
+kind of function is called *entity processing method*.  A module,
+consists of them corresponding with a representation-type, is called
+*mm-backend*.
+
+   Module name of each mm-backend consists of the prefix 'mm' and its
+representation-type.  The module is required automatically when its
+entity is created at first.
+
+* Menu:
+
+* Request for entity::          Message-passing for entity
+* mm-backend module::           Definition of mm-backend
+
+
+File: mime-en.info,  Node: Request for entity,  Next: mm-backend module,  Prev: mm-backend,  Up: mm-backend
+
+3.10.1 Message-passing for entity
+---------------------------------
+
+ -- Function: mime-entity-send entity message &rest args
+
+     Send MESSAGE to ENTITY with ARGS, and return the result.
+
+     ARGS is arguments of the MESSAGE.
+
+
+File: mime-en.info,  Node: mm-backend module,  Prev: Request for entity,  Up: mm-backend
+
+3.10.2 Definition of mm-backend
+-------------------------------
+
+ -- Macro: mm-define-backend type &optional parents
+
+     Define TYPE as a mm-backend.
+
+     If PARENTS is specified, TYPE inherits parents.  Each parent must
+     be representation-type.
+
+     Example:
+
+          (mm-define-backend chao (generic))
+
+ -- Macro: mm-define-method name args &rest body
+
+     Define NAME as a method function of (nth 1 (car ARGS)) backend.
+
+     ARGS is like an argument list of lambda, but (car ARGS) must be
+     specialized parameter.  (car (car ARGS)) is name of variable and
+     (nth 1 (car ARGS)) is name of backend (representation-type).
+
+     Example:
+
+          (mm-define-method entity-cooked-p ((entity chao)) nil)
+
+
+File: mime-en.info,  Node: Content-Type,  Next: Content-Disposition,  Prev: Entity,  Up: Top
+
+4 Information of Content-Type field
+***********************************
+
+*Content-Type field* is a field to indicate kind of contents or data
+format, such as media-type (*note media-type::) and MIME charset.  It is
+defined in RFC 2045 (*note RFC 2045::).
+
+*[Memo]*
+
+     Historically, Content-Type field was proposed in RFC 1049.  In it,
+     Content-Type did not distinguish type and subtype, and there are no
+     mechanism to represent kind of character code like MIME charset.
+
+   FLIM provides parser for Content-Type field and structure
+*mime-content-type* to store information of Content-Type field.
+
+* Menu:
+
+* Content-Type field::          Format of Content-Type field
+* mime-content-type::           mime-content-type structure
+* Content-Type parser::         Parser
+* Content-Type utility::        Utility functions
+
+
+File: mime-en.info,  Node: Content-Type field,  Next: mime-content-type,  Prev: Content-Type,  Up: Content-Type
+
+4.1 Format of Content-Type field
+================================
+
+Format of Content-Type field is defined as follows:
+
+     "Content-Type" ":" *type* "/" *subtype* *( ";" *parameter* )
+
+   For example:
+
+          Content-Type: image/jpeg
+
+          Content-Type: text/plain; charset=iso-2022-jp
+
+   'type' and 'subtype' indicate format of an entity.  In this document,
+pair of them is called 'media-type'.  'image/jpeg' or 'text/plain' is a
+media-type.
+
+*[Memo]*
+
+     If an entity does not have Content-Type field, it is regarded as
+     following:
+
+               Content-Type: text/plain; charset=us-ascii
+
+     (cf.  *note us-ascii::)
+
+
+File: mime-en.info,  Node: mime-content-type,  Next: Content-Type parser,  Prev: Content-Type field,  Up: Content-Type
+
+4.2 mime-content-type structure
+===============================
+
+ -- Structure: mime-content-type
+
+     Structure to store information of a Content-Type field.
+
+     Applications should use reference functions
+     'mime-content-type-SLOT' to refer information of the structure.
+
+     Slots of the structure are following:
+
+     PRIMARY-TYPE
+          primary type of media-type (symbol).
+
+     SUBTYPE
+          subtype of media-type (symbol).
+
+     PARAMETERS
+          parameters of Content-Type field (association-list).
+
+ -- Function: make-mime-content-type type subtype
+     &optional parameters
+
+     Constructor of content-type.
+
+ -- Function: mime-content-type-parameter content-type parameter
+
+     Return value of PARAMETER of CONTENT-TYPE.
+
+
+File: mime-en.info,  Node: Content-Type parser,  Next: Content-Type utility,  Prev: mime-content-type,  Up: Content-Type
+
+4.3 Parser
+==========
+
+ -- Function: mime-parse-Content-Type string
+
+     Parse STRING as a field-body of Content-Type field, and return the
+     result as mime-content-type (*note mime-content-type::) structure.
+
+ -- Function: mime-read-Content-Type
+
+     Parse Content-Type field of the current buffer, and return the
+     result as mime-content-type (*note mime-content-type::) structure.
+
+     Return 'nil' if Content-Type field is not found.
+
+
+File: mime-en.info,  Node: Content-Type utility,  Prev: Content-Type parser,  Up: Content-Type
+
+4.4 Utility functions
+=====================
+
+ -- Function: mime-type/subtype-string type &optional subtype
+
+     Return type/subtype string from TYPE and SUBTYPE.
+
+
+File: mime-en.info,  Node: Content-Disposition,  Next: Content-Transfer-Encoding,  Prev: Content-Type,  Up: Top
+
+5 Information of Content-Disposition field
+******************************************
+
+*Content-Disposition field* is an optional field to specify presentation
+of an entity or attributes of an entity, such as file name.
+
+[RFC 2183]
+     S. Dorner, K. Moore and R. Troost, "Communicating Presentation
+     Information in Internet Messages: The Content-Disposition Header",
+     August 1997, Standards Track.
+
+   FLIM provides parser for Content-Disposition field and structure
+*mime-content-disposition* to store information of Content-Disposition
+field.
+
+* Menu:
+
+* mime-content-disposition::    mime-content-disposition structure
+* Content-Disposition parser::  Parser for Content-Disposition field
+
+
+File: mime-en.info,  Node: mime-content-disposition,  Next: Content-Disposition parser,  Prev: Content-Disposition,  Up: Content-Disposition
+
+5.1 mime-content-disposition structure
+======================================
+
+ -- Structure: mime-content-disposition
+
+     Structure to store information of a Content-Disposition field.
+
+     Applications should use reference functions
+     'mime-content-disposition-SLOT' to refer information of the
+     structure.
+
+     Slots of the structure are following:
+
+     DISPOSITION-TYPE
+          disposition-type (symbol).
+
+     PARAMETERS
+          parameters of Content-Disposition field (association-list).
+
+ -- Function: mime-content-disposition-parameter content-disposition
+          parameter
+
+     Return value of PARAMETER of CONTENT-DISPOSITION.
+
+ -- Function: mime-content-disposition-filename content-disposition
+
+     Return filename of CONTENT-DISPOSITION.
+
+
+File: mime-en.info,  Node: Content-Disposition parser,  Prev: mime-content-disposition,  Up: Content-Disposition
+
+5.2 Parser for Content-Disposition field
+========================================
+
+ -- Function: mime-parse-Content-Disposition string
+
+     Parse STRING as field-body of Content-Disposition field, and return
+     the result as mime-content-disposition (*note
+     mime-content-disposition::) structure.
+
+ -- Function: mime-read-Content-Disposition
+
+     Parse Content-Disposition field of the current buffer, and return
+     the result as mime-content-disposition (*note
+     mime-content-disposition::) structure.
+
+     Return 'nil' if Content-Disposition field is not found.
+
+
+File: mime-en.info,  Node: Content-Transfer-Encoding,  Next: encoded-word,  Prev: Content-Disposition,  Up: Top
+
+6 Encoding Method
+*****************
+
+*Content-Transfer-Encoding field* is a header field to indicate body
+encoding of a entity.
+
+   FLIM provides parser functions for Content-Transfer-Encoding field.
+They represent information of Content-Transfer-Encoding field as string.
+
+   In addition, FLIM provides encoder/decoder functions by
+Content-Transfer-Encoding.
+
+* Menu:
+
+* Content-Transfer-Encoding parser::  Parser
+* encoder/decoder::             Encoder/decoder
+* Encoding information::        Other utilities
+* mel-backend::                 How to write encoder/decoder module
+* generic function for mel-backend::  How to add encoding/decoding service
+
+
+File: mime-en.info,  Node: Content-Transfer-Encoding parser,  Next: encoder/decoder,  Prev: Content-Transfer-Encoding,  Up: Content-Transfer-Encoding
+
+6.1 Parser
+==========
+
+ -- Function: mime-parse-Content-Transfer-Encoding string
+
+     Parse STRING as a field-body of Content-Transfer-Encoding field,
+     and return the result.
+
+ -- Function: mime-read-Content-Transfer-Encoding &optional
+          default-encoding
+
+     Parse Content-Transfer-Encoding field of the current buffer, and
+     return the result.
+
+     Return DEFAULT-ENCODING if Content-Transfer-Encoding field is not
+     found.  If it is not specified, 'nil' is used as the default value.
+
+
+File: mime-en.info,  Node: encoder/decoder,  Next: Encoding information,  Prev: Content-Transfer-Encoding parser,  Up: Content-Transfer-Encoding
+
+6.2 Encoder/decoder
+===================
+
+ -- Function: mime-encode-region start end encoding
+
+     Encode region START to END of current buffer using ENCODING.
+
+ -- Function: mime-decode-region start end encoding
+
+     Decode region START to END of current buffer using ENCODING.
+
+ -- Function: mime-decode-string string encoding
+
+     Decode STRING which is encoded in ENCODING, and return the result.
+
+ -- Function: mime-insert-encoded-file filename encoding
+
+     Insert file FILENAME encoded by ENCODING format.
+
+ -- Function: mime-write-decoded-region start end filename encoding
+
+     Decode and write current region encoded by ENCODING into FILENAME.
+
+     START and END are buffer positions.
+
+
+File: mime-en.info,  Node: Encoding information,  Next: mel-backend,  Prev: encoder/decoder,  Up: Content-Transfer-Encoding
+
+6.3 Other utilities
+===================
+
+ -- Function: mime-encoding-list &optional SERVICE
+
+     Return list of Content-Transfer-Encoding.
+
+     If SERVICE is specified, it returns available list of
+     Content-Transfer-Encoding for it.
+
+ -- Function: mime-encoding-alist &optional SERVICE
+
+     Return table of Content-Transfer-Encoding for completion.
+
+     If SERVICE is specified, it returns available list of
+     Content-Transfer-Encoding for it.
+
+
+File: mime-en.info,  Node: mel-backend,  Next: generic function for mel-backend,  Prev: Encoding information,  Up: Content-Transfer-Encoding
+
+6.4 How to write encoder/decoder module
+=======================================
+
+ -- Macro: mel-define-method name args &rest body
+
+     Define NAME as a method function of (nth 1 (car (last ARGS)))
+     backend.
+
+     ARGS is like an argument list of lambda, but (car (last ARGS)) must
+     be specialized parameter.  (car (car (last ARGS))) is name of
+     variable and (nth 1 (car (last ARGS))) is name of backend
+     (encoding).
+
+     Example:
+
+          (mel-define-method mime-write-decoded-region (start end filename
+          						    (nil "base64"))
+            "Decode and write current region encoded by base64 into FILENAME.
+          START and END are buffer positions."
+            (interactive
+             (list (region-beginning) (region-end)
+          	 (read-file-name "Write decoded region to file: ")))
+            (let ((str (buffer-substring start end)))
+              (with-temp-buffer
+                (insert (decode-base64-string str))
+                (write-region-as-binary (point-min) (point-max) filename)
+                )))
+
+ -- Macro: mel-define-method-function spec function
+
+     Set SPEC's function definition to FUNCTION.
+
+     First element of SPEC is service.
+
+     Rest of ARGS is like an argument list of lambda, but (car (last
+     ARGS)) must be specialized parameter.  (car (car (last ARGS))) is
+     name of variable and (nth 1 (car (last ARGS))) is name of backend
+     (encoding).
+
+     Example:
+
+          (mel-define-method-function (mime-encode-string string (nil "base64"))
+          			    'encode-base64-string)
+
+
+File: mime-en.info,  Node: generic function for mel-backend,  Prev: mel-backend,  Up: Content-Transfer-Encoding
+
+6.5 How to add encoding/decoding service
+========================================
+
+ -- Macro: mel-define-service name &optional args doc-string
+
+     Define NAME as a service for Content-Transfer-Encodings.
+
+     If ARGS is specified, NAME is defined as a generic function for the
+     service.
+
+     Example:
+
+          (mel-define-service encoded-text-encode-string (string encoding)
+            "Encode STRING as encoded-text using ENCODING.
+          ENCODING must be string.")
+
+
+File: mime-en.info,  Node: encoded-word,  Next: custom,  Prev: Content-Transfer-Encoding,  Up: Top
+
+7 Network representation of header
+**********************************
+
+*RFC 2047* defines the *encoded-word* which is a format to represent
+non-ASCII (*note ASCII::) characters in a header.
+
+[RFC 2047]
+     K. Moore, "MIME (Multipurpose Internet Mail Extensions) Part Three:
+     Message Header Extensions for Non-ASCII Text", November 1996,
+     Standards Track (obsolete RFC 1521,1522,1590).
+
+   The encoded-word is the only valid format to represent non-ASCII
+(*note ASCII::) characters in a header, but there are also invalid
+styles.  Such kinds of evil messages represent non-ASCII (*note ASCII::)
+characters in headers without encoded-words (it is called "raw"
+non-ASCII (*note ASCII::) characters).
+
+   FLIM provides encoding/decoding features of both encoded-word and
+invalid "raw" non-ASCII (*note ASCII::) characters.
+
+* Menu:
+
+* Header encoder/decoder::      Header encoding/decoding
+
+
+File: mime-en.info,  Node: Header encoder/decoder,  Prev: encoded-word,  Up: encoded-word
+
+7.1 Header encoding/decoding
+============================
+
+ -- Function: eword-decode-header &optional code-conversion separator
+
+     Decode MIME encoded-words in header fields.
+
+     If CODE-CONVERSION is 'nil', only encoded-words are decoded.  If
+     CODE-CONVERSION is a MIME charset (*note MIME charset::), non-ASCII
+     bit patterns are decoded as the MIME charset.  Otherwise non-ASCII
+     bit patterns are decoded as the 'default-mime-charset'.  (cf.
+     *note entity formatting::)
+
+     If SEPARATOR is not 'nil', it is used as header separator.
+
+ -- Function: eword-encode-header &optional code-conversion
+
+     Encode header fields to network representation, such as MIME
+     encoded-word.
+
+     Each field is encoded as corresponding method specified by variable
+     'mime-field-encoding-method-alist'.
+
+ -- Variable: mime-field-encoding-method-alist
+
+     Association list to specify field encoding method.  Each element
+     looks like (FIELD .  METHOD).
+
+     If METHOD is 'mime', the FIELD will be encoded into MIME format
+     (encoded-word).
+
+     If METHOD is 'nil', the FIELD will not be encoded.
+
+     If METHOD is a MIME charset, the FIELD will be encoded as the
+     charset when it must be convert into network-code.
+
+     Otherwise the FIELD will be encoded as variable
+     'default-mime-charset' when it must be convert into network-code.
+
+
+File: mime-en.info,  Node: custom,  Next: Appendix,  Prev: encoded-word,  Up: Top
+
+8 Various Customization
+***********************
+
+ -- group: mime
+
+     The group associated with functions related to MIME.
+
+     It belongs to 'mail' and 'news'.
+
+
+File: mime-en.info,  Node: Appendix,  Next: Concept Index,  Prev: custom,  Up: Top
+
+9 Appendix
+**********
+
+* Menu:
+
+* Glossary::
+* Bug report::                  How to report bugs
+* CVS::                         CVS based development
+* History::                     History of FLIM
+
+
+File: mime-en.info,  Node: Glossary,  Next: Bug report,  Prev: Appendix,  Up: Appendix
+
+9.1 Glossary
+============
+
+* Menu:
+
+* 7bit::
+* 8bit::
+* ASCII::
+* Base64::
+* binary::
+* coded character set::         Coded character set, Character code
+* media-type::
+* message::
+* MIME::
+* MIME charset::
+* MTA::
+* MUA::
+* Quoted-Printable::
+* RFC 822::
+* RFC 1036::
+* RFC 2045::
+* RFC 2046::
+* RFC 2048::
+* RFC 2049::
+* plain text::
+* us-ascii::
+
+
+File: mime-en.info,  Node: 7bit,  Next: 8bit,  Prev: Glossary,  Up: Glossary
+
+9.1.1 7bit
+----------
+
+*7bit* means any integer between 0 ..  127.
+
+   Any data represented by 7bit integers is called *7bit data*.
+
+   Textual string consisted of Control characters between 0 ..  31 and
+127, and space represented by 32, and graphic characters between 33 ..
+236 are called *7bit (textual) string*.
+
+   Conventional Internet MTA (*note MTA::) can translate 7bit data, so
+it is no need to translate by Quoted-Printable (*note
+Quoted-Printable::) or Base64 (*note Base64::) for 7bit data.
+
+   However if there are too long lines, it can not translate by 7bit MTA
+even if it is 7bit data.  RFC 822 (*note RFC 822::) and RFC 2045 (*note
+RFC 2045::) require lines in 7bit data must be less than 998 bytes.  So
+if a "7bit data" has a line more than 999 bytes, it is regarded as
+binary (*note binary::).  For example, Postscript file should be encoded
+by Quoted-Printable.
+
+
+File: mime-en.info,  Node: 8bit,  Next: ASCII,  Prev: 7bit,  Up: Glossary
+
+9.1.2 8bit
+----------
+
+*8bit* means any integer between 0 ..  255.
+
+   Any data represented by 8bit integers is called *8bit data*.
+
+   Textual string consisted of Control characters between 0 ..  31, 127,
+and 128 ..  159, and space represented by 32, and graphic characters
+between 33 ..  236 and 160 ..  255 are called *8bit (textual) string*.
+
+   For example, iso-8859-1 or euc-kr are coded-character-set represented
+by 8bit textual string.
+
+   Traditional Internet MTA (*note MTA::) can translate only 7bit (*note
+7bit::) data, so if a 8bit data will be translated such MTA, it must be
+encoded by Quoted-Printable (*note Quoted-Printable::) or Base64 (*note
+Base64::).
+
+   However 8bit MTA are increasing today.
+
+   However if there are too long lines, it can not translate by 8bit MTA
+even if it is 8bit data.  RFC 2045 (*note RFC 2045::) require lines in
+8bit data must be less than 998 bytes.  So if a "8bit data" has a line
+more than 999 bytes, it is regarded as binary (*note binary::), so it
+must be encoded by Base64 or Quoted-Printable.
+
+
+File: mime-en.info,  Node: ASCII,  Next: Base64,  Prev: 8bit,  Up: Glossary
+
+9.1.3 ASCII
+-----------
+
+*ASCII* is a 94-character set contains primary latin characters (A-Z,
+a-z), numbers and some characters.  It is a standard of the United
+States of America.  It is a variant of ISO 646.
+
+[ASCII]
+     "Coded Character Set - 7-Bit American Standard Code for Information
+     Interchange", ANSI X3.4:1986.
+
+
+File: mime-en.info,  Node: Base64,  Next: binary,  Prev: ASCII,  Up: Glossary
+
+9.1.4 Base64
+------------
+
+*Base64* is a transfer encoding method of MIME (*note MIME::) defined in
+RFC 2045 (*note RFC 2045::).
+
+   The encoding process represents 24-bit groups of input bits as output
+strings of 4 encoded characters.  Encoded characters represent integer 0
+..  63 or *pad*.  Base64 data must be 4 * n bytes, so pad is used to
+adjust size.
+
+   These 65 characters are subset of all versions of ISO 646, including
+US-ASCII, and all versions of EBCDIC. So it is safe even if it is
+translated by non-Internet gateways.
+
+
+File: mime-en.info,  Node: binary,  Next: coded character set,  Prev: Base64,  Up: Glossary
+
+9.1.5 binary
+------------
+
+Any byte stream is called *binary*.
+
+   It does not require structureof lines.  It differs from from 8bit
+(*note 8bit::).
+
+   In addition, if line structured data contain too long line (more than
+998 bytes), it is regarded as binary.
+
+
+File: mime-en.info,  Node: coded character set,  Next: media-type,  Prev: binary,  Up: Glossary
+
+9.1.6 Coded character set, Character code
+-----------------------------------------
+
+A set of unambiguous rules that establishes a character set and the
+one-to-one relationship between the characters of the set and their bit
+combinations.
+
+
+File: mime-en.info,  Node: media-type,  Next: message,  Prev: coded character set,  Up: Glossary
+
+9.1.7 media-type
+----------------
+
+*media-type* specifies the nature of the data in the body of MIME (*note
+MIME::) entity (*note Entity::).  It consists of *type* and *subtype*.
+It is defined in RFC 2046 (*note RFC 2046::).
+
+   Currently there are following standard primary-types:
+
+   * *text*
+   * *image*
+   * *audio*
+   * *video*
+   * *application*
+   * *multipart*
+   * *message*
+
+   And there are various subtypes, for example,
+application/octet-stream, audio/basic, image/jpeg, multipart/mixed,
+text/plain, video/mpeg...
+
+   You can refer registered media types at MEDIA TYPES
+(ftp://ftp.isi.edu/in-notes/iana/assignments/media-types).
+
+   In addition, you can use private type or subtype using *x-token*,
+which as the prefix 'x-'.  However you can not use them in public.
+
+   (cf.  *note Content-Type field::)
+
+
+File: mime-en.info,  Node: message,  Next: MIME,  Prev: media-type,  Up: Glossary
+
+9.1.8 message
+-------------
+
+In this document, it means mail defined in RFC 822 (*note RFC 822::) and
+news message defined in RFC 1036 (*note RFC 1036::).
+
+
+File: mime-en.info,  Node: MIME,  Next: MIME charset,  Prev: message,  Up: Glossary
+
+9.1.9 MIME
+----------
+
+MIME stands for *Multipurpose Internet Mail Extensions*, it is an
+extension for RFC 822 (*note RFC 822::).
+
+   According to RFC 2045:
+
+   STD 11, RFC 822, defines a message representation protocol specifying
+considerable detail about US-ASCII message headers, and leaves the
+message content, or message body, as flat US-ASCII text.  This set of
+documents, collectively called the Multipurpose Internet Mail
+Extensions, or MIME, redefines the format of messages to allow for
+
+  1. textual message bodies in character sets other than US-ASCII,
+  2. an extensible set of different formats for non-textual message
+     bodies,
+  3. multi-part message bodies, and
+  4. textual header information in character sets other than US-ASCII.
+
+   It is defined in RFC 2045 (*note RFC 2045::), RFC 2046 (*note RFC
+2046::), RFC 2047 (*note encoded-word::), RFC 2048 (*note RFC 2048::)
+and RFC 2049 (*note RFC 2049::).
+
+
+File: mime-en.info,  Node: MIME charset,  Next: MTA,  Prev: MIME,  Up: Glossary
+
+9.1.10 MIME charset
+-------------------
+
+Coded character set (*note coded character set::) used in Content-Type
+field (*note Content-Type field::) or charset parameter of encoded-word
+(*note encoded-word::).
+
+   It is defined in RFC 2045 (*note RFC 2045::).
+
+   iso-2022-jp or euc-kr are kinds of it.  (In this document, MIME
+charsets are written by small letters to distinguish graphic character
+set.  For example, ISO 8859-1 is a graphic character set, and iso-8859-1
+is a MIME charset)
+
+
+File: mime-en.info,  Node: MTA,  Next: MUA,  Prev: MIME charset,  Up: Glossary
+
+9.1.11 MTA
+----------
+
+*Message Transfer Agent*.  It means mail transfer programs (ex.
+sendmail) and news servers.
+
+   (cf.  *note MUA::)
+
+
+File: mime-en.info,  Node: MUA,  Next: Quoted-Printable,  Prev: MTA,  Up: Glossary
+
+9.1.12 MUA
+----------
+
+*Message User Agent*.  It means mail readers and news readers.
+
+   (cf.  *note MTA::)
+
+
+File: mime-en.info,  Node: Quoted-Printable,  Next: RFC 822,  Prev: MUA,  Up: Glossary
+
+9.1.13 Quoted-Printable
+-----------------------
+
+*Quoted-Printable* is a transfer encoding method of MIME (*note MIME::)
+defined in RFC 2045 (*note RFC 2045::).
+
+   If the data being encoded are mostly US-ASCII text, the encoded form
+of the data remains largely recognizable by humans.
+
+   (cf.  *note Base64::)
+
+
+File: mime-en.info,  Node: RFC 822,  Next: RFC 1036,  Prev: Quoted-Printable,  Up: Glossary
+
+9.1.14 RFC 822
+--------------
+
+A RFC defines format of Internet mail message, mainly *message header*.
+
+*[Memo]*
+
+     news message is based on RFC 822, so *Internet message* may be more
+     suitable than *Internet mail* .
+
+[RFC 822]
+     D. Crocker, "Standard for the Format of ARPA Internet Text
+     Messages", August 1982, STD 11.
+
+
+File: mime-en.info,  Node: RFC 1036,  Next: RFC 2045,  Prev: RFC 822,  Up: Glossary
+
+9.1.15 RFC 1036
+---------------
+
+A RFC defines format of USENET message.  It is a subset of RFC 822
+(*note RFC 822::).  It is not Internet standard, but a lot of netnews
+excepting Usenet uses it.
+
+[USENET: RFC 1036]
+     M. Horton and R. Adams, "Standard for Interchange of USENET
+     Messages", December 1987, (obsolete RFC 850).
+
+
+File: mime-en.info,  Node: RFC 2045,  Next: RFC 2046,  Prev: RFC 1036,  Up: Glossary
+
+9.1.16 RFC 2045
+---------------
+
+[RFC 2045]
+     N. Freed and N. Borenstein, "Multipurpose Internet Mail Extensions
+     (MIME) Part One: Format of Internet Message Bodies", November 1996,
+     Standards Track (obsolete RFC 1521, 1522, 1590).
+
+
+File: mime-en.info,  Node: RFC 2046,  Next: RFC 2048,  Prev: RFC 2045,  Up: Glossary
+
+9.1.17 RFC 2046
+---------------
+
+[RFC 2046]
+     N. Freed and N. Borenstein, "Multipurpose Internet Mail Extensions
+     (MIME) Part Two: Media Types", November 1996, Standards Track
+     (obsolete RFC 1521, 1522, 1590).
+
+
+File: mime-en.info,  Node: RFC 2048,  Next: RFC 2049,  Prev: RFC 2046,  Up: Glossary
+
+9.1.18 RFC 2048
+---------------
+
+[RFC 2048]
+     N. Freed, J. Klensin and J. Postel, "Multipurpose Internet Mail
+     Extensions (MIME) Part Four: Registration Procedures", November
+     1996, Standards Track (obsolete RFC 1521, 1522, 1590).
+
+
+File: mime-en.info,  Node: RFC 2049,  Next: plain text,  Prev: RFC 2048,  Up: Glossary
+
+9.1.19 RFC 2049
+---------------
+
+[RFC 2049]
+     N. Freed and N. Borenstein, "Multipurpose Internet Mail Extensions
+     (MIME) Part Five: Conformance Criteria and Examples", November
+     1996, Standards Track (obsolete RFC 1521, 1522, 1590).
+
+
+File: mime-en.info,  Node: plain text,  Next: us-ascii,  Prev: RFC 2049,  Up: Glossary
+
+9.1.20 plain text
+-----------------
+
+A textual data represented by only coded character set (*note coded
+character set::).  It does not have information about font or
+typesetting.
+
+
+File: mime-en.info,  Node: us-ascii,  Prev: plain text,  Up: Glossary
+
+9.1.21 us-ascii
+---------------
+
+A MIME charset (*note MIME charset::) for primary Latin script mainly
+written by English or other languages.
+
+   It is a 7bit coded character set (*note coded character set::) based
+on ISO 2022, it contains only ASCII (*note ASCII::) and code extension
+is not allowed.
+
+   It is standard coded character set of Internet mail.  If MIME charset
+is not specified, *us-ascii* is used as default.
+
+   In addition, *ASCII* of RFC 822 (*note RFC 822::) should be
+interpreted as us-ascii.
+
+
+File: mime-en.info,  Node: Bug report,  Next: CVS,  Prev: Glossary,  Up: Appendix
+
+9.2 How to report bugs
+======================
+
+If you write bug-reports and/or suggestions for improvement, please send
+them to the EMACS-MIME Mailing List:
+
+   * English <emacs-mime-en@m17n.org>
+   * Japanese <emacs-mime-ja@m17n.org>
+
+   Notice that, we do not welcome bug reports about too old version.
+Bugs in old version might be fixed.  So please try latest version at
+first.
+
+   You should write *good bug report*.  If you write only "FLIM does not
+work", we can not find such situations.  At least, you should write
+name, type, variants and version of OS, emacs, APEL, FLIM, SEMI and MUA,
+and setting.  In addition, if error occurs, to send backtrace is very
+important.  (cf.  *note (emacs)Bugs::)
+
+   Bug may not appear only your environment, but also in a lot of
+environment (otherwise it might not bug).  Therefor if you send mail to
+author directly, we must write a lot of mails.  So please send mail to
+address for EMACS-MIME Mailing List instead of author.
+
+   Via the EMACS-MIME ML, you can report FLIM bugs, obtain the latest
+release of FLIM, and discuss future enhancements to FLIM. To join the
+EMACS-MIME ML, send an empty e-mail to:
+
+   * English <emacs-mime-en-ctl@m17n.org>
+   * Japanese <emacs-mime-ja-ctl@m17n.org>
+
+
+File: mime-en.info,  Node: CVS,  Next: History,  Prev: Bug report,  Up: Appendix
+
+9.3 CVS based development
+=========================
+
+Files in FLIM are managed under CVS. Therefore you can obtain the newest
+FLIM by the following method.
+
+     (0) cvs login
+
+         % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
+
+         CVS password: [CR] # NULL string
+
+     (1) checkout
+
+         % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout
+     	checkout [-r TAG] flim
+
+   If you would like to join CVS based development, please send mail to
+
+   * <cvs@cvs.m17n.org>
+
+with your account name and your public key for ssh.  cvsroot is
+:ext:cvs@cvs.m17n.org:/cvs/root.
+
+
+File: mime-en.info,  Node: History,  Prev: CVS,  Up: Appendix
+
+9.4 History of FLIM
+===================
+
+FLIM の code の最古の部分は 榎並 嗣智 氏が書いた 'mime.el' に起源し ます
+。この小さな program は Nemacs で動作する iso-2022-jp の B-encoding 専用
+の encoded-word の復号化プログラムでした。
+
+   その後、守岡 知彦 は 'mime.el' を元に'tiny-mime.el' というプロ グラム
+を書きます。これは、Nemacs と Mule で動作する encoded-word の符号 化・復
+号化プログラムでした。'tiny-mime.el' は B-encoding だけでなく Q-encoding
+もsupport し、また、MULE で扱うことができるさまざまな MIME charset
+(*note MIME charset::) を同時に使うことができました。この時、 Nemacs と
+Mule の双方を support するために用いられたテクニックは後に emu package に
+まとめられます。
+
+   この頃、守岡 知彦 は 'tiny-mime.el' をさまざまな MUA で使うための設 定
+集も配布していましたが、それらは後に'tiny-mime.el' とともに１つの
+package にまとめられ、tm という名前で配布されます。
+
+   守岡 知彦 はやがて、MIME message を閲覧するためのプログラムである
+'tm-body.el' を書きます。これは、すぐに'tm-view.el' という名前 に変わり
+ましたが、やがて、これが'tiny-mime.el' に代わって、tm の中 核となります
+。
+
+   'tm-view.el' は当然、Content-Transfer-Encoding を扱う必要があります。
+この目的のために、MEL が整備されはじめました。Base64 に関しては
+'tiny-mime.el' の code が移され、また、新たにQuoted-Printable の code が
+追加されました。これらが'mel-b.el' と 'mel-q.el' になり ました。
+
+   また、後に、守岡 知彦 によって uuencode 用の 'mel-u.el' が追加され、
+その後に、小林 修平 氏によって x-gzip64 用の'mel-g.el' が追加されま した
+。
+
+   tm では後に、守岡 知彦 によって 'tiny-mime.el' の再実装が行われ、こ の
+過程で、STD 11 の parser が書かれました。これは、現在の 'std11.el' に当
+たります。また、この過程で 'tiny-mime.el' は復 号化を行う 'tm-ew-d.el' と
+符号化を行う 'tm-ew-e.el' に分けられ ました。この両者が現在の
+'eword-decode.el' と 'eword-encode.el' の先祖に当たります。
+
+   後に、守岡 知彦 らによって tm の全面書き換え作業が行われ、この過程で
+、tm は APEL, MEL, SEMI, EMH, RMAIL-MIME, Gnus-MIME などに分けられました
+。こ のうちの MEL が FLIM の直接の先祖に当たります。
+
+   後に、APEL から 'std11.el' が移され、また、'mailcap.el',
+'eword-decode.el' および 'eword-encode.el' が SEMI から移され、 package
+の名前が FLIM となります。
+
+   この直前から田中 哲 氏がより RFC に忠実な実装を書き始め、これは、現在
+、 FLIM の枝である "FLIM-FLAM" となっています。
+
+
+File: mime-en.info,  Node: Concept Index,  Next: Function Index,  Prev: Appendix,  Up: Top
+
+10 Concept Index
+****************
+
+ [index ]
+* Menu:
+
+* 7bit:                                  7bit.                  (line 6)
+* 7bit (textual) string:                 7bit.                  (line 6)
+* 7bit data:                             7bit.                  (line 6)
+* 8bit:                                  8bit.                  (line 6)
+* 8bit (textual) string:                 8bit.                  (line 6)
+* 8bit data:                             8bit.                  (line 6)
+* ANSI X3.4:1986:                        ASCII.                 (line 6)
+* application:                           media-type.            (line 6)
+* ASCII:                                 ASCII.                 (line 6)
+* ASCII <1>:                             ASCII.                 (line 6)
+* ASCII <2>:                             us-ascii.              (line 6)
+* audio:                                 media-type.            (line 6)
+* Base64:                                Base64.                (line 6)
+* binary:                                binary.                (line 6)
+* Content-Disposition field:             Content-Disposition.   (line 6)
+* Content-Transfer-Encoding field:       Content-Transfer-Encoding.
+                                                                (line 6)
+* Content-Type field:                    Content-Type.          (line 6)
+* encoded-word:                          encoded-word.          (line 6)
+* entity:                                Entity.                (line 6)
+* entity processing method:              mm-backend.            (line 6)
+* entity-number:                         Entity hierarchy.      (line 6)
+* good bug report:                       Bug report.            (line 6)
+* image:                                 media-type.            (line 6)
+* Internet mail:                         RFC 822.               (line 6)
+* Internet message:                      RFC 822.               (line 6)
+* media-type:                            media-type.            (line 6)
+* message:                               Entity hierarchy.      (line 6)
+* message <1>:                           media-type.            (line 6)
+* message header:                        RFC 822.               (line 6)
+* Message Transfer Agent:                MTA.                   (line 6)
+* Message User Agent:                    MUA.                   (line 6)
+* mime-content-disposition:              Content-Disposition.   (line 6)
+* mime-content-type:                     Content-Type.          (line 6)
+* mime-entity:                           Entity.                (line 6)
+* mm-backend:                            mm-backend.            (line 6)
+* multipart:                             media-type.            (line 6)
+* Multipurpose Internet Mail Extensions: MIME.                  (line 6)
+* node-id:                               Entity hierarchy.      (line 6)
+* pad:                                   Base64.                (line 6)
+* parameter:                             Content-Type field.    (line 6)
+* Quoted-Printable:                      Quoted-Printable.      (line 6)
+* representation-type:                   mm-backend.            (line 6)
+* RFC 1036:                              RFC 1036.              (line 6)
+* RFC 2045:                              RFC 2045.              (line 6)
+* RFC 2046:                              RFC 2046.              (line 6)
+* RFC 2047:                              encoded-word.          (line 6)
+* RFC 2047 <1>:                          encoded-word.          (line 6)
+* RFC 2048:                              RFC 2048.              (line 6)
+* RFC 2049:                              RFC 2049.              (line 6)
+* RFC 2183:                              Content-Disposition.   (line 6)
+* RFC 822:                               RFC 822.               (line 6)
+* root-entity:                           Entity hierarchy.      (line 6)
+* Standards Track:                       Content-Disposition.   (line 6)
+* Standards Track <1>:                   encoded-word.          (line 6)
+* Standards Track <2>:                   RFC 2045.              (line 6)
+* Standards Track <3>:                   RFC 2046.              (line 6)
+* Standards Track <4>:                   RFC 2048.              (line 6)
+* Standards Track <5>:                   RFC 2049.              (line 6)
+* STD 11:                                RFC 822.               (line 6)
+* subtype:                               Content-Type field.    (line 6)
+* subtype <1>:                           media-type.            (line 6)
+* text:                                  media-type.            (line 6)
+* type:                                  Content-Type field.    (line 6)
+* type <1>:                              media-type.            (line 6)
+* us-ascii:                              us-ascii.              (line 6)
+* USENET:                                RFC 1036.              (line 6)
+* video:                                 media-type.            (line 6)
+* x-token:                               media-type.            (line 6)
+
+
+File: mime-en.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+
+11 Function Index
+*****************
+
+ [index ]
+* Menu:
+
+* eword-decode-header:                   Header encoder/decoder.
+                                                               (line  6)
+* eword-encode-header:                   Header encoder/decoder.
+                                                               (line 18)
+* make-mime-content-type:                mime-content-type.    (line 24)
+* mel-define-method:                     mel-backend.          (line  6)
+* mel-define-method-function:            mel-backend.          (line 31)
+* mel-define-service:                    generic function for mel-backend.
+                                                               (line  6)
+* mime:                                  custom.               (line  6)
+* mime-content-disposition:              mime-content-disposition.
+                                                               (line  6)
+* mime-content-disposition-filename:     mime-content-disposition.
+                                                               (line 27)
+* mime-content-disposition-parameter:    mime-content-disposition.
+                                                               (line 22)
+* mime-content-type:                     mime-content-type.    (line  6)
+* mime-content-type-parameter:           mime-content-type.    (line 29)
+* mime-decode-region:                    encoder/decoder.      (line 10)
+* mime-decode-string:                    encoder/decoder.      (line 14)
+* mime-encode-region:                    encoder/decoder.      (line  6)
+* mime-encoding-alist:                   Encoding information. (line 13)
+* mime-encoding-list:                    Encoding information. (line  6)
+* mime-entity-body-end:                  Entity buffer.        (line 34)
+* mime-entity-body-start:                Entity buffer.        (line 29)
+* mime-entity-buffer:                    Entity buffer.        (line  6)
+* mime-entity-children:                  Entity hierarchy.     (line 49)
+* mime-entity-content:                   Entity-content.       (line  6)
+* mime-entity-content-disposition:       Entity Attributes.    (line 10)
+* mime-entity-content-type:              Entity Attributes.    (line  6)
+* mime-entity-cooked-p:                  Entity Attributes.    (line 28)
+* mime-entity-encoding:                  Entity Attributes.    (line 19)
+* mime-entity-filename:                  Entity Attributes.    (line 15)
+* mime-entity-header-end:                Entity buffer.        (line 24)
+* mime-entity-header-start:              Entity buffer.        (line 19)
+* mime-entity-node-id:                   Entity hierarchy.     (line 64)
+* mime-entity-number:                    Entity hierarchy.     (line 68)
+* mime-entity-parent:                    Entity hierarchy.     (line 53)
+* mime-entity-point-max:                 Entity buffer.        (line 15)
+* mime-entity-point-min:                 Entity buffer.        (line 10)
+* mime-entity-send:                      Request for entity.   (line  6)
+* mime-fetch-field:                      Entity-header.        (line  6)
+* mime-find-entity-from-content-id:      Entity Search.        (line 20)
+* mime-find-entity-from-node-id:         Entity Search.        (line 13)
+* mime-find-entity-from-number:          Entity Search.        (line  6)
+* mime-insert-encoded-file:              encoder/decoder.      (line 18)
+* mime-insert-entity:                    Entity-network-representation.
+                                                               (line  6)
+* mime-insert-entity-content:            Entity-content.       (line 10)
+* mime-insert-header:                    entity formatting.    (line  6)
+* mime-insert-text-content:              entity formatting.    (line 22)
+* mime-open-entity:                      Entity creation.      (line  6)
+* mime-parse-buffer:                     Entity creation.      (line 15)
+* mime-parse-Content-Disposition:        Content-Disposition parser.
+                                                               (line  6)
+* mime-parse-Content-Transfer-Encoding:  Content-Transfer-Encoding parser.
+                                                               (line  6)
+* mime-parse-Content-Type:               Content-Type parser.  (line  6)
+* mime-read-Content-Disposition:         Content-Disposition parser.
+                                                               (line 12)
+* mime-read-Content-Transfer-Encoding:   Content-Transfer-Encoding parser.
+                                                               (line 11)
+* mime-read-Content-Type:                Content-Type parser.  (line 11)
+* mime-read-field:                       Entity-header.        (line 17)
+* mime-root-entity-p:                    Entity hierarchy.     (line 60)
+* mime-type/subtype-string:              Content-Type utility. (line  6)
+* mime-write-decoded-region:             encoder/decoder.      (line 22)
+* mime-write-entity:                     Entity-network-representation.
+                                                               (line 10)
+* mime-write-entity-body:                Entity-network-representation.
+                                                               (line 14)
+* mime-write-entity-content:             Entity-content.       (line 14)
+* mm-define-backend:                     mm-backend module.    (line  6)
+* mm-define-method:                      mm-backend module.    (line 17)
+
+
+File: mime-en.info,  Node: Variable Index,  Prev: Function Index,  Up: Top
+
+12 Variable Index
+*****************
+
+ [index ]
+* Menu:
+
+* default-mime-charset:                  entity formatting.    (line 31)
+* mime-field-encoding-method-alist:      Header encoder/decoder.
+                                                               (line 26)
+* mime-message-structure:                Entity hierarchy.     (line 45)
+
+
+
+Tag Table:
+Node: Top206
+Node: Introduction1033
+Node: How to use1237
+Node: Entity1463
+Node: Entity creation2795
+Node: Entity hierarchy3574
+Node: Entity Search6124
+Node: Entity Attributes6860
+Node: Entity-header7855
+Node: entity formatting8929
+Node: Entity-content10255
+Node: Entity-network-representation10707
+Node: Entity buffer11187
+Node: mm-backend12238
+Node: Request for entity13289
+Node: mm-backend module13630
+Node: Content-Type14444
+Node: Content-Type field15368
+Node: mime-content-type16124
+Node: Content-Type parser16999
+Node: Content-Type utility17571
+Node: Content-Disposition17833
+Node: mime-content-disposition18649
+Node: Content-Disposition parser19565
+Node: Content-Transfer-Encoding20260
+Node: Content-Transfer-Encoding parser21030
+Node: encoder/decoder21692
+Node: Encoding information22541
+Node: mel-backend23124
+Node: generic function for mel-backend24836
+Node: encoded-word25434
+Node: Header encoder/decoder26432
+Node: custom27898
+Node: Appendix28147
+Node: Glossary28432
+Node: 7bit28872
+Node: 8bit29835
+Node: ASCII30962
+Node: Base6431369
+Node: binary31985
+Node: coded character set32342
+Node: media-type32681
+Node: message33601
+Node: MIME33842
+Node: MIME charset34856
+Node: MTA35429
+Node: MUA35650
+Node: Quoted-Printable35846
+Node: RFC 82236249
+Node: RFC 103636681
+Node: RFC 204537101
+Node: RFC 204637433
+Node: RFC 204837743
+Node: RFC 204938074
+Node: plain text38409
+Node: us-ascii38680
+Node: Bug report39268
+Node: CVS40591
+Node: History41276
+Node: Concept Index42993
+Node: Function Index48176
+Node: Variable Index53698
+
+End Tag Table

@@ -1,5 +1,3 @@
-(load-library "enzuru-enthusiast")
-
 (setq locate-command "locate")
 
 (setq locate-make-command-line

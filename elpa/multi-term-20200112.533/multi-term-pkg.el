@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "multi-term" "20200112.533" "Managing multiple terminal buffers in Emacs." 'nil :commit "7307ddd456db44045206253e5a905d3d8c143d5c" :keywords '("term" "terminal" "multiple buffer") :authors '(("Andy Stewart" . "lazycat.manatee@gmail.com")) :maintainer '("Andy Stewart" . "lazycat.manatee@gmail.com") :url "http://www.emacswiki.org/emacs/download/multi-term.el")

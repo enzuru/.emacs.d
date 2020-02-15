@@ -8,10 +8,12 @@
 
 ;; Features
 
+(load-library "enzuru-auto-complete")
 (load-library "enzuru-file-manager")
 (load-library "enzuru-help")
 (load-library "enzuru-hyperlinking")
 (load-library "enzuru-mail")
+(load-library "enzuru-parens")
 (load-library "enzuru-project-management")
 (load-library "enzuru-scheduler")
 (load-library "enzuru-server")
