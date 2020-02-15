@@ -26,6 +26,7 @@
 (load-library "enzuru-assembly")
 (load-library "enzuru-c")
 (load-library "enzuru-coffeescript")
+(load-library "enzuru-common-lisp")
 (load-library "enzuru-css")
 (load-library "enzuru-emacs-lisp")
 (load-library "enzuru-feature")
