@@ -1,0 +1,3 @@
+[submodule "local/sunrise-commander"]
+	path = local/sunrise-commander
+	url = https://github.com/sunrise-commander/sunrise-commander.git
