@@ -8,6 +8,8 @@
     (load-library "enzuru-arjen-grey"))
 (if (eq system-type 'berkeley-unix)
     (load-library "enzuru-deep-thought"))
+(if (eq system-type 'gnu/linux)
+    (load-library "enzuru-purple-haze"))
 
 (when (string= (system-name) "spirit")
   (load-library "enzuru-deep-thought"))

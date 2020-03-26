@@ -16,6 +16,7 @@
 (load-library "enzuru-parens")
 (load-library "enzuru-project-management")
 (load-library "enzuru-scheduler")
+(load-library "enzuru-search")
 (load-library "enzuru-server")
 (load-library "enzuru-shell")
 (load-library "enzuru-syntax-checking")
