@@ -11,3 +11,6 @@
  '(linum-format " %7d "))
 
 (set-face-attribute 'region nil :background "#666")
+
+(set-face-attribute 'default nil
+                    :family "Liberation Mono" :height 120 :weight 'normal)
