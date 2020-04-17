@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: _complex
-# key: _complex
-# group: Special methods
-# --
-def __complex__(self):
-    return $0

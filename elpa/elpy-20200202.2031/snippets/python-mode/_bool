@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: _bool
-# key: _bool
-# group: Special methods
-# --
-def __bool__(self):
-    return $0

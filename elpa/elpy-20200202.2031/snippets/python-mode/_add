@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: _add
-# key: _add
-# group: Special methods
-# --
-def __add__(self, other):
-    return $0

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: _or
-# key: _or
-# group: Special methods
-# --
-def __or__(self, other):
-    return $0

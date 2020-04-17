@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: _xor
-# key: _xor
-# group: Special methods
-# --
-def __xor__(self, other):
-    return $0
