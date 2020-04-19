@@ -26,6 +26,7 @@
 
 ;; Console: C-c(onsole)
 
+(global-set-key (kbd "C-c d") 'docker)                           ;; C-c(onsole) d(ocker)
 (global-set-key (kbd "C-c e") 'multi-term)                       ;; C-c(onsole) e(macs)
 (global-set-key (kbd "C-c x") 'async-term)                       ;; C-c(onsole) x(term)
 (global-set-key (kbd "C-c s") 'magit-status)                     ;; C-c(onsole) s(tatus of git)
