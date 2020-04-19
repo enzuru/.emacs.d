@@ -2,7 +2,9 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware")
 
-This is my `.emacs.d/` directory. When I was starting off with GNU Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
+This handcrafted repo contains a selection of nearly one hundred of the finest packages ever written for Emacs, all working in harmony with one another.
+
+When I was starting off with GNU Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
 This repository includes submodules, so you will want to pull the code like this:
 
