@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: sce
-# name: Scenario: Name
-# expand-env: ((yas-indent-line 'fixed))
-# --
-Scenario: ${1:Name}
-  giv$0

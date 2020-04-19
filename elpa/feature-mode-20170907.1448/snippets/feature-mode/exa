@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# key: exa
-# name: Examples
-# --
-Examples:
-  | ${1:column_title} $0
