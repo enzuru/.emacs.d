@@ -1,5 +1,6 @@
 (ivy-mode)
 (counsel-mode)
+(company-quickhelp-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
 
