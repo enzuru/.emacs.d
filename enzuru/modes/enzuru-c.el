@@ -7,6 +7,7 @@
         indent-tabs-mode t))
 
 (add-hook 'c-mode-hook 'enzuru-c-mode-hook)
+(add-hook 'c-mode-hook #'lsp)
 
 (global-ede-mode 1)
 (semantic-mode 1)

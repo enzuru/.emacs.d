@@ -1,3 +1,7 @@
+(require 'lsp-mode)
+(require 'ccls)
+(require 'company-lsp)
+
 (ivy-mode)
 (counsel-mode)
 (company-quickhelp-mode)
@@ -11,6 +15,7 @@
 (setq magit-completing-read-function 'ivy-completing-read)
 (setq projectile-completion-system 'ivy)
 (setq company-idle-delay 0)
+(setq lsp-prefer-flymake nil)
 
 (defun ivy-with-thing-at-point (cmd)
   (let ((ivy-initial-inputs-alist
@@ -25,3 +30,5 @@
 (defun swiper-thing-at-point ()
   (interactive)
   (ivy-with-thing-at-point 'swiper))
+
+(push 'company-lsp company-backends)

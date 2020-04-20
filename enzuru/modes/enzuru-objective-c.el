@@ -37,3 +37,5 @@
                                     "-I/usr/NextSpace/include"
                                     "-fobjc-nonfragile-abi"
                                     "-F/usr/NextSpace/Frameworks"))
+
+(add-hook 'objc-mode-hook #'lsp)
