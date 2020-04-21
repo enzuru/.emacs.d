@@ -4,7 +4,7 @@
 
 This handcrafted repo contains my Emacs Lisp code tying together a selection of more than 100 of the finest packages ever written for Emacs, all working in harmony with one another.
 
-For ease of use and analysis, I have bucked good practice and checked in the packages along with my personal Lisp in the `elpa` and `local` directories.
+For ease of use and analysis, I have bucked good practice and checked in the external packages in the `elpa` and `local` directories.
 
 When I was starting off with GNU Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
