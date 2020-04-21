@@ -10,14 +10,14 @@
 
 ;; Features
 
-(load-library "enzuru-auto-complete")
+(load-library "enzuru-autocompletion")
 (load-library "enzuru-dashboard")
 (load-library "enzuru-debugger")
 (load-library "enzuru-file-manager")
 (load-library "enzuru-help")
 (load-library "enzuru-mail")
 (load-library "enzuru-parens")
-(load-library "enzuru-project-management")
+(load-library "enzuru-project-manager")
 (load-library "enzuru-scheduler")
 (load-library "enzuru-search")
 (load-library "enzuru-server")
@@ -61,7 +61,7 @@
 (load-library "enzuru-bell")
 (load-library "enzuru-buffers")
 (load-library "enzuru-frames")
-(load-library "enzuru-highlight")
+(load-library "enzuru-highlighting")
 (load-library "enzuru-margin")
 (load-library "enzuru-modeline")
 (load-library "enzuru-recent-files")
