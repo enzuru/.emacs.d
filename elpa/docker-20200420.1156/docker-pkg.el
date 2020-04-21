@@ -1,4 +1,4 @@
-(define-package "docker" "20200410.1017" "Emacs interface to Docker"
+(define-package "docker" "20200420.1156" "Emacs interface to Docker"
   '((dash "2.14.1")
     (docker-tramp "0.1")
     (emacs "24.5")

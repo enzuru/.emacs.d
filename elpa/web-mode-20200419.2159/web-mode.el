@@ -4,7 +4,7 @@
 ;; Copyright 2011-2020 François-Xavier Bois
 
 ;; Version: 16.0.32
-;; Package-Version: 20200419.2106
+;; Package-Version: 20200419.2159
 ;; Author: François-Xavier Bois <fxbois AT Google Mail Service>
 ;; Maintainer: François-Xavier Bois
 ;; Package-Requires: ((emacs "23.1"))
@@ -1884,6 +1884,7 @@ shouldn't be moved back.)")
 (defvar web-mode-javascript-font-lock-keywords
   (list
    '("@\\([[:alnum:]_]+\\)\\_>" 0 'web-mode-keyword-face)
+   '("\\([[:alnum:]]+\\)[`]" 0 'web-mode-type-face)
    (cons (concat "\\_<\\(function\\*\\)\\_>") '(1 'web-mode-keyword-face))
    (cons (concat "\\([ \t}{(]\\|^\\)\\(" web-mode-javascript-keywords "\\)\\_>") '(2 'web-mode-keyword-face))
    (cons (concat "\\_<\\(" web-mode-javascript-constants "\\)\\_>") '(0 'web-mode-constant-face))
@@ -6818,8 +6819,8 @@ another auto-completion with different ac-sources (e.g. ac-php)")
     (setq end (1- end))
     (while (re-search-forward "${.*?}" end t)
       (put-text-property (match-beginning 0) (match-end 0)
-                         'font-lock-face
-                         'web-mode-variable-name-face)
+                           'font-lock-face
+                           'web-mode-variable-name-face)
       )
     (cond
      ((web-mode-looking-back "\\(css\\|styled[[:alnum:].]+\\)" beg)
@@ -6837,8 +6838,23 @@ another auto-completion with different ac-sources (e.g. ac-php)")
                            'font-lock-face
                            'web-mode-interpolate-color1-face)
         )
+      (goto-char (1+ beg))
+      (while (re-search-forward "</?\\|/?>\\| [[:alnum:]]+=" end t)
+        (cond
+         ((member (char-after (match-beginning 0)) '(?\< ?\/ ?\>))
+          (put-text-property (match-beginning 0) (match-end 0)
+                             'font-lock-face
+                             'web-mode-interpolate-color2-face)
+          )
+         (t
+          (put-text-property (1+ (match-beginning 0)) (1- (match-end 0))
+                             'font-lock-face
+                             'web-mode-interpolate-color3-face)
+          ) ;t
+         ) ;cond
+        ) ;while
       ) ;case html
-     ) ;cond
+     ) ;cond type of literal
     ))
 
 ;; todo : parsing plus compliqué: {$obj->values[3]->name}

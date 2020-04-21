@@ -40,6 +40,11 @@
   :type 'string
   :group 'geiser-chez)
 
+(geiser-custom--defcustom geiser-chez-extra-command-line-parameters '()
+  "Additional parameters to supply to the Chez binary."
+  :type '(repeat string)
+  :group 'geiser-chez)
+
 
 ;;; REPL support:
 
@@ -54,7 +59,8 @@ This function uses `geiser-chez-init-file' if it exists."
   (let ((init-file (and (stringp geiser-chez-init-file)
                         (expand-file-name geiser-chez-init-file))))
     `(,@(and init-file (file-readable-p init-file) (list init-file))
-      ,(expand-file-name "chez/geiser/geiser.ss" geiser-scheme-dir))))
+      ,(expand-file-name "chez/geiser/geiser.ss" geiser-scheme-dir)
+      ,@geiser-chez-extra-command-line-parameters)))
 
 (defconst geiser-chez--prompt-regexp "> ")
 
