@@ -45,11 +45,12 @@
 (global-set-key (kbd "C-x f") 'counsel-find-file)                ;; C-x(ecute) f(ind command)
 (global-set-key (kbd "C-x k") 'volatile-kill-buffer)             ;; C-x(ecute) k(ill)
 (global-set-key (kbd "C-x l") 'counsel-locate)                   ;; C-x(ecute) l(ocate)
+(global-set-key (kbd "C-x o") 'other-window)                     ;; C-x(ecute) o(ther window)
 (global-set-key (kbd "C-x s") 'replace-string)                   ;; C-x(ecute) s(tring replacement)
 
 ;; Execute under point: C-x(ecute) C-letter
 
-(global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)              ;; C-x(ecute) b(uffer switch)
+(global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)              ;; C-x(ecute) C-b(uffer switch)
 (global-set-key (kbd "C-x C-c") 'counsel-ag-thing-at-point)      ;; C-x(ecute) C-c(ounsel ag)
 (global-set-key (kbd "C-x C-d") 'devdocs-search)                 ;; C-x(ecute) C-d(ocumentation search)
 (global-set-key (kbd "C-x C-f") 'sunrise-cd)                     ;; C-x(ecute) C-f(ile manager)
