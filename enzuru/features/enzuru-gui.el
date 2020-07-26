@@ -7,6 +7,6 @@
 (if (eq system-type 'windows-nt)
     (load-library "enzuru-arjen-grey"))
 (if (eq system-type 'berkeley-unix)
-    (load-library "enzuru-deep-thought"))
+    (load-library "enzuru-zenburn"))
 (if (eq system-type 'gnu/linux)
     (load-library "enzuru-purple-haze"))
