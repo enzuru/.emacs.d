@@ -27,6 +27,7 @@
 (load-library "enzuru-server")
 (load-library "enzuru-shell")
 (load-library "enzuru-syntax-checking")
+(load-library "enzuru-uname")
 (load-library "enzuru-remote")
 (load-library "enzuru-version-control")
 (load-library "enzuru-writing")
