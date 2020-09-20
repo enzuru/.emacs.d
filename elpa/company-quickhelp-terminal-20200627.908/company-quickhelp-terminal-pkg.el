@@ -1,2 +1,0 @@
-;;; -*- no-byte-compile: t -*-
-(define-package "company-quickhelp-terminal" "20200627.908" "Terminal support for `company-quickhelp'" '((emacs "24.4") (company-quickhelp "2.2.0") (popup "0.5.3")) :commit "e18b4cf309e2bbc63995ebc3c1230c8c865dd00e" :authors '(("Shen, Jen-Chieh" . "jcs090218@gmail.com")) :maintainer '("Shen, Jen-Chieh" . "jcs090218@gmail.com") :url "https://github.com/jcs090218/company-quickhelp-terminal")

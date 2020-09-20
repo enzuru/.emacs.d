@@ -1,0 +1,2 @@
+;;; Generated package description from /home/enzuru/.emacs.d/elpa/company-quickhelp-terminal-20200904.305/company-quickhelp-terminal.el  -*- no-byte-compile: t -*-
+(define-package "company-quickhelp-terminal" "20200904.305" "Terminal support for `company-quickhelp'" '((emacs "24.4") (company-quickhelp "2.2.0") (popup "0.5.3")) :commit "c2e077e8d32610f80a506c410ab51a4ba747a47f" :authors '(("Shen, Jen-Chieh" . "jcs090218@gmail.com")) :maintainer '("Shen, Jen-Chieh" . "jcs090218@gmail.com") :url "https://github.com/jcs-elpa/company-quickhelp-terminal")

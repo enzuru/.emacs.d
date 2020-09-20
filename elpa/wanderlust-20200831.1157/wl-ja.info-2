@@ -1,0 +1,2355 @@
+This is wl-ja.info, produced by makeinfo version 6.5 from wl-ja.texi.
+
+INFO-DIR-SECTION GNU Emacs Lisp
+START-INFO-DIR-ENTRY
+* Wanderlust-ja: (wl-ja).  Yet Another Message Interface On Emacsen
+END-INFO-DIR-ENTRY
+
+This file documents Wanderlust, Yet another message interface on
+Emacsen.
+
+   このファイルは Emacs で動くメール/ニュース管理システム Wanderlust に
+関す る説明書です。
+
+   Copyright © 1998, 1999, 2000, 2001, 2002 Yuuichi Teranishi,
+Fujikazu Okunishi, Masahiro Murata, Kenichi Okada, Kaoru Takahashi,
+Katsumi Yamaoka, Hiroya Murata and Yoichi Nakayama.
+
+   This edition is for Wanderlust version 2.15.9.
+
+   この版は Wanderlust version 2.15.9 に対応します。
+
+   Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+   著作権表示とこの許可文がすべての複製に存在する限り、この説明書のまっ
+たく 同一の複製を作り、配布することを許可する。
+
+   Permission is granted to copy and distribute modified versions of
+this manual under the conditions for verbatim copying, provided that the
+entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+   同一複製の条件の下で、それによって得られた結果もこの許可文の表示と同
+一の 条件のもとで配布する限り、この説明書の修正版の複製をし、配布するこ
+とを許 可する。
+
+   Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions.
+
+   上記の修正版に関する条件の下で、この説明書の翻訳の複製を作り、配布す
+るこ とを許可する。
+
+
+File: wl-ja.info,  Node: Biff,  Next: Password Management,  Prev: Highlights,  Up: Advanced Issues
+
+14.3 メールの着信を知らせる
+===========================
+
+以下のように設定しておくと ‘%inbox’ にメールが届いたときに、 モードライ
+ンの表示によりメールの着信を知らせてくれます。
+
+     (setq wl-biff-check-folder-list '("%inbox"))
+
+14.3.1 カスタマイズ変数
+-----------------------
+
+‘wl-biff-check-folder-list’
+     初期設定は ‘nil’。 メールの着信をチェックするフォルダのリスト。
+     ‘nil’ の場合は着信のチェックを行ないません。
+
+‘wl-biff-check-interval’
+     初期設定は 40 (単位:秒)。 この値ごとにメール着信のチェックを行なお
+     うとします。
+
+‘wl-biff-check-delay’
+     初期設定は 0 (単位:秒)。 ‘wl-biff-check-interval’ で指定した時間が
+     経過し、かつ、 この変数で指定された時間だけアイドル状態が続いた場合
+     にチェックを行います。
+
+‘wl-biff-use-idle-timer’
+     初期設定は ‘nil’。 ‘nil’ なら ‘wl-biff-check-interval’ で指定した時
+     間が経過すると メール着信のチェックを行います。Non-nil なら
+     ‘wl-biff-check-interval’ で指定した時間だけアイドル状態が続くとメー
+     ル着信のチェックを行います。
+
+‘wl-biff-notify-hook’
+     新しいメールが届いた際に実行されるフック。 着信時にビープ音を鳴らす
+     （初期設定）なら以下のように設定します。
+          (setq wl-biff-notify-hook '(ding))
+     音を鳴らしたりしない場合は ‘nil’ に設定してください。
+
+‘wl-biff-unnotify-hook’
+     前回のチェックで新しいメールが届いており、 今回のチェックで新しいメ
+     ールが無くなった際に実行されるフック。
+
+
+File: wl-ja.info,  Node: Password Management,  Next: Split messages,  Prev: Biff,  Up: Advanced Issues
+
+14.4 パスワードの管理
+=====================
+
+サーバに接続する為に入力したパスワードは変数 ‘elmo-passwd-storage’ に 接
+続毎に保持されます。この変数にはエンコードされた生のパスワードが保持さ れ
+ており、Emacs を他人に触られるとパスワードを見られる危険性があるので十 分
+に注意して下さい。
+
+   パスワードが保持されている状態で ‘M-x elmo-passwd-alist-save’ を実行
+するとパスワードがファイルに保存され、パスワードの入力が不要になります。
+この場合、キー入力を盗み見られる危険性は減るかもしれませんが、生のパスワ
+ードがファイルに保存されるので、その扱いには十分注意して下さい。ファイル
+に保存されたパスワードを消去するには ‘M-x elmo-passwd-alist-clear’ の後
+、‘M-x elmo-passwd-alist-save’ を実行して下さい。
+
+‘elmo-passwd-alist-file-name’
+     初期設定は ‘passwd’。 パスワードをセーブしておくファイルの名前です
+     。 コマンド ‘elmo-passwd-alist-save’ を実行するとこのファイルに現在
+     設定 されているパスワードがセーブされます。
+
+‘elmo-passwd-life-time’
+     初期設定は ‘nil’。 Non-nil な値が設定された場合は、新規にパスワード
+     が入力されてから ‘elmo-passwd-life-time’ 秒後にパスワードを消去する
+     タイマが、 セットされます。‘nil’ の場合は入力されたパスワードを消去
+     しません。
+
+* Menu:
+
+* Auth-source:: auth-source を利用したパスワードの管理
+
+
+File: wl-ja.info,  Node: Auth-source,  Prev: Password Management,  Up: Password Management
+
+14.4.1 auth-source を利用したパスワードの管理
+---------------------------------------------
+
+‘~/.wl’ に ‘(setq elmo-passwd-storage-type 'auth-source)’ のように記述す
+るとパスワードの管理に auth-source (*note (auth)Top::) を利用するように
+なります。
+
+14.4.1.1 auth-source 利用時の制限
+.................................
+
+auth-source 使用時は以下の制限があります。
+
+   • プロトコル名や認証メカニズムによるパスワードの区別を行いません。
+   • netrc バックエンドの制限かもしれませんが、 同一ホスト名に複数アカウ
+     ントが存在する場合、インタラクティブにパスワードを 入力することがで
+     きず、あらかじめエントリを作成しておく必要があります。
+
+
+File: wl-ja.info,  Node: Split messages,  Next: Batch Processing,  Prev: Password Management,  Up: Advanced Issues
+
+14.5 メッセージの振り分け
+=========================
+
+‘elmo-split’ を使うと、変数 ‘elmo-split-folder’ で指定したフ ォルダ内の
+メッセージを特定の規則に従って ‘procmail’ 風に振り分 けることができます
+。 この機能を使うには、まず ‘~/.emacs’ に以下のように設定して下さい。
+
+     (autoload 'elmo-split "elmo-split" "Split messages on the folder." t)
+
+   振り分け元のフォルダを以下のように設定します。
+
+     (setq elmo-split-folder "%inbox")
+
+   振り分けのルールは変数 ‘elmo-split-rule’ に記述します(書き方は後で 説
+明します)。 以上の設定をした上で ‘M-x elmo-split’ すると
+‘elmo-split-rule’ に従って振り分けを実行します。 ‘C-u M-x elmo-split’ と
+すると実際には 振り分けはせずにリハーサルを行ない、その結果を表示します
+。
+
+   以下ではルールの記述の仕方を説明します。まずは次の例を見て下さい。
+
+     (setq elmo-split-rule
+           ;; SPAM は ‘+junk’ へ
+           '(((or (address-equal from "i.am@spammer")
+     	     (address-equal from "dull-work@dull-boy")
+     	     (address-equal from "death-march@software")
+     	     (address-equal from "ares@aon.at")
+     	     (address-equal from "get-money@richman"))
+     	 "+junk")
+     	;; mule メーリングリストからのメールを ‘%mule’ へ
+     	((equal x-ml-name "mule") "%mule")
+     	;; wanderlust メーリングリストからのメールを ‘%wanderlust’ へ
+     	;; そして続けてそれ以下の規則も評価する。
+     	((equal x-ml-name "wanderlust") "%wanderlust" continue)
+     	;; Yahoo 利用者からのメッセージを ‘+yahoo-{username}’ へ
+     	((match from "\\(.*\\)@yahoo\\.com")
+     	 "+yahoo-\\1")
+     	;; マッチしなかった残りを ‘+inbox’ へ
+     	(t "+inbox")))
+
+   規則の基本単位は
+
+     (‘CONDITION’ ‘ACTION’ [continue])
+
+   の組で、‘CONDITION’ が真の場合に ‘ACTION’ を実行します。 第一の要素
+‘CONDITION’ には条件を S 式で記述します。書式については すぐ後で説明しま
+す。第二の要素 ‘ACTION’ にはメッセージの振り分け先 のフォルダ名、もしく
+はシンボルを指定します。 第三の要素 ‘continue’ をシンボルとして与えると
+、‘CONDITION’ が 満たされた場合にも振り分け規則の評価を継続します。
+
+   ‘CONDITION’ の記法は以下のようになります。実際の書き方は上で挙げた 例
+を参考にして下さい。
+
+  1. ‘フィールド名’ および ‘値’ を引数として取る関数。 (‘フィールド名’ は
+     フィールド名を表すシンボルです)
+
+     ‘equal’
+          フィールドの値が ‘値’ に等しければ真。 大文字小文字の差は無視
+          されます。
+     ‘match’
+          フィールドの値が ‘値’ にマッチすれば真。 ‘値’ は ‘\&’ や ‘\N’
+          を含むことができます。 それらはその前の ‘値’ で ‘\(\)’ にマッ
+          チしたパターンに 置き換えられます。
+     ‘address-equal’
+          そのフィールドにあるアドレスのいずれかが ‘値’ に等しければ真。
+          大文字小文字の差は無視されます。
+     ‘address-match’
+          そのフィールドにあるアドレスのいずれかが ‘値’ にマッチすれば真
+          。 ‘値’ は ‘\&’ や ‘\N’ を含むことができます。 それらはその前
+          の ‘値’ で ‘\(\)’ にマッチしたパターンに 置き換えられます。
+
+  2. 1 つの整数 (‘SIZE’) を引数としてとる関数。
+
+     ‘<’
+          メッセージのサイズが ‘SIZE’ より小さければ真。
+     ‘>’
+          メッセージのサイズが ‘SIZE’ より大きければ真。
+
+  3. 任意数の引数を取る関数。
+
+     ‘or’
+          引数のいずれかが真を返すならば真。
+     ‘and’
+          引数のすべてが真を返すならば真。
+
+  4. シンボル。
+
+     シンボルが指定されると、それを評価します。
+
+   ‘ACTION’ の値として指定できるのは以下のいずれかです。
+
+  1. フォルダ名
+
+     文字列が指定されるとそれを振り分け先のフォルダ名とみなして、そのフ
+     ォルダ へメッセージを追加します。
+
+  2. ‘delete’
+
+     シンボル ‘delete’ が指定されると ‘elmo-split-folder’ 内にある メッ
+     セージの実体を削除します。
+
+  3. ‘noop’
+
+     シンボル ‘noop’ が指定された場合、そのメッセージに対しては何もせず
+     、 そのままの状態に保ちます。
+
+  4. 関数
+
+     関数が指定された場合、それを実行します。
+
+   全ての振り分け規則を通過したメッセージは、変数
+‘elmo-split-default-action’ で指定した ‘ACTION’ に沿って処理さ れます。
+
+
+File: wl-ja.info,  Node: Batch Processing,  Next: Advanced Settings,  Prev: Split messages,  Up: Advanced Issues
+
+14.6 バッチ処理
+===============
+
+コマンドラインから wanderlust に仕事をさせることができます。 現在できる
+処理は指定したフォルダの新着メッセージのプリフェッチです。
+
+   ‘wl-batch-prefetch-folder-list’ にプリフェッチを行うフォルダを 指定し
+てコマンドラインから以下のようにするとプリフェッチを行います。
+
+     % emacs -batch -l wl-batch -f wl-batch-prefetch
+
+14.6.1 カスタマイズ変数
+-----------------------
+
+‘wl-batch-prefetch-folder-list’
+     ‘wl-batch-prefetch’ でプリフェッチを行うフォルダを、フォルダ名のリ
+     スト で指定します。
+
+
+File: wl-ja.info,  Node: Advanced Settings,  Next: Customizable Valiables,  Prev: Batch Processing,  Up: Advanced Issues
+
+14.7 カスタマイズ〜応用編〜
+===========================
+
+* Menu:
+
+* Draft for Reply::             返事用ドラフト
+* Thread Format::               スレッドの見た目
+* User-Agent Field::            ‘User-Agent:’ ヘッダフィールド
+
+
+File: wl-ja.info,  Node: Draft for Reply,  Next: Thread Format,  Prev: Advanced Settings,  Up: Advanced Settings
+
+14.7.1 返事用ドラフト
+---------------------
+
+サマリモードで ‘a’ を押すと返事用のドラフトが用意されます。 用意される草
+稿の宛先は、以下のようにして設定することができます。
+
+   例えば、
+
+     (setq wl-draft-reply-without-argument-list
+           '(("Mail-Followup-To" . (("Mail-Followup-To") nil ("Newsgroups")))
+             ("Followup-To" . (nil nil ("Followup-To")))
+             (("X-ML-Name" "Reply-To") . (("Reply-To") nil nil))
+             ("From" . (("From") ("To" "Cc") ("Newsgroups")))))
+
+   のように設定します。ここでリスト
+‘wl-draft-reply-without-argument-list’ の各要素は
+
+     (key . (to-list cc-list newsgroup-list))
+
+   となっており、‘key’ で指定したフィールドが存在するときに、親メッセー
+ジ の ‘to-list’ で指定されるヘッダを、草稿の ‘To:’ にコピーします。 また
+同様に、親の ‘cc-list’, ‘newsgroup-list’ は草稿の ‘Cc:’, ‘Newsgroups:’ に
+コピーされます。
+
+   例を挙げて説明します。
+
+     ("Mail-Followup-To" . (("Mail-Followup-To") nil ("Newsgroups")))
+
+   親メッセージに ‘Mail-Followup-To’ フィールドが存在したときにマッチし
+ます。 親メッセージの ‘Mail-Followup-To’ および ‘Newsgroups’ フィールド
+の内容を、草稿の ‘To’ および ‘Newsgroups’ にコピーします。
+
+     (("X-ML-Name" "Reply-To") . (("Reply-To") nil nil))
+
+   親メッセージに ‘X-ML-Name’ および ‘Reply-To’ の両方が存在した ときに
+マッチします。 親メッセージの ‘Reply-To’ を草稿の ‘To’ にコピーします。
+
+     ("From" . (("From") ("To" "Cc") ("Newsgroups")))
+
+   親メッセージの ‘From’ を草稿の ‘To’ に、親の ‘To’ および ‘Cc’ を草稿
+の ‘Cc’ に、‘Newsgroups’ を ‘Newsgroups’ にそれぞれコピーします。
+
+   これらは順番に評価され、最初にマッチしたものが使われます。
+
+   同様にして、prefix argument 付きで ‘a’ を押したときの動作が、
+‘wl-draft-reply-with-argument-list’ で設定できます。
+
+   また、関数(親メッセージのバッファで評価される)を ‘key’ や ‘to-list’ 等
+の変わりに用いることもできます。
+
+   自分の書いたメッセージへの返信の場合にマッチさせたい場合には ‘key’ と
+して関数 ‘wl-draft-self-reply-p’ を指定します。
+
+   ‘C-u a’ したときに、‘wl-subscribed-mailing-list’ の アドレスが含まれ
+るメールに対してはメーリングリストにのみ返信したい場合、 次のような設定
+ができます。
+
+     (defun wl-mailing-list-addresses ()
+       (let (list-addrs)
+         (dolist (to (mapcar
+     		 (lambda (addr)
+     		   (nth 1 (std11-extract-address-components addr)))
+     		 (wl-parse-addresses
+     		  (wl-concat-list
+     		   (elmo-multiple-fields-body-list (list "To" "Cc"))
+     		   ","))))
+           (when (elmo-string-matched-member to wl-subscribed-mailing-list t)
+     	(setq list-addrs (cons to list-addrs))))
+         (nreverse list-addrs)))
+
+     (setq wl-draft-reply-with-argument-list
+           '((wl-mailing-list-addresses . (wl-mailing-list-addresses nil nil))
+     	("Reply-To" . (("Reply-To") nil nil))
+     	("Mail-Reply-To" . (("Mail-Reply-To") nil nil))
+     	("From" . (("From") nil nil))))
+
+
+File: wl-ja.info,  Node: Thread Format,  Next: User-Agent Field,  Prev: Draft for Reply,  Up: Advanced Settings
+
+14.7.2 スレッドの見ため
+-----------------------
+
+       389  09/18(金)01:07 [ てらにし          ] wl-0.6.3
+       390  09/18(金)07:25 +-[ 津邑さん          ]
+       391  09/18(金)19:24 +-[ 村田さん          ]
+       392  09/20(日)21:49 +-[ 奥西さん          ]
+       396  09/20(日)22:11 | +-[ 津邑さん          ]
+       398  09/21(月)00:17 |   +-[ 津邑さん          ]
+       408  09/21(月)22:37 |     +-[ 奥西さん          ]
+       411  09/22(火)01:34 |       +-[ 津邑さん          ]
+       412  09/22(火)09:28 |       +-[ てらにし          ]
+       415  09/22(火)11:52 |         +-[ 津邑さん          ]
+       416  09/22(火)12:38 |           +-[ てらにし          ]
+       395  09/20(日)21:49 +-[ 奥西さん          ]
+       397  09/21(月)00:15 +-[ 奥西さん          ]
+
+   スレッドの見ためを上記のようにしたい場合の設定は以下の通りです。
+
+     (setq wl-thread-indent-level 2)
+     (setq wl-thread-have-younger-brother-str "+")
+     (setq wl-thread-youngest-child-str       "+")
+     (setq wl-thread-vertical-str             "|")
+     (setq wl-thread-horizontal-str           "-")
+     (setq wl-thread-space-str                " ")
+
+   枝を表示しないようにしたい場合の設定は以下のようにします。
+
+     (setq wl-thread-indent-level 2)
+     (setq wl-thread-have-younger-brother-str " ")
+     (setq wl-thread-youngest-child-str       " ")
+     (setq wl-thread-vertical-str             " ")
+     (setq wl-thread-horizontal-str           " ")
+     (setq wl-thread-space-str                " ")
+
+
+File: wl-ja.info,  Node: User-Agent Field,  Prev: Thread Format,  Up: Advanced Settings
+
+14.7.3 User-Agent フィールド
+----------------------------
+
+‘X-Mailer:’ フィールドや ‘User-Agent:’ フィールドに凝りたいと いう変わっ
+た人は、文字列を生成する関数を自分の好きなように定義して、変数
+‘wl-generate-mailer-string-function’ に設定してください。
+
+   ‘User-Agent:’ フィールドを短くしたいのであれば、以下の設定をしてく だ
+さい。
+
+     (setq wl-generate-mailer-string-function
+           'wl-generate-user-agent-string-1)
+
+   以下は設定の例です。
+
+     (setq wl-generate-mailer-string-function nil)
+     (setq wl-draft-additional-header-alist
+           (list
+            (cons 'X-Mailer (lambda () (product-string-1 'wl-version)))))
+
+
+File: wl-ja.info,  Node: Customizable Valiables,  Next: Hooks,  Prev: Advanced Settings,  Up: Advanced Issues
+
+14.8 その他のカスタマイズ変数一覧
+=================================
+
+その他のカスタマイズ変数一覧。
+
+‘wl-default-folder’
+     初期設定は ‘%inbox’。フォルダ移動時などのデフォルト値となります。
+
+‘wl-draft-folder’
+     初期設定は ‘+draft’。ドラフトをセーブするフォルダです。 書き込みの
+     できるフォルダを指定する必要があります。 IMAP のリモートフォルダや
+     、Maildir なども指定可能です。 なお、‘wl-draft-config-exec’ で設定
+     された変数は ‘elmo-msgdb-directory’ 以下に保存されます。したがって
+     、‘wl-draft-folder’ でリモートのフォルダ を指定した場合、ドラフトの
+     セーブ前に ‘wl-draft-config-exec’ で設定された変数 は別のマシンで
+     ‘wl-summary-reedit’ で再編集した時には効果を持ちません。
+
+‘wl-trash-folder’
+     初期設定は ‘+trash’。ゴミ箱フォルダです。 この値を変更したときは
+     Wanderlust を再起動することをお勧めします。
+
+‘wl-interactive-exit’
+     初期設定は ‘t’。 Non-nil ならば、Wanderlust 終了時に確認を行います
+     。
+
+‘wl-interactive-send’
+     初期設定は ‘t’。 Non-nil ならば、メール送信時に本当に送信して良いか
+     を確認します。
+
+‘wl-default-sync-range’
+     初期設定は ‘update’。 デフォルトのサマリ更新レンジで、‘all’,
+     ‘update’, ‘rescan’, ‘no-sync’ のいずれかを指定します。 レンジの意味
+     については ‘wl-summary-sync’ の説明を参照して下さい。
+
+‘wl-folder-sync-range-alist’
+     初期設定は、以下の連想リスト。
+
+          (("^&.*$" . "all")
+           ("^\\+draft$\\|^\\+queue$" . "all"))
+
+     フォルダ名の正規表現とサマリ更新レンジとの連想リストです。 更新レン
+     ジには ‘all’, ‘update’, ‘rescan’, ‘no-sync’ のいずれかを指定します
+     。マッチしなかった場合は、‘wl-default-sync-range’ の値(初期値は
+     ‘update’)を使います。 レンジの意味については ‘wl-summary-sync’ の説
+     明を参照して下さい。
+
+‘wl-ask-range’
+     初期設定は ‘t’。 ‘nil’ なら、フォルダ移動時のサマリ更新で
+     ‘wl-folder-sync-range-alist’ の値を使用します。
+
+‘wl-mime-charset’
+     初期設定は ‘x-ctext’。 MIME ではないメッセージの場合
+     (‘Content-Type:’ がないメールなど) や、 サマリの表示で用いられる
+     MIME charset です。 (Nemacs とその他の Emacsen でサマリを共有したい
+     場合は、 この値を ‘iso-2022-jp’ としてください。)
+
+‘wl-highlight-folder-with-icon’
+     初期設定は ‘t’ です。
+
+‘wl-strict-diff-folders’
+     フォルダ名の正規表現のリストです。 フォルダモードで ‘s’ を押すなど
+     して未読のメッセージ数を チェックした場合、通常は簡易的な方法でチェ
+     ックしています(処理は速いが、正確ではない)。 この変数にマッチするフ
+     ォルダは厳密にチェックします。 IMAP4 フォルダに対する条件フィルタフ
+     ォルダのような場合には、 この変数にマッチするよう設定すると良いでし
+     ょう。 初期設定は ‘nil’。
+
+‘wl-folder-use-server-diff’
+     フォルダモードで ‘s’ を押すなどして未読のメッセージ数をチェックした
+     場合、通常は(サーバ上のメッセージ数) − (ローカルにあるメッセージ 数
+     )が未読とみなされます。しかし、この変数が non-nil ならば、サーバ上
+     の未 読のメッセージ数をチェックします。IMAP4 フォルダにのみ影響があ
+     ります。た だし、変数
+     ‘elmo-imap4-disuse-server-flag-mailbox-regexp’ にマッチ するメール
+     ボックスの IMAP4 フォルダは、この変数にマッチしてもサーバ上の 未読
+     のメッセージ数をチェックしません。初期設定は ‘t’。
+
+‘wl-auto-check-folder-name’
+     初期設定は ‘nil’。 起動時に未読数をチェックするフォルダやグループを
+     指定します。 チェックを行ないたいフォルダ(グループ)のリストを指定す
+     ることもできます。 ‘nil’ ならば起動時に Desktop 全体をチェックしま
+     す。 ‘none’ ならば、起動時に何もチェックしません。
+
+‘wl-auto-uncheck-folder-list’
+     初期設定は以下のリスト。
+
+          ("\\$.*")
+
+     ‘wl-auto-check-folder-name’ で指定されたグループに含まれていても 起
+     動時に未読チェックしないフォルダ名の正規表現のリストです。 また、
+     Desktop に対して未読チェックをする際にも、これらのフォルダはスキッ
+     プされます。
+
+‘wl-auto-check-folder-list’
+     初期設定は ‘nil’。 ‘wl-auto-uncheck-folder-list’ に指定されていたと
+     しても 例外的に未読チェックしたいフォルダ名の正規表現のリストを指定
+     します。
+
+‘wl-no-save-folder-list’
+     初期設定は以下のリスト。
+
+          ("^/.*$")
+
+     セーブしないフォルダ名の正規表現のリストです。
+
+‘wl-save-folder-list’
+     初期設定は ‘nil’。 セーブするフォルダ名の正規表現のリストです。
+     ‘wl-no-save-folder-list’ よりも優先します。
+
+‘wl-folder-mime-charset-alist’
+     初期設定は以下の連想リスト。
+
+          (("^-alt\\.chinese" . big5)
+           ("^-relcom\\." . koi8-r)
+           ("^-tw\\." . big5)
+           ("^-han\\." . euc-kr))
+
+     フォルダ名の正規表現と MIME charset の連想リストです。 マッチしなか
+     った場合は ‘wl-mime-charset’ が使われます。
+
+‘wl-folder-init-load-access-folders’
+     初期設定は ‘nil’。 初期化時に特定のアクセスグループのみロードする場
+     合に、そのグループのリ ストを指定します。 ‘nil’ の場合は
+     ‘wl-folder-init-no-load-access-folders’ が参照されます。
+
+‘wl-folder-init-no-load-access-folders’
+     初期設定は ‘nil’。 初期化時に特定のアクセスグループを除いてロードす
+     る場合に、ロードしない アクセスグループのリストを指定します。
+     ‘wl-folder-init-load-access-folders’ が non-nil の場合は無視されま
+     す。
+
+‘wl-dispose-folder-alist’
+     初期設定は以下の連想リスト。
+
+          (("^-" . remove)
+           ("^@" . remove))
+
+     処分マーク ‘d’ をつけたメッセージを処分する方針を設定します。 リス
+     トの各要素はフォルダと処分先になっており、処分先には次のものが指定
+     で きます。
+
+          remove or null : メッセージを即削除する。
+          string             : 指定したフォルダに移動する。
+          trash or その他  : wl-trash-folder に移動する。
+
+‘wl-x-face-file’
+     初期設定は ‘~/.xface’。 エンコード済みの X-Face 文字列を内容とする
+     ファイル名です。 *Note x-face-mule::.
+
+‘wl-demo-display-logo’
+     Non-nil ならばオープニングデモでビットマップのイメージを表示します
+     。 ‘xpm’, ‘xbm’ を指定すると(可能ならば)、その画像タイプのイメー ジ
+     を表示します。
+
+‘elmo-nntp-list-folders-use-cache’
+     初期設定は 600 (秒)。 NNTP において ‘list’ や ‘list active’ の結果
+     を キャッシュしておく時間を秒単位で指定します。 ‘nil’ ならキャッシ
+     ュしません。
+
+‘elmo-nntp-max-number-precedes-list-active’
+     初期設定は ‘nil’。 NNTP において ‘list active’ の結果得られる記事番
+     号を フォルダの最大記事番号として利用します。 NNTP サーバとして INN
+     2.3 などを使用していて、フォルダモードでの既読数 が一致しない場合は
+     ‘t’ にしてください。
+
+‘elmo-nntp-default-use-listgroup’
+     初期設定は ‘t’。 Non-nil なら、NNTP において 総記事数を調べるために
+     ‘listgroup’ を使 います。‘nil’ ならば ‘group’ の結果を用います。
+     ‘group’ を使うと、 正確さには欠けますが、若干高速化されます。
+
+‘elmo-pop3-send-command-synchronously’
+     初期設定は ‘nil’。 Non-nil なら POP3 のコマンドを同期的に発行します
+     。サーバによってはこの値を設定しないとサマリ情報を取り出せない場合
+     があるようです。 POP3 参照時に処理がハングするような場合は、‘t’ に
+     すると良いかもしれません。
+
+‘elmo-dop-flush-confirm’
+     初期設定は ‘t’。 Non-nil ならばオフライン処理で溜った処理を実行する
+     かどうかを確認します。
+
+‘elmo-network-session-idle-timeout’
+     初期設定は ‘nil’。 ネットワークセッションをキャッシュするアイドル時
+     間を秒で指定します。 ここで指定された値よりも長い時間、なにも通信が
+     行なわれなかった場合、 そのセッションは再利用されません。nil なら、
+     無条件に再利用します。
+
+
+File: wl-ja.info,  Node: Hooks,  Prev: Customizable Valiables,  Up: Advanced Issues
+
+14.9 フック
+===========
+
+(Not yet written)
+
+
+File: wl-ja.info,  Node: Migration,  Next: Terminology,  Prev: Advanced Issues,  Up: Top
+
+15 旧バージョンからの移行
+*************************
+
+この章では、以前のバージョンから移行する場合に必要な設定の変更や、制限等
+について説明します。
+
+* Menu:
+
+* Before 2.12.0::               2.12.0 より前のバージョンからの移行
+
+
+File: wl-ja.info,  Node: Before 2.12.0,  Prev: Migration,  Up: Migration
+
+15.1 2.12.0 より前のバージョンからの移行
+========================================
+
+15.1.1 msgdb の変換について
+---------------------------
+
+2.12.0 より前のバージョンから、msgdb の構造が変更されています。以後、新
+しく作成したフォルダの msgdb は、この新しい形式で作成/保存されます。以前
+の msgdb の形式をそのまま使い続ける場合には、‘~/.wl’ 等に以下の設定 を記
+述します。
+
+     (setq elmo-msgdb-default-type 'legacy)
+
+   以前のバージョンで作成された msgdb は、デフォルトの設定ではロードされ
+た時 に自動的に新しい形式の msgdb に変換されます。自動的に msgdb の形式
+を変換 しないようにするには、以下のいずれかの設定を ‘~/.wl’ 等に記述しま
+す。
+
+     ;; msgdb をロードした時に ‘elmo-msgdb-default-type’ と
+     ;; 異なった形式だった場合に自動的に変換する場合 (デフォルト)
+     (setq elmo-msgdb-convert-type 'auto)
+
+     ;; サマリで ‘s all’ した時に変換する場合
+     (setq elmo-msgdb-convert-type 'sync)
+
+     ;; 変換しない場合
+     (setq elmo-msgdb-convert-type nil)
+
+   上述の様に以前の msgdb のまま使い続ける事も出来ますが、その場合には以
+下 の制限があります。
+
+  1. 転送済みマーク (‘F’, ‘f’) が使用出来ません。
+
+  2. ‘important’ 以外のグローバルフラグが使用出来ません。
+
+15.1.2 ‘'mark’ フォルダから ‘'flag’ フォルダへの変更
+----------------------------------------------------
+
+新しいバージョンの Wanderlust を起動した時に ‘'mark’ フォルダにあっ たメ
+ッセージは、‘'flag’ フォルダに自動的に引き継がれます。但し、こ うやって
+引き継いだメッセージには、以下の制限があります。
+
+  1. ‘'flag’ フォルダでメッセージを消しても元のメッセージの ‘important’
+     フラグは消えません。
+
+  2. 元のメッセージの ‘important’ フラグを消しても ‘'flag’ フォルダ から
+     は削除されません。
+
+  3. help-echo で、元のメッセージが表示されません。
+
+   もしも、自動での引き継ぎが上手くいかなかった場合は、‘M-x
+elmo-global-mark-upgrade’ を実行する事で、再度 ‘'mark’ フォルダから
+‘'flag’ フォルダにメッセージを取り込む事が出来ます。(重複したメッセー ジ
+は取り込まないので、何回実行しても問題ありません)
+
+
+File: wl-ja.info,  Node: Terminology,  Next: Mailing List,  Prev: Migration,  Up: Top
+
+16 用語の解説
+*************
+
+このマニュアルで使われている用語についての説明をします。
+
+‘フォルダ (folder)’
+     メッセージが格納されているいれものです。
+
+‘グループ (group)’
+     複数のフォルダをまとめた集合です。
+
+‘アクセスグループ (access group)’
+     指定したパス以下のフォルダを自動的に集めてできる、特別なグループを
+     指します。 *Note Folder Definition::.
+
+‘サマリ (summary buffer)’
+     メッセージの一覧を表示するバッファです。
+
+‘スティッキーサマリ (sticky summary)’
+     サマリを抜けると、通常のサマリは破棄されますが、 ‘q’ や ‘g’ でサマ
+     リを抜けても破棄されずに残る、 特別なサマリを指します。 *Note
+     Sticky Summary::.
+
+‘エクスパイア (expire)’
+     期限切れメッセージを自動的に削除したりアーカイブしたりすること。
+     *Note Expire::.
+
+‘スコア (score)’
+     *Note Scoring::.
+
+‘プリフェッチ (prefetch)’
+     オフラインでメッセージを読むために、あらかじめメッセージをキャッシ
+     ュ しておくことをいいます。
+
+
+File: wl-ja.info,  Node: Mailing List,  Next: Addition,  Prev: Terminology,  Up: Top
+
+17 メーリングリスト
+*******************
+
+Wanderlust に関する議論は以下のメーリングリストで行われます。 最新バージ
+ョンのアナウンスもこちらに流れます。
+
+     Wanderlust Mailing List <wl@ml.gentei.org>
+
+   ここでは主に日本語での議論が行われています。また、英語専用のリストと
+して
+
+     Wanderlust List in English <wl-en@ml.gentei.org>
+
+   もあります(こちらに投稿されたメッセージは前者にも配送されます)。
+
+   これらのメーリングリストのガイドを得るには、wl-ctl@ml.gentei.org 宛
+(英語の方は wl-en-ctl@ml.gentei.org 宛) で、本文に
+
+     # guide
+
+と書いたメールを送って下さい。
+
+   バグ報告やパッチの送付もこれらのメーリングリストへ送ってください。メ
+ーリ ングリストへの送信はメンバになる必要があります。
+
+   もしくは、GutHubも利用できます。 プルリクエストを送る場合は、Emacs の
+様に、コミットメッセージに従来の ‘ChangeLog’ エントリに相当する内容をイ
+ンデントせずに入力して下さい。 Emacs の ‘CONTRIBUTE’ ファイル (1) にある
+‘Commit messages’ セクションを参照して下さい。
+
+   また、バグ報告の場合はバックトレースを取って添付すると原因究明しやす
+くな ります。 (2)
+
+   メーリングリストの皆様には貴重な御助言、コードをたくさん御提供いただ
+いて おります。この場を借りてお礼申し上げます。
+
+17.1 アーカイブ
+===============
+
+メーリングリストに投稿されたメッセージは、NetNews でも読むことができます
+。
+
+   <wl@ml.gentei.org> に投稿されたメッセージ
+
+     <news://news.gmane.io/gmane.mail.wanderlust.general.japanese>
+
+   <wl-en@ml.gentei.org> に投稿されたメッセージ
+
+     <news://news.gmane.io/gmane.mail.wanderlust.general>
+
+   ---------- Footnotes ----------
+
+   (1) <https://git.savannah.gnu.org/cgit/emacs.git/plain/CONTRIBUTE>
+
+   (2) バックトレースの取り方は <http://www.jpl.org/elips/BUGS-ja.html>が
+参考になります。
+
+
+File: wl-ja.info,  Node: Addition,  Next: Index,  Prev: Mailing List,  Up: Top
+
+18 おまけ
+*********
+
+18.1 略歴
+=========
+
+     1998  3/05    MH メッセージをスレッド表示するプロトタイプを作ってみる。
+           3/10    elisp による msgdb のしくみをつくる。
+           3/26    IMAP と NNTP もスレッド表示できるようになる。
+           4/13    スレッド表示用モジュールを elmo としてまとめはじめる。
+           5/01    0.1.0 ボロボロの initial version が完成。
+           6/12    tm-ja ML で、IMAP 対応の elisp メーラを作っている、
+                   とつい口を滑べらせてしまう。
+           6/16    tm-ja, elips ML で 0.1.3 をアナウンス。
+           6/22    北目さんのおかげで northeye.org でメーリングリストがスタート。
+           7/01    mm-backend 対応(0.3.0)。
+           8/25    multi フォルダ追加(0.5.0)。
+           8/28    filter フォルダ追加(0.5.1)。
+           9/10    スレッドが開閉できるようになる(0.6.0)。
+           9/11    fldmgr by 村田さん によりフォルダの編集が簡単に。
+           9/18    lha フォルダ追加 by 奥西さん(0.6.3)。
+           9/24    スレッドの枝を表示(0.6.5)。
+           9/28    圧縮フォルダがマルチアーカイバに対応 by 奥西さん。
+          10/28    オフライン処理 (0.7.4)。
+          12/09    ベータバージョンに。
+          12/21    wl-expire by 村田さん。
+     1999  2/03    auto-refile by 津邑さん。
+           4/28    wl-template by 村田さん。
+           5/18    1.0.0 stable リリース。
+           7/05    スコア機能 by 村田さん(2.1.0)。
+           9/26    プラグ管理システム by 村田さん(2.2.2)。
+          12/20    Modified UTF7 対応。
+     2000  3/24    1.1.0 stable リリース。
+           4/03    CVS サーバでの開発を開始。
+           5/07    スレッドつなぎ直し機能＆高速化 with 村田さん。
+           6/12    LDAP 対応 with 千葉さん＆後藤さん。
+           7/11    killed message 機能追加。
+           7/18    POP3 を UIDL 対応。
+           9/12    biff 機能 with 嵯峨田さん＆山岡さん。
+          10/17    expire-hide by 岡田さん。
+          11/08    2.4.0 stable リリース。
+     2001  7/04    2.6.0 stable リリース。
+           8/21    wl-addrmgr by 北本さん。
+          12/27    2.8.1 stable リリース。
+     2002 12/11    2.10.0 stable リリース。
+     2003  7/05    2.10.1 stable リリース。
+           9/18    flag フォルダ。
+           9/20    新形式 msgdb (modb-standard) by 村田浩也さん。
+          10/20    スパムフィルタ by 村田浩也さん。
+     2004  1/06    デモの背景色指定。
+           2/09    'file' フォルダ。
+           9/12    forwarded マーク。
+                   マーク文字列のデフォルト値変更。
+          12/24    2.12.0 stable リリース。
+
+   詳しい変遷は ‘ChangeLog’ を御覧ください。
+
+18.2 名前
+=========
+
+Wanderlust には、研究社英和辞典によれば、
+
+     wanderlust   wan・der・lust
+       ‡ドイツ語 ’desire to wander’ の意から‡
+       −名 放浪癖， 旅行熱， 旅心： have 〜 放浪癖がある．
+
+という意味があります。が、名前にたいして深い意図はありません。 (強いて言
+えば、IMAP ⇒ どこでもメールが読める ⇒ 放浪癖 ?)
+
+   elmo は、‘Elisp Library for Message Orchestration’ の略です。 最初は
+あの赤いぬいぐるみのつもりでしたが、放浪 ⇒ 漂流 ⇒ 道標 ⇒ St. Elmo’s fire
+⇒ elmo という、 それっぽい連想も可能です。
+
+18.3 コードネーム
+=================
+
+各バージョンにはコードネームがついています(ほとんど冗談です)。 いまのと
+ころ 1980 年代の米ビルボード誌トップ 40 ヒット
+
+   (<http://ntl.matrix.com.br/pfilho/html/top40/>)
+
+からアルファベット順に適当に好きなものをピックアップして使っています。
+
+
+File: wl-ja.info,  Node: Index,  Prev: Addition,  Up: Top
+
+索引
+****
+
+* Menu:
+
+* Concept Index::               概念索引
+* Key Index::                   キーバインド索引
+* Variable Index::              変数索引
+* Function Index::              関数索引
+
+
+File: wl-ja.info,  Node: Concept Index,  Next: Key Index,  Prev: Index,  Up: Index
+
+概念索引
+========
+
+ [index ]
+* Menu:
+
+* $:                                     Archive Folder.      (line   6)
+* %:                                     IMAP Folder.         (line   6)
+* &:                                     POP Folder.          (line   6)
+* ':                                     Internal Folder.     (line   6)
+* *:                                     Multi Folder.        (line   6)
+* +:                                     MH Folder.           (line   6)
+* -:                                     NNTP Folder.         (line   6)
+* .:                                     Maildir Folder.      (line   6)
+* .addresses:                            Mail Addresses.      (line   6)
+* .emacs:                                Minimal Settings.    (line   6)
+* .folders:                              Folder Definition.   (line   6)
+* .wl:                                   Minimal Settings.    (line   6)
+* /:                                     Filter Folder.       (line   6)
+* =:                                     News Spool Folder.   (line   6)
+* @:                                     Shimbun Folder.      (line   6)
+* [:                                     Search Folder.       (line   6)
+* |:                                     Pipe Folder.         (line   6)
+* Access Folder:                         Access Folder.       (line   6)
+* Addrbook:                              Addrbook.            (line   6)
+* Address Book:                          Address Book.        (line   6)
+* Address book Definition:               Mail Addresses.      (line   6)
+* Address Manager:                       Address Manager.     (line   6)
+* Advanced Issues:                       Advanced Issues.     (line   6)
+* Alias, Address:                        Mail Addresses.      (line   6)
+* APEL:                                  MIME Modules.        (line   6)
+* APOP:                                  POP Folder.          (line   6)
+* Apply Template:                        Template.            (line   6)
+* Archive Folder:                        Archive Folder.      (line   6)
+* Archive Tips:                          Archive Tips.        (line   6)
+* Archive variables:                     Archive Vars.        (line   6)
+* Archiver:                              Archiver.            (line   6)
+* Atom Folder:                           RSS Folder.          (line   6)
+* auth-source:                           Auth-source.         (line   6)
+* Backtrace:                             Mailing List.        (line   6)
+* Batch Processing:                      Batch Processing.    (line   6)
+* BBDB:                                  BBDB.                (line   6)
+* Biff:                                  Biff.                (line   6)
+* bitmap-mule:                           x-face-mule.         (line   6)
+* bogofilter:                            bogofilter.          (line   6)
+* bsfilter:                              bsfilter.            (line   6)
+* Bug report:                            Mailing List.        (line   6)
+* Bytecompile:                           Install.             (line   6)
+* Cache:                                 Internal Folder.     (line   6)
+* Compile:                               Install.             (line   6)
+* Configuration:                         Minimal Settings.    (line   6)
+* Default Mailer:                        Minimal Settings.    (line  45)
+* Dired-DD:                              dired-dd.            (line   6)
+* Dired-DragDrop:                        dired-dd.            (line   6)
+* Disconnected Operations:               Disconnected Operations.
+                                                              (line   6)
+* Download:                              Download.            (line   6)
+* Download Message:                      Pipe Folder.         (line   6)
+* Drag and Drop:                         dired-dd.            (line   6)
+* emacs-w3m:                             Shimbun Folder.      (line   6)
+* Expire and Archive:                    Expire and Archive.  (line   6)
+* Expire Message:                        Expire.              (line   6)
+* File Folder:                           File Folder.         (line   6)
+* Filter Folder:                         Filter Folder.       (line   6)
+* find:                                  grep.                (line   6)
+* Flag:                                  Filter Folder.       (line   6)
+* Flag <1>:                              Internal Folder.     (line   6)
+* FLIM:                                  MIME Modules.        (line   6)
+* Folder:                                Folder.              (line   6)
+* Folder Definition:                     Folder Definition.   (line   6)
+* Folder Manager:                        Folder Manager.      (line   6)
+* Folder Type:                           Folders.             (line   6)
+* Folder, $ mark:                        Internal Folder.     (line   6)
+* Folder, Conditional:                   Filter Folder.       (line   6)
+* Folder, Edit:                          Folder Manager.      (line   6)
+* Folder, Filtering:                     Filter Folder.       (line   6)
+* Folder, IMAP:                          IMAP Folder.         (line   6)
+* Folder, Marge:                         Multi Folder.        (line   6)
+* Folder, MH:                            MH Folder.           (line   6)
+* Folder, Multiple:                      Multi Folder.        (line   6)
+* Folder, News:                          NNTP Folder.         (line   6)
+* Folder, NNTP:                          NNTP Folder.         (line   6)
+* Folder, Search:                        Search Folder.       (line   6)
+* Folder, Shimbun:                       Shimbun Folder.      (line   6)
+* Folder, Subscribe:                     Folder Manager.      (line   6)
+* Folder, Text Search:                   Search Folder.       (line   6)
+* Folder, Unsubscribe:                   Folder Manager.      (line   6)
+* Folder, Virtual:                       Filter Folder.       (line   6)
+* Folder, Web:                           Shimbun Folder.      (line   6)
+* Format of summary lines:               Summary View.        (line   6)
+* Get Message:                           Pipe Folder.         (line   6)
+* gnspool:                               News Spool Folder.   (line   6)
+* GNU TAR:                               Archiver.            (line   6)
+* grep:                                  grep.                (line   6)
+* im-wl:                                 imput.               (line   6)
+* IMAP Folder:                           IMAP Folder.         (line   6)
+* IMAP4rev1:                             IMAP Folder.         (line   6)
+* imput:                                 imput.               (line   6)
+* Incorporate Message:                   Pipe Folder.         (line   6)
+* Info-ZIP:                              Archiver.            (line   6)
+* Install:                               Install.             (line   6)
+* Internal Folder:                       Internal Folder.     (line   6)
+* Introduction:                          Introduction.        (line   6)
+* Keybind, Draft Buffer:                 Key Bindings of Draft.
+                                                              (line   6)
+* Keybind, Draft Mode:                   Key Bindings of Draft.
+                                                              (line   6)
+* Keybind, Folder Buffer:                Folder Manager.      (line 122)
+* Keybind, Folder Mode:                  Folder Manager.      (line 122)
+* Keybind, Message Buffer:               Message.             (line  18)
+* Keybind, Message Mode:                 Message.             (line  18)
+* Keybind, spam filter:                  Usage of Spam Filter.
+                                                              (line 113)
+* Keybind, Summary Buffer:               Key Bindings of Summary.
+                                                              (line   6)
+* Keybind, Summary Mode:                 Key Bindings of Summary.
+                                                              (line   6)
+* LHA:                                   Archiver.            (line   6)
+* LSDB:                                  LSDB.                (line   6)
+* Maildir:                               Maildir Folder.      (line   6)
+* Maildir Folder:                        Maildir Folder.      (line   6)
+* Mailer, Default:                       Minimal Settings.    (line  45)
+* Make:                                  Install.             (line   5)
+* Makefile:                              Install.             (line   6)
+* Mark and Action:                       Mark and Action.     (line   6)
+* Mark, Temporary:                       Usage of Summary Mode.
+                                                              (line  49)
+* MH:                                    MH Folder.           (line   6)
+* MH Folder:                             MH Folder.           (line   6)
+* MHC:                                   MHC.                 (line   6)
+* Migration:                             Migration.           (line   6)
+* MIME modules:                          MIME Modules.        (line   6)
+* mime-w3m:                              mime-w3m.            (line   6)
+* Minimal Settings:                      Minimal Settings.    (line   6)
+* Modified UTF7:                         IMAP Folder.         (line  72)
+* mu:                                    mu.                  (line   6)
+* mu-cite:                               mu-cite.             (line   6)
+* Multi Folder:                          Multi Folder.        (line   6)
+* namazu:                                namazu.              (line   6)
+* NetNews:                               NNTP Folder.         (line   6)
+* News:                                  NNTP Folder.         (line   6)
+* News spool Folder:                     News Spool Folder.   (line   6)
+* Newsgroup:                             NNTP Folder.         (line   6)
+* NNTP Folder:                           NNTP Folder.         (line   6)
+* notmuch:                               notmuch.             (line   6)
+* Offline:                               Disconnected Operations.
+                                                              (line   6)
+* OpenSSL:                               Download.            (line  25)
+* Overview:                              Overview.            (line   6)
+* Pipe Folder:                           Pipe Folder.         (line   6)
+* POP Folder:                            POP Folder.          (line   6)
+* POP-before-SMTP:                       POP-before-SMTP.     (line   6)
+* POP3:                                  POP Folder.          (line   6)
+* qmail:                                 Maildir Folder.      (line   6)
+* Quick Search:                          Quick Search.        (line   6)
+* RAR:                                   Archiver.            (line   6)
+* Regular Expressions Header Matching:   Regular Expressions Header Matching.
+                                                              (line   6)
+* RFC 1939:                              POP Folder.          (line   6)
+* RFC 2060:                              IMAP Folder.         (line   6)
+* RFC 977:                               NNTP Folder.         (line   6)
+* RSS Folder:                            RSS Folder.          (line   6)
+* sc:                                    supercite.           (line   6)
+* Score Commands:                        Score Commands.      (line   5)
+* Score File Atoms:                      Score File Format.   (line  91)
+* Score File Format:                     Score File Format.   (line   6)
+* Scoring:                               Scoring.             (line   6)
+* Search Folder:                         Search Folder.       (line   6)
+* Selecting Folder:                      Selecting Folder.    (line   5)
+* SEMI:                                  MIME Modules.        (line   6)
+* Settings:                              Minimal Settings.    (line   6)
+* Shimbun Folder:                        Shimbun Folder.      (line   6)
+* SMTP AUTH:                             Variables of Draft Mode.
+                                                              (line   6)
+* SMTP-after-POP:                        POP-before-SMTP.     (line   6)
+* Spam Filter:                           Spam Filter.         (line   6)
+* Spam Filter, Bogofilter:               Spam Filter Processors.
+                                                              (line   6)
+* Spam Filter, Spamfilter:               Spam Filter Processors.
+                                                              (line   6)
+* SpamAssassin:                          SpamAssassin.        (line   6)
+* spamfilter:                            spamfilter.          (line   6)
+* SpamOracle:                            SpamOracle.          (line   6)
+* Split messages:                        Split messages.      (line   6)
+* SSL:                                   Download.            (line  25)
+* Start up:                              Start Me Up.         (line   6)
+* Start Wanderlust:                      Start Wanderlust.    (line   6)
+* starttls:                              Download.            (line  25)
+* Sticky Summary:                        Sticky Summary.      (line   6)
+* Summary, Sticky:                       Sticky Summary.      (line   6)
+* supercite:                             supercite.           (line   6)
+* TAR:                                   Archiver.            (line   6)
+* Template:                              Template.            (line   6)
+* Terminology:                           Terminology.         (line   6)
+* Unicode:                               IMAP Folder.         (line  72)
+* Unplugged:                             Disconnected Operations.
+                                                              (line   6)
+* UNZIP:                                 Archiver.            (line   6)
+* User-Agent:                            User-Agent Field.    (line   6)
+* UTF7:                                  IMAP Folder.         (line  72)
+* UTF8:                                  IMAP Folder.         (line  72)
+* w3m:                                   Shimbun Folder.      (line   6)
+* x-face:                                X-Face.              (line   6)
+* x-face-e21:                            x-face-mule.         (line  15)
+* x-face-mule:                           x-face-mule.         (line   6)
+* X-Mailer:                              User-Agent Field.    (line   6)
+* ZOO:                                   Archiver.            (line   6)
+
+
+File: wl-ja.info,  Node: Key Index,  Next: Variable Index,  Prev: Concept Index,  Up: Index
+
+キーバインド索引
+================
+
+ [index ]
+* Menu:
+
+* ! (Summary):                           Key Bindings of Summary.
+                                                              (line 218)
+* # (Summary):                           Key Bindings of Summary.
+                                                              (line 187)
+* $ (Summary):                           Key Bindings of Summary.
+                                                              (line  89)
+* * (Folder):                            Folder Manager.      (line 148)
+* * (Summary):                           Key Bindings of Summary.
+                                                              (line 294)
+* + (Folder):                            Folder Manager.      (line 132)
+* - (Summary):                           Key Bindings of Summary.
+                                                              (line  40)
+* . (Summary):                           Key Bindings of Summary.
+                                                              (line  13)
+* / (Folder):                            Selecting Folder.    (line 162)
+* / (Summary):                           Key Bindings of Summary.
+                                                              (line  45)
+* < (Summary):                           Key Bindings of Summary.
+                                                              (line  20)
+* > (Summary):                           Key Bindings of Summary.
+                                                              (line  23)
+* ? (Folder):                            Selecting Folder.    (line 150)
+* ? (Summary):                           Key Bindings of Summary.
+                                                              (line 280)
+* @ (Summary):                           Key Bindings of Summary.
+                                                              (line 173)
+* [ (Folder):                            Selecting Folder.    (line 165)
+* [ (Summary):                           Key Bindings of Summary.
+                                                              (line  49)
+* ] (Folder):                            Selecting Folder.    (line 168)
+* ] (Summary):                           Key Bindings of Summary.
+                                                              (line  52)
+* ^ (Summary):                           Key Bindings of Summary.
+                                                              (line 214)
+* | (Folder):                            Folder Manager.      (line 153)
+* | (Summary):                           Key Bindings of Summary.
+                                                              (line 183)
+* ~ (Summary):                           Key Bindings of Summary.
+                                                              (line 328)
+* a (Address Manager):                   Address Manager.     (line  35)
+* a (Summary):                           Key Bindings of Summary.
+                                                              (line  62)
+* A (Summary):                           Key Bindings of Summary.
+                                                              (line  66)
+* b (Address Manager):                   Address Manager.     (line  20)
+* B (Summary):                           Key Bindings of Summary.
+                                                              (line 167)
+* <BS> (Summary):                        Key Bindings of Summary.
+                                                              (line  27)
+* Button-2 (Message):                    Message.             (line  23)
+* Button-4 (Message):                    Message.             (line  30)
+* Button-5 (Message):                    Message.             (line  34)
+* c (Address Manager):                   Address Manager.     (line  17)
+* c (Folder):                            Selecting Folder.    (line 131)
+* c (Summary):                           Key Bindings of Summary.
+                                                              (line  58)
+* C (Summary):                           Key Bindings of Summary.
+                                                              (line  70)
+* C-c C-a (Draft):                       Key Bindings of Draft.
+                                                              (line  64)
+* C-c C-c (Draft):                       Key Bindings of Draft.
+                                                              (line  23)
+* C-c C-c (Score Mode):                  Score Commands.      (line 153)
+* C-c C-d (Draft):                       Key Bindings of Draft.
+                                                              (line  68)
+* C-c C-d (Score Mode):                  Score Commands.      (line 159)
+* C-c C-e (Draft):                       Key Bindings of Draft.
+                                                              (line  58)
+* C-c C-e (Score Mode):                  Score Commands.      (line 166)
+* C-c C-f (Summary):                     Key Bindings of Summary.
+                                                              (line 163)
+* C-c C-j (Draft):                       Key Bindings of Draft.
+                                                              (line  61)
+* C-c C-k (Draft):                       Key Bindings of Draft.
+                                                              (line  30)
+* C-c C-k (Score Mode):                  Score Commands.      (line 150)
+* C-c C-o (Draft):                       Key Bindings of Draft.
+                                                              (line  53)
+* C-c C-o (Folder):                      Selecting Folder.    (line  82)
+* C-c C-o (Summary):                     Key Bindings of Summary.
+                                                              (line 560)
+* C-c C-p (Draft):                       Key Bindings of Draft.
+                                                              (line  14)
+* C-c C-p (Score Mode):                  Score Commands.      (line 156)
+* C-c C-r (Draft):                       Key Bindings of Draft.
+                                                              (line  41)
+* C-c C-s (Draft):                       Key Bindings of Draft.
+                                                              (line  18)
+* C-c C-s (Score Mode):                  Score Commands.      (line 163)
+* C-c C-y (Draft):                       Key Bindings of Draft.
+                                                              (line   7)
+* C-c C-z (Draft):                       Key Bindings of Draft.
+                                                              (line  37)
+* C-k (Folder):                          Folder Manager.      (line 166)
+* C-l (Draft):                           Key Bindings of Draft.
+                                                              (line  45)
+* C-o (Summary):                         Key Bindings of Summary.
+                                                              (line 302)
+* C-t (Folder):                          Selecting Folder.    (line 184)
+* C-t (Summary):                         Key Bindings of Summary.
+                                                              (line 556)
+* C-w (Folder):                          Folder Manager.      (line 171)
+* C-x C-s (Draft):                       Key Bindings of Draft.
+                                                              (line  27)
+* C-x C-s (Folder):                      Selecting Folder.    (line 177)
+* C-x C-s (Summary):                     Key Bindings of Summary.
+                                                              (line 575)
+* C-x k (Draft):                         Key Bindings of Draft.
+                                                              (line  34)
+* C-y (Folder):                          Folder Manager.      (line 175)
+* C-y (Summary):                         Key Bindings of Summary.
+                                                              (line 570)
+* d (Address Manager):                   Address Manager.     (line  38)
+* D (Message):                           Message.             (line  38)
+* d (Summary):                           Key Bindings of Summary.
+                                                              (line 314)
+* D (Summary):                           Key Bindings of Summary.
+                                                              (line 320)
+* <DEL> (Summary):                       Key Bindings of Summary.
+                                                              (line  27)
+* e (Address Manager):                   Address Manager.     (line  41)
+* E (Folder):                            Selecting Folder.    (line 140)
+* E (Summary):                           Key Bindings of Summary.
+                                                              (line  74)
+* e (Summary):                           Key Bindings of Summary.
+                                                              (line 102)
+* f (Folder):                            Selecting Folder.    (line 136)
+* F (Folder):                            Selecting Folder.    (line 143)
+* f (Summary):                           Key Bindings of Summary.
+                                                              (line  85)
+* F (Summary):                           Key Bindings of Summary.
+                                                              (line  95)
+* g (Summary):                           Key Bindings of Summary.
+                                                              (line  55)
+* H (Summary):                           Key Bindings of Summary.
+                                                              (line 143)
+* h c (Summary):                         Score Commands.      (line 122)
+* h e (Summary):                         Score Commands.      (line 125)
+* h f (Summary):                         Score Commands.      (line 129)
+* h F (Summary):                         Score Commands.      (line 132)
+* h m (Summary):                         Score Commands.      (line 137)
+* h R (Summary):                         Score Commands.      (line 118)
+* h x (Summary):                         Score Commands.      (line 141)
+* I (Folder):                            Selecting Folder.    (line 125)
+* I (Summary):                           Key Bindings of Summary.
+                                                              (line 206)
+* i (Summary):                           Key Bindings of Summary.
+                                                              (line 324)
+* J (Folder):                            Selecting Folder.    (line 122)
+* j (Summary):                           Key Bindings of Summary.
+                                                              (line 199)
+* J (Summary):                           Key Bindings of Summary.
+                                                              (line 203)
+* K (Summary):                           Score Commands.      (line 108)
+* k c (Summary):                         Usage of Spam Filter.
+                                                              (line 117)
+* k C (Summary):                         Usage of Spam Filter.
+                                                              (line 122)
+* k m (Summary):                         Usage of Spam Filter.
+                                                              (line 114)
+* k n (Summary):                         Usage of Spam Filter.
+                                                              (line 135)
+* k N (Summary):                         Usage of Spam Filter.
+                                                              (line 139)
+* k s (Summary):                         Usage of Spam Filter.
+                                                              (line 128)
+* k S (Summary):                         Usage of Spam Filter.
+                                                              (line 131)
+* l (Folder):                            Folder Manager.      (line 205)
+* L (Folder):                            Folder Manager.      (line 210)
+* l (Message):                           Message.             (line  19)
+* l (Summary):                           Key Bindings of Summary.
+                                                              (line 263)
+* L (Summary):                           Score Commands.      (line 113)
+* m ! (Summary):                         Key Bindings of Summary.
+                                                              (line 478)
+* m # (Summary):                         Key Bindings of Summary.
+                                                              (line 543)
+* m $ (Summary):                         Key Bindings of Summary.
+                                                              (line 468)
+* M (Summary):                           Key Bindings of Summary.
+                                                              (line 150)
+* m ? (Summary):                         Key Bindings of Summary.
+                                                              (line 538)
+* m a (Folder):                          Folder Manager.      (line 127)
+* m A (Folder):                          Folder Manager.      (line 135)
+* m a (Summary):                         Key Bindings of Summary.
+                                                              (line 510)
+* m A (Summary):                         Key Bindings of Summary.
+                                                              (line 526)
+* m c (Folder):                          Folder Manager.      (line 158)
+* m C-s (Folder):                        Folder Manager.      (line 190)
+* m C-w (Folder):                        Folder Manager.      (line 171)
+* m d (Folder):                          Folder Manager.      (line 138)
+* m d (Summary):                         Key Bindings of Summary.
+                                                              (line 490)
+* m D (Summary):                         Key Bindings of Summary.
+                                                              (line 494)
+* m f (Folder):                          Folder Manager.      (line 153)
+* m F (Summary):                         Key Bindings of Summary.
+                                                              (line 473)
+* m f (Summary):                         Key Bindings of Summary.
+                                                              (line 530)
+* m g (Folder):                          Folder Manager.      (line 132)
+* m i (Summary):                         Key Bindings of Summary.
+                                                              (line 498)
+* m k (Folder):                          Folder Manager.      (line 166)
+* m k (Summary):                         Usage of Spam Filter.
+                                                              (line 180)
+* m l (Folder):                          Folder Manager.      (line 205)
+* m L (Folder):                          Folder Manager.      (line 210)
+* m m(Folder):                           Folder Manager.      (line 148)
+* m n (Summary):                         Usage of Spam Filter.
+                                                              (line 188)
+* m o (Summary):                         Key Bindings of Summary.
+                                                              (line 482)
+* m O (Summary):                         Key Bindings of Summary.
+                                                              (line 486)
+* m p (Folder):                          Folder Manager.      (line 179)
+* m q (Folder):                          Folder Manager.      (line 182)
+* m R (Folder):                          Folder Manager.      (line 143)
+* m R (Summary):                         Key Bindings of Summary.
+                                                              (line 464)
+* m r (Summary):                         Key Bindings of Summary.
+                                                              (line 522)
+* m s (Folder):                          Folder Manager.      (line 186)
+* m s (Summary):                         Usage of Spam Filter.
+                                                              (line 184)
+* m t (Summary):                         Key Bindings of Summary.
+                                                              (line 514)
+* m T (Summary):                         Key Bindings of Summary.
+                                                              (line 518)
+* m u (Folder):                          Folder Manager.      (line 196)
+* m u (Summary):                         Key Bindings of Summary.
+                                                              (line 507)
+* m U (Summary):                         Key Bindings of Summary.
+                                                              (line 534)
+* m W (Folder):                          Folder Manager.      (line 162)
+* m y (Folder):                          Folder Manager.      (line 175)
+* m y (Summary):                         Key Bindings of Summary.
+                                                              (line 503)
+* m | (Summary):                         Key Bindings of Summary.
+                                                              (line 547)
+* M-c (Folder):                          Folder Manager.      (line 158)
+* M-E (Summary):                         Key Bindings of Summary.
+                                                              (line  80)
+* M-j (Summary):                         Key Bindings of Summary.
+                                                              (line 211)
+* M-o (Summary):                         Key Bindings of Summary.
+                                                              (line 309)
+* M-<RET> (Folder):                      Selecting Folder.    (line  67)
+* M-<RET> (Summary):                     Key Bindings of Summary.
+                                                              (line  40)
+* M-t (Draft):                           Key Bindings of Draft.
+                                                              (line  49)
+* M-t (Folder):                          Selecting Folder.    (line 180)
+* M-t (Summary):                         Key Bindings of Summary.
+                                                              (line 552)
+* M-w (Folder):                          Folder Manager.      (line 162)
+* M-w (Summary):                         Key Bindings of Summary.
+                                                              (line 566)
+* N (Folder):                            Selecting Folder.    (line 112)
+* n (Folder):                            Selecting Folder.    (line 119)
+* n (Summary):                           Key Bindings of Summary.
+                                                              (line 105)
+* N (Summary):                           Key Bindings of Summary.
+                                                              (line 117)
+* o (Folder):                            Selecting Folder.    (line 154)
+* o (Summary):                           Key Bindings of Summary.
+                                                              (line 298)
+* O (Summary):                           Key Bindings of Summary.
+                                                              (line 305)
+* P (Folder):                            Selecting Folder.    (line 108)
+* p (Folder):                            Selecting Folder.    (line 116)
+* p (Summary):                           Key Bindings of Summary.
+                                                              (line 111)
+* P (Summary):                           Key Bindings of Summary.
+                                                              (line 125)
+* q (Address Manager):                   Address Manager.     (line  32)
+* q (Folder):                            Selecting Folder.    (line 171)
+* q (Summary):                           Key Bindings of Summary.
+                                                              (line 196)
+* r ! (Summary):                         Key Bindings of Summary.
+                                                              (line 353)
+* r $ (Summary):                         Key Bindings of Summary.
+                                                              (line 344)
+* R (Folder):                            Folder Manager.      (line 143)
+* R (Summary):                           Key Bindings of Summary.
+                                                              (line 286)
+* r * (Summary):                         Key Bindings of Summary.
+                                                              (line 361)
+* r d (Summary):                         Key Bindings of Summary.
+                                                              (line 373)
+* r D (Summary):                         Key Bindings of Summary.
+                                                              (line 377)
+* r F (Summary):                         Key Bindings of Summary.
+                                                              (line 349)
+* r i (Summary):                         Key Bindings of Summary.
+                                                              (line 381)
+* r k c (Summary):                       Usage of Spam Filter.
+                                                              (line 146)
+* r k m (Summary):                       Usage of Spam Filter.
+                                                              (line 143)
+* r k n (Summary):                       Usage of Spam Filter.
+                                                              (line 155)
+* r k s (Summary):                       Usage of Spam Filter.
+                                                              (line 151)
+* r o (Summary):                         Key Bindings of Summary.
+                                                              (line 365)
+* r O (Summary):                         Key Bindings of Summary.
+                                                              (line 369)
+* r R (Summary):                         Key Bindings of Summary.
+                                                              (line 340)
+* r s (Folder):                          Selecting Folder.    (line  96)
+* r S (Folder):                          Selecting Folder.    (line 100)
+* r u (Folder):                          Folder Manager.      (line 200)
+* r u (Summary):                         Key Bindings of Summary.
+                                                              (line 385)
+* r x (Summary):                         Key Bindings of Summary.
+                                                              (line 357)
+* r y (Summary):                         Key Bindings of Summary.
+                                                              (line 389)
+* <RET> (Folder):                        Selecting Folder.    (line  59)
+* <RET> (Summary):                       Key Bindings of Summary.
+                                                              (line  30)
+* s (Folder):                            Selecting Folder.    (line  88)
+* S (Folder):                            Selecting Folder.    (line  92)
+* s (Summary):                           Key Bindings of Summary.
+                                                              (line 222)
+* S (Summary):                           Key Bindings of Summary.
+                                                              (line 248)
+* <SPC> (Folder):                        Selecting Folder.    (line  59)
+* <SPC> (Summary):                       Key Bindings of Summary.
+                                                              (line   9)
+* t ! (Summary):                         Key Bindings of Summary.
+                                                              (line 410)
+* t $ (Summary):                         Key Bindings of Summary.
+                                                              (line 398)
+* t (Address Manager):                   Address Manager.     (line  14)
+* T (Summary):                           Key Bindings of Summary.
+                                                              (line 255)
+* t * (Summary):                         Key Bindings of Summary.
+                                                              (line 422)
+* t d (Summary):                         Key Bindings of Summary.
+                                                              (line 440)
+* t D (Summary):                         Key Bindings of Summary.
+                                                              (line 446)
+* t F (Summary):                         Key Bindings of Summary.
+                                                              (line 404)
+* t i (Summary):                         Key Bindings of Summary.
+                                                              (line 450)
+* t k c (Summary):                       Usage of Spam Filter.
+                                                              (line 164)
+* t k m (Summary):                       Usage of Spam Filter.
+                                                              (line 159)
+* t k n (Summary):                       Usage of Spam Filter.
+                                                              (line 175)
+* t k s (Summary):                       Usage of Spam Filter.
+                                                              (line 170)
+* t o (Summary):                         Key Bindings of Summary.
+                                                              (line 428)
+* t O (Summary):                         Key Bindings of Summary.
+                                                              (line 434)
+* t R (Summary):                         Key Bindings of Summary.
+                                                              (line 393)
+* t u (Summary):                         Key Bindings of Summary.
+                                                              (line 454)
+* t x (Summary):                         Key Bindings of Summary.
+                                                              (line 416)
+* t y (Summary):                         Key Bindings of Summary.
+                                                              (line 459)
+* <TAB> (Summary):                       Key Bindings of Summary.
+                                                              (line 276)
+* u (Address Manager):                   Address Manager.     (line  23)
+* u (Folder):                            Folder Manager.      (line 196)
+* U (Folder):                            Folder Manager.      (line 200)
+* u (Summary):                           Key Bindings of Summary.
+                                                              (line 332)
+* U (Summary):                           Key Bindings of Summary.
+                                                              (line 336)
+* V (Folder):                            Selecting Folder.    (line 146)
+* v (Summary):                           Key Bindings of Summary.
+                                                              (line 267)
+* V (Summary):                           Key Bindings of Summary.
+                                                              (line 271)
+* w (Folder):                            Selecting Folder.    (line  72)
+* W (Folder):                            Selecting Folder.    (line  75)
+* w (Summary):                           Key Bindings of Summary.
+                                                              (line 133)
+* W (Summary):                           Key Bindings of Summary.
+                                                              (line 136)
+* x (Address Manager):                   Address Manager.     (line  26)
+* x (Folder):                            Selecting Folder.    (line 158)
+* x (Summary):                           Key Bindings of Summary.
+                                                              (line 290)
+* y (Summary):                           Key Bindings of Summary.
+                                                              (line 102)
+* Z (Folder):                            Selecting Folder.    (line 104)
+* z (Folder):                            Selecting Folder.    (line 174)
+* Z (Summary):                           Key Bindings of Summary.
+                                                              (line 179)
+
+
+File: wl-ja.info,  Node: Variable Index,  Next: Function Index,  Prev: Key Index,  Up: Index
+
+変数索引
+========
+
+ [index ]
+* Menu:
+
+* elmo-archive-cmdstr-max-length:        Archive Vars.        (line  42)
+* elmo-archive-default-type:             Archive Vars.        (line   7)
+* elmo-archive-file-regexp-alist:        Archive Vars.        (line  30)
+* elmo-archive-lha-dos-compatible:       Archive Vars.        (line  38)
+* elmo-archive-method-list:              Archive Vars.        (line  34)
+* elmo-archive-suffix-alist:             Archive Vars.        (line  27)
+* elmo-archive-TYPE-method-alist:        Archive Vars.        (line  11)
+* elmo-dop-flush-confirm:                Customizable Valiables.
+                                                              (line 180)
+* elmo-enable-disconnected-operation:    Variables of Plugged Mode.
+                                                              (line  20)
+* elmo-folder-update-confirm:            Variables of Summary.
+                                                              (line 174)
+* elmo-folder-update-threshold:          Variables of Summary.
+                                                              (line 169)
+* elmo-imap4-use-cache:                  Variables of Summary.
+                                                              (line 217)
+* elmo-lost+found-folder:                Variables of Plugged Mode.
+                                                              (line  24)
+* elmo-message-fetch-confirm:            Variables of Summary.
+                                                              (line 203)
+* elmo-message-fetch-threshold:          Variables of Summary.
+                                                              (line 198)
+* elmo-msgdb-extra-fields:               Auto Refile.         (line   6)
+* elmo-msgid-to-cache-algorithm:         Cache.               (line  18)
+* elmo-msgid-to-cache-max-length:        Cache.               (line  18)
+* elmo-network-session-idle-timeout:     Customizable Valiables.
+                                                              (line 184)
+* elmo-nntp-default-use-listgroup:       Customizable Valiables.
+                                                              (line 169)
+* elmo-nntp-list-folders-use-cache:      Customizable Valiables.
+                                                              (line 158)
+* elmo-nntp-max-number-precedes-list-active: Customizable Valiables.
+                                                              (line 163)
+* elmo-nntp-use-cache:                   Variables of Summary.
+                                                              (line 221)
+* elmo-passwd-alist-file-name:           Password Management. (line  19)
+* elmo-passwd-life-time:                 Password Management. (line  24)
+* elmo-passwd-storage-type:              Auth-source.         (line   6)
+* elmo-plugged-condition:                Variables of Plugged Mode.
+                                                              (line  29)
+* elmo-pop3-send-command-synchronously:  Customizable Valiables.
+                                                              (line 174)
+* elmo-pop3-use-cache:                   Variables of Summary.
+                                                              (line 225)
+* elmo-shimbun-update-overview-folder-list: Shimbun Folder.   (line  27)
+* elmo-shimbun-use-cache:                Variables of Summary.
+                                                              (line 229)
+* elmo-spam-bogofilter-args:             bogofilter.          (line  23)
+* elmo-spam-bogofilter-database-directory: bogofilter.        (line  27)
+* elmo-spam-bogofilter-debug:            bogofilter.          (line  36)
+* elmo-spam-bogofilter-max-messages-per-process: bogofilter.  (line  32)
+* elmo-spam-bogofilter-program:          bogofilter.          (line  18)
+* elmo-spam-bsfilter-args:               bsfilter.            (line  23)
+* elmo-spam-bsfilter-database-directory: bsfilter.            (line  27)
+* elmo-spam-bsfilter-debug:              bsfilter.            (line  32)
+* elmo-spam-bsfilter-program:            bsfilter.            (line  18)
+* elmo-spam-bsfilter-shell-program:      bsfilter.            (line  36)
+* elmo-spam-bsfilter-shell-switch:       bsfilter.            (line  41)
+* elmo-spam-bsfilter-update-switch:      bsfilter.            (line  45)
+* elmo-spam-header-good-alist:           Regular Expressions Header Matching.
+                                                              (line  20)
+* elmo-spam-header-spam-alist:           Regular Expressions Header Matching.
+                                                              (line  29)
+* elmo-spam-spamassassin-learn-program:  SpamAssassin.        (line  27)
+* elmo-spam-spamassassin-lern-program-arguments: SpamAssassin.
+                                                              (line  39)
+* elmo-spam-spamassassin-program:        SpamAssassin.        (line  22)
+* elmo-spam-spamassassin-program-arguments: SpamAssassin.     (line  33)
+* elmo-spam-spamfilter-corpus-filename:  spamfilter.          (line  22)
+* elmo-spam-spamoracle-config-filename:  SpamOracle.          (line  24)
+* elmo-spam-spamoracle-database-filename: SpamOracle.         (line  29)
+* elmo-spam-spamoracle-program:          SpamOracle.          (line  19)
+* elmo-spam-spamoracle-spam-header-regexp: SpamOracle.        (line  33)
+* elmo-spamassassin-debug:               SpamAssassin.        (line  43)
+* mail-user-agent:                       Minimal Settings.    (line  45)
+* wl-archive-alist:                      Archive.             (line  66)
+* wl-ask-range:                          Customizable Valiables.
+                                                              (line  50)
+* wl-auto-check-folder-list:             Customizable Valiables.
+                                                              (line  97)
+* wl-auto-check-folder-name:             Customizable Valiables.
+                                                              (line  81)
+* wl-auto-flush-queue:                   Variables of Draft Mode.
+                                                              (line 187)
+* wl-auto-flush-queue <1>:               Variables of Plugged Mode.
+                                                              (line  14)
+* wl-auto-insert-x-face:                 Variables of Draft Mode.
+                                                              (line  28)
+* wl-auto-prefetch-first:                Cache.               (line  66)
+* wl-auto-select-first:                  Variables of Summary.
+                                                              (line  13)
+* wl-auto-select-next:                   Variables of Summary.
+                                                              (line  17)
+* wl-auto-uncheck-folder-list:           Customizable Valiables.
+                                                              (line  87)
+* wl-batch-prefetch-folder-list:         Batch Processing.    (line  18)
+* wl-bcc:                                Editing Header.      (line  41)
+* wl-biff-check-delay:                   Biff.                (line  23)
+* wl-biff-check-folder-list:             Biff.                (line  15)
+* wl-biff-check-interval:                Biff.                (line  19)
+* wl-biff-notify-hook:                   Biff.                (line  34)
+* wl-biff-unnotify-hook:                 Biff.                (line  40)
+* wl-biff-use-idle-timer:                Biff.                (line  28)
+* wl-break-pages:                        Variables of Summary.
+                                                              (line  64)
+* wl-default-folder:                     Customizable Valiables.
+                                                              (line   9)
+* wl-default-sync-range:                 Customizable Valiables.
+                                                              (line  33)
+* wl-demo-display-logo:                  Customizable Valiables.
+                                                              (line 153)
+* wl-dispose-folder-alist:               Customizable Valiables.
+                                                              (line 135)
+* wl-draft-always-delete-myself:         Variables of Draft Mode.
+                                                              (line 201)
+* wl-draft-buffer-style:                 Variables of Draft Mode.
+                                                              (line  93)
+* wl-draft-config-alist:                 Dynamical Message Re-arrangement.
+                                                              (line   6)
+* wl-draft-config-alist <1>:             Variables of Draft Mode.
+                                                              (line  66)
+* wl-draft-config-matchone:              Variables of Draft Mode.
+                                                              (line  76)
+* wl-draft-delete-myself-from-bcc-fcc:   Variables of Draft Mode.
+                                                              (line 205)
+* wl-draft-enable-queuing:               Variables of Draft Mode.
+                                                              (line 174)
+* wl-draft-folder:                       Customizable Valiables.
+                                                              (line  12)
+* wl-draft-queue-save-variables:         Variables of Draft Mode.
+                                                              (line 298)
+* wl-draft-remove-group-list-contents:   Variables of Draft Mode.
+                                                              (line 332)
+* wl-draft-reply-buffer-style:           Variables of Draft Mode.
+                                                              (line 120)
+* wl-draft-reply-default-position:       Variables of Draft Mode.
+                                                              (line 138)
+* wl-draft-reply-use-address-with-full-name: Variables of Draft Mode.
+                                                              (line 169)
+* wl-draft-reply-with-argument-list:     Draft for Reply.     (line   6)
+* wl-draft-reply-without-argument-list:  Draft for Reply.     (line   6)
+* wl-draft-send-mail-function:           Variables of Draft Mode.
+                                                              (line 209)
+* wl-draft-sendlog:                      Variables of Draft Mode.
+                                                              (line 302)
+* wl-draft-sendlog-max-size:             Variables of Draft Mode.
+                                                              (line 313)
+* wl-draft-truncate-lines:               Variables of Draft Mode.
+                                                              (line 143)
+* wl-draft-use-cache:                    Variables of Draft Mode.
+                                                              (line 178)
+* wl-draft-use-frame:                    Variables of Draft Mode.
+                                                              (line 134)
+* wl-envelope-from:                      Variables of Draft Mode.
+                                                              (line 151)
+* wl-expire-add-seen-list:               Expire.              (line 382)
+* wl-expire-alist:                       Expire.              (line 264)
+* wl-expire-archive-date-folder-name-fmt: Expire.             (line 326)
+* wl-expire-archive-date-folder-num-regexp: Expire.           (line 363)
+* wl-expire-archive-files:               Expire.              (line 294)
+* wl-expire-archive-folder-name-fmt:     Expire.              (line 317)
+* wl-expire-archive-folder-num-regexp:   Expire.              (line 358)
+* wl-expire-archive-folder-prefix:       Expire.              (line 340)
+* wl-expire-archive-folder-type:         Expire.              (line 336)
+* wl-expire-archive-get-folder-function: Expire.              (line 304)
+* wl-expire-delete-oldmsg-confirm:       Expire.              (line 369)
+* wl-expire-folder-update-msgdb:         Expire.              (line 393)
+* wl-expire-number-with-reserve-marks:   Expire.              (line 298)
+* wl-expire-use-log:                     Expire.              (line 377)
+* wl-fcc:                                Editing Header.      (line  36)
+* wl-fcc-force-as-read:                  Variables of Draft Mode.
+                                                              (line 183)
+* wl-fldmgr-add-complete-with-current-folder-list: Folder Manager.
+                                                              (line 251)
+* wl-fldmgr-make-backup:                 Folder Manager.      (line 222)
+* wl-fldmgr-sort-function:               Folder Manager.      (line 226)
+* wl-fldmgr-sort-group-first:            Folder Manager.      (line 231)
+* wl-folder-access-subscribe-alist:      Selecting Folder.    (line 228)
+* wl-folder-check-async:                 Folder Manager.      (line 236)
+* wl-folder-check-fast:                  Folder Manager.      (line 241)
+* wl-folder-desktop-name:                Selecting Folder.    (line 222)
+* wl-folder-hierarchy-access-folders:    Selecting Folder.    (line 249)
+* wl-folder-info-save:                   Selecting Folder.    (line 195)
+* wl-folder-init-load-access-folders:    Customizable Valiables.
+                                                              (line 124)
+* wl-folder-init-no-load-access-folders: Customizable Valiables.
+                                                              (line 129)
+* wl-folder-many-unsync-threshold:       Selecting Folder.    (line 211)
+* wl-folder-mime-charset-alist:          Customizable Valiables.
+                                                              (line 113)
+* wl-folder-move-cur-folder:             Variables of Summary.
+                                                              (line  45)
+* wl-folder-notify-deleted:              Folder Manager.      (line 245)
+* wl-folder-petname-alist:               Selecting Folder.    (line 225)
+* wl-folder-process-duplicates-alist:    Variables of Summary.
+                                                              (line 238)
+* wl-folder-summary-line-format-alist:   Summary View.        (line   6)
+* wl-folder-sync-range-alist:            Customizable Valiables.
+                                                              (line  38)
+* wl-folder-use-frame:                   Selecting Folder.    (line 207)
+* wl-folder-use-server-diff:             Customizable Valiables.
+                                                              (line  71)
+* wl-folder-window-width:                Selecting Folder.    (line 203)
+* wl-folders-file:                       Selecting Folder.    (line 191)
+* wl-forward-subject-prefix:             Variables of Draft Mode.
+                                                              (line 164)
+* wl-from:                               Variables of Draft Mode.
+                                                              (line 147)
+* wl-highlight-body-too:                 Highlights.          (line  31)
+* wl-highlight-citation-header-regexp:   Highlights.          (line  55)
+* wl-highlight-citation-prefix-regexp:   Highlights.          (line  44)
+* wl-highlight-folder-by-numbers:        Selecting Folder.    (line 215)
+* wl-highlight-folder-with-icon:         Customizable Valiables.
+                                                              (line  60)
+* wl-highlight-highlight-citation-too:   Highlights.          (line  50)
+* wl-highlight-max-header-size:          Highlights.          (line  60)
+* wl-highlight-max-message-size:         Highlights.          (line  65)
+* wl-highlight-max-summary-lines:        Highlights.          (line  14)
+* wl-highlight-message-header-alist:     Highlights.          (line  35)
+* wl-highlight-signature-separator:      Highlights.          (line  70)
+* wl-ignored-forwarded-headers:          Variables of Draft Mode.
+                                                              (line 193)
+* wl-insert-mail-followup-to:            Variables of Draft Mode.
+                                                              (line  20)
+* wl-insert-mail-reply-to:               Variables of Draft Mode.
+                                                              (line  24)
+* wl-insert-message-id:                  Variables of Draft Mode.
+                                                              (line  34)
+* wl-interactive-exit:                   Customizable Valiables.
+                                                              (line  25)
+* wl-interactive-save-folders:           Folder Manager.      (line 217)
+* wl-interactive-send:                   Customizable Valiables.
+                                                              (line  29)
+* wl-ldap-base:                          Variables of Draft Mode.
+                                                              (line 328)
+* wl-ldap-port:                          Variables of Draft Mode.
+                                                              (line 324)
+* wl-ldap-server:                        Variables of Draft Mode.
+                                                              (line 321)
+* wl-local-domain:                       Variables of Draft Mode.
+                                                              (line  42)
+* wl-max-signature-size:                 Highlights.          (line  76)
+* wl-message-auto-reassemble-message/partial: Message.        (line  87)
+* wl-message-buffer-prefetch-depth:      Cache.               (line  55)
+* wl-message-buffer-prefetch-folder-list: Cache.              (line  51)
+* wl-message-buffer-prefetch-folder-type-list: Cache.         (line  42)
+* wl-message-buffer-prefetch-idle-time:  Cache.               (line  58)
+* wl-message-buffer-prefetch-threshold:  Cache.               (line  61)
+* wl-message-header-narrowing-fields:    Message.             (line  73)
+* wl-message-header-narrowing-lines:     Message.             (line  80)
+* wl-message-header-narrowing-string:    Message.             (line  83)
+* wl-message-id-domain:                  Variables of Draft Mode.
+                                                              (line  56)
+* wl-message-id-use-message-from:        Variables of Draft Mode.
+                                                              (line  38)
+* wl-message-ignored-field-list:         Message.             (line  50)
+* wl-message-sort-field-list:            Message.             (line  61)
+* wl-message-truncate-lines:             Message.             (line  66)
+* wl-message-use-header-narrowing:       Message.             (line  70)
+* wl-message-visible-field-list:         Message.             (line  55)
+* wl-message-window-size:                Message.             (line  46)
+* wl-mime-charset:                       Customizable Valiables.
+                                                              (line  54)
+* wl-nntp-posting-config-alist:          Variables of Draft Mode.
+                                                              (line 261)
+* wl-nntp-posting-function:              Variables of Draft Mode.
+                                                              (line 258)
+* wl-nntp-posting-port:                  Variables of Draft Mode.
+                                                              (line 249)
+* wl-nntp-posting-server:                Variables of Draft Mode.
+                                                              (line 240)
+* wl-nntp-posting-stream-type:           Variables of Draft Mode.
+                                                              (line 253)
+* wl-nntp-posting-user:                  Variables of Draft Mode.
+                                                              (line 244)
+* wl-no-save-folder-list:                Customizable Valiables.
+                                                              (line 102)
+* wl-plugged:                            Variables of Plugged Mode.
+                                                              (line   7)
+* wl-pop-before-smtp-authenticate-type:  Variables of Draft Mode.
+                                                              (line 283)
+* wl-pop-before-smtp-port:               Variables of Draft Mode.
+                                                              (line 288)
+* wl-pop-before-smtp-server:             Variables of Draft Mode.
+                                                              (line 279)
+* wl-pop-before-smtp-stream-type:        Variables of Draft Mode.
+                                                              (line 292)
+* wl-pop-before-smtp-user:               Variables of Draft Mode.
+                                                              (line 275)
+* wl-prefetch-confirm:                   Variables of Summary.
+                                                              (line 213)
+* wl-prefetch-threshold:                 Variables of Summary.
+                                                              (line 207)
+* wl-queue-folder:                       Variables of Plugged Mode.
+                                                              (line  11)
+* wl-refile-rule-alist:                  Auto Refile.         (line   6)
+* wl-reply-subject-prefix:               Variables of Draft Mode.
+                                                              (line 159)
+* wl-reset-plugged-alist:                Variables of Plugged Mode.
+                                                              (line  62)
+* wl-save-folder-list:                   Customizable Valiables.
+                                                              (line 109)
+* wl-score-expiry-days:                  Score Commands.      (line 214)
+* wl-score-files-directory:              Score Commands.      (line 204)
+* wl-score-header-default-entry:         Score Commands.      (line 221)
+* wl-score-interactive-default-score:    Score Commands.      (line 208)
+* wl-score-simplify-fuzzy-regexp:        Score Commands.      (line 226)
+* wl-score-update-entry-dates:           Score Commands.      (line 217)
+* wl-smtp-authenticate-realm:            Variables of Draft Mode.
+                                                              (line 229)
+* wl-smtp-authenticate-type:             Variables of Draft Mode.
+                                                              (line 224)
+* wl-smtp-connection-type:               Variables of Draft Mode.
+                                                              (line 234)
+* wl-smtp-posting-port:                  Variables of Draft Mode.
+                                                              (line 217)
+* wl-smtp-posting-server:                Variables of Draft Mode.
+                                                              (line 214)
+* wl-smtp-posting-user:                  Variables of Draft Mode.
+                                                              (line 221)
+* wl-spam-auto-check-folder-regexp-list: Usage of Spam Filter.
+                                                              (line 213)
+* wl-spam-auto-check-marks:              Usage of Spam Filter.
+                                                              (line 217)
+* wl-spam-folder:                        Usage of Spam Filter.
+                                                              (line 195)
+* wl-spam-ignored-folder-regexp-list:    Usage of Spam Filter.
+                                                              (line 203)
+* wl-spam-undecided-folder-regexp-list:  Usage of Spam Filter.
+                                                              (line 199)
+* wl-stay-folder-window:                 Selecting Folder.    (line 199)
+* wl-strict-diff-folders:                Customizable Valiables.
+                                                              (line  63)
+* wl-subscribed-mailing-list:            Variables of Draft Mode.
+                                                              (line   7)
+* wl-summary-always-sticky-folder-list:  Variables of Summary.
+                                                              (line 178)
+* wl-summary-auto-sync-marks:            Score Commands.      (line 237)
+* wl-summary-default-number-column:      Summary View.        (line   6)
+* wl-summary-default-score:              Score Commands.      (line 173)
+* wl-summary-default-view:               Variables of Summary.
+                                                              (line  88)
+* wl-summary-display-mime-mode-list:     Variables of Summary.
+                                                              (line 272)
+* wl-summary-divide-thread-when-subject-changed: Variables of Summary.
+                                                              (line 142)
+* wl-summary-exit-next-move:             Variables of Summary.
+                                                              (line  41)
+* wl-summary-expire-reserve-marks:       Expire.              (line 268)
+* wl-summary-expunge-below:              Score Commands.      (line 189)
+* wl-summary-fix-timezone:               Variables of Summary.
+                                                              (line  54)
+* wl-summary-flag-alist:                 Variables of Summary.
+                                                              (line 254)
+* wl-summary-from-function:              Variables of Summary.
+                                                              (line  68)
+* wl-summary-highlight:                  Highlights.          (line  10)
+* wl-summary-highlight-partial-threshold: Highlights.         (line  18)
+* wl-summary-important-above:            Score Commands.      (line 177)
+* wl-summary-indent-length-limit:        Variables of Summary.
+                                                              (line 126)
+* wl-summary-keep-cursor-command:        Variables of Summary.
+                                                              (line 162)
+* wl-summary-line-format:                Summary View.        (line   6)
+* wl-summary-line-format-spec-alist:     Summary View.        (line   6)
+* wl-summary-mark-below:                 Score Commands.      (line 185)
+* wl-summary-max-thread-depth:           Variables of Summary.
+                                                              (line 131)
+* wl-summary-max-thread-depth <1>:       Variables of Summary.
+                                                              (line 138)
+* wl-summary-move-direction-toggle:      Variables of Summary.
+                                                              (line 113)
+* wl-summary-move-order:                 Variables of Summary.
+                                                              (line   7)
+* wl-summary-no-from-message:            Variables of Summary.
+                                                              (line  72)
+* wl-summary-no-subject-message:         Variables of Summary.
+                                                              (line  84)
+* wl-summary-number-column-alist:        Summary View.        (line   6)
+* wl-summary-partial-highlight-above-lines: Highlights.       (line  23)
+* wl-summary-print-argument-within-window: Variables of Summary.
+                                                              (line 122)
+* wl-summary-recenter:                   Variables of Summary.
+                                                              (line 134)
+* wl-summary-rescore-partial-threshold:  Score Commands.      (line 232)
+* wl-summary-resend-use-cache:           Variables of Summary.
+                                                              (line 233)
+* wl-summary-reserve-mark-list:          Variables of Summary.
+                                                              (line 183)
+* wl-summary-score-marks:                Score Commands.      (line 193)
+* wl-summary-search-via-nntp:            Variables of Summary.
+                                                              (line 146)
+* wl-summary-skip-mark-list:             Variables of Summary.
+                                                              (line 190)
+* wl-summary-subject-function:           Variables of Summary.
+                                                              (line  76)
+* wl-summary-target-above:               Score Commands.      (line 181)
+* wl-summary-use-frame:                  Variables of Summary.
+                                                              (line  92)
+* wl-summary-weekday-name-lang:          Variables of Summary.
+                                                              (line  49)
+* wl-summary-width:                      Variables of Summary.
+                                                              (line 118)
+* wl-template-alist:                     Variables of Draft Mode.
+                                                              (line  72)
+* wl-template-buffer-lines:              Variables of Draft Mode.
+                                                              (line  89)
+* wl-template-confirm:                   Variables of Draft Mode.
+                                                              (line  85)
+* wl-template-visible-select:            Variables of Draft Mode.
+                                                              (line  81)
+* wl-thread-insert-opened:               Variables of Summary.
+                                                              (line  33)
+* wl-thread-open-reading-thread:         Variables of Summary.
+                                                              (line  37)
+* wl-trash-folder:                       Customizable Valiables.
+                                                              (line  21)
+* wl-unique-id-suffix:                   Variables of Draft Mode.
+                                                              (line  62)
+* wl-use-folder-petname:                 Variables of Summary.
+                                                              (line  96)
+* wl-use-highlight-mouse-line:           Highlights.          (line  80)
+* wl-use-ldap:                           Variables of Draft Mode.
+                                                              (line 318)
+* wl-use-petname:                        Variables of Summary.
+                                                              (line  60)
+* wl-use-scoring:                        Score Commands.      (line 201)
+* wl-user-mail-address-list:             Variables of Draft Mode.
+                                                              (line 155)
+* wl-x-face-file:                        Customizable Valiables.
+                                                              (line 149)
+
+
+File: wl-ja.info,  Node: Function Index,  Prev: Variable Index,  Up: Index
+
+関数索引
+========
+
+ [index ]
+* Menu:
+
+* compose-mail:                          Minimal Settings.    (line  45)
+* elmo-passwd-alist-clear:               Password Management. (line  11)
+* elmo-passwd-alist-save:                Password Management. (line  11)
+* wl-addrmgr:                            Key Bindings of Draft.
+                                                              (line  64)
+* wl-addrmgr-add:                        Address Manager.     (line  35)
+* wl-addrmgr-apply:                      Address Manager.     (line  26)
+* wl-addrmgr-delete:                     Address Manager.     (line  38)
+* wl-addrmgr-edit:                       Address Manager.     (line  41)
+* wl-addrmgr-quit:                       Address Manager.     (line  32)
+* wl-addrmgr-set-bcc:                    Address Manager.     (line  20)
+* wl-addrmgr-set-cc:                     Address Manager.     (line  17)
+* wl-addrmgr-set-to:                     Address Manager.     (line  14)
+* wl-addrmgr-unmark:                     Address Manager.     (line  23)
+* wl-caesar-region:                      Key Bindings of Draft.
+                                                              (line  41)
+* wl-draft:                              Selecting Folder.    (line  72)
+* wl-draft-config-exec:                  Key Bindings of Draft.
+                                                              (line  58)
+* wl-draft-elide-region:                 Key Bindings of Draft.
+                                                              (line  68)
+* wl-draft-highlight-and-recenter:       Key Bindings of Draft.
+                                                              (line  45)
+* wl-draft-kill:                         Key Bindings of Draft.
+                                                              (line  30)
+* wl-draft-mimic-kill-buffer:            Key Bindings of Draft.
+                                                              (line  34)
+* wl-draft-preview-message:              Key Bindings of Draft.
+                                                              (line  14)
+* wl-draft-save:                         Key Bindings of Draft.
+                                                              (line  27)
+* wl-draft-save-and-exit:                Key Bindings of Draft.
+                                                              (line  37)
+* wl-draft-send:                         Key Bindings of Draft.
+                                                              (line  18)
+* wl-draft-send-and-exit:                Key Bindings of Draft.
+                                                              (line  23)
+* wl-draft-yank-original:                Key Bindings of Draft.
+                                                              (line   7)
+* wl-execute-temp-marks:                 Selecting Folder.    (line 158)
+* wl-exit:                               Selecting Folder.    (line 171)
+* wl-fldmgr-access-display-all:          Folder Manager.      (line 210)
+* wl-fldmgr-access-display-normal:       Folder Manager.      (line 205)
+* wl-fldmgr-add:                         Folder Manager.      (line 127)
+* wl-fldmgr-clear-cut-entity-list:       Folder Manager.      (line 182)
+* wl-fldmgr-copy:                        Folder Manager.      (line 158)
+* wl-fldmgr-copy-region:                 Folder Manager.      (line 162)
+* wl-fldmgr-cut:                         Folder Manager.      (line 166)
+* wl-fldmgr-cut-region:                  Folder Manager.      (line 171)
+* wl-fldmgr-delete:                      Folder Manager.      (line 138)
+* wl-fldmgr-make-access-group:           Folder Manager.      (line 135)
+* wl-fldmgr-make-filter:                 Folder Manager.      (line 153)
+* wl-fldmgr-make-group:                  Folder Manager.      (line 132)
+* wl-fldmgr-make-multi:                  Folder Manager.      (line 148)
+* wl-fldmgr-rename:                      Folder Manager.      (line 143)
+* wl-fldmgr-save:                        Folder Manager.      (line 190)
+* wl-fldmgr-set-petname:                 Folder Manager.      (line 179)
+* wl-fldmgr-sort:                        Folder Manager.      (line 186)
+* wl-fldmgr-unsubscribe:                 Folder Manager.      (line 196)
+* wl-fldmgr-unsubscribe-region:          Folder Manager.      (line 200)
+* wl-fldmgr-yank:                        Folder Manager.      (line 175)
+* wl-folder-check-current-entity:        Selecting Folder.    (line  88)
+* wl-folder-check-region:                Selecting Folder.    (line  96)
+* wl-folder-close-all:                   Selecting Folder.    (line 168)
+* wl-folder-empty-trash:                 Selecting Folder.    (line 140)
+* wl-folder-flush-queue:                 Selecting Folder.    (line 143)
+* wl-folder-goto-first-unread-folder:    Selecting Folder.    (line 136)
+* wl-folder-jump-folder:                 Selecting Folder.    (line 122)
+* wl-folder-jump-to-current-entity:      Selecting Folder.    (line  59)
+* wl-folder-mark-as-read-all-current-entity: Selecting Folder.
+                                                              (line 131)
+* wl-folder-next-entity:                 Selecting Folder.    (line 119)
+* wl-folder-next-unread:                 Selecting Folder.    (line 112)
+* wl-folder-open-all:                    Selecting Folder.    (line 165)
+* wl-folder-open-all-unread-folder:      Selecting Folder.    (line 154)
+* wl-folder-open-close:                  Selecting Folder.    (line 162)
+* wl-folder-pick:                        Selecting Folder.    (line 150)
+* wl-folder-prefetch-current-entity:     Selecting Folder.    (line 125)
+* wl-folder-prev-entity:                 Selecting Folder.    (line 116)
+* wl-folder-prev-unread:                 Selecting Folder.    (line 108)
+* wl-folder-suspend:                     Selecting Folder.    (line 174)
+* wl-folder-sync-current-entity:         Selecting Folder.    (line  92)
+* wl-folder-sync-region:                 Selecting Folder.    (line 100)
+* wl-folder-update-recursive-current-entity: Selecting Folder.
+                                                              (line  67)
+* wl-folder-virtual:                     Selecting Folder.    (line 146)
+* wl-folder-write-current-folder:        Selecting Folder.    (line  75)
+* wl-jump-to-draft-buffer:               Selecting Folder.    (line  82)
+* wl-jump-to-draft-buffer <1>:           Key Bindings of Summary.
+                                                              (line 560)
+* wl-jump-to-draft-buffer <2>:           Key Bindings of Draft.
+                                                              (line  53)
+* wl-message-button-refer-article:       Message.             (line  23)
+* wl-message-delete-current-part:        Message.             (line  38)
+* wl-message-header-narrowing:           Message.             (line  23)
+* wl-message-toggle-disp-summary:        Message.             (line  19)
+* wl-message-wheel-down:                 Message.             (line  30)
+* wl-message-wheel-up:                   Message.             (line  34)
+* wl-plugged-change:                     Selecting Folder.    (line 184)
+* wl-save:                               Selecting Folder.    (line 177)
+* wl-score-change-score-file:            Score Commands.      (line 122)
+* wl-score-edit-current-scores:          Score Commands.      (line 125)
+* wl-score-edit-exit:                    Score Commands.      (line 153)
+* wl-score-edit-file:                    Score Commands.      (line 129)
+* wl-score-edit-insert-date:             Score Commands.      (line 159)
+* wl-score-edit-insert-entry:            Score Commands.      (line 166)
+* wl-score-edit-insert-header:           Score Commands.      (line 163)
+* wl-score-edit-kill:                    Score Commands.      (line 150)
+* wl-score-flush-cache:                  Score Commands.      (line 132)
+* wl-score-pretty-print:                 Score Commands.      (line 156)
+* wl-score-set-expunge-below:            Score Commands.      (line 141)
+* wl-score-set-mark-below:               Score Commands.      (line 137)
+* wl-status-update:                      Selecting Folder.    (line 104)
+* wl-status-update <1>:                  Key Bindings of Summary.
+                                                              (line 179)
+* wl-summary-auto-refile:                Auto Refile.         (line   6)
+* wl-summary-auto-refile <1>:            Key Bindings of Summary.
+                                                              (line 302)
+* wl-summary-burst:                      Key Bindings of Summary.
+                                                              (line 167)
+* wl-summary-cancel-message:             Key Bindings of Summary.
+                                                              (line  70)
+* wl-summary-copy:                       Key Bindings of Summary.
+                                                              (line 305)
+* wl-summary-copy-region:                Key Bindings of Summary.
+                                                              (line 369)
+* wl-summary-delete:                     Key Bindings of Summary.
+                                                              (line 320)
+* wl-summary-delete-all-temp-marks:      Key Bindings of Summary.
+                                                              (line 508)
+* wl-summary-delete-region:              Key Bindings of Summary.
+                                                              (line 377)
+* wl-summary-display-bottom:             Key Bindings of Summary.
+                                                              (line  23)
+* wl-summary-display-top:                Key Bindings of Summary.
+                                                              (line  20)
+* wl-summary-dispose:                    Key Bindings of Summary.
+                                                              (line 314)
+* wl-summary-dispose-region:             Key Bindings of Summary.
+                                                              (line 373)
+* wl-summary-down:                       Key Bindings of Summary.
+                                                              (line 117)
+* wl-summary-edit-petname:               Key Bindings of Summary.
+                                                              (line 173)
+* wl-summary-enter-handler:              Key Bindings of Summary.
+                                                              (line  30)
+* wl-summary-exec:                       Key Bindings of Summary.
+                                                              (line 291)
+* wl-summary-exec-region:                Key Bindings of Summary.
+                                                              (line 357)
+* wl-summary-exit:                       Key Bindings of Summary.
+                                                              (line 196)
+* wl-summary-forward:                    Key Bindings of Summary.
+                                                              (line  85)
+* wl-summary-goto-folder:                Key Bindings of Summary.
+                                                              (line  55)
+* wl-summary-goto-last-displayed-msg:    Key Bindings of Summary.
+                                                              (line 276)
+* wl-summary-incorporate:                Key Bindings of Summary.
+                                                              (line 207)
+* wl-summary-increase-score:             Score Commands.      (line 108)
+* wl-summary-jump-to-current-message:    Key Bindings of Summary.
+                                                              (line 199)
+* wl-summary-jump-to-msg:                Key Bindings of Summary.
+                                                              (line 203)
+* wl-summary-jump-to-msg-by-message-id:  Key Bindings of Summary.
+                                                              (line 211)
+* wl-summary-jump-to-parent-message:     Key Bindings of Summary.
+                                                              (line 214)
+* wl-summary-lower-score:                Score Commands.      (line 113)
+* wl-summary-mark-as-important:          Key Bindings of Summary.
+                                                              (line  89)
+* wl-summary-mark-as-important-region:   Key Bindings of Summary.
+                                                              (line 344)
+* wl-summary-mark-as-read:               Key Bindings of Summary.
+                                                              (line 286)
+* wl-summary-mark-as-read-all:           Key Bindings of Summary.
+                                                              (line  58)
+* wl-summary-mark-as-read-region:        Key Bindings of Summary.
+                                                              (line 340)
+* wl-summary-mark-as-unread:             Key Bindings of Summary.
+                                                              (line 218)
+* wl-summary-mark-as-unread-region:      Key Bindings of Summary.
+                                                              (line 353)
+* wl-summary-mark-spam:                  Usage of Spam Filter.
+                                                              (line 122)
+* wl-summary-next:                       Key Bindings of Summary.
+                                                              (line 105)
+* wl-summary-next-line-content:          Key Bindings of Summary.
+                                                              (line  30)
+* wl-summary-pick:                       Key Bindings of Summary.
+                                                              (line 280)
+* wl-summary-pipe-message:               Key Bindings of Summary.
+                                                              (line 183)
+* wl-summary-prefetch:                   Key Bindings of Summary.
+                                                              (line 324)
+* wl-summary-prefetch-region:            Key Bindings of Summary.
+                                                              (line 381)
+* wl-summary-prev:                       Key Bindings of Summary.
+                                                              (line 111)
+* wl-summary-prev-line-content:          Key Bindings of Summary.
+                                                              (line  40)
+* wl-summary-prev-page:                  Key Bindings of Summary.
+                                                              (line  27)
+* wl-summary-print-message:              Key Bindings of Summary.
+                                                              (line 187)
+* wl-summary-read:                       Key Bindings of Summary.
+                                                              (line   9)
+* wl-summary-redisplay:                  Key Bindings of Summary.
+                                                              (line  13)
+* wl-summary-reedit:                     Key Bindings of Summary.
+                                                              (line  74)
+* wl-summary-refile:                     Key Bindings of Summary.
+                                                              (line 298)
+* wl-summary-refile-prev-destination:    Key Bindings of Summary.
+                                                              (line 310)
+* wl-summary-refile-region:              Key Bindings of Summary.
+                                                              (line 365)
+* wl-summary-register-as-good:           Usage of Spam Filter.
+                                                              (line 135)
+* wl-summary-register-as-good-all:       Usage of Spam Filter.
+                                                              (line 139)
+* wl-summary-register-as-good-region:    Usage of Spam Filter.
+                                                              (line 155)
+* wl-summary-register-as-spam:           Usage of Spam Filter.
+                                                              (line 128)
+* wl-summary-register-as-spam-all:       Usage of Spam Filter.
+                                                              (line 131)
+* wl-summary-register-as-spam-region:    Usage of Spam Filter.
+                                                              (line 151)
+* wl-summary-reply:                      Key Bindings of Summary.
+                                                              (line  62)
+* wl-summary-reply-with-citation:        Key Bindings of Summary.
+                                                              (line  66)
+* wl-summary-rescore:                    Score Commands.      (line 118)
+* wl-summary-resend:                     Key Bindings of Summary.
+                                                              (line 328)
+* wl-summary-resend-bounced-mail:        Key Bindings of Summary.
+                                                              (line  80)
+* wl-summary-save:                       Key Bindings of Summary.
+                                                              (line 102)
+* wl-summary-save-current-message:       Key Bindings of Summary.
+                                                              (line 566)
+* wl-summary-save-region:                Key Bindings of Summary.
+                                                              (line 389)
+* wl-summary-save-status:                Key Bindings of Summary.
+                                                              (line 575)
+* wl-summary-set-flags:                  Key Bindings of Summary.
+                                                              (line  95)
+* wl-summary-set-flags-region:           Key Bindings of Summary.
+                                                              (line 349)
+* wl-summary-sort:                       Key Bindings of Summary.
+                                                              (line 248)
+* wl-summary-spam:                       Usage of Spam Filter.
+                                                              (line 114)
+* wl-summary-spam-region:                Usage of Spam Filter.
+                                                              (line 143)
+* wl-summary-sync:                       Key Bindings of Summary.
+                                                              (line 222)
+* wl-summary-target-mark-all:            Key Bindings of Summary.
+                                                              (line 511)
+* wl-summary-target-mark-copy:           Key Bindings of Summary.
+                                                              (line 486)
+* wl-summary-target-mark-delete:         Key Bindings of Summary.
+                                                              (line 494)
+* wl-summary-target-mark-dispose:        Key Bindings of Summary.
+                                                              (line 490)
+* wl-summary-target-mark-forward:        Key Bindings of Summary.
+                                                              (line 530)
+* wl-summary-target-mark-line:           Key Bindings of Summary.
+                                                              (line 294)
+* wl-summary-target-mark-mark-as-important: Key Bindings of Summary.
+                                                              (line 468)
+* wl-summary-target-mark-mark-as-read:   Key Bindings of Summary.
+                                                              (line 464)
+* wl-summary-target-mark-mark-as-unread: Key Bindings of Summary.
+                                                              (line 478)
+* wl-summary-target-mark-pick:           Key Bindings of Summary.
+                                                              (line 538)
+* wl-summary-target-mark-pipe:           Key Bindings of Summary.
+                                                              (line 547)
+* wl-summary-target-mark-prefetch:       Key Bindings of Summary.
+                                                              (line 498)
+* wl-summary-target-mark-print:          Key Bindings of Summary.
+                                                              (line 543)
+* wl-summary-target-mark-refile:         Key Bindings of Summary.
+                                                              (line 482)
+* wl-summary-target-mark-region:         Key Bindings of Summary.
+                                                              (line 361)
+* wl-summary-target-mark-region <1>:     Key Bindings of Summary.
+                                                              (line 522)
+* wl-summary-target-mark-register-as-good: Usage of Spam Filter.
+                                                              (line 188)
+* wl-summary-target-mark-register-as-spam: Usage of Spam Filter.
+                                                              (line 184)
+* wl-summary-target-mark-reply-with-citation: Key Bindings of Summary.
+                                                              (line 526)
+* wl-summary-target-mark-save:           Key Bindings of Summary.
+                                                              (line 503)
+* wl-summary-target-mark-set-flags:      Key Bindings of Summary.
+                                                              (line 473)
+* wl-summary-target-mark-spam:           Usage of Spam Filter.
+                                                              (line 180)
+* wl-summary-target-mark-thread:         Key Bindings of Summary.
+                                                              (line 514)
+* wl-summary-target-mark-threads:        Key Bindings of Summary.
+                                                              (line 519)
+* wl-summary-target-mark-uudecode:       Key Bindings of Summary.
+                                                              (line 534)
+* wl-summary-test-spam:                  Usage of Spam Filter.
+                                                              (line 117)
+* wl-summary-test-spam-region:           Usage of Spam Filter.
+                                                              (line 146)
+* wl-summary-toggle-all-header:          Key Bindings of Summary.
+                                                              (line 143)
+* wl-summary-toggle-disp-folder:         Key Bindings of Summary.
+                                                              (line 263)
+* wl-summary-toggle-disp-msg:            Key Bindings of Summary.
+                                                              (line 267)
+* wl-summary-toggle-header-narrowing:    Key Bindings of Summary.
+                                                              (line 163)
+* wl-summary-toggle-mime:                Key Bindings of Summary.
+                                                              (line 150)
+* wl-summary-toggle-thread:              Key Bindings of Summary.
+                                                              (line 255)
+* wl-summary-unmark:                     Key Bindings of Summary.
+                                                              (line 332)
+* wl-summary-unmark-all:                 Key Bindings of Summary.
+                                                              (line 336)
+* wl-summary-unmark-region:              Key Bindings of Summary.
+                                                              (line 385)
+* wl-summary-up:                         Key Bindings of Summary.
+                                                              (line 125)
+* wl-summary-virtual:                    Key Bindings of Summary.
+                                                              (line 273)
+* wl-summary-write:                      Key Bindings of Summary.
+                                                              (line 133)
+* wl-summary-write-current-folder:       Key Bindings of Summary.
+                                                              (line 136)
+* wl-summary-yank-saved-message:         Key Bindings of Summary.
+                                                              (line 570)
+* wl-template-select:                    Key Bindings of Draft.
+                                                              (line  61)
+* wl-thread-close-all:                   Key Bindings of Summary.
+                                                              (line  52)
+* wl-thread-copy:                        Key Bindings of Summary.
+                                                              (line 434)
+* wl-thread-delete:                      Key Bindings of Summary.
+                                                              (line 446)
+* wl-thread-dispose:                     Key Bindings of Summary.
+                                                              (line 440)
+* wl-thread-exec:                        Key Bindings of Summary.
+                                                              (line 416)
+* wl-thread-mark-as-important:           Key Bindings of Summary.
+                                                              (line 398)
+* wl-thread-mark-as-read:                Key Bindings of Summary.
+                                                              (line 393)
+* wl-thread-mark-as-unread:              Key Bindings of Summary.
+                                                              (line 410)
+* wl-thread-open-all:                    Key Bindings of Summary.
+                                                              (line  49)
+* wl-thread-open-close:                  Key Bindings of Summary.
+                                                              (line  45)
+* wl-thread-prefetch:                    Key Bindings of Summary.
+                                                              (line 450)
+* wl-thread-refile:                      Key Bindings of Summary.
+                                                              (line 428)
+* wl-thread-register-as-good:            Usage of Spam Filter.
+                                                              (line 175)
+* wl-thread-register-as-spam:            Usage of Spam Filter.
+                                                              (line 170)
+* wl-thread-save:                        Key Bindings of Summary.
+                                                              (line 459)
+* wl-thread-set-flags:                   Key Bindings of Summary.
+                                                              (line 404)
+* wl-thread-spam:                        Usage of Spam Filter.
+                                                              (line 159)
+* wl-thread-target-mark:                 Key Bindings of Summary.
+                                                              (line 422)
+* wl-thread-test-spam:                   Usage of Spam Filter.
+                                                              (line 164)
+* wl-thread-unmark:                      Key Bindings of Summary.
+                                                              (line 454)
+* wl-toggle-plugged:                     Selecting Folder.    (line 180)
+* wl-toggle-plugged <1>:                 Key Bindings of Summary.
+                                                              (line 552)
+* wl-toggle-plugged <2>:                 Key Bindings of Draft.
+                                                              (line  49)
+
