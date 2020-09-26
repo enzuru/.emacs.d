@@ -6,8 +6,8 @@
 (add-to-list 'load-path "~/.emacs.d/enzuru/setup")
 (add-to-list 'load-path "~/.emacs.d/enzuru/operating-systems")
 (add-to-list 'load-path "~/.emacs.d/enzuru/themes")
-(add-to-list 'load-path "~/.emacs.d/elpa/exwm-0.22.1")
-(add-to-list 'load-path "~/.emacs.d/elpa/xelb-0.17")
+(add-to-list 'load-path "~/.emacs.d/elpa/exwm-0.24")
+(add-to-list 'load-path "~/.emacs.d/elpa/xelb-0.18")
 
 (load-library "enzuru-packages")
 
