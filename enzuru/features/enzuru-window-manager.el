@@ -23,6 +23,10 @@
                       (string= "gimp" exwm-instance-name))
               (exwm-workspace-rename-buffer exwm-title))))
 
+(add-hook 'exwm-floating-setup-hook (lambda ()
+                                      (exwm-floating-toggle-floating)
+                                      (split-window-vertically)))
+
 ;; Global keybindings can be defined with `exwm-input-global-keys'.
 ;; Here are a few examples:
 (setq exwm-input-global-keys
@@ -41,12 +45,12 @@
         ;; Bind "s-&" to launch applications ('M-&' also works if the output
         ;; buffer does not bother you).
         ([?\s-&] . (lambda (command)
-             (interactive (list (read-shell-command "$ ")))
-             (start-process-shell-command command nil command)))
+                     (interactive (list (read-shell-command "$ ")))
+                     (start-process-shell-command command nil command)))
         ;; Bind "s-<f2>" to "slock", a simple X display locker.
         ([s-f2] . (lambda ()
-            (interactive)
-            (start-process "" nil "/usr/bin/slock")))))
+                    (interactive)
+                    (start-process "" nil "/usr/bin/slock")))))
 
 ;; To add a key binding only available in line-mode, simply define it in
 ;; `exwm-mode-map'.  The following example shortens 'C-c q' to 'C-q'.

@@ -47,6 +47,7 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)                   ;; C-x(ecute) l(ocate)
 (global-set-key (kbd "C-x o") 'other-window)                     ;; C-x(ecute) o(ther window)
 (global-set-key (kbd "C-x s") 'replace-string)                   ;; C-x(ecute) s(tring replacement)
+(global-set-key (kbd "C-x y") 'sly)                              ;; C-x(ecute) (sl)y
 
 ;; Execute under point: C-x(ecute) C-letter
 

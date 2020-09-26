@@ -6,3 +6,9 @@
 
 (add-hook 'lisp-mode-hook (lambda () (lispy-mode 1)))
 (add-hook 'lisp-interaction-mode-hook (lambda () (lispy-mode 1)))
+
+(add-hook 'kill-buffer-hook (lambda ()
+                              (if (cl-search "SDL" (buffer-name))
+                                  (progn
+                                    (delete-other-windows)
+                                    (sly)))))
