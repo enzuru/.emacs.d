@@ -14,6 +14,6 @@
 (defun async-term ()
   "Open terminal"
   (interactive)
-  (start-process "xterm" "xterm" "xterm"))
+  (start-process "urxvt" "urxvt" "urxvt"))
 
 (find-file "~/org/index.org")
