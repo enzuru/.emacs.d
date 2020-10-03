@@ -41,6 +41,7 @@
 
 ;; Execute: C-x(ecute) letter
 
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 (global-set-key (kbd "C-x c") 'compile)                          ;; C-x(ecute) c(ompilation)
 (global-set-key (kbd "C-x f") 'counsel-find-file)                ;; C-x(ecute) f(ind command)
 (global-set-key (kbd "C-x k") 'volatile-kill-buffer)             ;; C-x(ecute) k(ill)
