@@ -1,0 +1,2 @@
+;;; Generated package description from /Users/ahmed.khanzada/.emacs.d/elpa/flycheck-objc-clang-20201003.1053/flycheck-objc-clang.el  -*- no-byte-compile: t -*-
+(define-package "flycheck-objc-clang" "20201003.1053" "Flycheck: Objective-C support using Clang" '((emacs "24.4") (flycheck "26")) :commit "cf45af2a71f6e7a21e01c556613c5b5cdc983ac9" :authors '(("Goichi Hirakawa" . "gooichi@gyazsquare.com")) :maintainer '("Goichi Hirakawa" . "gooichi@gyazsquare.com") :keywords '("convenience" "languages" "tools") :url "https://github.com/GyazSquare/flycheck-objc-clang")
