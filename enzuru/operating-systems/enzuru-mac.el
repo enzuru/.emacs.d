@@ -1,8 +1,8 @@
-(load-library "enzuru-enthusiast")
 (load-library "enzuru-dash")
 
 (nyan-mode)
 
+(setq mac-command-modifier 'control)
 (setq nyan-bar-length 5)
 (setq racer-rust-src-path "~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/")
 (setq locate-command "mdfind")
