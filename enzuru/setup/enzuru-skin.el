@@ -6,4 +6,5 @@
 (sml/setup)
 
 (if window-system
-    (load-library "enzuru-gui"))
+    (load-library "enzuru-gui")
+  (load-library "enzuru-purple-haze"))
