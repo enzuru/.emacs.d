@@ -1,7 +1,7 @@
 (load-library "enzuru-window-manager")
 
 (setq locate-command "locate")
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq inferior-lisp-program "/usr/local/bin/ecl")
 (setq elpy-rpc-python-command "python3")
 (setq locate-make-command-line
       (lambda (ss) (list locate-command "/home/enzuru" "-name" ss)))
