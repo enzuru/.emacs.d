@@ -26,4 +26,4 @@
 (setq notmuch-search-oldest-first nil)
 
 (setq fill-column 72)
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'message-mode-hook 'turn-on-auto-fill)
