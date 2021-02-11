@@ -1,0 +1,2 @@
+;;; Generated package description from counsel-jq.el  -*- no-byte-compile: t -*-
+(define-package "counsel-jq" "20201230.1703" "Live preview of \"jq\" queries using counsel" '((swiper "0.12.0") (ivy "0.12.0") (emacs "24.1")) :commit "153d70b576df1d572c56d84039cb40749310cfe7" :authors '(("Alain M. Lafon" . "alain@200ok.ch")) :maintainer '("Alain M. Lafon" . "alain@200ok.ch") :keywords '("convenience" "data" "matching") :url "https://github.com/200ok-ch/counsel-jq")

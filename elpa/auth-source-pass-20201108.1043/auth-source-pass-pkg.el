@@ -1,2 +1,0 @@
-;;; Generated package description from /Users/ahmed.khanzada/.emacs.d/elpa/auth-source-pass-20201108.1043/auth-source-pass.el  -*- no-byte-compile: t -*-
-(define-package "auth-source-pass" "20201108.1043" "Integrate auth-source with password-store" '((emacs "27.1")) :commit "aa7f17116ec3f760eb414d655ba20016b11a4a0e" :authors '(("Damien Cassou" . "damien@cassou.me") ("Nicolas Petton" . "nicolas@petton.fr") ("Keith Amidon" . "camalot@picnicpark.org")) :maintainer '("Damien Cassou" . "damien@cassou.me") :url "https://github.com/DamienCassou/auth-source-pass")

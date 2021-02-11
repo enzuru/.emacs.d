@@ -1,0 +1,2 @@
+;;; Generated package description from counsel-ag-popup.el  -*- no-byte-compile: t -*-
+(define-package "counsel-ag-popup" "20210121.805" "Interactive search with counsel-ag" '((emacs "26.1") (counsel "0.13.0") (transient "0.3.0")) :commit "41d85fe36edd72da68f5009ad9cf9013cd19960d" :authors '(("Eder Elorriaga" . "gexplorer8@gmail.com")) :maintainer '("Eder Elorriaga" . "gexplorer8@gmail.com") :keywords '("convenience" "matching" "tools") :url "https://github.com/gexplorer/counsel-ag-popup")

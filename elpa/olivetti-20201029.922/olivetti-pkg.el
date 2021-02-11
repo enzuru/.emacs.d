@@ -1,2 +1,0 @@
-;;; Generated package description from /Users/ahmed.khanzada/.emacs.d/elpa/olivetti-20201029.922/olivetti.el  -*- no-byte-compile: t -*-
-(define-package "olivetti" "20201029.922" "Minor mode for a nice writing environment" '((emacs "24.4")) :commit "b76a020aedb57a6a7d0ae61cde13434f5c802a44" :authors '(("Paul W. Rankin" . "pwr@skeletons.cc")) :maintainer '("Paul W. Rankin" . "pwr@skeletons.cc") :keywords '("wp" "text") :url "https://git.skeletons.cc/olivetti")
