@@ -27,3 +27,4 @@
 
 (setq fill-column 72)
 (add-hook 'message-mode-hook 'turn-on-auto-fill)
+(add-hook 'message-mode-hook 'refill-mode)
