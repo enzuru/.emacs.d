@@ -13,17 +13,5 @@
   :ensure t
   :config (enzuru-configure-flycheck))
 
-(use-package flycheck-guile
-  :ensure t)
-
-(use-package flycheck-kotlin
-  :ensure t)
-
-(use-package flycheck-objc-clang
-  :ensure t)
-
-(use-package flycheck-swift3
-  :ensure t)
-
 (provide 'enzuru-syntax-checking)
 

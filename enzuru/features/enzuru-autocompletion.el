@@ -28,9 +28,9 @@
   :ensure t
   :config (enzuru-configure-company))
 
-;; (use-package company-lsp
-;;   :ensure t
-;;   :config (enzuru-configure-company-lsp))
+(use-package company-lsp
+  :ensure t
+  :config (enzuru-configure-company-lsp))
 
 (use-package counsel
   :ensure t
@@ -38,9 +38,9 @@
          ("C-h v" . 'counsel-describe-variable)
          ("C-x f" . 'counsel-find-file)
          ("C-x l" . 'counsel-locate)
-         ("M-y" . 'counsel-yank-pop)
-         ("M-x" . 'counsel-M-x)
-         ("C-x C-m" . 'counsel-M-x)
+         ("C-y" . 'counsel-yank-pop)
+         ("C-x" . 'counsel-m-x)
+         ("C-x C-m" . 'counsel-m-x)
          ("C-x C-c" . 'counsel-ag))
   :config (enzuru-configure-counsel))
 
@@ -54,14 +54,18 @@
   :ensure t)
 
 (use-package lsp-ui
-  :bind (("C-x C-r" . 'lsp-ui-peek-find-references)
-         ("C-x C-w" . 'lsp-ui-peek-find-definitions))
+  :bind (:map java-mode-map
+              ("C-x C-r" . 'lsp-ui-peek-find-references)
+              ("C-x C-w" . 'lsp-ui-peek-find-definitions)
+              :map objc-mode-map
+              ("C-x C-r" . 'lsp-ui-peek-find-references)
+              ("C-x C-w" . 'lsp-ui-peek-find-definitions))
   :ensure t)
 
 (use-package ivy
   :ensure t
   :bind ((("C-x b" . 'ivy-switch-buffer))
-         (("C-x C-b" . 'ivy-switch-buffer)))
+         (("C-x c-b" . 'ivy-switch-buffer)))
   :config (enzuru-configure-ivy))
 
 (use-package ivy-xref

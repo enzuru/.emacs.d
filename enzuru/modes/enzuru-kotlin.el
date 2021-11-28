@@ -7,6 +7,9 @@
 
 ;; Packages
 
+(use-package flycheck-kotlin
+  :ensure t)
+
 (use-package kotlin-mode
   :ensure t
   :hook ((kotlin-mode . flycheck-mode))

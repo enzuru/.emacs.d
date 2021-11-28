@@ -9,6 +9,9 @@
 
 ;; Packages
 
+(use-package flycheck-swift3
+  :ensure t)
+
 (use-package swift-mode
   :ensure t
   :config (enzuru-configure-swift-mode))

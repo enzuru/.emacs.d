@@ -7,6 +7,9 @@
 
 ;; Packages
 
+(use-package flycheck-guile
+  :ensure t)
+
 (use-package geiser
   :ensure t
   :bind (("C-x c" . geiser-load-current-buffer)

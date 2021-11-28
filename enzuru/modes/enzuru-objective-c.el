@@ -22,4 +22,9 @@
 
 (add-hook 'objc-mode-hook (lambda () ("C-x C-d" . 'enzuru-cocoa-open-documentation)))
 
+;; Packages
+
+(use-package flycheck-objc-clang
+  :ensure t)
+
 (provide 'enzuru-objective-c)
