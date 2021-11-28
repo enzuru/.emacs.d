@@ -19,7 +19,7 @@
 
 (use-package eshell
   :ensure t
-  :bind (("C-c x" . 'eshell))
+  :bind (("C-c e" . 'eshell))
   :config (enzuru-configure-eshell))
 
 (use-package multi-term

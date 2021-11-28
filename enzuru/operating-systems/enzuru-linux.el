@@ -14,7 +14,7 @@
   (interactive)
   (start-process "urxvtc" "urxvtc" "urxvtc" "-fn" "xft:Iosevka:style=Regular:size=15"))
 
-(global-set-key (kbd "C-x c") 'enzuru-async-term)
+(global-set-key (kbd "C-c x") 'enzuru-async-term)
 
 (with-eval-after-load 'geiser-guile
   (add-to-list 'geiser-guile-load-path "~/src/guix"))
