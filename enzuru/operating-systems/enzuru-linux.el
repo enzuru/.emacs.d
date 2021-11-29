@@ -3,6 +3,8 @@
 (if window-system
     (require 'enzuru-window-management))
 
+(require 'enzuru-guix)
+
 (setq locate-command "locate -d /home/enzuru/locatedb.n")
 (setq ccls-executable "ccls")
 (setq browse-url-browser-function 'browse-url-firefox)
