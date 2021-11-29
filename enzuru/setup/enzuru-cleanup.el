@@ -19,6 +19,7 @@
   (diminish 'ruby-tools-mode)
   (diminish 'smartparens-mode)
   (diminish 'which-key-mode)
+  (diminish 'undo-tree-mode)
   (diminish 'yard-mode)
 
   (eval-after-load "company" '(diminish 'company-mode))
