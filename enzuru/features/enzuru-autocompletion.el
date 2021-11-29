@@ -15,6 +15,12 @@
         enable-recursive-minibuffers t
         ivy-wrap t))
 
+(defun enzuru-configure-ivy-xref ()
+  (when (>= emacs-major-version 27)
+    (setq xref-show-definitions-function #'ivy-xref-show-defs))
+  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
 ;; Packages
 
 (use-package ccls
@@ -63,7 +69,8 @@
   :config (enzuru-configure-ivy))
 
 (use-package ivy-xref
-  :ensure t)
+  :ensure t
+  :config (enzuru-configure-ivy-xref))
 
 (use-package swiper
   :ensure t
