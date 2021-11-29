@@ -2,10 +2,10 @@
 
 ;; Packages
 
-(use-package fish-completion
+(use-package kubernetes
   :ensure t)
 
-(use-package fish-mode
+(use-package kubernetes-tramp
   :ensure t)
 
-(provide 'enzuru-fish)
+(provide 'enzuru-kubernetes)
