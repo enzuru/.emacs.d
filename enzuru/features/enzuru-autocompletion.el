@@ -9,15 +9,11 @@
 (defun enzuru-configure-company-lsp ()
   (push 'company-lsp company-backends))
 
-(defun enzuru-configure-counsel ())
-
 (defun enzuru-configure-ivy ()
   (setq ivy-display-style 'fancy
         ivy-use-virtual-buffers t
         enable-recursive-minibuffers t
         ivy-wrap t))
-
-(defun enzuru-configure-swiper ())
 
 ;; Packages
 
@@ -40,8 +36,7 @@
          ("C-x l" . counsel-locate)
          ("C-y" . counsel-yank-pop)
          ("C-x C-m" . counsel-M-x)
-         ("C-x C-c" . counsel-ag))
-  :config (enzuru-configure-counsel))
+         ("C-x C-c" . counsel-ag)))
 
 (use-package lsp-mode
   :ensure t
@@ -72,7 +67,6 @@
 
 (use-package swiper
   :ensure t
-  :bind ((("C-s" . 'swiper-isearch)))
-  :config (enzuru-configure-swiper))
+  :bind ((("C-s" . 'swiper-isearch))))
 
 (provide 'enzuru-autocompletion)
