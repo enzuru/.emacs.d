@@ -32,6 +32,7 @@
 (require 'enzuru-shell)
 (require 'enzuru-syntax-checking)
 (require 'enzuru-uname)
+(require 'enzuru-undo)
 (require 'enzuru-remote)
 (require 'enzuru-version-control)
 (require 'enzuru-writing)
