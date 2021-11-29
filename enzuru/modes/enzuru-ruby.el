@@ -16,11 +16,13 @@
   (setq enh-ruby-deep-indent-paren nil)
   (setq rspec-use-rake-when-possible nil)
   (setq compilation-scroll-output 'first-error)
-  (setq ruby-insert-encoding-magic-comment nil)
-  (rvm-use-default))
+  (setq ruby-insert-encoding-magic-comment nil))
 
 (defun enzuru-configure-inf-ruby ()
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
+
+(defun enzuru-configure-rvm ()
+  (rvm-use-default))
 
 ;; Packages
 
@@ -48,6 +50,10 @@
 (use-package ruby-refactor
   :hook (enh-ruby-mode-hook . ruby-refactor-mode-launch)
   :ensure t)
+
+(use-package rvm
+  :ensure t
+  :config (enzuru-configure-rvm))
 
 (use-package yard-mode
   :hook (enh-ruby-mode-hook . yard-mode)
