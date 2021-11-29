@@ -38,6 +38,9 @@
   :ensure t
   :config (enzuru-configure-inf-ruby))
 
+(use-package projectile-rails
+  :ensure t)
+
 (use-package robe
   :hook (enh-ruby-mode-hook . robe-mode)
   :ensure t)

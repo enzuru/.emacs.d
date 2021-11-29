@@ -9,8 +9,8 @@
 
 (use-package magit
   :ensure t
-  :bind (("C-c s" . 'magit-status)
-         ("C-c C-p" . 'magit-push-current-to-upstream))
+  :bind (("C-c s" . magit-status)
+         ("C-c C-p" . magit-push-current-to-upstream))
   :config (enzuru-configure-magit))
 
 (provide 'enzuru-version-control)

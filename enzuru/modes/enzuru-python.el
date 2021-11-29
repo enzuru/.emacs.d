@@ -14,13 +14,16 @@
                    (concat "python3 " (buffer-name))))))
 
 (defun enzuru-configure-importmagic ()
-  (add-hook 'before-save-hook 'importmagic-fix-imports))
+  (add-hook 'python-mode-hook (lambda ()
+                                (add-hook 'before-save-hook 'importmagic-fix-imports))))
 
 (defun enzuru-configure-pyimport ()
-  (add-hook 'before-save-hook 'pyimport-remove-unused))
+  (add-hook 'python-mode-hook (lambda ()
+                                (add-hook 'before-save-hook 'pyimport-remove-unused))))
 
 (defun enzuru-configure-pyimpsort ()
-  (add-hook 'before-save-hook 'pyimpsort-buffer))
+  (add-hook 'python-mode-hook (lambda ()
+                                (add-hook 'before-save-hook 'pyimpsort-buffer))))
 
 ;; Packages
 
@@ -35,8 +38,8 @@
   :ensure t
   :hook ((python-mode . anaconda-mode)
          (python-mode . anaconda-eldoc-mode))
-  :bind (("C-x C-d" . 'anaconda-mode-show-doc)
-         ("C-x C-w" . 'anaconda-mode-find-definitions)))
+  :bind (("C-x C-d" . anaconda-mode-show-doc)
+         ("C-x C-w" . anaconda-mode-find-definitions)))
 
 (use-package importmagic
   :ensure t

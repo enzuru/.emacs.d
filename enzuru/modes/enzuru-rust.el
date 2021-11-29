@@ -10,6 +10,6 @@
 (use-package rust-mode
   :ensure t
   :hook ((rust-mode . racer-mode))
-  :bind (:map rust-mode-map ("<tab>" . #'company-indent-or-complete-common)))
+  :bind (:map rust-mode-map ("<tab>" . company-indent-or-complete-common)))
 
 (provide 'enzuru-rust)

@@ -3,7 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-coffee-mode ()
-    (setq coffee-tab-width 2))
+  (setq coffee-tab-width 2))
 
 ;; Packages
 

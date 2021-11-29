@@ -23,7 +23,7 @@
 
 (use-package scheme
   :ensure t
-  :mode (("\\.scm$" . 'scheme-mode)
-         ("\\.guile$" . 'scheme-mode)))
+  :mode (("\\.scm$" . scheme-mode)
+         ("\\.guile$" . scheme-mode)))
 
 (provide 'enzuru-scheme)

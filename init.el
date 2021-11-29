@@ -48,7 +48,6 @@
 (require 'enzuru-fish)
 (require 'enzuru-fountain)
 (require 'enzuru-haskell)
-(require 'enzuru-hyperbole)
 (require 'enzuru-java)
 (require 'enzuru-javascript)
 (require 'enzuru-json)
@@ -85,12 +84,12 @@
 
 ;; Final setup
 
-(require 'enzuru-cleanup)
-(require 'enzuru-keys)
+(require 'enzuru-cleanup)               ;; Needs work
+(require 'enzuru-keys)                  ;; Needs work
 (require 'enzuru-shutdown)
 (require 'enzuru-skin)
 
-;; Operating systems
+;; Operating systems                       Needs work (as does enzuru-window-manager.el)
 
 (if (eq system-type 'gnu/linux)
     (require 'enzuru-linux))

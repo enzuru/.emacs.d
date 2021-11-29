@@ -9,6 +9,7 @@
 
 (use-package hyperbole
   :ensure t
+  :mode (("\\.hypb$" . lisp-mode))
   :config (enzuru-configure-hyperbole))
 
 (provide 'enzuru-hyperlinking)
