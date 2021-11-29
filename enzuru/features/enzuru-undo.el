@@ -9,4 +9,4 @@
   :ensure t
   :config (enzuru-configure-undo-tree))
 
-(provide 'enzuru-undo-tree)
+(provide 'enzuru-undo)

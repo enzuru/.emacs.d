@@ -25,7 +25,6 @@
 (require 'enzuru-modeline)
 (require 'enzuru-movement)
 (require 'enzuru-music)
-(require 'enzuru-parens)
 (require 'enzuru-project-management)
 (require 'enzuru-search)
 (require 'enzuru-server)
