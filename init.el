@@ -40,7 +40,6 @@
 ;; Modes
 
 (require 'enzuru-c)
-(require 'enzuru-coffeescript)
 (require 'enzuru-common-lisp)
 (require 'enzuru-docker)
 (require 'enzuru-emacs-lisp)
