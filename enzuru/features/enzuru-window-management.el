@@ -62,4 +62,4 @@
 (exwm-enable)
 (exwm-config-ido)
 
-(provide 'enzuru-window-manager)
+(provide 'enzuru-window-management)

@@ -1,7 +1,7 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
 (if window-system
-    (require 'enzuru-window-manager))
+    (require 'enzuru-window-management))
 
 (setq locate-command "locate -d /home/enzuru/locatedb.n")
 (setq ccls-executable "ccls")

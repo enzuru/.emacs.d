@@ -8,4 +8,4 @@
          ("C-x C-f" . 'sunrise))
   :mode (("\\.srvm\\'" . sr-virtual-mode)))
 
-(provide 'enzuru-file-manager)
+(provide 'enzuru-file-managent)

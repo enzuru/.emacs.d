@@ -12,4 +12,4 @@
   :ensure t
   :config (enzuru-configure-projectile))
 
-(provide 'enzuru-project-manager)
+(provide 'enzuru-project-management)

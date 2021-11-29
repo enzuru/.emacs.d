@@ -1,6 +1,6 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(require 'enzuru-window-manager)
+(require 'enzuru-window-management)
 
 (setq locate-command "locate")
 (setq inferior-lisp-program "/usr/local/bin/ecl")
