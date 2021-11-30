@@ -36,7 +36,8 @@
 
 (use-package counsel
   :ensure t
-  :bind (("C-h f" . counsel-describe-function)
+  :bind (("C-h b" . counsel-descbinds)
+         ("C-h f" . counsel-describe-function)
          ("C-h v" . counsel-describe-variable)
          ("C-x f" . counsel-find-file)
          ("C-x l" . counsel-locate)
