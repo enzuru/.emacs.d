@@ -18,6 +18,6 @@ If you ever need to remove compiled Lisp files, the root directory contains a ha
 ./remove-compiled-files
 ```
 
-Everything is very organized in the `enzuru` folder by feature, mode, preference, setup, operating system, and theme. While this repo should work immediately for you on a `git pull`, it's obviously a very personalized setup and many things won't appeal to you. If I were you, I would first take a look at my `init.el` and `enzuru/setup/enzuru-keys.el` and then pick a topical elisp file from there.
+Everything is very organized in the `enzuru` folder by feature, mode, preference, setup, operating system, and theme. While this repo should work immediately for you on a `git pull`, it's obviously a very personalized setup and many things won't appeal to you. If I were you, I would first take a look at my `init.el` and then pick a topical elisp file from there.
 
 Happy hacking!
