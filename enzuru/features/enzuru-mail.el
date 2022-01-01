@@ -10,9 +10,13 @@
         message-directory "~/mail/"
         message-kill-buffer-on-exit t
         message-send-mail-function 'message-smtpmail-send-it
+        notmuch-search-oldest-first nil
+        notmuch-draft-save-plaintext nil
+        send-mail-function 'smtpmail-send-it
+        smtpmail-smtp-server "smtp.gmail.com"
+        smtpmail-smtp-service 587
         user-mail-address "me@enzu.ru"
-        user-full-name "Ahmed Khanzada"
-        notmuch-search-oldest-first nil))
+        user-full-name "Ahmed Khanzada"))
 
 ;; Packages
 

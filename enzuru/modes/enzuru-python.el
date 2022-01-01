@@ -3,7 +3,8 @@
 ;; Configuration
 
 (defun enzuru-configure-blacken ()
-  (add-hook 'before-save-hook 'blacken-buffer))
+  (add-hook 'python-mode-hook
+            (add-hook 'before-save-hook 'blacken-buffer)))
 
 (defun enzuru-configure-company-anaconda ()
   (eval-after-load "company"
@@ -14,16 +15,16 @@
                    (concat "python3 " (buffer-name))))))
 
 (defun enzuru-configure-importmagic ()
-  (add-hook 'python-mode-hook (lambda ()
-                                (add-hook 'before-save-hook 'importmagic-fix-imports))))
+  (add-hook 'python-mode-hook
+            (add-hook 'before-save-hook 'importmagic-fix-imports)))
 
 (defun enzuru-configure-pyimport ()
-  (add-hook 'python-mode-hook (lambda ()
-                                (add-hook 'before-save-hook 'pyimport-remove-unused))))
+  (add-hook 'python-mode-hook
+            (add-hook 'before-save-hook 'pyimport-remove-unused)))
 
 (defun enzuru-configure-pyimpsort ()
-  (add-hook 'python-mode-hook (lambda ()
-                                (add-hook 'before-save-hook 'pyimpsort-buffer))))
+  (add-hook 'python-mode-hook
+            (add-hook 'before-save-hook 'pyimpsort-buffer)))
 
 ;; Packages
 
