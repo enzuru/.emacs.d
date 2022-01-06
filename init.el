@@ -39,6 +39,7 @@
 ;; Modes
 
 (require 'enzuru-c)
+(require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
 (require 'enzuru-docker)
 (require 'enzuru-emacs-lisp)
