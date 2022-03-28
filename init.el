@@ -49,6 +49,7 @@
 (require 'enzuru-fish)
 (require 'enzuru-fountain)
 (require 'enzuru-go)
+(require 'enzuru-groovy)
 (require 'enzuru-haskell)
 (require 'enzuru-java)
 (require 'enzuru-javascript)
