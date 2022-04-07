@@ -2,6 +2,6 @@
 
 (if window-system
     (require 'enzuru-gui)
-  (require 'enzuru-purple-haze))
+  (require 'enzuru-molokai))
 
 (provide 'enzuru-skin)
