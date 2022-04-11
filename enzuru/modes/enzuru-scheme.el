@@ -12,8 +12,9 @@
 
 (use-package geiser
   :ensure t
-  :bind (("C-x c" . geiser-load-current-buffer)
-         ("C-x d" . geiser-doc-symbol-at-point))
+  :bind (:map scheme-mode-map
+              ("C-x c" . geiser-load-current-buffer)
+              ("C-x d" . geiser-doc-symbol-at-point))
   :mode (("\\.scm$" . geiser-mode)
          ("\\.guile$" . geiser-mode)))
 

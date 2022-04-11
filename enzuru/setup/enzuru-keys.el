@@ -11,6 +11,7 @@
 
 ;; Execute: C-x(ecute) letter
 
+(global-set-key (kbd "C-x c") 'compile)
 (global-set-key (kbd "C-x k") 'enzuru-volatile-kill-buffer)      ;; C-x(ecute) k(ill)
 (global-set-key (kbd "C-x s") 'replace-string)                   ;; C-x(ecute) s(tring replacement)
 
