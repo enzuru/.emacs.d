@@ -2,6 +2,7 @@
 
 (if window-system
     (require 'enzuru-gui)
-  (require 'enzuru-molokai))
+  (progn (require 'enzuru-molokai)
+         (xterm-mouse-mode t)))
 
 (provide 'enzuru-skin)
