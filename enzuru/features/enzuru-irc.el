@@ -6,12 +6,12 @@
   (setq erc-nick "enzuru"
         erc-user-full-name "Ahmed Khanzada")
 
-  (setq erc-autojoin-channels-alist
-        '(("libera.chat" "#emacs" "#guix" "#guile" "#gnu")))
+  ;; (setq erc-autojoin-channels-alist
+  ;;       '(("libera.chat" "#emacs" "#guix" "#guile" "#gnu")))
 
   (defun enzuru-load-irc ()
     (interactive)
-    (erc-tls :server "irc.libera.chat" :port "6697" :password "password")))
+    (erc :server "enzu.ru" :port "6667" :password "password")))
 
 ;; Packages
 
