@@ -11,7 +11,7 @@
 
   (defun enzuru-load-irc ()
     (interactive)
-    (erc :server "enzu.ru" :port "6667" :password "password")))
+    (erc :server "enzu.ru" :port "7000" :nick "enzuru/Libera" :password "enzuru/Libera:password")))
 
 ;; Packages
 
