@@ -4,7 +4,9 @@
 
 (defun enzuru-configure-erc ()
   (setq erc-nick "enzuru"
-        erc-user-full-name "Ahmed Khanzada")
+        erc-user-full-name "Ahmed Khanzada"
+        erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+                                  "324" "329" "332" "333" "353" "477"))
 
   ;; (setq erc-autojoin-channels-alist
   ;;       '(("libera.chat" "#emacs" "#guix" "#guile" "#gnu")))

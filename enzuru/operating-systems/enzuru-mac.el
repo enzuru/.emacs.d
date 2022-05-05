@@ -2,10 +2,7 @@
 
 (require 'enzuru-dash)
 
-(nyan-mode)
-
 (setq mac-command-modifier 'control)
-(setq nyan-bar-length 5)
 (setq racer-rust-src-path "~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/")
 (setq locate-command "mdfind")
 (setq locate-make-command-line
@@ -17,5 +14,8 @@
                     :family "Bookerly" :height 135 :weight 'normal)
 
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+
+(add-to-list 'default-frame-alist '(fullscreen . fullboth))
+(setq ns-use-native-fullscreen t)
 
 (provide 'enzuru-mac)
