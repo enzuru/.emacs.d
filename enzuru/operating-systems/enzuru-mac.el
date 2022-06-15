@@ -8,6 +8,8 @@
 (setq locate-make-command-line
       (lambda (ss) (list locate-command "-name" ss)))
 
+(setq notmuch-command "~/bin/notmuch")
+
 (set-face-attribute 'default nil
                     :family "Menlo" :height 120 :weight 'normal)
 (set-face-attribute 'variable-pitch nil
