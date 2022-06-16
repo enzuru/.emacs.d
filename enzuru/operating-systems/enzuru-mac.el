@@ -11,7 +11,7 @@
 (setq notmuch-command "~/bin/notmuch")
 
 (set-face-attribute 'default nil
-                    :family "Menlo" :height 120 :weight 'normal)
+                    :family "Menlo" :height 150 :weight 'normal)
 (set-face-attribute 'variable-pitch nil
                     :family "Bookerly" :height 135 :weight 'normal)
 

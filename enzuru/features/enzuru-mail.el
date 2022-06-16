@@ -13,7 +13,7 @@
         notmuch-search-oldest-first nil
         notmuch-draft-save-plaintext nil
         send-mail-function 'smtpmail-send-it
-        smtpmail-smtp-server "smtp.gmail.com"
+        smtpmail-smtp-server "mail.enzu.ru"
         smtpmail-smtp-service 587
         user-mail-address "me@enzu.ru"
         user-full-name "Ahmed Khanzada"))
