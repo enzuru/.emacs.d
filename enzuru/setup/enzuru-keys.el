@@ -14,6 +14,7 @@
 (global-set-key (kbd "C-x c") 'compile)
 (global-set-key (kbd "C-x k") 'enzuru-volatile-kill-buffer)      ;; C-x(ecute) k(ill)
 (global-set-key (kbd "C-x s") 'replace-string)                   ;; C-x(ecute) s(tring replacement)
+(global-set-key (kbd "C-x g") 'org-agenda)                       ;; C-x(ecute) a(g)enda
 
 ;; Execute under point: C-x(ecute) C-letter
 
