@@ -5,7 +5,7 @@
 (use-package sunrise
   :load-path "local/sunrise-commander"
   :bind (("M-o" . 'sunrise-synchronize-panes)
-         ("C-x C-f" . 'sunrise))
+         ("C-x C-f" . 'sunrise-cd))
   :mode (("\\.srvm\\'" . sr-virtual-mode)))
 
-(provide 'enzuru-file-managent)
+(provide 'enzuru-file-management)
