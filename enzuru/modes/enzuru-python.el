@@ -39,8 +39,8 @@
   :ensure t
   :hook ((python-mode . anaconda-mode)
          (python-mode . anaconda-eldoc-mode))
-  :bind (("C-x C-d" . anaconda-mode-show-doc)
-         ("C-x C-w" . anaconda-mode-find-definitions)))
+  :bind (:map python-mode-map (("C-x C-d" . anaconda-mode-show-doc)
+                               ("C-x C-w" . anaconda-mode-find-definitions))))
 
 (use-package importmagic
   :ensure t
