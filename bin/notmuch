@@ -1,0 +1,3 @@
+#!/bin/bash
+printf -v ARGS "%q " "$@"
+exec ssh enzuru@enzu.ru /home/enzuru/src/notmuch/notmuch ${ARGS}
