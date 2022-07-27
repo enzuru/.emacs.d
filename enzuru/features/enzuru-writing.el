@@ -2,8 +2,8 @@
 
 ;; Packages
 
-(use-package olivetti
-  :ensure t)
+;; (use-package olivetti
+;;   :ensure t)
 
 (use-package fountain-mode
   :ensure t
