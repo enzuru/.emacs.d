@@ -2,6 +2,9 @@
 
 ;; Packages
 
+(use-package company-terraform
+  :ensure t)
+
 (use-package terraform-mode
   :ensure t)
 

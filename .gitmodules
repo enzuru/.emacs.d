@@ -1,6 +1,6 @@
 [submodule "local/sunrise-commander"]
 	path = local/sunrise-commander
-	url = https://github.com/sunrise-commander/sunrise-commander.git
+	url = git@github.com:enzuru/sunrise-commander.git
 [submodule "local/exwm"]
 	path = local/exwm
 	url = git@github.com:ch11ng/exwm.git
@@ -10,3 +10,6 @@
 [submodule "local/omtose-phellack-theme"]
 	path = local/omtose-phellack-theme
 	url = git@github.com:franksn/omtose-phellack-theme.git
+[submodule "local/company-aspell"]
+	path = "local/company-aspell"
+	url = git@github.com:enzuru/company-aspell.git

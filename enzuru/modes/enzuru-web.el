@@ -8,6 +8,9 @@
 
 ;; Packages
 
+(use-package company-web
+  :ensure t)
+
 (use-package web-mode
   :ensure t
   :config (enzuru-configure-web-mode)

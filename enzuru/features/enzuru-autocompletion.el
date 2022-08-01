@@ -2,6 +2,10 @@
 
 ;; Configuration
 
+(add-to-list 'load-path "~/.emacs.d/local/company-aspell")
+(require 'company-aspell)
+(push 'company-aspell company-backends)
+
 (defun enzuru-configure-company ()
   (setq company-idle-delay 0)
   (add-hook 'after-init-hook 'global-company-mode))

@@ -7,6 +7,9 @@
 
 ;; Packages
 
+(use-package company-php
+  :ensure t)
+
 (use-package flycheck-php-noverify
   :ensure t)
 
