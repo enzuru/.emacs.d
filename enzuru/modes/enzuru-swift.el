@@ -9,7 +9,7 @@
 
 ;; Packages
 
-(use-package flycheck-swift3
+(use-package flycheck-swiftx
   :ensure t)
 
 (use-package swift-mode

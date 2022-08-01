@@ -5,6 +5,9 @@
 ;; (use-package olivetti
 ;;   :ensure t)
 
+(use-package flycheck-aspell
+  :ensure t)
+
 (use-package fountain-mode
   :ensure t
   :hook ((fountain-mode . variable-pitch-mode)

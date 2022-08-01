@@ -2,6 +2,9 @@
 
 ;; Packages
 
+(use-package flycheck-golangci-lint
+  :ensure t)
+
 (use-package go-mode
   :ensure t)
 

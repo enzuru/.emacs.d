@@ -41,6 +41,7 @@
 ;; Modes
 
 (require 'enzuru-c)
+(require 'enzuru-css)
 (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
 (require 'enzuru-docker)

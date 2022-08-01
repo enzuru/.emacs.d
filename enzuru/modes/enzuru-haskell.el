@@ -9,6 +9,9 @@
 
 ;; Packages
 
+(use-package flycheck-haskell
+  :ensure t)
+
 (use-package haskell-mode
   :ensure t
   :config (enzuru-configure-haskell-mode))

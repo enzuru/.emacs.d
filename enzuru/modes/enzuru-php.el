@@ -7,6 +7,9 @@
 
 ;; Packages
 
+(use-package flycheck-php-noverify
+  :ensure t)
+
 (use-package php-mode
   :ensure t
   :mode (("\.php$" . php-mode))
