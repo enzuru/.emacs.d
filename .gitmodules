@@ -11,5 +11,5 @@
 	path = local/omtose-phellack-theme
 	url = git@github.com:franksn/omtose-phellack-theme.git
 [submodule "local/company-aspell"]
-	path = "local/company-aspell"
+	path = local/company-aspell
 	url = git@github.com:enzuru/company-aspell.git
