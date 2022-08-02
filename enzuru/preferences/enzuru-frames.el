@@ -2,19 +2,20 @@
 
 ;; Configuration
 
-(defun enzuru-configure-elscreen ()
-  (elscreen-start)
-  (setq elscreen-display-tab nil))
+(defun enzuru-configure-tab-bar-mode ()
+  (tab-bar-mode)
+  (define-prefix-command 'tab-map)
+  (global-set-key (kbd "C-z") 'tab-map)
+  (global-set-key (kbd "C-z c") 'tab-bar-new-tab)
+  (global-set-key (kbd "C-z n") 'tab-bar-switch-to-next-tab)
+  (global-set-key (kbd "C-z p") 'tab-bar-switch-to-next-tab))
 
 (defun enzuru-configure-winner-mode ()
   (winner-mode))
 
 ;; Packages
 
-(use-package elscreen
-  :ensure t
-  :config (enzuru-configure-elscreen))
-
+(enzuru-configure-tab-bar-mode)
 (enzuru-configure-winner-mode)
 
 (provide 'enzuru-frames)
