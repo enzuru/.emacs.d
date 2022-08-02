@@ -3,8 +3,6 @@
 ;; Configuration
 
 (defun enzuru-configure-notmuch ()
-  (add-hook 'message-mode-hook 'flyspell-mode)
-  (add-hook 'mail-mode-hook 'flyspell-mode)
   (setq fill-column 72
         mail-user-agent 'message-user-agent
         message-auto-save-directory "~/mail/draft"
