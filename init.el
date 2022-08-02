@@ -32,6 +32,7 @@
 (require 'enzuru-server)
 (require 'enzuru-shell)
 (require 'enzuru-syntax-checking)
+(require 'enzuru-spelling)
 (require 'enzuru-uname)
 (require 'enzuru-undo)
 (require 'enzuru-remote)

@@ -11,6 +11,7 @@
 
 (use-package org
   :ensure t
+  :hook ((org-mode . flyspell-mode))
   :config (enzuru-configure-org))
 
 (provide 'enzuru-org)

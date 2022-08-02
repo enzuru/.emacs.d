@@ -10,6 +10,6 @@
 [submodule "local/omtose-phellack-theme"]
 	path = local/omtose-phellack-theme
 	url = git@github.com:franksn/omtose-phellack-theme.git
-[submodule "local/company-aspell"]
-	path = local/company-aspell
-	url = git@github.com:enzuru/company-aspell.git
+[submodule "local/company-spell"]
+	path = local/company-spell
+	url = git@github.com:enzuru/company-spell.git

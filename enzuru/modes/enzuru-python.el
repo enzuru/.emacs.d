@@ -8,7 +8,7 @@
 
 (defun enzuru-configure-company-anaconda ()
   (eval-after-load "company"
-    '(add-to-list 'company-backends 'company-anaconda))
+    (push 'company-anaconda company-backends))
   (add-hook 'python-mode-hook
             (lambda ()
               (set (make-local-variable 'compile-command)
