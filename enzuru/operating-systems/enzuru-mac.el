@@ -11,7 +11,7 @@
 (setq notmuch-command "~/.emacs.d/bin/notmuch")
 
 (set-face-attribute 'default nil
-                    :family "Menlo" :height 150 :weight 'normal)
+                    :family "Menlo" :height 140 :weight 'normal)
 (set-face-attribute 'variable-pitch nil
                     :family "Bookerly" :height 135 :weight 'normal)
 
