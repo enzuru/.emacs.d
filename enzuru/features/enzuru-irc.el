@@ -5,10 +5,10 @@
 (defun enzuru-configure-erc ()
   (setq erc-nick "enzuru"
         erc-user-full-name "enzu.ru"
+        erc-hide-list '("JOIN" "PART" "QUIT")
         erc-track-visibility nil
-        erc-track-exclude-types
-        '("JOIN" "NICK" "PART" "QUIT" "MODE"
-          "324" "329" "332" "333" "353" "477"))
+        erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+                                  "324" "329" "332" "333" "353" "477"))
 
   (defun enzuru-load-irc ()
     (interactive)
@@ -30,8 +30,7 @@
 (use-package erc-hl-nicks
   :ensure t
   :after erc
-  :config
-  (add-to-list 'erc-modules 'hl-nicks))
+  :config (add-to-list 'erc-modules 'hl-nicks))
 
 (use-package znc
   :ensure t
