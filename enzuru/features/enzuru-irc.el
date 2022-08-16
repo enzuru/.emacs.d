@@ -9,18 +9,15 @@
         erc-hide-timestamps t
         erc-track-visibility nil
         erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
-                                  "324" "329" "332" "333" "353" "477"))
-
-  (defun enzuru-load-irc ()
-    (interactive)
-    (setq erc-autojoin-channels-alist
-          '(("libera.chat" "#emacs" "#guix" "#guile" "#gnu")))
-    (erc :server "enzu.ru" :port "7000" :nick "enzuru/Libera" :password "enzuru/Libera:password")))
+                                  "324" "329" "332" "333" "353" "477")))
 
 (defun enzuru-configure-znc ()
   (setq znc-servers
-        '(("enzu.ru" 7000 nil
-           ((Libera "enzuru" "password"))))))
+        '(
+          ("enzu.ru" 7000 nil ((Libera "enzuru/Libera" "password")
+                               (Sorcery "enzuru/Sorcery" "password")
+                               (IRCnet "enzuru/IRCnet" "password")
+                               (OFTC "enzuru/OFTC" "password"))))))
 
 ;; Packages
 
