@@ -17,6 +17,7 @@
           ("enzu.ru" 7000 nil ((Libera "enzuru/Libera" "password")
                                (Sorcery "enzuru/Sorcery" "password")
                                (IRCnet "enzuru/IRCnet" "password")
+                               (DarkMyst "enzuru/DarkMyst" "password")
                                (OFTC "enzuru/OFTC" "password"))))))
 
 ;; Packages
