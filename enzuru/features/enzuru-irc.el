@@ -12,12 +12,15 @@
                                   "324" "329" "332" "333" "353" "477")))
 
 (defun enzuru-configure-znc ()
-  (setq znc-servers
+  (setq znc-detach-on-kill nil
+        znc-servers
         '(
           ("enzu.ru" 7000 nil ((Libera "enzuru/Libera" "password")
                                (Sorcery "enzuru/Sorcery" "password")
                                (IRCnet "enzuru/IRCnet" "password")
                                (DarkMyst "enzuru/DarkMyst" "password")
+                               (EFnet "enzuru/EFnet" "password")
+                               (Darknet "enzuru/Darknet" "password")
                                (OFTC "enzuru/OFTC" "password"))))))
 
 ;; Packages
