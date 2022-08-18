@@ -14,6 +14,7 @@
 ;; Features
 
 (require 'enzuru-autocompletion)
+(require 'enzuru-gemini)
 (require 'enzuru-browser)
 (require 'enzuru-dashboard)
 (require 'enzuru-debugger)
