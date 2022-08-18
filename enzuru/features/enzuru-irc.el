@@ -16,12 +16,11 @@
         znc-servers
         '(
           ("enzu.ru" 7000 nil ((Libera "enzuru/Libera" "password")
-                               (Sorcery "enzuru/Sorcery" "password")
+                               (OFTC "enzuru/OFTC" "password")
                                (IRCnet "enzuru/IRCnet" "password")
+                               (Sorcery "enzuru/Sorcery" "password")
                                (DarkMyst "enzuru/DarkMyst" "password")
-                               (EFnet "enzuru/EFnet" "password")
-                               (Darknet "enzuru/Darknet" "password")
-                               (OFTC "enzuru/OFTC" "password"))))))
+                               (Darknet "enzuru/Darknet" "password"))))))
 
 ;; Packages
 
