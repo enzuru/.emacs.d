@@ -21,6 +21,10 @@
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
+(defun swiper-all-buffer-p (buffer)
+  (with-current-buffer buffer
+    (not (eq major-mode 'minibuffer-inactive-mode))))
+
 ;; Packages
 
 (use-package ccls
@@ -43,7 +47,8 @@
          ("C-x l" . counsel-locate)
          ("C-y" . counsel-yank-pop)
          ("C-x C-m" . counsel-M-x)
-         ("C-x C-c" . counsel-ag)))
+         ("C-x C-c" . counsel-ag)
+         ("C-x C-z" . swiper-all)))
 
 (use-package lsp-mode
   :ensure t

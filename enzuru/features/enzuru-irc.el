@@ -5,7 +5,7 @@
 (defun enzuru-configure-erc ()
   (setq erc-nick "enzuru"
         erc-user-full-name "enzu.ru"
-        erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329")
+        erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306")
         erc-hide-timestamps t
         erc-track-visibility nil
         erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
