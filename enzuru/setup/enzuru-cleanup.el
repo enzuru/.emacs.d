@@ -1,7 +1,7 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
 (require 'midnight)
-(midnight-delay-set 'midnight-delay "4:30am")
+(midnight-delay-set 'midnight-delay "8:00pm")
 
 ;;  Configuration
 
