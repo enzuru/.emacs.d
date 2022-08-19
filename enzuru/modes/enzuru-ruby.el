@@ -45,9 +45,11 @@
 
 (use-package robe
   :hook (enh-ruby-mode-hook . robe-mode)
+  :diminish robe-mode
   :ensure t)
 
 (use-package ruby-refactor
+  :diminish ruby-refactor-mode
   :hook (enh-ruby-mode-hook . ruby-refactor-mode-launch)
   :ensure t)
 
@@ -57,6 +59,7 @@
 
 (use-package yard-mode
   :hook (enh-ruby-mode-hook . yard-mode)
+  :diminish yard-mode
   :ensure t)
 
 (provide 'enzuru-ruby)

@@ -32,7 +32,7 @@
                (cl-pushnew root-dir* geiser-guile-load-path :test #'string-equal))))
      (eval setq-local guix-directory
            (locate-dominating-file default-directory ".dir-locals.el"))))
- '(tab-bar-show nil))
+ '(tab-bar-show 1))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

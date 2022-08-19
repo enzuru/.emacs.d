@@ -32,6 +32,7 @@
 
 (use-package company
   :ensure t
+  :diminish company-mode
   :config (enzuru-configure-company))
 
 ;; (use-package company-lsp
@@ -40,6 +41,7 @@
 
 (use-package counsel
   :ensure t
+  :diminish counsel-mode
   :bind (("C-h b" . counsel-descbinds)
          ("C-h f" . counsel-describe-function)
          ("C-h v" . counsel-describe-variable)
@@ -70,6 +72,7 @@
 
 (use-package ivy
   :ensure t
+  :diminish ivy-mode
   :bind ((("C-x b" . 'ivy-switch-buffer))
          (("C-x C-b" . 'ivy-switch-buffer)))
   :config (enzuru-configure-ivy))

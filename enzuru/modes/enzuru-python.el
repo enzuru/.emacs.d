@@ -44,6 +44,7 @@
 
 (use-package importmagic
   :ensure t
+  :diminish importmagic
   :hook ((python-mode . importmagic-mode))
   :config (enzuru-configure-importmagic))
 

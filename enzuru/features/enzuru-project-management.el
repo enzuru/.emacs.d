@@ -10,6 +10,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish projectile-mode
   :config (enzuru-configure-projectile))
 
 (provide 'enzuru-project-management)

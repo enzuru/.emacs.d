@@ -18,6 +18,7 @@
 (require 'enzuru-browser)
 (require 'enzuru-dashboard)
 (require 'enzuru-debugger)
+(require 'enzuru-desktop)
 (require 'enzuru-documentation)
 (require 'enzuru-elisp)
 (require 'enzuru-file-management)

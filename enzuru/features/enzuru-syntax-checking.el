@@ -11,6 +11,7 @@
 
 (use-package flycheck
   :ensure t
+  :diminish flycheck-mode
   :config (enzuru-configure-flycheck))
 
 (provide 'enzuru-syntax-checking)

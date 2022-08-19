@@ -8,6 +8,7 @@
         erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306")
         erc-hide-timestamps t
         erc-track-visibility nil
+        erc-join-buffer 'bury
         erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                   "324" "329" "332" "333" "353" "477")))
 

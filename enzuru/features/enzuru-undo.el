@@ -7,6 +7,7 @@
 
 (use-package undo-tree
   :ensure t
+  :diminish undo-tree-mode
   :config (enzuru-configure-undo-tree))
 
 (provide 'enzuru-undo)

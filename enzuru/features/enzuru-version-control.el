@@ -9,6 +9,7 @@
 
 (use-package magit
   :ensure t
+  :diminish magit-auto-revert-mode
   :bind (("C-c s" . magit-status)
          ("C-c C-p" . magit-push-current-to-upstream))
   :config (enzuru-configure-magit))
