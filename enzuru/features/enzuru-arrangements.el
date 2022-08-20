@@ -43,7 +43,7 @@
   (enzuru-setup-tab "Role-playing" "#DarkMyst" "#rpg-hub")
   (enzuru-setup-tab "Demoscene" "#demoscene" "#c-64")
   (enzuru-setup-tab "Anime" "#news" "#chat" "#truth" "#rice")
-  (enzuru-setup-tab "Alternative" "#square" "#rpg-hub")
+  (enzuru-setup-tab "Alternative" "#square")
   (enzuru-setup-tab "GNU" "#gnu" "#gnu-linux-libre" "#guix" "#guile")
   (enzuru-setup-tab "Emacs" "#emacs" "#exwm" "#lispgames" "#gnustep")
   (enzuru-setup-tab "Lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")
