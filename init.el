@@ -114,5 +114,5 @@
 
 ;; Local customization
 
-(if (file-exists-p "~/.emacs.d/local.lisp")
-    (load "~/.emacs.d/local.lisp"))
+(if (file-exists-p "~/.emacs.d/local.el")
+    (load "~/.emacs.d/local.el"))
