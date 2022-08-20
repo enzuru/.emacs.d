@@ -20,6 +20,4 @@
 (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 (setq ns-use-native-fullscreen t)
 
-(enzuru-arrange-social)
-
 (provide 'enzuru-mac)

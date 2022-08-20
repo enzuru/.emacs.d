@@ -111,3 +111,8 @@
     (require 'enzuru-openbsd))
 (if (eq system-type 'windows-nt)
     (require 'enzuru-windows))
+
+;; Local customization
+
+(if (file-exists-p "~/.emacs.d/local.lisp")
+    (load "~/.emacs.d/local.lisp"))

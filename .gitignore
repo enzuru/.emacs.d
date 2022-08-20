@@ -32,3 +32,4 @@ transient/
 bookmarks
 eln-cache/
 elpa/
+local.lisp
