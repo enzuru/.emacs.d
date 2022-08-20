@@ -49,7 +49,6 @@
 (require 'enzuru-css)
 (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
-(require 'enzuru-docker)
 (require 'enzuru-emacs-lisp)
 (require 'enzuru-epub)
 (require 'enzuru-feature)

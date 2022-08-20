@@ -1,5 +1,7 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+(require 'enzuru-docker)
+
 ;; Functions
 
 (defun enzuru-setup-desktop ()

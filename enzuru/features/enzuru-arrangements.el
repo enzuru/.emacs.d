@@ -57,6 +57,6 @@
   (tab-bar-rename-tab "tmp")
   (notmuch)
   (znc-all)
-  (run-at-time "5 sec" nil 'enzuru-arrange-social-tabs))
+  (run-at-time "10 sec" nil 'enzuru-arrange-social-tabs))
 
 (provide 'enzuru-arrangements)
