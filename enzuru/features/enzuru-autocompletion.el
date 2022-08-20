@@ -21,9 +21,10 @@
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
-(defun swiper-all-buffer-p (buffer)
-  (with-current-buffer buffer
-    (not (eq major-mode 'minibuffer-inactive-mode))))
+(defun enzuru-configure-swiper ()
+  (defun swiper-all-buffer-p (buffer)
+    (with-current-buffer buffer
+      (not (eq major-mode 'minibuffer-inactive-mode)))))
 
 ;; Packages
 
@@ -83,6 +84,7 @@
 
 (use-package swiper
   :ensure t
+  :config (enzuru-configure-swiper)
   :bind ((("C-s" . 'swiper-isearch))))
 
 (provide 'enzuru-autocompletion)
