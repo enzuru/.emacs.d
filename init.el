@@ -99,7 +99,7 @@
 (require 'enzuru-shutdown)
 (require 'enzuru-skin)
 
-;; Operating systems                       Needs work (as does enzuru-window-manager.el)
+;; Operating systems
 
 (if (eq system-type 'gnu/linux)
     (require 'enzuru-linux))
