@@ -5,7 +5,7 @@
 (scroll-bar-mode -1)
 
 (if (eq system-type 'darwin)
-    (require 'enzuru-exotica))
+    (require 'enzuru-gotham))
 (if (eq system-type 'windows-nt)
     (require 'enzuru-arjen-grey))
 (if (eq (enzuru-uname) 'FreeBSD)
