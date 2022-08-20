@@ -1,5 +1,9 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+;; Text management
+
+(global-set-key (kbd "C-q") 'copy-region-as-kill)
+
 ;; Arrow keys for movement and buffer management
 
 (global-set-key (kbd "C-<up>") 'backward-paragraph)              ;; C-<up>(buffer)

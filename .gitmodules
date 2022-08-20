@@ -13,3 +13,6 @@
 [submodule "local/company-spell"]
 	path = local/company-spell
 	url = git@github.com:enzuru/company-spell.git
+[submodule "local/counsel-tabs"]
+	path = local/counsel-tabs
+	url = git@github.com:enzuru/counsel-tabs.git
