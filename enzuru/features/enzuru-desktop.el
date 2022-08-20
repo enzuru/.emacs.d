@@ -2,6 +2,6 @@
 
 ;; Configuration
 
-(desktop-save-mode)
+;; (desktop-save-mode)
 
 (provide 'enzuru-desktop)

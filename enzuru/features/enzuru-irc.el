@@ -3,6 +3,9 @@
 ;; Configuration
 
 (defun enzuru-configure-erc ()
+  (add-to-list 'erc-modules 'completion)
+  (add-to-list 'erc-modules 'notifications)
+  (add-to-list 'erc-modules 'spelling)
   (setq erc-nick "enzuru"
         erc-user-full-name "enzu.ru"
         erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306")

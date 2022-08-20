@@ -3,7 +3,8 @@
 ;; Configuration
 
 (defun enzuru-configure-org ()
-  (setq org-log-done t
+  (setq org-agenda-files (directory-files "~/" t ".org$" t)
+        org-log-done t
         org-src-fontify-natively t
         org-startup-folded nil))
 

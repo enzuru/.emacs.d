@@ -12,7 +12,7 @@
   (global-set-key (kbd "C-z k") 'tab-bar-close-tab))
 
 (defun enzuru-configure-winner-mode ()
-  (winner-mode))
+  (winner-mode 1))
 
 ;; Packages
 

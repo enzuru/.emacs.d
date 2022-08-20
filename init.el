@@ -13,6 +13,7 @@
 
 ;; Features
 
+(require 'enzuru-arrangements)
 (require 'enzuru-autocompletion)
 (require 'enzuru-gemini)
 (require 'enzuru-browser)
@@ -30,6 +31,7 @@
 (require 'enzuru-movement)
 (require 'enzuru-music)
 (require 'enzuru-project-management)
+(require 'enzuru-scratch)
 (require 'enzuru-search)
 (require 'enzuru-server)
 (require 'enzuru-shell)
@@ -93,8 +95,8 @@
 
 ;; Final setup
 
-(require 'enzuru-cleanup)               ;; Needs work
-(require 'enzuru-keys)                  ;; Needs work
+(require 'enzuru-cleanup)
+(require 'enzuru-keys)
 (require 'enzuru-shutdown)
 (require 'enzuru-skin)
 

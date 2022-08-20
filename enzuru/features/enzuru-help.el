@@ -2,6 +2,6 @@
 
 (use-package which-key
   :ensure t
-  :diminish :which-key-mode)
+  :diminish which-key-mode)
 
 (provide 'enzuru-help)

@@ -9,8 +9,10 @@
 ;; Hooks
 
 (add-hook 'emacs-lisp-mode-hook
-          (define-key emacs-lisp-mode-map (kbd "C-x C-d") 'enzuru-elisp-documentation-search)
-          (define-key emacs-lisp-mode-map (kbd "C-x C-w") 'find-function-at-point)
-          (define-key emacs-lisp-mode-map (kbd "C-x c") 'eval-buffer))
+	        (lambda ()
+            (company-mode)
+            (define-key emacs-lisp-mode-map (kbd "C-x C-d") 'enzuru-elisp-documentation-search)
+            (define-key emacs-lisp-mode-map (kbd "C-x C-w") 'find-function-at-point)
+            (define-key emacs-lisp-mode-map (kbd "C-x c") 'eval-buffer)))
 
 (provide 'enzuru-emacs-lisp)
