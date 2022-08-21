@@ -18,12 +18,12 @@
   (setq znc-detach-on-kill nil
         znc-servers
         '(
-          ("enzu.ru" 7000 nil ((Libera "enzuru/Libera" "password")
-                               (OFTC "enzuru/OFTC" "password")
-                               (IRCnet "enzuru/IRCnet" "password")
-                               (Sorcery "enzuru/Sorcery" "password")
-                               (DarkMyst "enzuru/DarkMyst" "password")
-                               (Darknet "enzuru/Darknet" "password"))))))
+          ("enzu.ru" 7001 t ((Libera "enzuru/Libera" "password")
+                             (OFTC "enzuru/OFTC" "password")
+                             (IRCnet "enzuru/IRCnet" "password")
+                             (Sorcery "enzuru/Sorcery" "password")
+                             (DarkMyst "enzuru/DarkMyst" "password")
+                             (QuakeNet "enzuru/QuakeNet" "password"))))))
 
 ;; Packages
 
