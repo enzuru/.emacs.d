@@ -18,7 +18,8 @@
   (setq znc-detach-on-kill nil
         znc-servers
         '(
-          ("enzu.ru" 7001 t ((Libera "enzuru/Libera" "password")
+          ("enzu.ru" 7001 t ((darkscience "enzuru/darkscience" "password")
+                             (Libera "enzuru/Libera" "password")
                              (OFTC "enzuru/OFTC" "password")
                              (IRCnet "enzuru/IRCnet" "password")
                              (Sorcery "enzuru/Sorcery" "password")
