@@ -3,7 +3,6 @@
 (require 'enzuru-dash)
 
 (setq mac-command-modifier 'control)
-(setq racer-rust-src-path "~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/")
 (setq locate-command "mdfind")
 (setq locate-make-command-line
       (lambda (ss) (list locate-command "-name" ss)))

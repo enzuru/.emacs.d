@@ -6,6 +6,4 @@
 (set-face-attribute 'variable-pitch nil
                     :family "Bookerly" :height 150 :weight 'normal)
 
-(load-theme 'almost-mono-black t)
-
 (provide 'enzuru-windows)
