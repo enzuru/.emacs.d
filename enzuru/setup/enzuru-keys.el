@@ -2,7 +2,7 @@
 
 ;; Text management
 
-(global-set-key (kbd "C-q") 'copy-region-as-kill)
+(global-set-key (kbd "C-q") 'copy-region-as-kill)                ;; C-q(opy)
 
 ;; Arrow keys for movement and buffer management
 
