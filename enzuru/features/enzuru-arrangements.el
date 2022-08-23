@@ -49,7 +49,7 @@
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans")
 
   (tab-bar-close-tab-by-name "tmp")
-  (tab-bar-select-tab-by-name "Hacking"))
+  (tab-bar-select-tab-by-name "hacking"))
 
 (defun enzuru-arrange-social ()
   (interactive)
