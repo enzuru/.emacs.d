@@ -16,3 +16,6 @@
 [submodule "local/counsel-tabs"]
 	path = local/counsel-tabs
 	url = git@github.com:enzuru/counsel-tabs.git
+[submodule "local/mu"]
+	path = local/mu
+	url = git@github.com:kensanata/mu.git

@@ -23,6 +23,7 @@
 (require 'enzuru-documentation)
 (require 'enzuru-elisp)
 (require 'enzuru-file-management)
+(require 'enzuru-gaming)
 (require 'enzuru-help)
 (require 'enzuru-hyperlinking)
 (require 'enzuru-irc)
