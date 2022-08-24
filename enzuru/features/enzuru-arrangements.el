@@ -41,7 +41,7 @@
   (enzuru-setup-tab "chat" "#darkscience" "*irc-darkscience*")
   (enzuru-setup-tab "feminism" "#witches" "#square" "##feminism")
   (enzuru-setup-tab "security" "#openbsd" "#tor" "#bitcoin" "#ircv3")
-  (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#dataclaw")
+  (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
   (enzuru-setup-tab "demoscene" "#demoscene" "#c-64")
   (enzuru-setup-tab "gnu" "#gnu" "#gnu-linux-libre" "#guix" "#guile")
   (enzuru-setup-tab "emacs" "#emacs" "#exwm" "#lispgames" "#gnustep")
