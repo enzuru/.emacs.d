@@ -1,3 +1,5 @@
+;; -*- coding: utf-8; lexical-binding: t -*-
+
 ;; Configuration
 
 (defun enzuru-configure-eww ()

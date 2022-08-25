@@ -36,6 +36,7 @@
   (interactive)
 
   (enzuru-setup-tab "hacking" "*dashboard*")
+  (enzuru-setup-tab "music" "*EMMS Playlist*")
   (enzuru-setup-tab "mail" "*notmuch-hello*")
   (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading")
   (enzuru-setup-tab "chat" "#darkscience" "*irc-darkscience*")
@@ -55,10 +56,17 @@
 
 (defun enzuru-run-apps ()
   (interactive)
+  ;; Music
+  (emms-play-directory "/scp:enzuru@enzu.ru:/home/enzuru/music/Nala Sinephro - Space 1.8/")
+  ;; IRC
   (znc-all)
+  ;; Email
   (notmuch)
+  ;; Gemini
   (elpher)
-  (mu-open ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"]))
+  ;;  MUD
+  (mu-open
+   ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"]))
 
 (defun enzuru-arrange-social ()
   (interactive)
