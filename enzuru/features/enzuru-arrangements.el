@@ -32,7 +32,7 @@
           (split-window-vertically)
           (switch-to-buffer four)))))
 
-(defun enzuru-arrange-social-tabs ()
+(defun enzuru-arrange-tabs ()
   (interactive)
 
   (enzuru-setup-tab "hacking" "*dashboard*")
@@ -57,7 +57,7 @@
 (defun enzuru-run-apps ()
   (interactive)
   ;; Music
-  (emms-play-directory "/scp:enzuru@enzu.ru:/home/enzuru/music/Nala Sinephro - Space 1.8/")
+  ;; (emms-play-directory "/sftp:enzuru@enzu.ru:/home/enzuru/music/Nala Sinephro - Space 1.8")
   ;; IRC
   (znc-all)
   ;; Email
@@ -72,6 +72,6 @@
   (interactive)
   (tab-bar-rename-tab "tmp")
   (enzuru-run-apps)
-  (run-at-time "10 sec" nil 'enzuru-arrange-social-tabs))
+  (run-at-time "10 sec" nil 'enzuru-arrange-tabs))
 
 (provide 'enzuru-arrangements)
