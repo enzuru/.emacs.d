@@ -15,7 +15,6 @@
 
 (require 'enzuru-arrangements)
 (require 'enzuru-autocompletion)
-(require 'enzuru-gemini)
 (require 'enzuru-browser)
 (require 'enzuru-dashboard)
 (require 'enzuru-debugger)
@@ -24,6 +23,7 @@
 (require 'enzuru-elisp)
 (require 'enzuru-file-management)
 (require 'enzuru-gaming)
+(require 'enzuru-gemini)
 (require 'enzuru-help)
 (require 'enzuru-hyperlinking)
 (require 'enzuru-irc)
