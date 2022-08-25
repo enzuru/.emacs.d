@@ -48,6 +48,7 @@
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans")
   (enzuru-setup-tab "gaming" "*Input for guest@SquareSoft*" "*guest@SquareSoft*")
+  (enzuru-setup-tab "gemini" "*elpher*")
 
   (tab-bar-close-tab-by-name "tmp")
   (tab-bar-select-tab-by-name "hacking"))
@@ -57,6 +58,7 @@
   (tab-bar-rename-tab "tmp")
   (notmuch)
   (znc-all)
+  (elpher)
   (mu-open ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"])
   (run-at-time "10 sec" nil 'enzuru-arrange-social-tabs))
 
