@@ -7,4 +7,4 @@
   :bind (:map emacs-lisp-mode-map
               ("C-x c" . eval-buffer)))
 
-(provide 'enzuru-elisp)
+(provide 'enzuru-benchmarks)
