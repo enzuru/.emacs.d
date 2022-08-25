@@ -53,13 +53,17 @@
   (tab-bar-close-tab-by-name "tmp")
   (tab-bar-select-tab-by-name "hacking"))
 
+(defun enzuru-run-apps ()
+  (interactive)
+  (znc-all)
+  (notmuch)
+  (elpher)
+  (mu-open ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"]))
+
 (defun enzuru-arrange-social ()
   (interactive)
   (tab-bar-rename-tab "tmp")
-  (notmuch)
-  (znc-all)
-  (elpher)
-  (mu-open ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"])
+  (enzuru-run-apps)
   (run-at-time "10 sec" nil 'enzuru-arrange-social-tabs))
 
 (provide 'enzuru-arrangements)
