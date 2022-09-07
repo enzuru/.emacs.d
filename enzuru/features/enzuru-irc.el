@@ -22,7 +22,6 @@
                              (Libera "enzuru/Libera" "password")
                              (OFTC "enzuru/OFTC" "password")
                              (IRCnet "enzuru/IRCnet" "password")
-                             (Sorcery "enzuru/Sorcery" "password")
                              (DarkMyst "enzuru/DarkMyst" "password")
                              (QuakeNet "enzuru/QuakeNet" "password"))))))
 

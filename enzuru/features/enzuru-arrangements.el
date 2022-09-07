@@ -40,7 +40,7 @@
   (enzuru-setup-tab "mail" "*notmuch-hello*")
   (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading")
   (enzuru-setup-tab "chat" "#darkscience" "*irc-darkscience*")
-  (enzuru-setup-tab "feminism" "#witches" "#square" "##feminism")
+  (enzuru-setup-tab "feminism" "##feminism")
   (enzuru-setup-tab "security" "#openbsd" "#tor" "#bitcoin" "#ircv3")
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
   (enzuru-setup-tab "demoscene" "#demoscene" "#c-64")
