@@ -26,4 +26,4 @@ Happy hacking!
 
 # License
 
-Licensed under the GPLv3; copyright is assigned to the nonprofit Salma Karama, LLC
+Licensed under the GPLv3; copyright is assigned to my eponymous nonprofit [enzu.ru](https://enzu.ru)
