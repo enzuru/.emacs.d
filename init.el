@@ -37,6 +37,7 @@
 (require 'enzuru-shell)
 (require 'enzuru-syntax-checking)
 (require 'enzuru-spelling)
+(require 'enzuru-studying)
 (require 'enzuru-uname)
 (require 'enzuru-undo)
 (require 'enzuru-remote)

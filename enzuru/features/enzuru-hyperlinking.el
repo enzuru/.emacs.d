@@ -14,4 +14,6 @@
          ("\\.org$" . org-mode))
   :config (enzuru-configure-hyperbole))
 
+(enzuru-configure-hyperbole)
+
 (provide 'enzuru-hyperlinking)
