@@ -36,7 +36,7 @@
   (interactive)
 
   (enzuru-setup-tab "hacking" "*dashboard*")
-  (enzuru-setup-tab "music" "*EMMS Playlist*")
+  (enzuru-setup-tab "music" "*pianobar*")
   (enzuru-setup-tab "mail" "*notmuch-hello*")
   (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading")
   (enzuru-setup-tab "chat" "#darkscience" "*irc-darkscience*")
@@ -58,6 +58,7 @@
   (interactive)
   ;; Music
   ;; (emms-play-directory "/sftp:enzuru@enzu.ru:/home/enzuru/music/Nala Sinephro - Space 1.8")
+  (pianobar)
   ;; IRC
   (znc-all)
   ;; Email
