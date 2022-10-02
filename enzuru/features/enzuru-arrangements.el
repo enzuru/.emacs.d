@@ -39,7 +39,7 @@
   (enzuru-setup-tab "music" "*pianobar*")
   (enzuru-setup-tab "mail" "*notmuch-hello*")
   (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading")
-  (enzuru-setup-tab "chat" "#darkscience" "*irc-darkscience*")
+  (enzuru-setup-tab "chat" "*irc-darkscience*" "#darkscience")
   (enzuru-setup-tab "feminism" "*irc-Libera*" "##feminism")
   (enzuru-setup-tab "security" "#openbsd" "#tor" "#bitcoin" "#ircv3")
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
