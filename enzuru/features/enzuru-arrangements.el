@@ -73,6 +73,6 @@
   (interactive)
   (tab-bar-rename-tab "tmp")
   (enzuru-run-apps)
-  (run-at-time "30 sec" nil 'enzuru-arrange-tabs))
+  (run-at-time "120 sec" nil 'enzuru-arrange-tabs))
 
 (provide 'enzuru-arrangements)
