@@ -19,3 +19,6 @@
 [submodule "local/mu"]
 	path = local/mu
 	url = git@github.com:kensanata/mu.git
+[submodule "local/sly-repl-ansi-color"]
+	path = local/sly-repl-ansi-color
+	url = git@github.com:PuercoPop/sly-repl-ansi-color.git
