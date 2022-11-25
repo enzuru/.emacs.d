@@ -3,8 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-hyperbole ()
-  (interactive)
-  (hyperb:init))
+  (hyperb:init-menubar))
 
 ;; Packages
 
