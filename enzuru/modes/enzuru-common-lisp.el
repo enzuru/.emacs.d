@@ -11,6 +11,9 @@
 
 ;; Packages
 
+(use-package glue
+  :ensure t)
+
 (use-package sly
   :ensure t
   :config (enzuru-configure-sly)
