@@ -25,7 +25,8 @@
 
 (setq locate-command "locate -d /home/enzuru/locatedb.n")
 (setq ccls-executable "ccls")
-(setq browse-url-browser-function 'browse-url-emacs)
+(setq browse-url-browser-function 'eww-browse-url)
+
 (setq inferior-lisp-program "sbcl")
 (setq multi-term-program "fish")
 
