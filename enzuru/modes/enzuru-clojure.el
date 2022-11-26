@@ -10,6 +10,9 @@
 (use-package clojure-mode
   :ensure t)
 
+(use-package clojure-snippets
+  :ensure t)
+
 (use-package flycheck-clojure
   :ensure t)
 

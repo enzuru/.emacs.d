@@ -16,4 +16,7 @@
   :ensure t
   :config (enzuru-configure-haskell-mode))
 
+(use-package haskell-snippets
+  :ensure t)
+
 (provide 'enzuru-haskell)

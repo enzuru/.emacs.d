@@ -14,6 +14,9 @@
 (use-package glue
   :ensure t)
 
+(use-package common-lisp-snippets
+  :ensure t)
+
 (use-package sly
   :ensure t
   :config (enzuru-configure-sly)

@@ -43,6 +43,7 @@
 (require 'enzuru-remote)
 (require 'enzuru-version-control)
 (require 'enzuru-writing)
+(require 'enzuru-snippets)
 
 ;; Modes
 
