@@ -12,7 +12,7 @@ When I was starting off with GNU Emacs, other people's customizations were deepl
 
 Everything is very organized in the `enzuru` folder by feature, mode, preference, setup, operating system, and theme. While this repo should work immediately for you on a `git pull`, it's obviously a very personalized setup and many things won't appeal to you. If I were you, I would first take a look at my `init.el` and then pick a topical elisp file from there.
 
-At the foundation of my package management strategy is [straight.el](https://github.com/radian-software/straight.el) and [use-package](https://github.com/radian-software/straight.el).
+At the foundation of my package management strategy is [use-package](https://github.com/jwiegley/use-package) and [straight.el](https://github.com/radian-software/straight.el).
 
 Happy hacking!
 
