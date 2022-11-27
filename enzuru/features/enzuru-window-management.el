@@ -1,5 +1,7 @@
-(add-to-list 'load-path "~/.emacs.d/local/xelb")
-(add-to-list 'load-path "~/.emacs.d/local/exwm")
+;; -*- coding: utf-8; lexical-binding: t -*-
+
+(straight-use-package '(xelb :type git :host github :repo "ch11ng/xelb"))
+(straight-use-package '(exwm :type git :host github :repo "ch11ng/exwm"))
 
 (require 'xcb)
 (require 'exwm-config)
@@ -8,11 +10,6 @@
 (add-hook 'exwm-update-class-hook
           (lambda ()
             (exwm-workspace-rename-buffer exwm-class-name)))
-
-;; (add-hook 'exwm-floating-setup-hook
-;;           (lambda ()
-;;             (exwm-floating-toggle-floating)
-;;             (split-window-vertically)))
 
 (setq exwm-input-global-keys
       `(
@@ -55,9 +52,6 @@
 (define-key exwm-mode-map (kbd "S-<left>") 'windmove-left)
 (define-key exwm-mode-map (kbd "S-<right>") 'windmove-right)
 (define-key exwm-mode-map (kbd "S-<down>") 'windmove-down)
-
-;; (setq exwm-workspace-minibuffer-position 'bottom)
-;; (exwm-systemtray-enable)
 
 (exwm-enable)
 (exwm-config-ido)

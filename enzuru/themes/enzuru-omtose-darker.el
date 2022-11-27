@@ -9,8 +9,8 @@
 
 ;; Packages
 
-(use-package omtose-phellack-theme
-  :load-path "local/omtose-phellack-theme"
-  :config (enzuru-configure-omtose-theme))
+(straight-use-package '(omtose-phellack-theme :type git :host github :repo "franksn/omtose-phellack-theme"))
+
+(enzuru-configure-omtose-theme)
 
 (provide 'enzuru-omtose-darker)

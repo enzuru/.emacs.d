@@ -3,7 +3,7 @@
 ;; Configuration
 
 (defun enzuru-load-mu ()
-  (add-to-list 'load-path "~/.emacs.d/local/mu")
+  (straight-use-package '(mu :type git :host github :repo "kensanata/mu"))
   (require 'mu)
   (autoload 'mu-open "mu" "Play on MUSHes and MUDs" t)
   (add-hook 'mu-connection-mode-hook 'ansi-color-for-comint-mode-on))

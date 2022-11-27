@@ -2,7 +2,7 @@
 
 ;; Directories
 
-(add-to-list 'load-path "~/.emacs.d/local/sly-repl-ansi-color")
+(straight-use-package '(sly-repl-ansi-color :type git :host github :repo "PuercoPop/sly-repl-ansi-color"))
 
 ;; Functions
 

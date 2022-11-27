@@ -35,3 +35,7 @@ bookmarks
 eln-cache/
 elpa/
 local.el
+straight/build
+straight/repos
+straight/modified
+straight/build-cache.el

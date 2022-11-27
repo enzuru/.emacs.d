@@ -3,7 +3,12 @@
 ;; Configuration
 
 (defun enzuru-load-company-spell ()
-  (add-to-list 'load-path "~/.emacs.d/local/company-spell")
+  (straight-use-package
+   '(company-spell
+     :type git
+     :host github
+     :repo "enzuru/company-spell"
+     :fork (:repo "enzuru/company-spell" :branch "async")))
   (require 'company-spell)
   (push 'company-spell company-backends))
 
@@ -12,9 +17,6 @@
   (add-to-list 'flycheck-checkers 'mail-aspell-dynamic))
 
 ;; Packages
-
-;; (use-package olivetti
-;;   :ensure t)
 
 (use-package flycheck-aspell
   :ensure t

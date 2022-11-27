@@ -33,7 +33,7 @@
      (eval setq-local guix-directory
            (locate-dominating-file default-directory ".dir-locals.el"))))
  '(tab-bar-show nil)
- '(warning-suppress-types '((comp))))
+ '(warning-suppress-types '((server) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

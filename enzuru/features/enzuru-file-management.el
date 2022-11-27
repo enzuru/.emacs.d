@@ -8,7 +8,13 @@
 ;;          ("C-x C-f" . 'sunrise-cd))
 ;;   :mode (("\\.srvm\\'" . sr-virtual-mode)))
 
-(add-to-list 'load-path "~/.emacs.d/local/sunrise-commander")
+(straight-use-package
+ '(sunrise-commander
+   :type git
+   :host github
+   :repo "sunrise-commander/sunrise-commander"
+   :fork (:repo "enzuru/sunrise-commander" :branch "attempting-to-stabilize")))
+
 (load-library "sunrise")
 (global-set-key (kbd "C-x C-f") 'sunrise-cd)
 
