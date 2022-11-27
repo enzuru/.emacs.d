@@ -14,7 +14,7 @@
   :ensure t
   :bind (:map scheme-mode-map
               ("C-x c" . geiser-load-current-buffer)
-              ("C-x d" . geiser-doc-symbol-at-point))
+              ("C-x C-d" . geiser-doc-symbol-at-point))
   :mode (("\\.scm$" . geiser-mode)
          ("\\.guile$" . geiser-mode)))
 

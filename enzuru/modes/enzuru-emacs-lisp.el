@@ -4,12 +4,12 @@
 
 (defun enzuru-elisp-documentation-search ()
   (interactive)
-  (elisp-index-search (thing-at-point 'symbol)))
+  (describe-symbol (intern (thing-at-point 'symbol))))
 
 ;; Hooks
 
 (add-hook 'emacs-lisp-mode-hook
-	        (lambda ()
+          (lambda ()
             (company-mode)
             (define-key emacs-lisp-mode-map (kbd "C-x C-d") 'enzuru-elisp-documentation-search)
             (define-key emacs-lisp-mode-map (kbd "C-x C-w") 'find-function-at-point)
