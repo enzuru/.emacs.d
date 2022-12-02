@@ -36,11 +36,11 @@
   (interactive)
 
   (enzuru-setup-tab "hacking" "*dashboard*")
-  (enzuru-setup-tab "music" "*pianobar*")
+  ;; (enzuru-setup-tab "music" "*pianobar*")
   (enzuru-setup-tab "mail" "*notmuch-hello*")
   (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading")
-  (enzuru-setup-tab "chat" "*irc-darkscience*" "#darkscience")
-  (enzuru-setup-tab "feminism" "*irc-Libera*" "##feminism")
+  (enzuru-setup-tab "chat" "darkscience" "#darkscience")
+  (enzuru-setup-tab "feminism" "Libera.Chat" "##feminism")
   (enzuru-setup-tab "security" "#openbsd" "#tor" "#bitcoin" "#ircv3")
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
   (enzuru-setup-tab "demoscene" "#demoscene" "#c-64")
@@ -48,7 +48,7 @@
   (enzuru-setup-tab "emacs" "#emacs" "#exwm" "#lispgames" "#gnustep")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans")
-  (enzuru-setup-tab "gaming" "*Input for guest@SquareSoft*" "*guest@SquareSoft*")
+  ;; (enzuru-setup-tab "gaming" "*Input for guest@SquareSoft*" "*guest@SquareSoft*")
   (enzuru-setup-tab "gemini" "*elpher*")
 
   (tab-bar-close-tab-by-name "tmp")
@@ -58,7 +58,7 @@
   (interactive)
   ;; Music
   ;; (emms-play-directory "/sftp:enzuru@enzu.ru:/home/enzuru/music/Nala Sinephro - Space 1.8")
-  (pianobar)
+  ;; (pianobar)
   ;; IRC
   (znc-all)
   ;; Email
@@ -66,8 +66,9 @@
   ;; Gemini
   (elpher)
   ;;  MUD
-  (mu-open
-   ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"]))
+  ;; (mu-open
+  ;;  ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"])
+  )
 
 (defun enzuru-arrange-social ()
   (interactive)
