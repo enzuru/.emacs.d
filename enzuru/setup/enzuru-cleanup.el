@@ -9,7 +9,10 @@
   (diminish 'abbrev-mode)
   (diminish 'auto-revert-mode)
   (diminish 'eldoc-mode)
-  
+  (diminish 'undo-tree-mode)
+  (diminish 'company-mode)
+  (diminish 'hyperbole-mode)
+
   (eval-after-load "hideshow" '(diminish 'hs-minor-mode)))
 
 ;; Packages
