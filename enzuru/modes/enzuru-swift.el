@@ -10,10 +10,12 @@
 ;; Packages
 
 (use-package flycheck-swiftx
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package swift-mode
   :ensure t
+  :defer t
   :config (enzuru-configure-swift-mode))
 
 (provide 'enzuru-swift)

@@ -4,16 +4,20 @@
 
 (use-package cider
   :ensure t
+  :defer t
   :bind (:map clojure-mode-map
               ("C-x c" . cider-eval-buffer)))
 
 (use-package clojure-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package clojure-snippets
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package flycheck-clojure
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-clojure)

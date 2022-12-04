@@ -12,6 +12,7 @@
 
 (use-package org
   :ensure t
+  :defer t
   :config (enzuru-configure-org))
 
 (provide 'enzuru-org)

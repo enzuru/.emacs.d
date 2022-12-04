@@ -4,7 +4,6 @@
 
 (use-package elisp-benchmarks
   :ensure t
-  :bind (:map emacs-lisp-mode-map
-              ("C-x c" . eval-buffer)))
+  :defer t)
 
 (provide 'enzuru-benchmarks)

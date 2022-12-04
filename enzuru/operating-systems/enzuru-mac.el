@@ -32,6 +32,7 @@
 
 (use-package osx-browse
   :ensure t
+  :defer t
   :config (enzuru-configure-osx-browse))
 
 (provide 'enzuru-mac)

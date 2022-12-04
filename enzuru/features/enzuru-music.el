@@ -17,10 +17,12 @@
 
 (use-package emms
   :ensure t
+  :defer t
   :config (enzuru-configure-emms))
 
 (use-package pianobar
   :ensure t
+  :defer t
   :config (enzuru-configure-pianobar))
 
 (provide 'enzuru-music)

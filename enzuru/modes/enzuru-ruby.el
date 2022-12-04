@@ -12,7 +12,7 @@
             (lambda ()
               (hs-minor-mode 1) ;; Enables folding
               (modify-syntax-entry ?: ".")))
-  
+
   (setq enh-ruby-deep-indent-paren nil)
   (setq rspec-use-rake-when-possible nil)
   (setq compilation-scroll-output 'first-error)
@@ -38,27 +38,33 @@
 
 (use-package inf-ruby
   :ensure t
+  :defer t
   :config (enzuru-configure-inf-ruby))
 
 (use-package projectile-rails
+  :defer t
   :ensure t)
 
 (use-package robe
   :hook (enh-ruby-mode-hook . robe-mode)
+  :defer t
   :diminish robe-mode
   :ensure t)
 
 (use-package ruby-refactor
   :diminish ruby-refactor-mode
+  :defer t
   :hook (enh-ruby-mode-hook . ruby-refactor-mode-launch)
   :ensure t)
 
 (use-package rvm
   :ensure t
+  :defer t
   :config (enzuru-configure-rvm))
 
 (use-package yard-mode
   :hook (enh-ruby-mode-hook . yard-mode)
+  :defer t
   :diminish yard-mode
   :ensure t)
 

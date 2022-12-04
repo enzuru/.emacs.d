@@ -10,6 +10,7 @@
 
 (use-package semantic
   :ensure t
+  :defer t
   :config (enzuru-configure-semantic))
 
 (provide 'enzuru-c)

@@ -3,9 +3,11 @@
 ;; Packages
 
 (use-package flycheck-golangci-lint
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package go-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-go)

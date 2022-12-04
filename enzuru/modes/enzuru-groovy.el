@@ -3,6 +3,7 @@
 ;; Packages
 
 (use-package groovy-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-groovy)

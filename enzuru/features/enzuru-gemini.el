@@ -3,6 +3,7 @@
 ;; Packages
 
 (use-package elpher
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-gemini)

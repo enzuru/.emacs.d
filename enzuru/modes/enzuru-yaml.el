@@ -9,6 +9,7 @@
 
 (use-package yaml-mode
   :ensure t
+  :defer t
   :config (enzuru-configure-yaml-mode))
 
 (provide 'enzuru-yaml)

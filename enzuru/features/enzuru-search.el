@@ -9,6 +9,7 @@
 
 (use-package dumb-jump
   :ensure t
+  :defer t
   :config (enzuru-configure-dumb-jump))
 
 (provide 'enzuru-search)

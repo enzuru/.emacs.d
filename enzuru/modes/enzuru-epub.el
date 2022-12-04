@@ -4,6 +4,7 @@
 
 (use-package nov
   :ensure t
+  :defer t
   :mode (("\\.epub\\'" . nov-mode)))
 
 (provide 'enzuru-epub)

@@ -3,9 +3,11 @@
 ;; Packages
 
 (use-package fish-completion
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package fish-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-fish)

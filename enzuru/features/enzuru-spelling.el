@@ -20,6 +20,7 @@
 
 (use-package flycheck-aspell
   :ensure t
+  :defer t
   :config (enzuru-configure-flycheck-aspell))
 
 (enzuru-load-company-spell)

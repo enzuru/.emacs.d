@@ -19,15 +19,18 @@
 
 (use-package eshell
   :ensure t
+  :defer t
   :bind (("C-c e" . eshell))
   :config (enzuru-configure-eshell))
 
 (use-package multi-term
   :ensure t
+  :defer t
   :config (enzuru-configure-multi-term))
 
 (use-package shell
   :ensure t
+  :defer t
   :config (enzuru-configure-shell))
 
 ;; Functions

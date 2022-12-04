@@ -12,10 +12,12 @@
 ;; Packages
 
 (use-package glue
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package common-lisp-snippets
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package sly
   :ensure t
@@ -26,6 +28,7 @@
               ("C-x c" . sly-eval-buffer)))
 
 (use-package sly-quicklisp
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-common-lisp)

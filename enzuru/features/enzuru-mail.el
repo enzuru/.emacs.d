@@ -22,6 +22,7 @@
 
 (use-package notmuch
   :ensure t
+  :defer t
   :config (enzuru-configure-notmuch))
 
 (provide 'enzuru-mail)

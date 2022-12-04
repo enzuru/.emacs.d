@@ -3,9 +3,11 @@
 ;; Packages
 
 (use-package kubernetes
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package kubernetes-tramp
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-kubernetes)

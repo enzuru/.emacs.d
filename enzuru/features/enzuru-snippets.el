@@ -9,6 +9,7 @@
 
 (use-package yasnippet
   :ensure t
+  :defer t
   :diminish (yas-global-mode yas-minor-mode)
   :config (enzuru-configure-yasnippet))
 

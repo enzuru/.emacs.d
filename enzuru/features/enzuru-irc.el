@@ -38,6 +38,7 @@
 
 (use-package znc
   :ensure t
+  :after erc
   :config (enzuru-configure-znc))
 
 (provide 'enzuru-irc)

@@ -8,7 +8,8 @@
 ;; Packages
 
 (use-package flycheck-guile
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package geiser
   :ensure t
@@ -20,10 +21,12 @@
 
 (use-package geiser-guile
   :ensure t
+  :defer t
   :config (enzuru-configure-geiser-guile))
 
 (use-package scheme
   :ensure t
+  :defer t
   :mode (("\\.scm$" . scheme-mode)
          ("\\.guile$" . scheme-mode)))
 

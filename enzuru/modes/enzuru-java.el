@@ -3,6 +3,7 @@
 ;; Packages
 
 (use-package lsp-java
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-java)

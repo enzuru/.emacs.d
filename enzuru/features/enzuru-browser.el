@@ -13,6 +13,7 @@
 
 (use-package eww
   :ensure t
+  :defer t
   :config (enzuru-configure-eww))
 
 (provide 'enzuru-browser)

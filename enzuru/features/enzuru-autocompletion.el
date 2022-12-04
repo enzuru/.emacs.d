@@ -29,10 +29,12 @@
 ;; Packages
 
 (use-package ccls
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package company
   :ensure t
+  :defer t
   :diminish company-mode
   :config (enzuru-configure-company))
 
@@ -60,7 +62,8 @@
          (objc-mode . lsp)))
 
 (use-package lsp-ivy
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package lsp-ui
   :bind (:map java-mode-map
@@ -80,6 +83,7 @@
 
 (use-package ivy-xref
   :ensure t
+  :defer t
   :config (enzuru-configure-ivy-xref))
 
 (use-package swiper

@@ -3,9 +3,11 @@
 ;; Packages
 
 (use-package company-terraform
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package terraform-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-terraform)

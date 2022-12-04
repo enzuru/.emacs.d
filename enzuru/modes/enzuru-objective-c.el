@@ -25,6 +25,7 @@
 ;; Packages
 
 (use-package flycheck-objc-clang
+  :defer t
   :ensure t)
 
 (provide 'enzuru-objective-c)

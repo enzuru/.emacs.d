@@ -10,13 +10,16 @@
 ;; Packages
 
 (use-package flycheck-haskell
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package haskell-mode
   :ensure t
+  :defer t
   :config (enzuru-configure-haskell-mode))
 
 (use-package haskell-snippets
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-haskell)

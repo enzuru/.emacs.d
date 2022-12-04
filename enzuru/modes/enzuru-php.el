@@ -8,10 +8,12 @@
 ;; Packages
 
 (use-package company-php
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package flycheck-php-noverify
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package php-mode
   :ensure t

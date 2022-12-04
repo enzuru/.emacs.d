@@ -8,7 +8,8 @@
 ;; Packages
 
 (use-package flycheck-kotlin
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package kotlin-mode
   :ensure t

@@ -9,7 +9,8 @@
 ;; Packages
 
 (use-package company-web
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package web-mode
   :ensure t

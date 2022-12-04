@@ -50,10 +50,12 @@
 
 (use-package pyimport
   :ensure t
+  :defer t
   :config (enzuru-configure-pyimport))
 
 (use-package pyimpsort
   :ensure t
+  :defer t
   :config (enzuru-configure-pyimpsort))
 
 (provide 'enzuru-python)

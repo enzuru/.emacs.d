@@ -9,6 +9,7 @@
 
 (use-package typescript-mode
   :ensure t
+  :defer t
   :config (enzuru-configure-typescript-mode))
 
 (provide 'enzuru-typescript)
