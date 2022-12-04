@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Explore"
+(("Gemini"
+ (position . 563)
+ (location . "gemini://gemini.circumlunar.space/")
+ (handler . elpher-bookmark-jump)
+ (annotation . "Midnight Pub"))
+("Spacewalk"
+ (position . 546)
+ (location . "gemini://rawtext.club/~sloum/spacewalk.gmi")
+ (handler . elpher-bookmark-jump)
+ (annotation . "Midnight Pub"))
+("Explore"
  (position . 352)
  (location . "gemini://gemini.ctrl-c.club/~scientiac/capsules/explore.gmi")
  (handler . elpher-bookmark-jump)
