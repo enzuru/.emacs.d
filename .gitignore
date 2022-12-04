@@ -31,7 +31,6 @@ ede-projects.el
 archive-contents.signed
 elpa/archives
 transient/
-bookmarks
 eln-cache/
 elpa/
 local.el

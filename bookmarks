@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Explore"
+ (position . 352)
+ (location . "gemini://gemini.ctrl-c.club/~scientiac/capsules/explore.gmi")
+ (handler . elpher-bookmark-jump)
+ (annotation . "Midnight Pub"))
+("Search"
+ (position . 1)
+ (location . "gemini://geminispace.info/")
+ (handler . elpher-bookmark-jump)
+ (annotation . "Midnight Pub"))
+("Midnight"
+ (position . 1)
+ (location . "gemini://midnight.pub/")
+ (handler . elpher-bookmark-jump)
+ (annotation . "Midnight Pub"))
+("Gemipedia"
+ (position . 1)
+ (location . "gemini://gemi.dev/cgi-bin/wp.cgi/welcome")
+ (handler . elpher-bookmark-jump)
+ (annotation . "Midnight Pub"))
+)
