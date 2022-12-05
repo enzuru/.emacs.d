@@ -15,7 +15,8 @@
 (use-package rust-mode
   :ensure t
   :defer t
-  :hook ((rust-mode . racer-mode))
+  :hook ((rust-mode . racer-mode)
+         (rust-mode . eglot-ensure))
   :bind (:map rust-mode-map ("<tab>" . company-indent-or-complete-common)))
 
 (provide 'enzuru-rust)

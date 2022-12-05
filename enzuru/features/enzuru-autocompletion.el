@@ -28,19 +28,11 @@
 
 ;; Packages
 
-(use-package ccls
-  :ensure t
-  :defer t)
-
 (use-package company
   :ensure t
   :defer t
   :diminish company-mode
   :config (enzuru-configure-company))
-
-;; (use-package company-lsp
-;;   :ensure t
-;;   :config (enzuru-configure-company-lsp))
 
 (use-package counsel
   :ensure t
@@ -55,25 +47,6 @@
          ("C-x C-c" . counsel-ag)
          ("C-x C-z" . swiper-all)))
 
-(use-package lsp-mode
-  :ensure t
-  :hook ((c-mode . lsp)
-         (java-mode . lsp)
-         (objc-mode . lsp)))
-
-(use-package lsp-ivy
-  :ensure t
-  :defer t)
-
-(use-package lsp-ui
-  :bind (:map java-mode-map
-              ("C-x C-r" . lsp-ui-peek-find-references)
-              ("C-x C-w" . lsp-ui-peek-find-definitions)
-              :map objc-mode-map
-              ("C-x C-r" . lsp-ui-peek-find-references)
-              ("C-x C-w" . lsp-ui-peek-find-definitions))
-  :ensure t)
-
 (use-package ivy
   :ensure t
   :diminish ivy-mode
@@ -85,6 +58,11 @@
   :ensure t
   :defer t
   :config (enzuru-configure-ivy-xref))
+
+(use-package eglot
+  :ensure t
+  :defer t
+  :config (enzuru-configure-eglot))
 
 (use-package swiper
   :ensure t

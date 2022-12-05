@@ -11,6 +11,7 @@
 (use-package semantic
   :ensure t
   :defer t
+  :hook ((c-mode . eglot-ensure))
   :config (enzuru-configure-semantic))
 
 (provide 'enzuru-c)

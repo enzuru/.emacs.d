@@ -3,6 +3,7 @@
 ;; Packages
 
 (use-package guix
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-guix)

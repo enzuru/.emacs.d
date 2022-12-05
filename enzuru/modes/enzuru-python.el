@@ -14,18 +14,6 @@
               (set (make-local-variable 'compile-command)
                    (concat "python3 " (buffer-name))))))
 
-(defun enzuru-configure-importmagic ()
-  (add-hook 'python-mode-hook
-            (add-hook 'before-save-hook 'importmagic-fix-imports)))
-
-(defun enzuru-configure-pyimport ()
-  (add-hook 'python-mode-hook
-            (add-hook 'before-save-hook 'pyimport-remove-unused)))
-
-(defun enzuru-configure-pyimpsort ()
-  (add-hook 'python-mode-hook
-            (add-hook 'before-save-hook 'pyimpsort-buffer)))
-
 ;; Packages
 
 (use-package anaconda-mode
@@ -42,20 +30,10 @@
   :bind (:map python-mode-map (("C-x C-d" . anaconda-mode-show-doc)
                                ("C-x C-w" . anaconda-mode-find-definitions))))
 
-(use-package importmagic
-  :ensure t
-  :diminish importmagic
-  :hook ((python-mode . importmagic-mode))
-  :config (enzuru-configure-importmagic))
-
-(use-package pyimport
+(use-package jedi
   :ensure t
   :defer t
-  :config (enzuru-configure-pyimport))
-
-(use-package pyimpsort
-  :ensure t
-  :defer t
-  :config (enzuru-configure-pyimpsort))
+  :hook ((python-mode . jedi-mode)
+         (python-mode . eglot-ensure)))
 
 (provide 'enzuru-python)
