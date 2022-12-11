@@ -17,6 +17,7 @@
 (require 'enzuru-autocompletion)
 (require 'enzuru-benchmarks)
 (require 'enzuru-browser)
+(require 'enzuru-bug-tracking)
 (require 'enzuru-dashboard)
 (require 'enzuru-debugger)
 (require 'enzuru-desktop)

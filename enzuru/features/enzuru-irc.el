@@ -22,8 +22,7 @@
                              (Libera "enzuru/Libera" "password")
                              (OFTC "enzuru/OFTC" "password")
                              (IRCnet "enzuru/IRCnet" "password")
-                             (DarkMyst "enzuru/DarkMyst" "password")
-                             (QuakeNet "enzuru/QuakeNet" "password"))))))
+                             (DarkMyst "enzuru/DarkMyst" "password"))))))
 
 ;; Packages
 
