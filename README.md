@@ -16,6 +16,10 @@ At the foundation of my package management strategy is [use-package](https://git
 
 Happy hacking!
 
-# License
+## Supported platforms
+
+- Emacs 28
+
+## License
 
 Licensed under the GPLv3; copyright is assigned to my eponymous nonprofit [enzu.ru](https://enzu.ru)
