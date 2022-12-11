@@ -9,6 +9,8 @@
          (ielm-mode . lispy-mode)
          (lisp-mode . lispy-mode)
          (lisp-interaction-mode . lispy-mode)
+         (geiser-repl-mode . lispy-mode)
+         (sly-mrepl-mode . lispy-mode)
          (scheme-mode . lispy-mode)))
 
 (use-package rainbow-blocks
