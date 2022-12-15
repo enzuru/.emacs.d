@@ -1,35 +1,59 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(defun enzuru-setup-tab (name one &rest args)
+(defun enzuru-setup-tab-squares (name one &rest args)
   (interactive)
   (tab-bar-new-tab)
   (tab-bar-rename-tab name)
-
   (let ((amount (+ 1 (length args)))
         (two (nth 0 args))
         (three (nth 1 args))
         (four (nth 2 args)))
-
     (if (> amount 0)
         (progn
           (switch-to-buffer one)))
-
     (if (> amount 1)
         (progn
           (split-window-horizontally)
           (other-window 1)
           (switch-to-buffer two)))
-
     (if (> amount 2)
         (progn
           (split-window-vertically)
           (other-window 1)
           (switch-to-buffer three)))
-
     (if (> amount 3)
         (progn
           (other-window 1)
           (split-window-vertically)
+          (switch-to-buffer four)))))
+
+(defun enzuru-setup-tab (name one &rest args)
+  (interactive)
+  (tab-bar-new-tab)
+  (tab-bar-rename-tab name)
+  (let ((amount (+ 1 (length args)))
+        (two (nth 0 args))
+        (three (nth 1 args))
+        (four (nth 2 args)))
+    (if (> amount 0)
+        (progn
+          (switch-to-buffer one)))
+    (if (> amount 1)
+        (progn
+          (split-window-horizontally)
+          (other-window 1)
+          (switch-to-buffer two)))
+    (if (> amount 2)
+        (progn
+          (other-window 1)
+          (split-window-horizontally)
+          (other-window 1)
+          (switch-to-buffer three)))
+    (if (> amount 3)
+        (progn
+          (other-window 1)
+          (split-window-horizontally)
+          (other-window 1)
           (switch-to-buffer four)))))
 
 (defun enzuru-arrange-tabs ()
@@ -38,16 +62,16 @@
   (enzuru-setup-tab "hacking" "*dashboard*")
   ;; (enzuru-setup-tab "music" "*pianobar*")
   (enzuru-setup-tab "mail" "*notmuch-hello*")
-  (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading")
+  (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading" "Libera.Chat")
   (enzuru-setup-tab "chat" "darkscience" "#darkscience")
   (enzuru-setup-tab "feminism" "Libera.Chat" "##feminism")
   (enzuru-setup-tab "security" "#openbsd" "#tor" "#bitcoin" "#ircv3")
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
-  (enzuru-setup-tab "demoscene" "#demoscene" "#c-64")
+  (enzuru-setup-tab "demoscene" "#demoscene" "#c-64" "IRCnet")
   (enzuru-setup-tab "gnu" "#gnu" "#gnu-linux-libre" "#guix" "#guile")
   (enzuru-setup-tab "emacs" "#emacs" "#exwm" "#lispgames" "#gnustep")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")
-  (enzuru-setup-tab "9fans" "#cat-v" "##9fans")
+  (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
   ;; (enzuru-setup-tab "gaming" "*Input for guest@SquareSoft*" "*guest@SquareSoft*")
   (enzuru-setup-tab "gemini" "*elpher*")
 

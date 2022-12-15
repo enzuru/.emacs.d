@@ -21,7 +21,6 @@
 
 (use-package geiser-guile
   :ensure t
-  :defer t
   :config (enzuru-configure-geiser-guile))
 
 (use-package scheme

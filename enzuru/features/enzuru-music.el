@@ -6,7 +6,7 @@
   (emms-all)
   (setq
    emms-player-list '(emms-player-vlc)
-   emms-source-file-default-directory "/sftp:enzuru@enzu.ru:/home/enzuru/music"))
+   emms-source-file-default-directory "~/music/"))
 
 (defun enzuru-configure-pianobar ()
   (setq pianobar-username "lenzuru@gmail.com"
