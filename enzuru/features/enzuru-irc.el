@@ -5,6 +5,13 @@
 (defun enzuru-configure-erc ()
   (add-to-list 'erc-modules 'completion)
 
+  (let ((count 0))
+    (defun enzuru-incf-enzuru-irc-channels-count ()
+      (cl-incf count)
+      (if (equal count 27)
+          (enzuru-arrange-tabs)))
+    (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
+
   (setq erc-nick "enzuru"
         erc-user-full-name "enzu.ru"
         erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306")
@@ -21,7 +28,7 @@
           ("enzu.ru" 7001 t ((darkscience "enzuru/darkscience" "password")
                              (Libera "enzuru/Libera" "password")
                              (OFTC "enzuru/OFTC" "password")
-                             (IRCnet "enzuru/IRCnet" "password")
+                             ;; (IRCnet "enzuru/IRCnet" "password")
                              (DarkMyst "enzuru/DarkMyst" "password"))))))
 
 ;; Packages
