@@ -12,7 +12,38 @@
  '(package-selected-packages
    '(haskell-snippets clojure-snippets common-lisp-snippets clhs glue stock-tracker osx-browse dash-at-point emms elpher znc erc-hl-nicks company-ispell dismal elisp-benchmarks emacs-lisp flycheck-clojure cider kubernetes-tramp elisp-lint use-package ppp "swiper" "swiper" rainbow-blocks nov notmuch lsp-java xref ivy-xref flim apel hackernews guix geiser-guile flycheck-guile typescript-mode almost-mono-themes omtose-phellack-theme solarized-theme zenburn-theme monokai-alt-theme monokai-theme dracula-theme avk-emacs-themes atom-one-dark-theme afternoon-theme abyss-theme seoul256-theme sly-repl-ansi-color sly-quicklisp sly lsp-ivy lsp-ui ccls company-lsp lsp-mode company-quickhelp-terminal dashboard dockerfile-mode docker-compose-mode docker hyperbole flycheck-objc-clang lispy pianobar go-mode expand-region which-key soap-client debbugs avy kubernetes fish-mode fish-completion groovy-mode importmagic pylint blacken flycheck devdocs google-this company-anaconda anaconda-mode company-terraform vue-mode vue-html-mode nyan-mode color-theme-sanityinc-tomorrow dumb-jump gotham-theme molokai-theme exotica-theme pass counsel swiper rjsx-mode let-alist cl-generic racer olivetti intero fancy-battery flycheck-swift3 flycheck-kotlin kotlin-mode yard-mode yaml-mode web-mode undo-tree sws-mode swift-mode string-inflection sml-modeline smart-tabs-mode smart-mode-line-powerline-theme shell-switcher scss-mode sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax rspec-mode robe rainbow-delimiters purple-haze-theme puppet-mode projectile-rails project-mode prodigy php-mode openwith multi-term markdown-mode magit js2-mode isearch-symbol-at-point htmlize highlight-symbol haskell-mode guile-scheme geiser fountain-mode feature-mode exec-path-from-shell enh-ruby-mode elnode diminish db-pg ag))
  '(safe-local-variable-values
-   '((eval modify-syntax-entry 43 "'")
+   '((eval progn
+           (require 'lisp-mode)
+           (defun emacs27-lisp-fill-paragraph
+               (&optional justify)
+             (interactive "P")
+             (or
+              (fill-comment-paragraph justify)
+              (let
+                  ((paragraph-start
+                    (concat paragraph-start "\\|\\s-*\\([(;\"]\\|\\s-:\\|`(\\|#'(\\)"))
+                   (paragraph-separate
+                    (concat paragraph-separate "\\|\\s-*\".*[,\\.]$"))
+                   (fill-column
+                    (if
+                        (and
+                         (integerp emacs-lisp-docstring-fill-column)
+                         (derived-mode-p 'emacs-lisp-mode))
+                        emacs-lisp-docstring-fill-column fill-column)))
+                (fill-paragraph justify))
+              t))
+           (setq-local fill-paragraph-function #'emacs27-lisp-fill-paragraph))
+     (eval with-eval-after-load 'yasnippet
+           (let
+               ((guix-yasnippets
+                 (expand-file-name "etc/snippets/yas"
+                                   (locate-dominating-file default-directory ".dir-locals.el"))))
+             (unless
+                 (member guix-yasnippets yas-snippet-dirs)
+               (add-to-list 'yas-snippet-dirs guix-yasnippets)
+               (yas-reload-all))))
+     (eval add-to-list 'completion-ignored-extensions ".go")
+     (eval modify-syntax-entry 43 "'")
      (eval modify-syntax-entry 36 "'")
      (eval modify-syntax-entry 126 "'")
      (eval let

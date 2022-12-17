@@ -39,6 +39,7 @@
 (require 'enzuru-syntax-checking)
 (require 'enzuru-spelling)
 (require 'enzuru-studying)
+(require 'enzuru-tagging)
 (require 'enzuru-uname)
 (require 'enzuru-undo)
 (require 'enzuru-remote)
