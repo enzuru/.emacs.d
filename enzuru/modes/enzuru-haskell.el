@@ -22,4 +22,9 @@
   :ensure t
   :defer t)
 
+(use-package intero
+  :ensure t
+  :hook ((haskell-mode . intero-mode))
+  :defer t)
+
 (provide 'enzuru-haskell)

@@ -2,10 +2,6 @@
 
 ;; Configuration
 
-(defun enzuru-configure-blacken ()
-  (add-hook 'python-mode-hook
-            (add-hook 'before-save-hook 'blacken-buffer)))
-
 (defun enzuru-configure-company-anaconda ()
   (eval-after-load "company"
     (push 'company-anaconda company-backends))
@@ -18,10 +14,6 @@
 
 (use-package anaconda-mode
   :ensure t)
-
-(use-package blacken
-  :ensure t
-  :config (enzuru-configure-blacken))
 
 (use-package company-anaconda
   :ensure t

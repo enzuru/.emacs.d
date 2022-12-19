@@ -7,6 +7,7 @@
   :ensure t)
 
 (use-package docker-tramp
+  :defer t
   :ensure t)
 
 (use-package dockerfile-mode

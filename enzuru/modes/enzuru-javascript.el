@@ -17,10 +17,12 @@
 
 (use-package js2-mode
   :ensure t
+  :defer t
   :config (enzuru-configure-js2-mode))
 
 (use-package mmm-mode
   :ensure t
+  :defer t
   :config (enzuru-configure-mmm-mode))
 
 (use-package rjsx-mode

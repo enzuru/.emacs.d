@@ -19,7 +19,6 @@
 
 (use-package eshell
   :ensure t
-  :defer t
   :bind (("C-c e" . eshell))
   :config (enzuru-configure-eshell))
 

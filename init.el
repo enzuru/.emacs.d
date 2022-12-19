@@ -49,7 +49,6 @@
 ;; Modes
 
 (require 'enzuru-c)
-(require 'enzuru-css)
 (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
 (require 'enzuru-emacs-lisp)
@@ -62,7 +61,6 @@
 (require 'enzuru-haskell)
 (require 'enzuru-java)
 (require 'enzuru-javascript)
-(require 'enzuru-json)
 (require 'enzuru-kotlin)
 (require 'enzuru-kubernetes)
 (require 'enzuru-lisp)
