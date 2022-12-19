@@ -59,11 +59,6 @@
   :defer t
   :config (enzuru-configure-ivy-xref))
 
-(use-package eglot
-  :ensure t
-  :defer t
-  :config (enzuru-configure-eglot))
-
 (use-package swiper
   :ensure t
   :config (enzuru-configure-swiper)

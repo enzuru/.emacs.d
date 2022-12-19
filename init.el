@@ -23,6 +23,7 @@
 (require 'enzuru-desktop)
 (require 'enzuru-documentation)
 (require 'enzuru-file-management)
+(require 'enzuru-language-servers)
 (require 'enzuru-gaming)
 (require 'enzuru-gemini)
 (require 'enzuru-help)
