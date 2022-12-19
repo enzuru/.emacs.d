@@ -19,7 +19,7 @@
 (require 'enzuru-browser)
 (require 'enzuru-bug-tracking)
 (require 'enzuru-dashboard)
-(require 'enzuru-debugger)
+(require 'enzuru-debugging)
 (require 'enzuru-desktop)
 (require 'enzuru-documentation)
 (require 'enzuru-file-management)
