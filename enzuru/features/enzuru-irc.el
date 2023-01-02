@@ -8,7 +8,7 @@
   (let ((count 0))
     (defun enzuru-incf-enzuru-irc-channels-count ()
       (cl-incf count)
-      (if (equal count 27)
+      (if (equal count 28)
           (enzuru-arrange-tabs)))
     (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
 
