@@ -68,7 +68,7 @@
   (enzuru-setup-tab "security" "#openbsd" "#tor-relay" "#bitcoin" "#ircv3")
   ;; (enzuru-setup-tab "security" "#openbsd" "#bitcoin" "#ircv3")
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
-  ;; (enzuru-setup-tab "demoscene" "#demoscene" "#c-64" "IRCnet")
+  (enzuru-setup-tab "demoscene" "#demoscene" "#c-64" "IRCnet")
   (enzuru-setup-tab "gnu" "#gnu" "#gnu-linux-libre" "#guix" "#guile")
   (enzuru-setup-tab "emacs" "#emacs" "#exwm" "#lispgames" "#gnustep")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")

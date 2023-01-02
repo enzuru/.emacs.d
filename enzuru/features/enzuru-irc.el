@@ -8,7 +8,7 @@
   (let ((count 0))
     (defun enzuru-incf-enzuru-irc-channels-count ()
       (cl-incf count)
-      (if (equal count 28)
+      (if (equal count 30)
           (enzuru-arrange-tabs)))
     (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
 
@@ -28,7 +28,7 @@
           ("enzu.ru" 7001 t ((darkscience "enzuru/darkscience" "password")
                              (Libera "enzuru/Libera" "password")
                              (OFTC "enzuru/OFTC" "password")
-                             ;; (IRCnet "enzuru/IRCnet" "password")
+                             (IRCnet "enzuru/IRCnet" "password")
                              (DarkMyst "enzuru/DarkMyst" "password"))))))
 
 ;; Packages
