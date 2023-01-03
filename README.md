@@ -18,7 +18,7 @@ Happy hacking!
 
 ## Tested platforms
 
-Probably works on any modern version of Emacs. But here's what I've actually tested:
+Probably works on any modern version of Emacs. But here's what I've actually tested recently:
 
 - Emacs 28
 
