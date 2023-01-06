@@ -8,8 +8,10 @@
   (let ((count 0))
     (defun enzuru-incf-enzuru-irc-channels-count ()
       (cl-incf count)
-      (if (equal count 30)
-          (enzuru-arrange-tabs)))
+      ;; (message (int-to-string count))
+      (when (equal count 30)
+        (setf count 0)
+        (enzuru-arrange-tabs)))
     (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
 
   (setq erc-nick "enzuru"

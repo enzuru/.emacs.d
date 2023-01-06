@@ -1,8 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(require 'midnight)
-(midnight-delay-set 'midnight-delay "8:00pm")
-
 ;;  Configuration
 
 (defun enzuru-configure-diminish ()
