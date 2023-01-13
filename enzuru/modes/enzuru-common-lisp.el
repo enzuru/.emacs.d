@@ -11,10 +11,6 @@
 
 ;; Packages
 
-(use-package glue
-  :ensure t
-  :defer t)
-
 (use-package common-lisp-snippets
   :ensure t
   :defer t)
