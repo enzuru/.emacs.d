@@ -11,6 +11,7 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (company-mode)
+            (eldoc-mode)
             (define-key emacs-lisp-mode-map (kbd "C-x C-d") 'enzuru-elisp-documentation-search)
             (define-key emacs-lisp-mode-map (kbd "C-x C-w") 'find-function-at-point)
             (define-key emacs-lisp-mode-map (kbd "C-x c") 'eval-buffer)))
