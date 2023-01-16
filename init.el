@@ -69,6 +69,7 @@
 (require 'enzuru-objective-c)
 (require 'enzuru-org)
 (require 'enzuru-php)
+(require 'enzuru-protocol-buffers)
 (require 'enzuru-puppet)
 (require 'enzuru-python)
 (require 'enzuru-ruby)
