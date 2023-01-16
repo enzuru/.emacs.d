@@ -10,6 +10,10 @@
 
 ;; Packages
 
+(use-package flymake-ruby
+  :ensure t
+  :hook ((ruby-mode . flymake-ruby-load)))
+
 (use-package inf-ruby
   :ensure t
   :defer t

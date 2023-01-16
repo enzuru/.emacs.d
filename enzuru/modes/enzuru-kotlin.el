@@ -7,13 +7,8 @@
 
 ;; Packages
 
-(use-package flycheck-kotlin
-  :ensure t
-  :defer t)
-
 (use-package kotlin-mode
   :ensure t
-  :hook ((kotlin-mode . flycheck-mode))
   :config (enzuru-configure-kotlin-mode))
 
 (provide 'enzuru-kotlin)

@@ -7,6 +7,10 @@
 
 ;; Packages
 
+(use-package flymake-yamllint
+  :ensure t
+  :hook ((yaml-mode . flymake-yamllint-load)))
+
 (use-package yaml-mode
   :ensure t
   :defer t

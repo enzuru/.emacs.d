@@ -11,9 +11,9 @@
   :ensure t
   :defer t)
 
-(use-package flycheck-php-noverify
+(use-package flymake-php
   :ensure t
-  :defer t)
+  :hook ((php-mode . flymake-php-load)))
 
 (use-package php-mode
   :ensure t

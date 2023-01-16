@@ -24,9 +24,4 @@
 
 ;; Packages
 
-(use-package flycheck-objc-clang
-  :defer t
-  :ensure t
-  :hook ((objc-mode . eglot-ensure)))
-
 (provide 'enzuru-objective-c)

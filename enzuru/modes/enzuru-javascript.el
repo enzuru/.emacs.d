@@ -15,6 +15,14 @@
 
 ;; Packages
 
+(use-package flymake-eslint
+  :ensure t
+  :hook ((js2-mode . flymake-eslint-enable)))
+
+(use-package flymake-json
+  :ensure t
+  :hook ((js2-mode . flymake-json-maybe-load)))
+
 (use-package js2-mode
   :ensure t
   :defer t

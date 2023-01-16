@@ -12,16 +12,11 @@
   (require 'company-spell)
   (push 'company-spell company-backends))
 
-(defun enzuru-configure-flycheck-aspell ()
-  (add-to-list 'flycheck-checkers 'markdown-aspell-dynamic)
-  (add-to-list 'flycheck-checkers 'mail-aspell-dynamic))
-
 ;; Packages
 
-(use-package flycheck-aspell
+(use-package flymake-aspell
   :ensure t
-  :defer t
-  :config (enzuru-configure-flycheck-aspell))
+  :hook ((text-mode-hook . flymake-aspell-setup)))
 
 (enzuru-load-company-spell)
 

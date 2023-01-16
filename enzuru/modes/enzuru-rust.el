@@ -2,10 +2,6 @@
 
 ;; Packages
 
-(use-package flycheck-rust
-  :ensure t
-  :defer t)
-
 (use-package racer
   :ensure t
   :hook ((racer-mode . eldoc-mode)

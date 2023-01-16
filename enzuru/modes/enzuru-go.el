@@ -2,9 +2,9 @@
 
 ;; Packages
 
-(use-package flycheck-golangci-lint
+(use-package flymake-golangci
   :ensure t
-  :defer t)
+  :hook ((go-mode . flymake-golangci-load)))
 
 (use-package go-mode
   :ensure t

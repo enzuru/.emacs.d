@@ -16,8 +16,8 @@
   :ensure t
   :defer t)
 
-(use-package flycheck-clojure
+(use-package flymake-kondor
   :ensure t
-  :defer t)
+  :hook (clojure-mode . flymake-kondor-setup))
 
 (provide 'enzuru-clojure)

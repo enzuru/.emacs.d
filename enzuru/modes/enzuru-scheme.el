@@ -7,10 +7,6 @@
 
 ;; Packages
 
-(use-package flycheck-guile
-  :ensure t
-  :defer t)
-
 (use-package geiser
   :ensure t
   :bind (:map scheme-mode-map

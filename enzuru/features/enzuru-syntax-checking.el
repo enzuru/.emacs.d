@@ -2,17 +2,14 @@
 
 ;; Configuration
 
-(defun enzuru-configure-flycheck ()
-    (with-eval-after-load 'flycheck
-      (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
-  (global-flycheck-mode))
+(defun enzuru-configure-flymake ()
+  (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
 
 ;; Packages
 
-(use-package flycheck
+(use-package flymake
   :ensure t
-  :defer t
-  :diminish flycheck-mode
-  :config (enzuru-configure-flycheck))
+  :hook ((prog-mode . flymake-mode))
+  :config (enzuru-configure-flymake))
 
 (provide 'enzuru-syntax-checking)

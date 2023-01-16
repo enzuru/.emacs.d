@@ -9,9 +9,9 @@
 
 ;; Packages
 
-(use-package flycheck-haskell
+(use-package flymake-haskell-multi
   :ensure t
-  :defer t)
+  :hook ((haskell-mode . flymake-haskell-multi-load)))
 
 (use-package haskell-mode
   :ensure t
