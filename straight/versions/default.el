@@ -11,7 +11,7 @@
  ("common-lisp-snippets" . "c82ebf18f4ad49f390dd96ffcc59f8683c1a868b")
  ("company-anaconda" . "da1566db41a68809ef7f91ebf2de28118067c89b")
  ("company-mode" . "93b0284e5a6be8506d194aab00fb613be0f364fd")
- ("company-spell" . "c6c69034c90748f4ab0a7c13caf71d17b3d37862")
+ ("company-spell" . "090bfd69da757a88922eab943d1fc377838364da")
  ("company-web" . "863fb84b81ed283474e50330cd8d27b1ca0d74f1")
  ("compat" . "8885b1cd3f5a2833c727b4448583213deb2d1d76")
  ("counsel-tabs" . "386275cf1f838e09113a554e3dc09768333bae16")
