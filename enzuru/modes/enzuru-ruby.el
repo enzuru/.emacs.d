@@ -2,10 +2,6 @@
 
 ;; Configuration
 
-(defun enzuru-configure-company-inf-ruby ()
-  (if (not (member 'company-inf-ruby company-backends))
-      (push 'company-inf-ruby company-backends)))
-
 (defun enzuru-configure-inf-ruby ()
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
@@ -13,10 +9,6 @@
   (rvm-use-default))
 
 ;; Packages
-
-(use-package company-inf-ruby
-  :ensure t
-  :hook ((ruby-mode . enzuru-configure-company-inf-ruby)))
 
 (use-package inf-ruby
   :ensure t

@@ -11,7 +11,6 @@
  ("company-anaconda" . "da1566db41a68809ef7f91ebf2de28118067c89b")
  ("company-ansible" . "79dd421b161efa49fbdffad57fa40edb41f484a3")
  ("company-go" . "31948b463f2fc18f8801e5a8fe511fef300eb3dd")
- ("company-inf-ruby" . "fe3e4863bc971fbb81edad447efad5795ead1b17")
  ("company-jedi" . "ea22b1f7a980c49aaf2c5e840e4536577f6602f6")
  ("company-mode" . "48fea7a905b3bcc6d97609316beced666da89b1f")
  ("company-shell" . "5f959a63a6e66eb0cbdac3168cad523a62cc2ccd")
