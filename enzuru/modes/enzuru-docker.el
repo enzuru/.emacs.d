@@ -2,10 +2,6 @@
 
 ;; Packages
 
-(use-package flymake-hadolint
-  :ensure t
-  :hook ((dockerfile-mode . flymake-hadolint-setup)))
-
 (use-package docker
   :bind ("C-c d" . 'docker)
   :ensure t)

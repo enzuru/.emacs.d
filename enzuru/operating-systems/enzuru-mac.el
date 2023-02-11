@@ -4,11 +4,12 @@
 
 ;; Variables
 
-(setq mac-command-modifier 'control)
-(setq locate-command "mdfind")
-(setq locate-make-command-line
+(setq mac-command-modifier 'control
+      locate-command "mdfind"
+      notmuch-command "~/.emacs.d/bin/notmuch"
+      locate-make-command-line
       (lambda (ss) (list locate-command "-name" ss)))
-(setq notmuch-command "~/.emacs.d/bin/notmuch")
+
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
 ;; Faces

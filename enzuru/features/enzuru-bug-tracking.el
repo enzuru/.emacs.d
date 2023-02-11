@@ -3,6 +3,7 @@
 ;; Packages
 
 (use-package debbugs
+  :defer t
   :ensure t)
 
 (provide 'enzuru-bug-tracking)

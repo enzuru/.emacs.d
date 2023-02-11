@@ -37,6 +37,4 @@
 ;;   ;; :bind (("C-c v" . vterm))
 ;;   )
 
-;; Functions
-
-(provide 'enzuru-shell)
+(provide 'enzuru-terminal)

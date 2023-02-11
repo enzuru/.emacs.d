@@ -2,6 +2,10 @@
 
 ;; Configuration
 
+(defun enzuru-configure-company-inf-ruby ()
+  (if (not (member 'company-inf-ruby company-backends))
+      (push 'company-inf-ruby company-backends)))
+
 (defun enzuru-configure-inf-ruby ()
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
@@ -10,9 +14,9 @@
 
 ;; Packages
 
-(use-package flymake-ruby
+(use-package company-inf-ruby
   :ensure t
-  :hook ((ruby-mode . flymake-ruby-load)))
+  :hook ((ruby-mode . enzuru-configure-company-inf-ruby)))
 
 (use-package inf-ruby
   :ensure t

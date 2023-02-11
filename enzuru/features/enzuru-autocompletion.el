@@ -30,7 +30,6 @@
 
 (use-package company
   :ensure t
-  :defer t
   :diminish company-mode
   :config (enzuru-configure-company))
 
@@ -56,7 +55,6 @@
 
 (use-package ivy-xref
   :ensure t
-  :defer t
   :config (enzuru-configure-ivy-xref))
 
 (use-package swiper

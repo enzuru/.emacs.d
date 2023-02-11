@@ -9,18 +9,10 @@
 
 ;; Packages
 
-(use-package flymake-haskell-multi
-  :ensure t
-  :hook ((haskell-mode . flymake-haskell-multi-load)))
-
 (use-package haskell-mode
   :ensure t
   :defer t
   :config (enzuru-configure-haskell-mode))
-
-(use-package haskell-snippets
-  :ensure t
-  :defer t)
 
 (use-package intero
   :ensure t

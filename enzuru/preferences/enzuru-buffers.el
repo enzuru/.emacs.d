@@ -19,16 +19,14 @@
 
 (defun enzuru-kill-sunrise-buffers ()
   (interactive)
-  (mapc
-   'kill-if-sunrise
-   (buffer-list)))
+  (mapc 'kill-if-sunrise (buffer-list)))
 
 ;; Configuration
 
 (defun enzuru-configure-uniquify ()
-  (setq switch-to-buffer-in-dedicated-window 'pop)
-  (setq kill-buffer-query-functions nil)
-  (setq uniquify-buffer-name-style 'post-forward))
+  (setq switch-to-buffer-in-dedicated-window 'pop
+        kill-buffer-query-functions nil
+        uniquify-buffer-name-style 'post-forward))
 
 (enzuru-configure-uniquify)
 

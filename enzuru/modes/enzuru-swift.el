@@ -3,8 +3,8 @@
 ;; Configuration
 
 (defun enzuru-configure-swift-mode ()
-  (setq swift-tab-width 4)
-  (setq swift-indent-offset 4))
+  (setq swift-tab-width 4
+        swift-indent-offset 4))
 
 ;; Packages
 

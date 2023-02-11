@@ -23,11 +23,11 @@
 
 ;; Variables
 
-(setq locate-command "locate -d /home/enzuru/locatedb.n")
-(setq ccls-executable "ccls")
-(setq browse-url-browser-function 'eww-browse-url)
-(setq inferior-lisp-program "sbcl")
-(setq multi-term-program "fish")
+(setq locate-command "locate -d /home/enzuru/locatedb.n"
+      ccls-executable "ccls"
+      browse-url-browser-function 'eww-browse-url
+      inferior-lisp-program "sbcl"
+      multi-term-program "fish")
 
 ;; Keys
 

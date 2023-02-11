@@ -3,10 +3,10 @@
 ;; Functions
 
 (defun enzuru-debugging-on ()
-  (setq debug-on-error t)
-  (setq debug-on-event t)
-  (setq debug-on-message t)
-  (setq edebug-all-forms t))
+  (setq debug-on-error t
+        debug-on-event t
+        debug-on-message t
+        edebug-all-forms t))
 
 ;; (enzuru-debugging-on)
 

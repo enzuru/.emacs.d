@@ -2,6 +2,10 @@
 
 ;; Functions
 
+(defun enzuru-configure-company-php ()
+  (if (not (member 'company-ac-php-backend company-backends))
+      (push 'company-ac-php-backend company-backends)))
+
 (defun enzuru-configure-php-mode ()
   (setq php-mode-force-pear 1))
 
@@ -9,11 +13,7 @@
 
 (use-package company-php
   :ensure t
-  :defer t)
-
-(use-package flymake-php
-  :ensure t
-  :hook ((php-mode . flymake-php-load)))
+  :hook ((php-mode . enzuru-configure-company-php)))
 
 (use-package php-mode
   :ensure t

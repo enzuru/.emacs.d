@@ -12,12 +12,4 @@
   :ensure t
   :defer t)
 
-(use-package clojure-snippets
-  :ensure t
-  :defer t)
-
-(use-package flymake-kondor
-  :ensure t
-  :hook (clojure-mode . flymake-kondor-setup))
-
 (provide 'enzuru-clojure)

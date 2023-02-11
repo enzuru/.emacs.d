@@ -2,6 +2,10 @@
 
 ;; Configuration
 
+(defun enzuru-configure-company-web ()
+  (if (not (member 'company-web-html company-backends))
+      (push 'company-web-html company-backends)))
+
 (defun enzuru-configure-web-mode ()
   (setq web-mode-markup-indent-offset 2
         web-mode-code-indent-offset 2))
@@ -10,7 +14,7 @@
 
 (use-package company-web
   :ensure t
-  :defer t)
+  :hook ((web-mode . enzuru-configure-company-web)))
 
 (use-package web-mode
   :ensure t

@@ -2,10 +2,10 @@
 
 (require 'enzuru-window-management)
 
-(setq locate-command "locate")
-(setq inferior-lisp-program "/usr/local/bin/ccl")
-(setq elpy-rpc-python-command "python3")
-(setq locate-make-command-line
+(setq locate-command "locate"
+      inferior-lisp-program "/usr/local/bin/ccl"
+      elpy-rpc-python-command "python3"
+      locate-make-command-line
       (lambda (ss) (list locate-command "/home/enzuru" "-name" ss)))
 
 (set-face-attribute 'default nil

@@ -2,7 +2,8 @@
 
 ;; Directories
 
-(straight-use-package '(sly-repl-ansi-color :type git :host github :repo "PuercoPop/sly-repl-ansi-color"))
+(straight-use-package
+ '(sly-repl-ansi-color :type git :host github :repo "PuercoPop/sly-repl-ansi-color"))
 
 ;; Functions
 
@@ -10,10 +11,6 @@
   (push 'sly-repl-ansi-color sly-contribs))
 
 ;; Packages
-
-(use-package common-lisp-snippets
-  :ensure t
-  :defer t)
 
 (use-package sly
   :ensure t
