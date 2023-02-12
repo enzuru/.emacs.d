@@ -4,7 +4,7 @@
 
 This handcrafted repo contains my Emacs Lisp code tying together a selection of around two hundred of the finest packages ever written for Emacs, all working in harmony with one another.
 
-Around thirty languages and file formats are supported, but the three great Lisps (Common Lisp, Scheme, Clojure) are particularly well-supported, and ship with the REPL-centered IDEs [Sly](https://github.com/joaotavora/sly), [Geiser](https://www.nongnu.org/geiser/), and [Cider](https://github.com/clojure-emacs/cider) respectively.
+Around thirty languages and file formats are supported, but the three great Lisps (Common Lisp, Scheme, Clojure) are particularly well-supported, and ship with the REPL-centered IDEs [Sly](https://github.com/joaotavora/sly), [Geiser](https://www.nongnu.org/geiser/), and [CIDER](https://github.com/clojure-emacs/cider) respectively.
 
 When I was starting off with GNU Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
