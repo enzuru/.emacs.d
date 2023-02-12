@@ -42,6 +42,7 @@ The following major languages are not well-supported outside using an LSP server
 This configuration ships with a great many helpful tools:
 
 | Feature              | Tool                                                                                            |
+|----------------------|-------------------------------------------------------------------------------------------------|
 | Benchmarking         | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                         |
 | Bug tracker          | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                           |
 | Completion           | [Company](https://company-mode.github.io), [Ivy](https://github.com/abo-abo/swiper)             |
