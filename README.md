@@ -59,7 +59,7 @@ This configuration ships with a great many helpful tools:
 | Dashboard              | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                 |
 | Documentation searcher | [devdocs](https://github.com/astoff/devdocs.el)                                                 |
 | File manager           | [Sunrise Commander](https://github.com/sunrise-commander/sunrise-commander)                     |
-| Hyperlinking           | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                            |
+| Hyperlinker            | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                            |
 | IRC client             | [ERC](https://www.gnu.org/software/emacs/erc.html)                                              |
 | LSP client             | [Eglot](https://github.com/joaotavora/eglot)                                                    |
 | Mail client            | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                               |
