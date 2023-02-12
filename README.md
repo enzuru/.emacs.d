@@ -97,7 +97,7 @@ There are many beautiful theme families for you to enjoy:
 Package management is provided by:
 
 - [use-package](https://github.com/jwiegley/use-package)
-- [straight.el](https://github.com/radian-software/straight.el).
+- [straight.el](https://github.com/radian-software/straight.el)
 
 ### Versions
 
@@ -110,6 +110,7 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 You can discover and learn anything about this Emacs setup by only using the commands below:
 
 | Keystroke | Function                    | Description                  |
+|-----------|-----------------------------|------------------------------|
 | `C-h b`   | `counsel-descbinds`         | Describe a key binding       |
 | `C-h d`   | `apropos-documentation`     | Search through documentation |
 | `C-h f`   | `counsel-describe-function` | Describe a function          |
