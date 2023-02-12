@@ -3,7 +3,8 @@
 ;; Configuration
 
 (defun enzuru-configure-company ()
-  (setq company-idle-delay 0)
+  (setq company-idle-delay 0
+        company-tooltip-align-annotations t)
   (add-hook 'after-init-hook 'global-company-mode))
 
 (defun enzuru-configure-company-lsp ()
@@ -62,4 +63,4 @@
   :config (enzuru-configure-swiper)
   :bind ((("C-s" . 'swiper-isearch))))
 
-(provide 'enzuru-autocompletion)
+(provide 'enzuru-completion)

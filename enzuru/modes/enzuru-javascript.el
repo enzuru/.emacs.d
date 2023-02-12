@@ -15,6 +15,10 @@
 
 ;; Packages
 
+(use-package indium
+  :ensure t
+  :defer t)
+
 (use-package js2-mode
   :ensure t
   :defer t

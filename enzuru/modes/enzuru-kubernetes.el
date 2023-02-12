@@ -2,6 +2,10 @@
 
 ;; Packages
 
+(use-package kubedoc
+  :ensure t
+  :defer t)
+
 (use-package kubernetes
   :ensure t
   :defer t)

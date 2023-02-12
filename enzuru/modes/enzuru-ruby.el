@@ -26,12 +26,6 @@
   :diminish robe-mode
   :ensure t)
 
-(use-package ruby-refactor
-  :diminish ruby-refactor-mode
-  :defer t
-  :hook ((ruby-mode. ruby-refactor-mode-launch))
-  :ensure t)
-
 (use-package rvm
   :ensure t
   :defer t

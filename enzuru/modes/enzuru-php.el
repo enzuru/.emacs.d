@@ -20,4 +20,8 @@
   :mode (("\.php$" . php-mode))
   :config (enzuru-configure-php-mode))
 
+(use-package psysh
+  :ensure t
+  :defer t)
+
 (provide 'enzuru-php)

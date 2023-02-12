@@ -2,12 +2,24 @@
 
 ;; Configure
 
+(defun enzuru-configure-company-ghci ()
+  (if (not (member 'company-ghci company-backends))
+      (push 'company-ghci company-backends)))
+
 (defun enzuru-configure-haskell-mode ()
   (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
   (add-hook 'haskell-mode-hook 'turn-on-haskeull-indent)
   (put 'downcase-region 'disabled nil))
 
 ;; Packages
+
+(use-package company-ghci
+  :ensure t
+  :hook ((haskell-mode . enzuru-configure-company-ghci)))
+
+(use-package dante
+  :ensure t
+  :defer t)
 
 (use-package haskell-mode
   :ensure t
@@ -16,7 +28,6 @@
 
 (use-package intero
   :ensure t
-  :hook ((haskell-mode . intero-mode))
-  :defer t)
+  :hook ((haskell-mode . intero-mode)))
 
 (provide 'enzuru-haskell)

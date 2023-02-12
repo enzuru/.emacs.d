@@ -14,10 +14,10 @@
 ;; Features
 
 (require 'enzuru-arrangements)
-(require 'enzuru-autocompletion)
 (require 'enzuru-benchmarks)
 (require 'enzuru-browser)
 (require 'enzuru-bug-tracking)
+(require 'enzuru-completion)
 (require 'enzuru-dashboard)
 (require 'enzuru-debugging)
 (require 'enzuru-documentation)
@@ -35,10 +35,10 @@
 (require 'enzuru-project-management)
 (require 'enzuru-search)
 (require 'enzuru-server)
-(require 'enzuru-terminal)
 (require 'enzuru-syntax-checking)
 (require 'enzuru-spelling)
 (require 'enzuru-studying)
+(require 'enzuru-terminal)
 (require 'enzuru-uname)
 (require 'enzuru-undo)
 (require 'enzuru-version-control)
