@@ -33,6 +33,10 @@
   :ensure t
   :hook ((python-mode . enzuru-configure-company-jedi)))
 
+(use-package elpy
+  :ensure t
+  :init (elpy-enable))
+
 (use-package jedi
   :ensure t
   :defer t
