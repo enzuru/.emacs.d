@@ -8,6 +8,16 @@ When I was starting off with Emacs, other people's customizations were deeply he
 
 ## Features
 
+### Operating systems
+
+The following operating systems are supported:
+
+- [FreeBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-freebsd.el)
+- [GNU/Linux](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-linux.el)
+- [macOS](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-mac.el)
+- [OpenBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-openbsd.el)
+- [Windows](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-windows.el)
+
 ### Programming languages
 
 This Emacs configuration reflects my REPL-centered [exploratory programming style](https://en.wikipedia.org/wiki/Exploratory_programming). Additionally, [Eglot](https://github.com/joaotavora/eglot) will automatically spin up an [LSP](https://en.wikipedia.org/wiki/Language_Server_Protocol) for a language if it finds one.
@@ -67,16 +77,6 @@ This configuration ships with a great many helpful tools:
 | Version control      | [Magit](https://magit.vc)                                                                       |
 | Web browser          | [Elpher](https://thelambdalab.xyz/elpher/)                                                      |
 | Window manager       | [exwm](https://github.com/ch11ng/exwm)                                                          |
-
-### Operating systems
-
-The following operating systems are supported:
-
-- [FreeBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-freebsd.el)
-- [GNU/Linux](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-linux.el)
-- [macOS](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-mac.el)
-- [OpenBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-openbsd.el)
-- [Windows](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-windows.el)
 
 ### Themes
 
