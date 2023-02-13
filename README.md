@@ -79,7 +79,7 @@ This configuration ships with a great many helpful tools:
 | Syntax highlighter     | [rainbow-blocks](https://github.com/istib/rainbow-blocks)                                                       |
 | Undo visualizer        | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                       |
 | Version control        | [Magit](https://magit.vc)                                                                                       |
-| Web browser            | [Elpher](https://thelambdalab.xyz/elpher/), [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) |
+| Web browsers           | [Elpher](https://thelambdalab.xyz/elpher/), [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) |
 | Window manager         | [exwm](https://github.com/ch11ng/exwm)                                                                          |
 
 ### Themes
