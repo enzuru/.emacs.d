@@ -6,6 +6,8 @@ This handcrafted repo contains my Lisp code harmoniously integrating a selection
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
+You can draw inspiration from this repo, fork it for yourself, copy specific pieces of code, or even just add it as a submodule to your own Emacs directory.
+
 ## Features
 
 ### Operating systems
