@@ -20,13 +20,13 @@ The following operating systems are supported:
 - [OpenBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-openbsd.el)
 - [Windows](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-windows.el)
 
-### Programming languages
+### Development environments
 
 This Emacs configuration reflects my REPL-centered [exploratory programming style](https://en.wikipedia.org/wiki/Exploratory_programming). Additionally, [Eglot](https://github.com/joaotavora/eglot) will automatically spin up an [LSP](https://en.wikipedia.org/wiki/Language_Server_Protocol) for a language if it finds one.
 
 I provide an IDE and REPL for each major environment that I work in:
 
-| Language    | IDE                                                             | REPL                                                                 |
+| Environment | IDE                                                             | REPL                                                                 |
 |-------------|-----------------------------------------------------------------|----------------------------------------------------------------------|
 | Clojure     | [CIDER](https://github.com/clojure-emacs/cider)                 | [CIDER](https://github.com/clojure-emacs/cider)                      |
 | Common Lisp | [Sly](https://github.com/joaotavora/sly)                        | [Sly](https://github.com/joaotavora/sly)                             |
