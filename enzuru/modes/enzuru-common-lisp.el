@@ -5,10 +5,19 @@
 (straight-use-package
  '(sly-repl-ansi-color :type git :host github :repo "PuercoPop/sly-repl-ansi-color"))
 
+(straight-use-package
+ '(ivy-common-lisp
+   :type git
+   :host github
+   :repo "enzuru/ivy-common-lisp"))
+
 ;; Functions
 
 (defun enzuru-configure-sly ()
   (push 'sly-repl-ansi-color sly-contribs))
+
+(defun enzuru-configure-ivy-common-lisp ()
+  (setq ivy-common-lisp-spec-function 'sly-hyperspec-lookup))
 
 ;; Packages
 
@@ -23,5 +32,7 @@
 (use-package sly-quicklisp
   :ensure t
   :defer t)
+
+(enzuru-configure-ivy-common-lisp)
 
 (provide 'enzuru-common-lisp)

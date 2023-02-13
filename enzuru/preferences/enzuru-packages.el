@@ -1,7 +1,8 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
 (setq package-enable-at-startup nil
-      straight-use-package-by-default t)
+      straight-use-package-by-default t
+      straight-vc-git-default-protocol "ssh")
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
