@@ -106,16 +106,16 @@
 
 ;; Operating systems
 
-(if (eq system-type 'gnu/linux)
-    (require 'enzuru-linux))
-(if (eq system-type 'darwin)
-    (require 'enzuru-mac))
-(if (eq (enzuru-uname) 'FreeBSD)
-    (require 'enzuru-freebsd))
-(if (eq (enzuru-uname) 'OpenBSD)
-    (require 'enzuru-openbsd))
-(if (eq system-type 'windows-nt)
-    (require 'enzuru-windows))
+(cond ((eq system-type 'gnu/linux)
+       (require 'enzuru-linux))
+      ((eq system-type 'darwin)
+       (require 'enzuru-mac))
+      ((eq system-type 'windows-nt)
+       (require 'enzuru-windows))
+      ((eq (enzuru-uname) 'FreeBSD)
+       (require 'enzuru-freebsd))
+      ((eq (enzuru-uname) 'OpenBSD)
+       (require 'enzuru-openbsd)))
 
 ;; Local customization
 
