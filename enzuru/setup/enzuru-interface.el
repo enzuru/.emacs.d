@@ -5,4 +5,4 @@
   (progn (require 'enzuru-molokai)
          (xterm-mouse-mode t)))
 
-(provide 'enzuru-skin)
+(provide 'enzuru-interface)

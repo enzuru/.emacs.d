@@ -102,7 +102,7 @@
 (require 'enzuru-cleanup)
 (require 'enzuru-keys)
 (require 'enzuru-shutdown)
-(require 'enzuru-skin)
+(require 'enzuru-interface)
 
 ;; Operating systems
 
