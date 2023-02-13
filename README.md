@@ -101,6 +101,25 @@ Package management is provided by:
 - [use-package](https://github.com/jwiegley/use-package)
 - [straight.el](https://github.com/radian-software/straight.el)
 
+### Modularity
+
+If you wanted to use my `.emacs.d` as a foundation for your own, you could add it as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules), add it to your load path, and then reference specific modules of mine that you like.
+
+Run something like this in your Emacs directory:
+
+```
+git submodule add https://github.com/enzuru/.emacs.d enzuru
+```
+
+Add something like this to your init:
+
+```
+(add-to-list 'load-path "~/.emacs.d/enzuru/enzuru/features")
+(require 'enzuru-file-management)
+```
+
+Referencing my configuration requires use-package and straight.el.
+
 ### Versions
 
 Probably works on any modern version of Emacs. Here's what I've actually tested recently:
