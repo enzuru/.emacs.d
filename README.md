@@ -39,6 +39,7 @@ I provide an IDE and REPL for each major environment that I work in:
 | Ruby        | [Robe](https://github.com/dgutov/robe)                          | [inf-ruby](https://github.com/nonsequitur/inf-ruby)                  |
 | Rust        | [Racer](https://github.com/racer-rust/emacs-racer)              | [rust-playground](https://github.com/grafov/rust-playground/)        |
 | Scheme      | [Geiser](https://www.nongnu.org/geiser/)                        | [Geiser](https://www.nongnu.org/geiser/)                             |
+| SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)             | [emacsql](https://github.com/magit/emacsql)                          |
 | TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                  | [Indium](https://github.com/NicolasPetton/Indium/)                   |
 
 The following major languages are not well-supported outside using an LSP server with Eglot:
@@ -69,6 +70,7 @@ This configuration ships with a great many helpful tools:
 | Music players          | [Emms](https://www.gnu.org/software/emms/), [pianobar.el](https://github.com/agrif/pianobar.el) |
 | Organization           | [org-mode](https://orgmode.org)                                                                 |
 | Project interaction    | [Projectile](https://github.com/bbatsov/projectile)                                             |
+| REST client            | [restclient.el](https://github.com/pashky/restclient.el)                                        |
 | Shell                  | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                       |
 | Spreadsheets           | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                             |
 | Syntax checker         | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                     |

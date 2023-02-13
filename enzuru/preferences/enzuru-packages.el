@@ -2,7 +2,7 @@
 
 (setq package-enable-at-startup nil
       straight-use-package-by-default t
-      straight-vc-git-default-protocol "ssh")
+      straight-vc-git-default-protocol 'ssh)
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
