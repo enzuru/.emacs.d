@@ -12,6 +12,10 @@
   :ensure t
   :hook ((terraform-mode . enzuru-configure-company-terraform)))
 
+(use-package terraform-doc
+  :ensure t
+  :defer t)
+
 (use-package terraform-mode
   :ensure t
   :defer t)

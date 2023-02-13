@@ -16,4 +16,8 @@
   :ensure t
   :defer t)
 
+(use-package go-projectile
+  :ensure t
+  :defer t)
+
 (provide 'enzuru-go)
