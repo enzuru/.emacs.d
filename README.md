@@ -103,7 +103,7 @@ Package management is provided by:
 
 ### Modularity
 
-If you wanted to use my `.emacs.d` as a foundation for your own, you could add it as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules), add it to your load path, and then reference specific modules of mine that you like.
+If you wanted to use my `.emacs.d` as a foundation for your own, you could add it as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to your Emacs directory, add it to your load path, and then reference specific modules of mine that you like.
 
 Run something like this in your Emacs directory:
 
