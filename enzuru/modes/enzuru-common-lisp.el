@@ -11,6 +11,8 @@
    :host github
    :repo "enzuru/ivy-common-lisp"))
 
+(load-library "ivy-common-lisp")
+
 ;; Functions
 
 (defun enzuru-configure-sly ()
