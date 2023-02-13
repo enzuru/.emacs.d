@@ -3,7 +3,10 @@
 ;; Directories
 
 (straight-use-package
- '(sly-repl-ansi-color :type git :host github :repo "PuercoPop/sly-repl-ansi-color"))
+ '(sly-repl-ansi-color
+   :type git
+   :host github
+   :repo "PuercoPop/sly-repl-ansi-color"))
 
 (straight-use-package
  '(ivy-common-lisp
