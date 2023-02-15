@@ -47,6 +47,9 @@
          ("C-x C-c" . counsel-ag)
          ("C-x C-z" . swiper-all)))
 
+(use-package flymake-collection
+  :ensure t)
+
 (use-package ivy
   :ensure t
   :diminish ivy-mode
