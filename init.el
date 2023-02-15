@@ -32,7 +32,6 @@
 (require 'enzuru-modeline)
 (require 'enzuru-movement)
 (require 'enzuru-music)
-(require 'enzuru-project-management)
 (require 'enzuru-search)
 (require 'enzuru-server)
 (require 'enzuru-syntax-checking)

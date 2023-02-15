@@ -15,10 +15,6 @@
   :defer t
   :config (enzuru-configure-inf-ruby))
 
-(use-package projectile-rails
-  :defer t
-  :ensure t)
-
 (use-package robe
   :hook ((ruby-mode . robe-mode)
          (ruby-mode . eglot-ensure))

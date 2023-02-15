@@ -71,7 +71,7 @@ This configuration ships with a great many helpful tools:
 | MUD client             | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                                  |
 | Music players          | [Emms](https://www.gnu.org/software/emms/), [pianobar.el](https://github.com/agrif/pianobar.el)                 |
 | Organization           | [org-mode](https://orgmode.org)                                                                                 |
-| Project interaction    | [Projectile](https://github.com/bbatsov/projectile)                                                             |
+| Project interaction    | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html)                           |
 | REST client            | [restclient.el](https://github.com/pashky/restclient.el)                                                        |
 | Shell                  | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                       |
 | Spreadsheets           | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                                             |
