@@ -53,8 +53,8 @@
 (use-package ivy
   :ensure t
   :diminish ivy-mode
-  :bind ((("C-x b" . 'ivy-switch-buffer))
-         (("C-x C-b" . 'ivy-switch-buffer)))
+  :bind (("C-x b" . 'ivy-switch-buffer)
+         ("C-x C-b" . 'ivy-switch-buffer))
   :config (enzuru-configure-ivy))
 
 (use-package ivy-xref
