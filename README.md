@@ -61,7 +61,7 @@ This configuration ships with a great many helpful tools:
 | Completion             | [Company](https://company-mode.github.io), [Ivy](https://github.com/abo-abo/swiper)                             |
 | Dashboard              | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                 |
 | Documentation searcher | [devdocs](https://github.com/astoff/devdocs.el)                                                                 |
-| File manager           | [Sunrise Commander](https://github.com/sunrise-commander/sunrise-commander)                                     |
+| File manager           | [eFar](https://github.com/suntsov/efar)                                                                         |
 | Hyperlinker            | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                            |
 | IRC client             | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                              |
 | LSP client             | [Eglot](https://github.com/joaotavora/eglot)                                                                    |
