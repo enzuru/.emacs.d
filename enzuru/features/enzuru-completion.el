@@ -64,6 +64,6 @@
 (use-package swiper
   :ensure t
   :config (enzuru-configure-swiper)
-  :bind ((("C-s" . 'swiper-isearch))))
+  :bind (("C-s" . 'swiper-isearch)))
 
 (provide 'enzuru-completion)
