@@ -30,6 +30,7 @@
   :ensure t
   :config (enzuru-configure-sly)
   :bind (:map lisp-mode-map
+              ("C-h f" . ivy-describe-common-lisp-spec-symbol)
               ("C-x C-d" . sly-documentation)
               ("C-x C-w" . sly-edit-definition-other-window)
               ("C-x c" . sly-eval-buffer)))
