@@ -20,6 +20,8 @@ The following operating systems are supported:
 - [OpenBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-openbsd.el)
 - [Windows](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-windows.el)
 
+Additionally, this entire `.emacs.d` can be setup with native compilation, all necessary development environments below, and as your window manager by visiting my [profiles](https://github.com/enzuru/profiles) repo, which can be executed on the [Guix](https://guix.org) GNU/Linux distribution.
+
 ### Development environments
 
 This Emacs configuration reflects my [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)-centered [exploratory programming style](https://en.wikipedia.org/wiki/Exploratory_programming). Additionally, [Eglot](https://github.com/joaotavora/eglot) will automatically spin up an [LSP](https://en.wikipedia.org/wiki/Language_Server_Protocol) for a language if it finds one.
