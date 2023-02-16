@@ -10,7 +10,10 @@
   (set-face-background 'mode-line-inactive "#000F14")
   (set-face-background 'mode-line "#113450")
   (set-face-attribute 'vertical-border nil :foreground "#000F14")
-  (sml/apply-theme 'respectful))
+  (sml/apply-theme 'respectful)
+  (custom-set-faces
+   '(mode-line ((t (:background "#001520" :foreground "#FFFFFF" :inverse-video nil :box nil :height 150))))
+   '(mode-line-inactive ((t (:inherit mode-line :background "#001520" :foreground "gray40" :inverse-video nil :box nil :weight light))))))
 
 ;; Packages
 

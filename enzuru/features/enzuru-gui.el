@@ -17,7 +17,7 @@
   (if (eq (enzuru-uname) 'OpenBSD)
       (require 'enzuru-zenburn))
   (if (eq system-type 'gnu/linux)
-      (require 'enzuru-gotham)))
+      (require 'enzuru-deep-thought)))
 
 (enzuru-configure-minimalism)
 (enzuru-configure-operating-systems)
