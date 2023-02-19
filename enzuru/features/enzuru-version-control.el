@@ -3,6 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-magit ()
+  (setq vc-follow-symlinks t)
   (global-auto-revert-mode t))
 
 ;; Packages
