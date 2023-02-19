@@ -33,7 +33,6 @@
  (annotation . "Midnight Pub"))
 ("Gemipedia"
  (position . 1)
- (location . "gemini://gemi.dev/cgi-bin/wp.cgi/welcome")
- (handler . elpher-bookmark-jump)
- (annotation . "Midnight Pub"))
+ (location . "gemini://gemi.dev/cgi-bin/wp.cgi/")
+ (handler . elpher-bookmark-jump))
 )
