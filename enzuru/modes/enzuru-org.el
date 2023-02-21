@@ -13,6 +13,8 @@
 (use-package org
   :ensure t
   :defer t
+  :bind (:map org-mode-map
+              ("C-c b" . org-insert-heading))
   :config (enzuru-configure-org))
 
 (provide 'enzuru-org)
