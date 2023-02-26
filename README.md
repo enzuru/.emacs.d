@@ -134,14 +134,15 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 
 You can discover and learn anything about this Emacs setup by only using the commands below:
 
-| Keystroke | Function                    | Description                  |
-|-----------|-----------------------------|------------------------------|
-| `C-h b`   | `counsel-descbinds`         | Describe a key binding       |
-| `C-h d`   | `apropos-documentation`     | Search through documentation |
-| `C-h f`   | `counsel-describe-function` | Describe a function          |
-| `C-h i`   | `info`                      | Open documentation           |
-| `C-h k`   | `describe-key`              | Describe a keystroke         |
-| `C-h v`   | `counsel-describe-variable` | Describe a variable          |
+| Keystroke | Function                               | Description                         |
+|-----------|----------------------------------------|-------------------------------------|
+| `C-h b`   | `counsel-descbinds`                    | Describe a key binding              |
+| `C-h d`   | `apropos-documentation`                | Search through documentation        |
+| `C-h f`   | `counsel-describe-function`            | Describe a function                 |
+| `C-h i`   | `info`                                 | Open documentation                  |
+| `C-h k`   | `describe-key`                         | Describe a keystroke                |
+| `C-h s`   | `ivy-describe-common-lisp-spec-symbol` | Describe an ANSI Common Lisp symbol |
+| `C-h v`   | `counsel-describe-variable`            | Describe a variable                 |
 
 Additionally, everything is very organized in the `enzuru` folder by feature, mode, preference, setup, operating system, and theme. While this repo should work immediately for you on a `git pull`, it's obviously a very personalized setup and many things won't appeal to you. If I were you, I would first take a look at my `init.el` and then pick a topical elisp file from there.
 
