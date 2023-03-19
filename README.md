@@ -46,6 +46,8 @@ I provide an IDE and REPL for each major environment that I work in:
 | SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)             | [emacsql](https://github.com/magit/emacsql)                          |
 | TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                  | [Indium](https://github.com/NicolasPetton/Indium/)                   |
 
+One can debate about how many of the above languages Emacs is ideal for, but Emacs is certainly a best-in-class environment for Haskell, Common Lisp, Scheme, and Clojure.
+
 The following major languages are not well-supported outside using an LSP server with Eglot:
 
 - C / Objective-C / C++
