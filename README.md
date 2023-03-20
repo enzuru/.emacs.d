@@ -33,6 +33,7 @@ I provide an IDE and REPL for each major environment that I work in:
 | Clojure     | [CIDER](https://github.com/clojure-emacs/cider)                 | [CIDER](https://github.com/clojure-emacs/cider)                      |
 | Common Lisp | [Sly](https://github.com/joaotavora/sly)                        | [Sly](https://github.com/joaotavora/sly)                             |
 | Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)     | [docker-tramp](https://github.com/emacs-pe/docker-tramp.el)          |
+| Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)             | [inf-elixir](https://github.com/J3RN/inf-elixir/)                    |
 | Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)               | [fish-completion](https://gitlab.com/ambrevar/emacs-fish-completion) |
 | Go          | [go-mode](https://github.com/dominikh/go-mode.el)               | [go-playground](https://github.com/grafov/go-playground)             |
 | Haskell     | [Intero](https://chrisdone.github.io/intero/)                   | [Dante](https://github.com/jyp/dante)                                |
@@ -46,7 +47,7 @@ I provide an IDE and REPL for each major environment that I work in:
 | SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)             | [emacsql](https://github.com/magit/emacsql)                          |
 | TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                  | [Indium](https://github.com/NicolasPetton/Indium/)                   |
 
-One can debate about how many of the above languages Emacs is ideal for, but Emacs is certainly a best-in-class environment for Haskell, Common Lisp, Scheme, and Clojure.
+One can debate about how many of the above languages Emacs is ideal for, but Emacs is certainly a best-in-class environment for Haskell, Elixir, Common Lisp, Scheme, and Clojure.
 
 The following major languages are not well-supported outside using an LSP server with Eglot:
 

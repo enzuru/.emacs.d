@@ -50,6 +50,7 @@
 (require 'enzuru-c)
 (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
+(require 'enzuru-elixir)
 (require 'enzuru-emacs-lisp)
 (require 'enzuru-epub)
 (require 'enzuru-feature)
