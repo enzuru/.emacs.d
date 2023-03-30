@@ -8,6 +8,7 @@
 
 (use-package kubernetes
   :ensure t
+  :commands (kubernetes-overview)
   :defer t)
 
 (use-package kubernetes-tramp
