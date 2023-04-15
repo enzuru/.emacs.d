@@ -73,6 +73,7 @@
   (enzuru-setup-tab "emacs" "#emacs" "#exwm" "#lispgames" "#gnustep")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
+  (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#security")
   ;; (enzuru-setup-tab "gaming" "*Input for guest@SquareSoft*" "*guest@SquareSoft*")
   (enzuru-setup-tab "gemini" "*elpher*")
 

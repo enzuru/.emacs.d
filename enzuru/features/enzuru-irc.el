@@ -4,12 +4,11 @@
 
 (defun enzuru-configure-erc ()
   (add-to-list 'erc-modules 'completion)
-
   (let ((count 0))
     (defun enzuru-incf-enzuru-irc-channels-count ()
       (cl-incf count)
       ;; (message (int-to-string count))
-      (when (equal count 30)
+      (when (equal count 34)
         (setf count 0)
         (enzuru-arrange-tabs)))
     (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
@@ -26,12 +25,12 @@
 (defun enzuru-configure-znc ()
   (setq znc-detach-on-kill nil
         znc-servers
-        '(
-          ("enzu.ru" 7001 t ((darkscience "enzuru/darkscience" "password")
+        '(("enzu.ru" 7001 t ((darkscience "enzuru/darkscience" "password")
                              (Libera "enzuru/Libera" "password")
                              (OFTC "enzuru/OFTC" "password")
                              (IRCnet "enzuru/IRCnet" "password")
-                             (DarkMyst "enzuru/DarkMyst" "password"))))))
+                             (DarkMyst "enzuru/DarkMyst" "password")
+                             (Tilde "enzuru/Tilde" "password"))))))
 
 ;; Packages
 
