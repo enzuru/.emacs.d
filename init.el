@@ -63,6 +63,7 @@
 (require 'enzuru-kotlin)
 (require 'enzuru-kubernetes)
 (require 'enzuru-lisp)
+(require 'enzuru-log)
 (require 'enzuru-markdown)
 (require 'enzuru-objective-c)
 (require 'enzuru-org)
