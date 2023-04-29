@@ -2,9 +2,12 @@
 
 ;; Packages
 
-(use-package fish-completion
-  :ensure t
-  :defer t)
+(straight-use-package
+ '(fish-completion
+   :protocol https
+   :type git
+   :host gitlab
+   :repo "Ambrevar/emacs-fish-completion"))
 
 (use-package fish-mode
   :ensure t

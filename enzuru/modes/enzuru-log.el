@@ -7,4 +7,4 @@
   :mode (("\\log$" . itail-mode))
   :ensure t)
 
-(provide 'enzuru-logs)
+(provide 'enzuru-log)
