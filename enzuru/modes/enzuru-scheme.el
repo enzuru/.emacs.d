@@ -3,10 +3,11 @@
 ;; Configuration
 
 (defun enzuru-configure-geiser-guile ()
+  (require 'geiser)
   (require 'geiser-guile)
-  (add-hook 'scheme-mode-hook (lambda () ("C-x c" . 'geiser-load-current-buffer)))
-  (add-hook 'scheme-mode-hook (lambda () ("C-x C-d" . 'geiser-doc-symbol-at-point)))
-  (setq geiser-active-implementations '(guile)))
+  (add-hook 'scheme-mode-hook 'geiser-mode)
+  (define-key scheme-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
+  (define-key scheme-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
 
 ;; Packages
 
@@ -23,18 +24,6 @@
    :type git
    :host gitlab
    :repo "emacs-geiser/guile"))
-
-;; (use-package geiser
-;;   :ensure t
-;;   :bind (:map scheme-mode-map
-;;               ("C-x c" . geiser-load-current-buffer)
-;;               ("C-x C-d" . geiser-doc-symbol-at-point))
-;;   :mode (("\\.scm$" . geiser-mode)
-;;          ("\\.guile$" . geiser-mode)))
-
-;; (use-package geiser-guile
-;;   :ensure t
-;;   :config (enzuru-configure-geiser-guile))
 
 (use-package scheme
   :ensure t
