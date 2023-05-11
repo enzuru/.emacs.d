@@ -140,11 +140,11 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 
 These are the five most important keystrokes of all. If you know these five keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.
 
-- `C-h[elp] b[indings]` shows the keybindings available in the current buffer.
-- `C-h[elp] f[unction]` displays the current list of available functions.
-- `C-h[elp] i[nfo]` shows the info docs installed on your computer [no need to have a browser open just to read documentation].
-- `C-h[elp] k[ey]` let’s you type a keystroke and find out what it does.
-- `C-h[elp] v[ariable]` displays the list of available variables.
+- `C-h(elp) b(indings)` shows the keybindings available in the current buffer.
+- `C-h(elp) f(unction)` displays the current list of available functions.
+- `C-h(elp) i(nfo)` shows the info docs installed on your computer (no need to have a browser open just to read documentation).
+- `C-h(elp) k(ey)` let’s you type a keystroke and find out what it does.
+- `C-h(elp) v(ariable)` displays the list of available variables.
 
 ### Navigation
 
@@ -176,40 +176,40 @@ Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, 
 
 I have keystrokes setup to mimic tmux/screen using Emacs tabs:
 
-- `C-z[one] c[reates]` a new workspace.
-- `C-z[one] k[ills]` a current workspace.
-- `C-z[one] n[ext]` workspace.
-- `C-z[one] p[revious]` workspace.
+- `C-z(one) c(reates)` a new workspace.
+- `C-z(one) k(ills)` a current workspace.
+- `C-z(one) n(ext)` workspace.
+- `C-z(one) p(revious)` workspace.
 
 ### Console actions
 
 These keystrokes encompass things one commonly does in a terminal.
 
-- `C-c[onsole] d[ocker]` brings up tools for managing and shelling into Docker containers.
-- `C-c[onsole] e[shell]` let’s me boot up an Emacs shell which is an awesome hybrid between a Lisp interpreter and a traditional POSIX shell.
-- `C-c[onsole] x[term]` let’s me boot up a real terminal.
-- `C-c[onsole] s[tatus]` let’s me bring up a dashboard with the current git status for the git repo that I am working in.
-- `C-c[onsole] C-p[ushes]` my current git branch to upstream.
+- `C-c(onsole) d(ocker)` brings up tools for managing and shelling into Docker containers.
+- `C-c(onsole) e(shell)` let’s me boot up an Emacs shell which is an awesome hybrid between a Lisp interpreter and a traditional POSIX shell.
+- `C-c(onsole) x(term)` let’s me boot up a real terminal.
+- `C-c(onsole) s(tatus)` let’s me bring up a dashboard with the current git status for the git repo that I am working in.
+- `C-c(onsole) C-p(ushes)` my current git branch to upstream.
 
 ### Primary actions
 
-- `C-x c[ompile]` let’s me run a compile command on any buffer I’m working on. This can be used to run a REPL for your language too.
-- `C-x f[ile]` starts the eFar file manager.
-- `C-x i[ntelligence]` starts a ChatGPT session.
-- `C-x k[ill]` aggressively kills a buffer.
-- `C-x l[ocate]` uses counsel to locate a file on your disk.
-- `C-x o[ther]` let’s me select another window.
-- `C-x s[tring replace]` let’s me replace all strings in a buffer or selection.
+- `C-x c(ompile)` let’s me run a compile command on any buffer I’m working on. This can be used to run a REPL for your language too.
+- `C-x f(ile)` starts the eFar file manager.
+- `C-x i(ntelligence)` starts a ChatGPT session.
+- `C-x k(ill)` aggressively kills a buffer.
+- `C-x l(ocate)` uses counsel to locate a file on your disk.
+- `C-x o(ther)` let’s me select another window.
+- `C-x s(tring replace)` let’s me replace all strings in a buffer or selection.
 
 ### Secondary actions
 
-- `C-x C-b[uffer]` uses ivy to help me find a buffer.
-- `C-x C-c[ounsel]` let’s me search for a word at point in a project.
-- `C-x C-d[ocumentation]` let’s me search online documentation.
-- `C-x C-f[ile]` finds a file.
-- `C-x C-m[eta]` let’s me run an Emacs function.
-- `C-x C-s[aves]` a buffer for me.
-- `C-x C-w[here]` let’s me find where a function is defined in a language agnostic basis.
+- `C-x C-b(uffer)` uses ivy to help me find a buffer.
+- `C-x C-c(ounsel)` let’s me search for a word at point in a project.
+- `C-x C-d(ocumentation)` let’s me search online documentation.
+- `C-x C-f(ile)` finds a file.
+- `C-x C-m(eta)` let’s me run an Emacs function.
+- `C-x C-s(aves)` a buffer for me.
+- `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
 
 I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when save-buffers-exit-emacs will do.
 
