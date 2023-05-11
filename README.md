@@ -59,33 +59,34 @@ The following major languages are not well-supported outside using an LSP server
 
 This configuration ships with a great many helpful tools:
 
-| Feature                | Tool                                                                                                            |
-|------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Benchmarker            | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                                         |
-| Bug tracker            | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                           |
-| Completion             | [Company](https://company-mode.github.io), [Ivy](https://github.com/abo-abo/swiper)                             |
-| Dashboard              | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                 |
-| Documentation searcher | [devdocs](https://github.com/astoff/devdocs.el)                                                                 |
-| File manager           | [eFar](https://github.com/suntsov/efar)                                                                         |
-| Hyperlinker            | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                            |
-| IRC client             | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                              |
-| LSP client             | [Eglot](https://github.com/joaotavora/eglot)                                                                    |
-| Mail client            | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                               |
-| Modal editor           | [lispy](https://github.com/abo-abo/lispy)                                                                       |
-| Modeline               | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                                 |
-| MUD client             | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                                  |
-| Music players          | [Emms](https://www.gnu.org/software/emms/), [pianobar.el](https://github.com/agrif/pianobar.el)                 |
-| Organization           | [org-mode](https://orgmode.org)                                                                                 |
-| Project interaction    | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html)                           |
-| REST client            | [restclient.el](https://github.com/pashky/restclient.el)                                                        |
-| Shell                  | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                       |
-| Spreadsheets           | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                                             |
-| Syntax checker         | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                                     |
-| Syntax highlighter     | [rainbow-blocks](https://github.com/istib/rainbow-blocks)                                                       |
-| Undo visualizer        | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                       |
-| Version control        | [Magit](https://magit.vc)                                                                                       |
-| Web browsers           | [Elpher](https://thelambdalab.xyz/elpher/), [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) |
-| Window manager         | [exwm](https://github.com/ch11ng/exwm)                                                                          |
+| Feature                 | Tool                                                                                                            |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Artificial intelligence | [chatgpt-shell](https://github.com/xenodium/chatgpt-shell)                                                      |
+| Benchmarker             | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                                         |
+| Bug tracker             | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                           |
+| Completion              | [Company](https://company-mode.github.io), [Ivy](https://github.com/abo-abo/swiper)                             |
+| Dashboard               | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                 |
+| Documentation searcher  | [devdocs](https://github.com/astoff/devdocs.el)                                                                 |
+| File manager            | [eFar](https://github.com/suntsov/efar)                                                                         |
+| Hyperlinker             | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                            |
+| IRC client              | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                              |
+| LSP client              | [Eglot](https://github.com/joaotavora/eglot)                                                                    |
+| Mail client             | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                               |
+| Modal editor            | [lispy](https://github.com/abo-abo/lispy)                                                                       |
+| Modeline                | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                                 |
+| MUD client              | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                                  |
+| Music players           | [Emms](https://www.gnu.org/software/emms/), [pianobar.el](https://github.com/agrif/pianobar.el)                 |
+| Organization            | [org-mode](https://orgmode.org)                                                                                 |
+| Project interaction     | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html)                           |
+| REST client             | [restclient.el](https://github.com/pashky/restclient.el)                                                        |
+| Shell                   | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                       |
+| Spreadsheets            | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                                             |
+| Syntax checker          | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                                     |
+| Syntax highlighter      | [rainbow-blocks](https://github.com/istib/rainbow-blocks)                                                       |
+| Undo visualizer         | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                       |
+| Version control         | [Magit](https://magit.vc)                                                                                       |
+| Web browsers            | [Elpher](https://thelambdalab.xyz/elpher/), [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) |
+| Window manager          | [exwm](https://github.com/ch11ng/exwm)                                                                          |
 
 ### Themes
 
