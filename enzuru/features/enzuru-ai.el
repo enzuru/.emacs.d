@@ -1,5 +1,7 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+(require 'auth-source)
+
 ;; Configuration
 
 (defun enzuru-configure-chatgpt-shell ()
