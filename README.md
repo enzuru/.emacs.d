@@ -172,6 +172,7 @@ Like with the helper keys, you should have swiper and counsel installed for adva
 
 Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, but I personally don’t. I don’t deny that they are a little slower.
 
+- `C-x C-b(uffer)` uses Ivy to help me find a buffer.
 - `C-tab` (or `C-x o(ther)`) let’s me switch to another visible buffer.
 - `Shift-up`, `shift-left`, `shift-right`, and `shift-down` let me move to a buffer in that direction.
 - `C-x left` and `C-x right` let me run forward and backward through the list of buffers.
@@ -203,6 +204,8 @@ These keystrokes encompass things one commonly does in a terminal.
 
 ### Primary commands
 
+These are the most powerful commands, mostly applications.
+
 - `C-x c(ompile)` let’s me run a compile command on any buffer I’m working on. This can be used to run a REPL for your language too.
 - `C-x f(ile)` starts a file manager.
 - `C-x i(ntelligence)` starts a ChatGPT session.
@@ -212,7 +215,8 @@ These keystrokes encompass things one commonly does in a terminal.
 
 ### Secondary commands
 
-- `C-x C-b(uffer)` uses ivy to help me find a buffer.
+These are less powerful commands, mostly functions.
+
 - `C-x C-c(ounsel)` let’s me search for a word at point in a project.
 - `C-x C-d(ocumentation)` let’s me search online documentation.
 - `C-x C-f(ile)` finds a file.
