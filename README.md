@@ -141,9 +141,12 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 These are the five most important keystrokes of all. If you know these five keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.
 
 - `C-h(elp) b(indings)` shows the keybindings available in the current buffer.
+- `C-h(elp) d(ocumentation)` lets you search through all available documentation.
 - `C-h(elp) f(unction)` displays the current list of available functions.
 - `C-h(elp) i(nfo)` shows the info docs installed on your computer (no need to have a browser open just to read documentation).
+- `C-h(elp) m(ode)` shows information about all the modes in the buffer.
 - `C-h(elp) k(ey)` let’s you type a keystroke and find out what it does.
+- `C-h(elp) s(ymbol)` gives you the definition of a Common Lisp symbol
 - `C-h(elp) v(ariable)` displays the list of available variables.
 
 ### Navigation
@@ -200,6 +203,7 @@ These keystrokes encompass things one commonly does in a terminal.
 - `C-x l(ocate)` uses counsel to locate a file on your disk.
 - `C-x o(ther)` let’s me select another window.
 - `C-x s(tring replace)` let’s me replace all strings in a buffer or selection.
+- `C-x u(ndo)` will launch an undo-tree visualizer
 
 ### Secondary actions
 
@@ -223,6 +227,7 @@ You can discover and learn anything about this Emacs setup by only using the com
 | `C-h d`   | `apropos-documentation`                | Search through documentation        |
 | `C-h f`   | `counsel-describe-function`            | Describe a function                 |
 | `C-h i`   | `info`                                 | Open documentation                  |
+| `C-h m`   | `describe-mode`                        | Describe modes in buffer            |
 | `C-h k`   | `describe-key`                         | Describe a keystroke                |
 | `C-h s`   | `ivy-describe-common-lisp-spec-symbol` | Describe an ANSI Common Lisp symbol |
 | `C-h v`   | `counsel-describe-variable`            | Describe a variable                 |
