@@ -149,26 +149,33 @@ These are the five most important keystrokes of all. If you know these five keys
 - `C-h(elp) s(ymbol)` gives you the definition of a Common Lisp symbol
 - `C-h(elp) v(ariable)` displays the list of available variables.
 
+### Basics
+
+This is the stuff that you're used to doing in other editors.
+
+- `C-w` is my cut, `M-w` (or `C-q(opy)`) is my copy, `C-y` is my paste.
+- `C-g` cancels the current action.
+
 ### Navigation
 
 These keystrokes are for navigating Emacs. They are not intuitive at all, but are unfortunately necessary to memorize.
 Like with the helper keys, you should have swiper and counsel installed for advanced search features.
 
-- `C-tab` let’s me switch to another visible buffer.
+- `C-up` and `C-down` let me skip up and down paragraphs respectively.
+- `C-x up` and `C-x down` let me get to the top and bottom of a buffer respectively.
 - `C-a` and `C-e` get me between the front and end of a line respectively.
 - `C-f` and `C-v` let me scroll up and down respectively.
 - `C-s` let’s me search a buffer using Swiper.
-- `C-w` is my cut, `M-w` is my copy, `C-y` is my paste.
 - `M-g` let’s me quickly jump to any line number.
 
 ### Buffer management
 
 Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, but I personally don’t. I don’t deny that they are a little slower.
 
-- `C-up` and `C-down` let me skip up and down paragraphs respectively.
-- `C-x up` and `C-x down` let me get to the top and bottom of a buffer respectively.
-- `C-x left` and `C-x right` let me run forward and backward through the list of buffers.
+- `C-tab` (or `C-x o(ther)`) let’s me switch to another visible buffer.
 - `Shift-up`, `shift-left`, `shift-right`, and `shift-down` let me move to a buffer in that direction.
+- `C-x left` and `C-x right` let me run forward and backward through the list of buffers.
+- `C-x k(ill)` aggressively kills a buffer.
 
 ### Window management
 
@@ -194,18 +201,16 @@ These keystrokes encompass things one commonly does in a terminal.
 - `C-c(onsole) s(tatus)` let’s me bring up a dashboard with the current git status for the git repo that I am working in.
 - `C-c(onsole) C-p(ushes)` my current git branch to upstream.
 
-### Primary actions
+### Primary commands
 
 - `C-x c(ompile)` let’s me run a compile command on any buffer I’m working on. This can be used to run a REPL for your language too.
-- `C-x f(ile)` starts the eFar file manager.
+- `C-x f(ile)` starts a file manager.
 - `C-x i(ntelligence)` starts a ChatGPT session.
-- `C-x k(ill)` aggressively kills a buffer.
 - `C-x l(ocate)` uses counsel to locate a file on your disk.
-- `C-x o(ther)` let’s me select another window.
 - `C-x s(tring replace)` let’s me replace all strings in a buffer or selection.
 - `C-x u(ndo)` will launch an undo-tree visualizer
 
-### Secondary actions
+### Secondary commands
 
 - `C-x C-b(uffer)` uses ivy to help me find a buffer.
 - `C-x C-c(ounsel)` let’s me search for a word at point in a project.
@@ -215,7 +220,7 @@ These keystrokes encompass things one commonly does in a terminal.
 - `C-x C-s(aves)` a buffer for me.
 - `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
 
-I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when save-buffers-exit-emacs will do.
+I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when `save-buffers-exit-emacs` will do.
 
 ## Learning
 
