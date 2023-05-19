@@ -159,7 +159,6 @@ This is the stuff that you're used to doing in other editors.
 ### Navigation
 
 These keystrokes are for navigating Emacs. They are not intuitive at all, but are unfortunately necessary to memorize.
-Like with the helper keys, you should have swiper and counsel installed for advanced search features.
 
 - `C-up` and `C-down` let me skip up and down paragraphs respectively.
 - `C-x up` and `C-x down` let me get to the top and bottom of a buffer respectively.
@@ -185,7 +184,7 @@ Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, 
 
 ### Tab management
 
-I have keystrokes setup to mimic tmux/screen using Emacs tabs:
+I have keystrokes setup to mimic tmux/screen using Emacs tabs.
 
 - `C-z(one) c(reates)` a new workspace.
 - `C-z(one) k(ills)` a current workspace.
