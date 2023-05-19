@@ -105,6 +105,7 @@
 (require 'enzuru-keys)
 (require 'enzuru-shutdown)
 (require 'enzuru-interface)
+(require 'enzuru-syntax-highlighting)
 
 ;; Operating systems
 

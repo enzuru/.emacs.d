@@ -82,7 +82,7 @@ This configuration ships with a great many helpful tools:
 | Shell                   | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                       |
 | Spreadsheets            | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                                             |
 | Syntax checker          | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                                     |
-| Syntax highlighter      | [rainbow-blocks](https://github.com/istib/rainbow-blocks)                                                       |
+| Syntax highlighter      | [prism](https://github.com/alphapapa/prism.el)                                                                  |
 | Undo visualizer         | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                       |
 | Version control         | [Magit](https://magit.vc)                                                                                       |
 | Web browsers            | [Elpher](https://thelambdalab.xyz/elpher/), [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) |

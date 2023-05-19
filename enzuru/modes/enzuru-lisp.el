@@ -14,9 +14,4 @@
          (cider-repl-mode . lispy-mode)
          (scheme-mode . lispy-mode)))
 
-(use-package rainbow-blocks
-  :ensure t
-  :diminish rainbow-blocks-mode
-  :hook ((lispy-mode . rainbow-blocks-mode)))
-
 (provide 'enzuru-lisp)
