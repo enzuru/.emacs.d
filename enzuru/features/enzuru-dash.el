@@ -4,7 +4,6 @@
 
 (use-package dash-at-point
   :ensure t
-  :bind (("C-c d" . dash-at-point)
-         ("C-c e" . dash-at-point-with-docset)))
+  :bind (("C-c d" . dash-at-point)))
 
 (provide 'enzuru-dash)
