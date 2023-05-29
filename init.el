@@ -23,6 +23,7 @@
 (require 'enzuru-debugging)
 (require 'enzuru-documentation)
 (require 'enzuru-file-management)
+(require 'enzuru-fitness)
 (require 'enzuru-language-servers)
 (require 'enzuru-gaming)
 (require 'enzuru-gemini)
