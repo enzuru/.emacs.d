@@ -18,6 +18,7 @@
 (require 'enzuru-benchmarks)
 (require 'enzuru-browser)
 (require 'enzuru-bug-tracking)
+(require 'enzuru-clipboard)
 (require 'enzuru-completion)
 (require 'enzuru-dashboard)
 (require 'enzuru-debugging)
