@@ -64,6 +64,7 @@ This configuration ships with a great many helpful tools:
 | Artificial intelligence | [chatgpt-shell](https://github.com/xenodium/chatgpt-shell)                                                      |
 | Benchmarker             | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                                         |
 | Bug tracker             | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                           |
+| Clipboard               | [Clipetty](https://github.com/spudlyo/clipetty)                                                                 |
 | Completion              | [Company](https://company-mode.github.io), [Ivy](https://github.com/abo-abo/swiper)                             |
 | Dashboard               | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                 |
 | Documentation searcher  | [devdocs](https://github.com/astoff/devdocs.el)                                                                 |
