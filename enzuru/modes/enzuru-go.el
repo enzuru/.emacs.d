@@ -7,4 +7,8 @@
   :defer t
   :hook ((go-mode . eglot-ensure)))
 
+(use-package go-playground
+  :ensure t
+  :defer t)
+
 (provide 'enzuru-go)
