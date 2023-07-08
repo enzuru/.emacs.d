@@ -3,8 +3,7 @@
 ;; Functions
 
 (defun enzuru-configure-which-key ()
-  (setq which-key-popup-type 'minibuffer)
-  (which-key-setup-minibuffer))
+  (which-key-setup-side-window-right))
 
 ;; Packages
 
