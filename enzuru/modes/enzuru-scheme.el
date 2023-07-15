@@ -10,7 +10,7 @@
   (define-key geiser-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
 
 (defun enzuru-configure-ivy-guile ()
-  (define-key geiser-mode-map (kbd "C-h s") 'ivy-describe-guile-symbol))
+  (define-key geiser-mode-map (kbd "C-h s") 'ivy-guile-describe-symbol))
 
 ;; Packages
 
