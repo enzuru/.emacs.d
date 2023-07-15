@@ -70,7 +70,7 @@
 
 (defun enzuru-arrange-workspace ()
   (interactive)
-  (enzuru-setup-tab ".emacs.d" "*dashboard*")
+  (enzuru-setup-tab ".emacs.d" "init.el")
   (enzuru-setup-tab "mail" "*notmuch-hello*")
   (enzuru-setup-tab "gemini" "*elpher*")
   (enzuru-setup-tab "sly" "*sly-mrepl for sbcl*")
@@ -97,6 +97,7 @@
 
 (defun enzuru-add-workspaces ()
   (interactive)
+  (find-file "~/.emacs.d/init.el")
   (notmuch)
   (elpher)
   (sly)
