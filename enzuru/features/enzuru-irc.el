@@ -10,7 +10,7 @@
       ;; (message (int-to-string count))
       (when (equal count 34)
         (setf count 0)
-        (enzuru-arrange-tabs)))
+        (enzuru-arrange-chats)))
     (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
 
   (setq erc-nick "enzuru"
