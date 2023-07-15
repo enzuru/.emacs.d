@@ -76,7 +76,8 @@
   (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#security")
   ;; (enzuru-setup-tab "gaming" "*Input for guest@SquareSoft*" "*guest@SquareSoft*")
   (enzuru-setup-tab "gemini" "*elpher*")
-
+  ;; (enzuru-setup-tab "sly" "*sly-mrepl for sbcl*")
+  ;; (enzuru-setup-tab "geiser" "*Geiser Guile REPL*")
   (tab-bar-close-tab-by-name "tmp")
   (tab-bar-select-tab-by-name "hacking"))
 
@@ -85,12 +86,11 @@
   ;; Music
   ;; (emms-play-directory "/sftp:enzuru@enzu.ru:/home/enzuru/music/Nala Sinephro - Space 1.8")
   ;; (pianobar)
-  ;; IRC
   (znc-all)
-  ;; Email
   (notmuch)
-  ;; Gemini
   (elpher)
+  ;; (sly)
+  ;; (geiser 'guile)
   ;;  MUD
   ;; (mu-open
   ;;  ["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"])
