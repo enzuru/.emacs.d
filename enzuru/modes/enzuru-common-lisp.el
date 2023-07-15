@@ -22,7 +22,7 @@
   (push 'sly-repl-ansi-color sly-contribs))
 
 (defun enzuru-configure-ivy-common-lisp ()
-  (setq ivy-common-lisp-spec-function 'sly-hyperspec-lookup))
+  (setq ivy-common-lisp-spec-function 'sly-describe-symbol))
 
 ;; Packages
 
