@@ -7,8 +7,8 @@
 (setq mac-command-modifier 'control
       locate-command "mdfind"
       notmuch-command "~/.emacs.d/bin/notmuch"
-      locate-make-command-line
-      (lambda (ss) (list locate-command "-name" ss)))
+      inferior-lisp-program "/opt/homebrew/bin/sbcl"
+      locate-make-command-line (lambda (ss) (list locate-command "-name" ss)))
 
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
