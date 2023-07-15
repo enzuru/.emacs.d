@@ -14,7 +14,7 @@
   (global-set-key (kbd "C-z n") 'tab-bar-switch-to-next-tab)
   (global-set-key (kbd "C-z p") 'tab-bar-switch-to-next-tab)
   (global-set-key (kbd "C-z k") 'tab-bar-close-tab)
-  (global-set-key (kbd "C-x C-n") 'counsel-describe-tab))
+  (global-set-key (kbd "C-x C-n") 'counsel-tabs-describe-tab))
 
 (defun enzuru-configure-winner-mode ()
   (winner-mode 1))
