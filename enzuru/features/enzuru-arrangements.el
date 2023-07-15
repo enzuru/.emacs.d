@@ -10,8 +10,8 @@
 
 (defun enzuru-setup-tab-squares (name one &rest args)
   (interactive)
-  (if enzuru-tab-exists-p (name)
-    (tab-bar-close-tab-by-name name))
+  (if (enzuru-tab-exists-p name)
+      (tab-bar-close-tab-by-name name))
   (tab-bar-new-tab)
   (tab-bar-rename-tab name)
   (let ((amount (+ 1 (length args)))
@@ -39,8 +39,8 @@
 
 (defun enzuru-setup-tab (name one &rest args)
   (interactive)
-  (if enzuru-tab-exists-p (name)
-    (tab-bar-close-tab-by-name name))
+  (if (enzuru-tab-exists-p name)
+      (tab-bar-close-tab-by-name name))
   (tab-bar-new-tab)
   (tab-bar-rename-tab name)
   (let ((amount (+ 1 (length args)))
