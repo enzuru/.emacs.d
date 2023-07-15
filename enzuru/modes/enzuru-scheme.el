@@ -10,7 +10,7 @@
   (define-key geiser-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
 
 (defun enzuru-configure-ivy-guile ()
-  (define-key geiser-mode-map (kbd "C-h s") 'ivy-guile-describe-symbol))
+  (define-key geiser-mode-map (kbd "C-h s") 'ivy-geiser-describe-symbol))
 
 ;; Packages
 
@@ -29,10 +29,10 @@
    :repo "emacs-geiser/guile"))
 
 (straight-use-package
- '(ivy-common-lisp
+ '(ivy-geiser
    :type git
    :host github
-   :repo "enzuru/ivy-guile"))
+   :repo "enzuru/ivy-geiser"))
 
 (use-package scheme
   :ensure t
