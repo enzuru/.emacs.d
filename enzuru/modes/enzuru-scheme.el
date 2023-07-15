@@ -6,8 +6,11 @@
   (require 'geiser)
   (require 'geiser-guile)
   (add-hook 'scheme-mode-hook 'geiser-mode)
-  (define-key scheme-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
-  (define-key scheme-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
+  (define-key geiser-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
+  (define-key geiser-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
+
+(defun enzuru-configure-ivy-guile ()
+  (define-key geiser-mode-map (kbd "C-h s") 'ivy-describe-guile-symbol))
 
 ;; Packages
 
@@ -25,6 +28,12 @@
    :host gitlab
    :repo "emacs-geiser/guile"))
 
+(straight-use-package
+ '(ivy-common-lisp
+   :type git
+   :host github
+   :repo "enzuru/ivy-guile"))
+
 (use-package scheme
   :ensure t
   :defer t
@@ -32,5 +41,6 @@
          ("\\.guile$" . scheme-mode)))
 
 (enzuru-configure-geiser-guile)
+(enzuru-configure-ivy-guile)
 
 (provide 'enzuru-scheme)
