@@ -7,9 +7,6 @@
 (defun enzuru-setup-desktop ()
   (require 'enzuru-window-management)
   (require 'enzuru-guix)
-  (find-file "~/notes/index.org")
-  (split-window-right)
-  (switch-to-buffer "index.org")
   (with-eval-after-load 'geiser-guile
     (add-to-list 'geiser-guile-load-path "~/src/guix")))
 

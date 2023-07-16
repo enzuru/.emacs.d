@@ -36,18 +36,15 @@
 
 (use-package erc
   :ensure t
-  :defer t
   :config (enzuru-configure-erc))
 
 (use-package erc-hl-nicks
   :ensure t
-  :defer t
   :after erc
   :config (add-to-list 'erc-modules 'hl-nicks))
 
 (use-package znc
   :ensure t
-  :defer t
   :after erc
   :config (enzuru-configure-znc))
 
