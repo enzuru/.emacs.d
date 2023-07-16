@@ -73,6 +73,7 @@
   (enzuru-setup-tab "ai" "*chatgpt*")
   (enzuru-setup-tab "eshell" "*eshell*")
   (enzuru-setup-tab "files" "*eFAR*")
+  (enzuru-setup-tab "hacking" "*dashboard*")
   (enzuru-setup-tab ".emacs.d" "init.el")
   (enzuru-setup-tab "mail" "*notmuch-hello*")
   (enzuru-setup-tab "gemini" "*elpher*")
