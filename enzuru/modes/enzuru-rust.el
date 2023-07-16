@@ -1,5 +1,10 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+;; Functions
+
+(defun enzuru-configure-rust-playground ()
+  (setf rust-playground-basedir "~/"))
+
 ;; Packages
 
 (use-package racer
@@ -14,6 +19,7 @@
 
 (use-package rust-playground
   :ensure t
+  :config (enzuru-configure-rust-playground)
   :defer t)
 
 (provide 'enzuru-rust)
