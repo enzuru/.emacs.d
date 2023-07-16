@@ -78,7 +78,7 @@
   (enzuru-setup-tab "gemini" "*elpher*")
   (enzuru-setup-tab "sly" "*sly-mrepl for sbcl*")
   (enzuru-setup-tab "geiser" "*Geiser Guile REPL*")
-  (tab-bar-select-tab-by-name "eshell"))
+  (tab-bar-select-tab-by-name "sly"))
 
 (defun enzuru-arrange-chats ()
   (interactive)
