@@ -9,8 +9,11 @@
 
 (use-package rust-mode
   :ensure t
-  :hook ((rust-mode . racer-mode)
-         (rust-mode . eglot-ensure))
+  :hook ((rust-mode . racer-mode))
   :bind (:map rust-mode-map ("<tab>" . company-indent-or-complete-common)))
+
+(use-package rust-playground
+  :ensure t
+  :defer t)
 
 (provide 'enzuru-rust)
