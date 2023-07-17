@@ -36,6 +36,7 @@
 (require 'enzuru-movement)
 (require 'enzuru-music)
 (require 'enzuru-search)
+(require 'enzuru-secrets-management)
 (require 'enzuru-server)
 (require 'enzuru-syntax-checking)
 (require 'enzuru-spelling)
