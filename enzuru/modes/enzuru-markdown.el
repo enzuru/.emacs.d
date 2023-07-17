@@ -4,6 +4,7 @@
 
 (use-package markdown-mode
   :ensure t
-  :mode (("\\.md$" . markdown-mode)))
+  :mode (("\\.md$" . markdown-mode)
+         ("\\.gmi$" . markdown-mode)))
 
 (provide 'enzuru-markdown)

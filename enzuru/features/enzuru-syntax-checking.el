@@ -9,6 +9,8 @@
 
 (use-package flymake
   :ensure t
+  :bind (("C-x n" . flymake-goto-next-error)
+         ("C-x p" . flymake-goto-prev-error))
   :hook ((prog-mode . flymake-mode))
   :config (enzuru-configure-flymake))
 

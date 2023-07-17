@@ -6,6 +6,21 @@
   (interactive)
   (describe-symbol (intern (thing-at-point 'symbol))))
 
+;; Packages
+
+(use-package package-build
+  :ensure t
+  :defer t)
+
+(use-package package-lint
+  :ensure t
+  :defer t)
+
+(use-package package-lint-flymake
+  :ensure t
+  :hook ((emacs-lisp-mode . package-lint-flymake-setup))
+  :defer t)
+
 ;; Hooks
 
 (add-hook 'emacs-lisp-mode-hook
