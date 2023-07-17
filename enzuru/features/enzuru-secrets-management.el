@@ -12,4 +12,4 @@
   :config (enzuru-configure-password-store)
   :defer t)
 
-(provide 'enzuru-secrets-manager)
+(provide 'enzuru-secrets-management)
