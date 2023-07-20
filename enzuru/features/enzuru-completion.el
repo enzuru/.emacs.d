@@ -14,7 +14,8 @@
   (setq ivy-display-style 'fancy
         ivy-use-virtual-buffers t
         enable-recursive-minibuffers t
-        ivy-wrap t))
+        ivy-wrap t
+        completing-read-function 'ivy-completing-read))
 
 (defun enzuru-configure-ivy-xref ()
   (when (>= emacs-major-version 27)
