@@ -6,4 +6,7 @@
     (/ (* 30 (- rmr (- daily-calories (* daily-training-hours burned-per-hour))))
        3500)))
 
+(defun enzuru-fitness-vo2-max (ftp kilos)
+  (+ (/ (* 10.8 ftp) kilos) 7))
+
 (provide 'enzuru-fitness)
