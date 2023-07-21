@@ -47,7 +47,7 @@
         ;; search
         ([?\C-s] . [?\C-f])))
 
-(define-key exwm-mode-map (kbd "C-b") 'ivy-switch-buffer)
+(define-key exwm-mode-map (kbd "C-b") 'consult-buffer)
 (define-key exwm-mode-map (kbd "S-<up>") 'windmove-up)
 (define-key exwm-mode-map (kbd "S-<left>") 'windmove-left)
 (define-key exwm-mode-map (kbd "S-<right>") 'windmove-right)

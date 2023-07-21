@@ -2,9 +2,9 @@
 
 ;; Configuration
 
-(defun enzuru-load-counsel-tabs ()
-  (straight-use-package '(counsel-tabs :type git :host github :repo "enzuru/counsel-tabs"))
-  (require 'counsel-tabs))
+;; (defun enzuru-load-counsel-tabs ()
+;;   (straight-use-package '(counsel-tabs :type git :host github :repo "enzuru/counsel-tabs"))
+;;   (require 'counsel-tabs))
 
 (defun enzuru-configure-tab-bar-mode ()
   (tab-bar-mode)
@@ -14,14 +14,15 @@
   (global-set-key (kbd "C-z n") 'tab-bar-switch-to-next-tab)
   (global-set-key (kbd "C-z p") 'tab-bar-switch-to-next-tab)
   (global-set-key (kbd "C-z k") 'tab-bar-close-tab)
-  (global-set-key (kbd "C-x C-n") 'counsel-tabs-describe-tab))
+  ;; (global-set-key (kbd "C-x C-n") 'counsel-tabs-describe-tab)
+  )
 
 (defun enzuru-configure-winner-mode ()
   (winner-mode 1))
 
 ;; Packages
 
-(enzuru-load-counsel-tabs)
+;; (enzuru-load-counsel-tabs)
 (enzuru-configure-tab-bar-mode)
 (enzuru-configure-winner-mode)
 
