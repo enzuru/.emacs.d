@@ -8,9 +8,9 @@
   (define-key scheme-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
   (define-key scheme-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
 
-;; (defun enzuru-configure-ivy-guile ()
-;;   (define-key scheme-mode-map (kbd "C-h s") 'ivy-geiser-describe-symbol)
-;;   (define-key geiser-repl-mode-map (kbd "C-h s") 'ivy-geiser-describe-symbol))
+(defun enzuru-configure-completing-read-geiser ()
+  (define-key scheme-mode-map (kbd "C-h s") 'completing-read-geiser)
+  (define-key geiser-repl-mode-map (kbd "C-h s") 'completing-read-geiser))
 
 ;; Packages
 
@@ -21,13 +21,13 @@
    :host gitlab
    :repo "emacs-geiser/guile"))
 
-;; (straight-use-package
-;;  '(ivy-geiser
-;;    :type git
-;;    :host github
-;;    :repo "enzuru/ivy-geiser"))
+(straight-use-package
+ '(completing-read-geiser
+   :type git
+   :host github
+   :repo "enzuru/completing-read-geiser"))
 
-;;(load-library "ivy-geiser")
+(require 'completing-read-geiser)
 
 (use-package scheme
   :ensure t
@@ -36,6 +36,6 @@
          ("\\.guile$" . scheme-mode)))
 
 (enzuru-configure-geiser-guile)
-;; (enzuru-configure-ivy-guile)
+(enzuru-configure-completing-read-geiser)
 
 (provide 'enzuru-scheme)

@@ -24,6 +24,7 @@
 
 (global-set-key (kbd "C-x C-r") 'eval-region)                    ;; C-x(ecute) C-r(egion)
 (global-set-key (kbd "C-x C-w") 'xref-find-definitions)          ;; C-x(ecute) C-w(here is this code)
+(global-set-key (kbd "C-x C-n") 'tab-bar-select-tab-by-name)
 
 ;; Buffer browsing & management: ergonomic & simple but not memorable
 

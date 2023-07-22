@@ -70,7 +70,7 @@
 
 (defun enzuru-arrange-workspace ()
   (interactive)
-  (enzuru-setup-tab "bugs" "*Woodchuck Bugs*")
+  ;; (enzuru-setup-tab "bugs" "*Woodchuck Bugs*")
   (enzuru-setup-tab "hacking" "*dashboard*")
   (enzuru-setup-tab ".emacs.d" "init.el")
   (enzuru-setup-tab "ai" "*chatgpt*")
@@ -105,7 +105,7 @@
   (interactive)
   (find-file "~/.emacs.d/init.el")
   (sly)
-  (debbugs-gnu '() debbugs-gnu-all-packages)
+  ;; (debbugs-gnu '() debbugs-gnu-all-packages)
   (chatgpt-shell)
   (eshell)
   (enzuru-efar)
