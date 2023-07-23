@@ -5,6 +5,7 @@
 (defun enzuru-configure-geiser-guile ()
   (require 'geiser-guile)
   (add-hook 'scheme-mode-hook 'geiser-mode)
+  (setq geiser-debug-show-debug nil)
   (define-key scheme-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
   (define-key scheme-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
 
