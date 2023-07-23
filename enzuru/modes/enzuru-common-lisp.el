@@ -32,6 +32,8 @@
   :config (enzuru-configure-sly)
   :bind (
          ("C-h s" . completing-read-sly)
+         (:map sly-mode-map
+               ("C-h s" . completing-read-sly))
          (:map lisp-mode-map
                ("C-x C-d" . enzuru-sly-describe-symbol-at-point)
                ("C-x C-w" . sly-edit-definition-other-window)
