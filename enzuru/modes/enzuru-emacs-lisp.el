@@ -8,6 +8,10 @@
 
 ;; Packages
 
+(use-package checkdoc
+  :ensure
+  :defer t)
+
 (use-package package-build
   :ensure t
   :defer t)
