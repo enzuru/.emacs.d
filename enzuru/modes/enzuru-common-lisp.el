@@ -21,9 +21,6 @@
 (defun enzuru-configure-sly ()
   (push 'sly-repl-ansi-color sly-contribs))
 
-(defun enzuru-configure-completing-read-sly ()
-  (setq completing-read-sly-spec-function 'sly-describe-symbol))
-
 (defun enzuru-sly-describe-symbol-at-point ()
   (interactive)
   (sly-describe-symbol (word-at-point)))
@@ -43,7 +40,5 @@
 (use-package sly-quicklisp
   :ensure t
   :defer t)
-
-(enzuru-configure-completing-read-sly)
 
 (provide 'enzuru-common-lisp)
