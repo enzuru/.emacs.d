@@ -142,8 +142,8 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 
 These bindings cover the three most important things you'll do while hacking Lisp code in either Elisp, Sly, Geiser, or CIDER:
 
-- `C-x c(ompile)` evaluate buffer
-- `C-x r(egion)` evaluate region
+- `C-x(ecute) c(ompile)` evaluate buffer
+- `C-x(ecute) r(egion)` evaluate region
 - `C-x(ecute) C-d(ocumentation)` lets you search through all available documentation.
 - `C-x(ecute) C-w(here)` displays the current list of available functions.
 - `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in
