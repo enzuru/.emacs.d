@@ -10,6 +10,7 @@
   (define-key scheme-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
 
 (defun enzuru-configure-completing-read-geiser ()
+  (require 'completing-read-geiser)
   (define-key scheme-mode-map (kbd "C-h s") 'completing-read-geiser)
   (define-key geiser-repl-mode-map (kbd "C-h s") 'completing-read-geiser))
 
@@ -27,8 +28,6 @@
    :type git
    :host github
    :repo "enzuru/completing-read-geiser"))
-
-(require 'completing-read-geiser)
 
 (use-package scheme
   :ensure t
