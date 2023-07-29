@@ -7,7 +7,8 @@
   (add-hook 'emacs-lisp-mode-hook 'prism-mode)
   (add-hook 'scheme-mode-hook 'prism-mode)
   (add-hook 'json-mode-hook 'prism-mode)
-  (add-hook 'yaml-mode-hook 'prism-mode))
+  (add-hook 'yaml-mode-hook 'prism-mode)
+  (add-hook 'clojure-mode-hook 'prism-mode))
 
 ;; Packages
 
