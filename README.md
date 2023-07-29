@@ -138,6 +138,29 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 
 ## Keystrokes
 
+### Lisp
+
+These bindings cover the three most important things you'll do while hacking Lisp code in either Elisp, Sly, Geiser, or CIDER:
+
+- `C-x c(ompile)` evaluate buffer
+- `C-x r(egion)` evaluate region
+- `C-x(ecute) C-d(ocumentation)` lets you search through all available documentation.
+- `C-x(ecute) C-w(here)` displays the current list of available functions.
+- `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in
+
+#### Parenthesis
+
+When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate and edit code:
+
+- `e` evaluate s-expression
+- `]` move forward
+- `[` move backwards
+- `>` slurp up next s-expression
+- `<` barf up s-expression
+- `w` move s-expression up
+- `s` move s-expression down
+- `r` raise s-expression
+
 ### Help
 
 These are the five most important keystrokes of all. If you know these five keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.

@@ -32,6 +32,7 @@
             (eldoc-mode)
             (define-key emacs-lisp-mode-map (kbd "C-x C-d") 'enzuru-elisp-documentation-search)
             (define-key emacs-lisp-mode-map (kbd "C-x C-w") 'find-function-at-point)
-            (define-key emacs-lisp-mode-map (kbd "C-x c") 'eval-buffer)))
+            (define-key emacs-lisp-mode-map (kbd "C-x c") 'eval-buffer)
+            (define-key emacs-lisp-mode-map (kbd "C-x r") 'eval-region)))
 
 (provide 'enzuru-emacs-lisp)

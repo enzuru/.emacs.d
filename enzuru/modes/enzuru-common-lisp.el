@@ -24,7 +24,8 @@
   :bind ((:map lisp-mode-map
                ("C-x C-d" . enzuru-sly-describe-symbol-at-point)
                ("C-x C-w" . sly-edit-definition-other-window)
-               ("C-x c" . sly-eval-buffer))))
+               ("C-x c" . sly-eval-buffer)
+               ("C-x r" . sly-eval-region))))
 
 (use-package sly-quicklisp
   :ensure t

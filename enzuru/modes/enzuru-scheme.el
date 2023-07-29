@@ -7,6 +7,8 @@
   (add-hook 'scheme-mode-hook 'geiser-mode)
   (setq geiser-debug-show-debug nil)
   (define-key scheme-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
+  (define-key scheme-mode-map (kbd "C-x r") 'geiser-eval-region)
+  (define-key scheme-mode-map (kbd "C-x C-w") 'geiser-edit-symbol-at-point)
   (define-key scheme-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
 
 (defun enzuru-configure-completing-read-geiser ()
