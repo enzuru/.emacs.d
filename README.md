@@ -59,36 +59,36 @@ The following major languages are not well-supported outside using an LSP server
 
 This configuration ships with a great many helpful tools:
 
-| Feature                      | Tool                                                                                                            |
-|------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Artificial intelligence      | [chatgpt-shell](https://github.com/xenodium/chatgpt-shell)                                                      |
-| Benchmarker                  | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                                         |
-| Bug tracker                  | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                           |
-| Clipboard                    | [Clipetty](https://github.com/spudlyo/clipetty)                                                                 |
-| Completion  (regular buffer) | [Company](https://company-mode.github.io)                                                                       |
-| Completion (minibuffer)      | [vertico](https://github.com/minad/vertico)
-| Dashboard                    | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                 |
-| Documentation searcher       | [devdocs](https://github.com/astoff/devdocs.el)                                                                 |
-| File manager                 | [eFar](https://github.com/suntsov/efar)                                                                         |
-| Hyperlinker                  | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                            |
-| IRC client                   | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                              |
-| LSP client                   | [Eglot](https://github.com/joaotavora/eglot)                                                                    |
-| Mail client                  | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                               |
-| Modal editor                 | [lispy](https://github.com/abo-abo/lispy)                                                                       |
-| Modeline                     | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                                 |
-| MUD client                   | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                                  |
-| Music players                | [Emms](https://www.gnu.org/software/emms/), [pianobar.el](https://github.com/agrif/pianobar.el)                 |
-| Organization                 | [org-mode](https://orgmode.org)                                                                                 |
-| Project interaction          | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html)                           |
-| REST client                  | [restclient.el](https://github.com/pashky/restclient.el)                                                        |
-| Shell                        | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                       |
-| Spreadsheets                 | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                                             |
-| Syntax checker               | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                                     |
-| Syntax highlighter           | [prism](https://github.com/alphapapa/prism.el)                                                                  |
-| Undo visualizer              | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                       |
-| Version control              | [Magit](https://magit.vc)                                                                                       |
-| Web browsers                 | [Elpher](https://thelambdalab.xyz/elpher/), [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) |
-| Window manager               | [exwm](https://github.com/ch11ng/exwm)                                                                          |
+| Feature                     | Tool                                                                                                            |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Artificial intelligence     | [chatgpt-shell](https://github.com/xenodium/chatgpt-shell)                                                      |
+| Benchmarker                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                                         |
+| Bug tracker                 | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                           |
+| Clipboard                   | [Clipetty](https://github.com/spudlyo/clipetty)                                                                 |
+| Completion (regular buffer) | [Company](https://company-mode.github.io)                                                                       |
+| Completion (minibuffer)     | [vertico](https://github.com/minad/vertico)                                                                     |
+| Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                 |
+| Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                                 |
+| File manager                | [eFar](https://github.com/suntsov/efar)                                                                         |
+| Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                            |
+| IRC client                  | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                              |
+| LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                                                    |
+| Mail client                 | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                               |
+| Modal editor                | [lispy](https://github.com/abo-abo/lispy)                                                                       |
+| Modeline                    | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                                 |
+| MUD client                  | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                                  |
+| Music players               | [Emms](https://www.gnu.org/software/emms/), [pianobar.el](https://github.com/agrif/pianobar.el)                 |
+| Organization                | [org-mode](https://orgmode.org)                                                                                 |
+| Project interaction         | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html)                           |
+| REST client                 | [restclient.el](https://github.com/pashky/restclient.el)                                                        |
+| Shell                       | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                       |
+| Spreadsheets                | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                                             |
+| Syntax checker              | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                                     |
+| Syntax highlighter          | [prism](https://github.com/alphapapa/prism.el)                                                                  |
+| Undo visualizer             | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                       |
+| Version control             | [Magit](https://magit.vc)                                                                                       |
+| Web browsers                | [Elpher](https://thelambdalab.xyz/elpher/), [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) |
+| Window manager              | [exwm](https://github.com/ch11ng/exwm)                                                                          |
 
 ### Themes
 
@@ -171,7 +171,6 @@ These are the five most important keystrokes of all. If you know these five keys
 - `C-h(elp) i(nfo)` shows the info docs installed on your computer (no need to have a browser open just to read documentation).
 - `C-h(elp) m(ode)` shows information about all the modes in the buffer.
 - `C-h(elp) k(ey)` let’s you type a keystroke and find out what it does.
-- `C-h(elp) s(ymbol)` gives you the definition of a Common Lisp symbol
 - `C-h(elp) v(ariable)` displays the list of available variables.
 
 ### Basics
@@ -209,7 +208,7 @@ Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, 
 
 ### Tab management
 
-I have keystrokes setup to mimic tmux/screen using Emacs tabs.
+I have keystrokes setup to emulate tmux/screen using Emacs tabs.
 
 - `C-z(one) c(reates)` a new workspace.
 - `C-z(one) k(ills)` a current workspace.
@@ -241,7 +240,7 @@ These are the most powerful commands, mostly applications.
 
 These are less powerful commands, mostly functions.
 
-- `C-x C-c(ounsel)` let’s me search for a word at point in a project.
+- `C-x C-c(onsult)` let’s me search for a word at point in a project.
 - `C-x C-d(ocumentation)` let’s me search online documentation.
 - `C-x C-f(ile)` finds a file.
 - `C-x C-m(eta)` let’s me run an Emacs function.
