@@ -66,7 +66,7 @@ This configuration ships with a great many helpful tools:
 | Bug tracker                 | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                           |
 | Clipboard                   | [Clipetty](https://github.com/spudlyo/clipetty)                                                                 |
 | Completion (regular buffer) | [Company](https://company-mode.github.io)                                                                       |
-| Completion (minibuffer)     | [vertico](https://github.com/minad/vertico)                                                                     |
+| Completion (minibuffer)     | [vert&co](https://github.com/minad/vertico#complementary-packages)                                              |
 | Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                 |
 | Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                                 |
 | File manager                | [eFar](https://github.com/suntsov/efar)                                                                         |
@@ -140,7 +140,7 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 
 ### Lisp
 
-These bindings cover the three most important things you'll do while hacking Lisp code in either Elisp, Sly, Geiser, or CIDER:
+These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, Sly, Geiser, or CIDER:
 
 - `C-x(ecute) c(ompile)` evaluate buffer
 - `C-x(ecute) r(egion)` evaluate region
@@ -150,7 +150,7 @@ These bindings cover the three most important things you'll do while hacking Lis
 
 #### Parenthesis
 
-When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate and edit code:
+When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate, edit, and evaluate code:
 
 - `e` evaluate s-expression
 - `]` move forward
@@ -195,7 +195,7 @@ These keystrokes are for navigating Emacs. They are not intuitive at all, but ar
 
 Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, but I personally don’t. I don’t deny that they are a little slower.
 
-- `C-x C-b(uffer)` uses Vertico to help me find a buffer.
+- `C-x C-b(uffer)` helps me find a buffer.
 - `C-tab` (or `C-x o(ther)`) let’s me switch to another visible buffer.
 - `Shift-up`, `shift-left`, `shift-right`, and `shift-down` let me move to a buffer in that direction.
 - `C-x left` and `C-x right` let me run forward and backward through the list of buffers.
