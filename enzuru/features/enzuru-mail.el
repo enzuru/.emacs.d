@@ -2,6 +2,24 @@
 
 ;; Configuration
 
+(defun enzuru-configure-gnus ()
+  ;; (add-to-list 'gnus-search-default-engines '(nnml . notmuch))
+  (setq gnus-search-default-engines '(notmuch)
+        gnus-search-use-parsed-queries t
+        gnus-verbose 10
+        gnus-verbose-backends 10)
+  ;; (setq gnus-select-method
+  ;;       '(nnmaildir "me@enzu.ru"
+  ;;                   (directory "~/mail/me")
+  ;;                   (gnus-search-notmuch-program "notmuch")
+  ;;                   (gnus-search-engine gnus-search-notmuch (config-file "~/.notmuch_config"))))
+  )
+
+(defun enzuru-configure-nnnotmuch ()
+  (setf gnus-select-method '(nnnotmuch ""))
+  (setq nnnotmuch-groups '((""
+                       ("mail.9front" "tag:9front")))))
+
 (defun enzuru-configure-notmuch ()
   (setq fill-column 72
         mail-user-agent 'message-user-agent
@@ -20,9 +38,23 @@
 
 ;; Packages
 
+(use-package gnus
+  :ensure t
+  :defer t
+  :config (enzuru-configure-gnus))
+
 (use-package notmuch
   :ensure t
   :defer t
   :config (enzuru-configure-notmuch))
+
+(straight-use-package
+ '(nnnotmuch
+   :type git
+   :host github
+   :repo "tlikonen/nnnotmuch"))
+(require 'nnnotmuch)
+
+(enzuru-configure-nnnotmuch)
 
 (provide 'enzuru-mail)
