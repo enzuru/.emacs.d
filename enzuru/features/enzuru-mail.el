@@ -16,9 +16,22 @@
   )
 
 (defun enzuru-configure-nnnotmuch ()
-  (setf gnus-select-method '(nnnotmuch ""))
+  (setq gnus-select-method '(nnnotmuch ""))
   (setq nnnotmuch-groups '((""
-                       ("mail.9front" "tag:9front")))))
+                            ("openbsd" "tag:openbsd")
+                            ("openbsd.commits" "tag:openbsd-commits")
+                            ("openbsd.bugs" "tag:openbsd-bugs")
+                            ("gnu" "tag:gnu")
+                            ("gnu.commits" "tag:gnu-commits")
+                            ("gnu.bugs" "tag:gnu-bugs")
+                            ("9front" "tag:9front")
+                            ("archive.openbsd" "tag:archive-openbsd")
+                            ("archive.openbsd.commits" "tag:archive-openbsd-commits")
+                            ("archive.openbsd.bugs" "tag:archive-openbsd-bugs")
+                            ("archive.gnu" "tag:archive-gnu")
+                            ("archive.gnu.commits" "tag:archive-gnu-commits")
+                            ("archive.gnu.bugs" "tag:archive-gnu-bugs")
+                            ("archive.9front" "tag:archive-9front")))))
 
 (defun enzuru-configure-notmuch ()
   (setq fill-column 72
