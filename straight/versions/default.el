@@ -111,6 +111,7 @@
  ("mu" . "cd6fbac551b7dc0926ced8d0e04b87a00216d24f")
  ("multi-term" . "017c77c550115936860e2ea71b88e585371475d5")
  ("multiple-cursors.el" . "6956e8e12ee191d7c80d042ae8ff495286fcbe38")
+ ("nnnotmuch" . "2643990f2c63974ac38ce7dbef48ea2cfdf87b2d")
  ("nongnu-elpa" . "14e9631cd2b81f66ed551b14d31811a75cc53a4b")
  ("notmuch" . "95a4bf38173311597bcc4fa7f597d58bb11ed119")
  ("nov.el" . "58c35e677e11f5c04a702b42ac753c80c8955089")
