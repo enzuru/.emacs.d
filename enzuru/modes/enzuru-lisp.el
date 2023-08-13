@@ -12,6 +12,7 @@
          (geiser-repl-mode . lispy-mode)
          (sly-mrepl-mode . lispy-mode)
          (cider-repl-mode . lispy-mode)
-         (scheme-mode . lispy-mode)))
+         (scheme-mode . lispy-mode)
+         (minibuffer-mode . lispy-mode)))
 
 (provide 'enzuru-lisp)
