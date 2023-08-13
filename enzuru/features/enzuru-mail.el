@@ -3,17 +3,11 @@
 ;; Configuration
 
 (defun enzuru-configure-gnus ()
-  ;; (add-to-list 'gnus-search-default-engines '(nnml . notmuch))
   (setq gnus-search-default-engines '(notmuch)
         gnus-search-use-parsed-queries t
         gnus-verbose 10
-        gnus-verbose-backends 10)
-  ;; (setq gnus-select-method
-  ;;       '(nnmaildir "me@enzu.ru"
-  ;;                   (directory "~/mail/me")
-  ;;                   (gnus-search-notmuch-program "notmuch")
-  ;;                   (gnus-search-engine gnus-search-notmuch (config-file "~/.notmuch_config"))))
-  )
+        gnus-verbose-backends 10
+        gnus-show-threads nil))
 
 (defun enzuru-configure-nnnotmuch ()
   (setq gnus-select-method '(nnnotmuch ""))
