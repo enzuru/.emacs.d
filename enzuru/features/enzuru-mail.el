@@ -4,10 +4,12 @@
 
 (defun enzuru-configure-gnus ()
   (setq gnus-search-default-engines '(notmuch)
+        gnus-show-threads t
+        gnus-thread-indent-level 1
+        gnus-thread-hide-subtree t
         gnus-search-use-parsed-queries t
         gnus-verbose 10
-        gnus-verbose-backends 10
-        gnus-show-threads nil))
+        gnus-verbose-backends 10))
 
 (defun enzuru-configure-nnnotmuch ()
   (setq gnus-select-method '(nnnotmuch ""))
