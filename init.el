@@ -13,8 +13,8 @@
 
 ;; Features
 
-(require 'enzuru-arrangements)
 (require 'enzuru-ai)
+(require 'enzuru-arrangements)
 (require 'enzuru-benchmarks)
 (require 'enzuru-browser)
 (require 'enzuru-bug-tracking)
