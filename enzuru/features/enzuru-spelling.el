@@ -2,22 +2,14 @@
 
 ;; Configuration
 
-(defun enzuru-load-company-spell ()
-  (straight-use-package
-   '(company-spell
-     :type git
-     :host github
-     :repo "enzuru/company-spell"
-     :fork (:repo "enzuru/company-spell" :branch "master")))
-  (require 'company-spell)
-  (push 'company-spell company-backends))
+(use-package company-spell
+  :config (push 'company-spell company-backends)
+  :ensure t)
 
 ;; Packages
 
 (use-package flymake-aspell
   :ensure t
   :hook ((text-mode-hook . flymake-aspell-setup)))
-
-(enzuru-load-company-spell)
 
 (provide 'enzuru-spelling)
