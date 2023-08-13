@@ -20,7 +20,7 @@
  ("company-mode" . "8a78f320019574bc35b5727f95b052b27918da20")
  ("company-restclient" . "e5a3ec54edb44776738c13e13e34c85b3085277b")
  ("company-shell" . "5f959a63a6e66eb0cbdac3168cad523a62cc2ccd")
- ("company-spell" . "48093269130ee61521737c7629fe2a7d074b9554")
+ ("company-spell" . "ecdc9f37e08d7eaa8350e521c9368bf97c08ce4e")
  ("company-web" . "863fb84b81ed283474e50330cd8d27b1ca0d74f1")
  ("compat" . "e07c0f29d45a73cc0bdf9423780979978c1d9d22")
  ("completing-read-cider" . "bdeb3da36b44f52db11f5546344d5d63fa785774")
