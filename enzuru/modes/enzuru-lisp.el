@@ -4,7 +4,6 @@
 
 (use-package lispy
   :ensure t
-  :diminish lispy-mode
   :hook ((emacs-lisp-mode . lispy-mode)
          (ielm-mode . lispy-mode)
          (lisp-mode . lispy-mode)
