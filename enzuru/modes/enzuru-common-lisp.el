@@ -5,7 +5,7 @@
 ;; Functions
 
 (defun enzuru-configure-sly ()
-  (push 'sly-repl-ansi-color sly-contribs))
+  (add-to-list 'sly-repl-ansi-color sly-contribs))
 
 (defun enzuru-sly-describe-symbol-at-point ()
   (interactive)

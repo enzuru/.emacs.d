@@ -3,8 +3,7 @@
 ;; Functions
 
 (defun enzuru-configure-company-php ()
-  (if (not (member 'company-ac-php-backend company-backends))
-      (push 'company-ac-php-backend company-backends)))
+  (add-to-list 'company-ac-php-backend company-backends))
 
 (defun enzuru-configure-php-mode ()
   (setq php-mode-force-pear 1))

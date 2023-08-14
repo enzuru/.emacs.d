@@ -3,12 +3,9 @@
 ;; Functions
 
 (defun enzuru-configure-company-shell ()
-  (if (not (member 'company-shell company-backends))
-      (push 'company-shell company-backends))
-  (if (not (member 'company-shell-env company-backends))
-      (push 'company-shell-env company-backends))
-  (if (not (member 'company-fish-shell company-backends))
-      (push 'company-fish-shell company-backends)))
+  (add-to-list 'company-shell company-backends)
+  (add-to-list 'company-shell-env company-backends)
+  (add-to-list 'company-fish-shell company-backends))
 
 ;; Packages
 

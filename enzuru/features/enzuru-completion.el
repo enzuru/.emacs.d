@@ -8,7 +8,7 @@
   (add-hook 'after-init-hook 'global-company-mode))
 
 (defun enzuru-configure-company-lsp ()
-  (push 'company-lsp company-backends))
+  (add-to-list 'company-lsp company-backends))
 
 (defun enzuru-initialize-emacs ()
   (defun crm-indicator (args)
@@ -100,7 +100,7 @@
          ("M-y" . consult-yank-pop)
          ("M-g e" . consult-compile-error)
          ("M-g f" . consult-flymake)
-         ("M-g g" . consult-goto-line) 
+         ("M-g g" . consult-goto-line)
          ("M-g M-g" . consult-goto-line)
          ("M-g o" . consult-outline)
          ("M-g m" . consult-mark)

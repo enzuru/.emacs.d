@@ -3,8 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-company-web ()
-  (if (not (member 'company-web-html company-backends))
-      (push 'company-web-html company-backends)))
+  (add-to-list 'company-web-html company-backends))
 
 (defun enzuru-configure-web-mode ()
   (setq web-mode-markup-indent-offset 2

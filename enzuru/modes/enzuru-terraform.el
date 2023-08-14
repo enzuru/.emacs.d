@@ -3,8 +3,7 @@
 ;; Functions
 
 (defun enzuru-configure-company-terraform ()
-  (if (not (member 'company-terraform company-backends))
-      (push 'company-terraform company-backends)))
+  (add-to-list 'company-terraform company-backends))
 
 (defun enzuru-configure-terraform ()
   (add-hook 'terraform-mode-hook

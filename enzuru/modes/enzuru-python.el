@@ -3,8 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-company-anaconda ()
-  (if (not (member 'company-anaconda company-backends))
-      (push 'company-anaconda company-backends)))
+  (add-to-list 'company-anaconda company-backends))
 
 (defun enzuru-configure-python-compile-command ()
   (add-hook 'python-mode-hook
