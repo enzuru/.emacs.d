@@ -75,7 +75,8 @@ This configuration ships with a great many helpful tools:
 | Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                  |
 | IRC client                  | [ERC](https://www.gnu.org/software/emacs/erc.html)                                    |
 | LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                          |
-| Mail client                 | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                     |
+| Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html) |
+| Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                     |
 | Modal editor                | [lispy](https://github.com/abo-abo/lispy)                                             |
 | Modeline                    | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                       |
 | MUD client                  | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                        |
