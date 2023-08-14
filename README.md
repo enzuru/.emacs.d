@@ -147,8 +147,8 @@ These bindings cover the most important things you'll do while hacking Lisp code
 
 - `C-x(ecute) c(ompile)` evaluate buffer
 - `C-x(ecute) r(egion)` evaluate region
-- `C-x(ecute) C-d(ocumentation)` lets you search through all available documentation.
-- `C-x(ecute) C-w(here)` displays the current list of available functions.
+- `C-x(ecute) C-d(ocumentation)` view documentation for symbol at point
+- `C-x(ecute) C-w(here)` jump to definition for symbol at point
 - `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in
 
 #### Parenthesis
