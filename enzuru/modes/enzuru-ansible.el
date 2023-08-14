@@ -3,8 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-ansible ()
-  (if (not (member 'company-ansible company-backends))
-      (push 'company-ansible company-backends)))
+  (add-to-list 'company-ansible company-backends))
 
 ;; Packages
 

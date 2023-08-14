@@ -3,8 +3,7 @@
 ;; Configure
 
 (defun enzuru-configure-company-ghci ()
-  (if (not (member 'company-ghci company-backends))
-      (push 'company-ghci company-backends)))
+  (add-to-list 'company-ghci company-backends))
 
 (defun enzuru-configure-haskell-mode ()
   (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
