@@ -6,7 +6,6 @@
 
 (setq mac-command-modifier 'control
       locate-command "mdfind"
-      notmuch-command "~/.emacs.d/bin/notmuch"
       inferior-lisp-program "/opt/homebrew/bin/sbcl"
       locate-make-command-line (lambda (ss) (list locate-command "-name" ss)))
 
