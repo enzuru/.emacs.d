@@ -13,13 +13,14 @@
         (enzuru-arrange-chats)))
     (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
 
-  (setq erc-nick "enzuru"
-        erc-user-full-name "enzu.ru"
-        erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306")
-        erc-hide-timestamps t
-        erc-track-visibility nil
-        erc-join-buffer 'bury
-        erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+    (setq erc-nick "enzuru"
+          erc-user-full-name "enzu.ru"
+          erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306")
+          erc-hide-timestamps t
+          erc-track-position-in-mode-line nil
+          erc-join-buffer 'bury
+          erc-track-minor-mode nil
+          erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                   "324" "329" "332" "333" "353" "477")))
 
 (defun enzuru-configure-znc ()
