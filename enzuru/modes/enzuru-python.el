@@ -6,10 +6,6 @@
   (if (not (member 'company-anaconda company-backends))
       (push 'company-anaconda company-backends)))
 
-(defun enzuru-configure-company-jedi ()
-  (if (not (member 'company-jedi company-backends))
-      (push 'company-jedi company-backends)))
-
 (defun enzuru-configure-python-compile-command ()
   (add-hook 'python-mode-hook
             (lambda ()
@@ -28,20 +24,6 @@
 (use-package company-anaconda
   :ensure t
   :hook ((python-mode . enzuru-configure-company-anaconda)))
-
-(use-package company-jedi
-  :ensure t
-  :hook ((python-mode . enzuru-configure-company-jedi)))
-
-(use-package elpy
-  :ensure t
-  :init (elpy-enable))
-
-(use-package jedi
-  :ensure t
-  :defer t
-  :hook ((python-mode . jedi-mode)
-         (python-mode . eglot-ensure)))
 
 (enzuru-configure-python-compile-command)
 

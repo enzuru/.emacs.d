@@ -40,7 +40,7 @@ I provide an IDE and REPL for each major environment that I work in:
 | JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                    | [Indium](https://github.com/NicolasPetton/Indium/)                   |
 | Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el) | [kubernetes-tramp](https://github.com/gruggiero/kubernetes-tramp)    |
 | PHP         | [php-mode](https://github.com/emacs-php/php-mode)               | [PsySH](https://github.com/emacs-php/psysh.el)                       |
-| Python      | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode)     | [Elpy](https://github.com/jorgenschaefer/elpy)                       |
+| Python      | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode)     | `run-python`                                                         |
 | Ruby        | [Robe](https://github.com/dgutov/robe)                          | [inf-ruby](https://github.com/nonsequitur/inf-ruby)                  |
 | Rust        | [Racer](https://github.com/racer-rust/emacs-racer)              | [rust-playground](https://github.com/grafov/rust-playground/)        |
 | Scheme      | [Geiser](https://www.nongnu.org/geiser/)                        | [Geiser](https://www.nongnu.org/geiser/)                             |
