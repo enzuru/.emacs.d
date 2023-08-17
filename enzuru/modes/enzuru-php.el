@@ -3,7 +3,7 @@
 ;; Functions
 
 (defun enzuru-configure-company-php ()
-  (add-to-list 'company-ac-php-backend company-backends))
+  (cl-pushnew 'company-ac-php-backend company-backends))
 
 (defun enzuru-configure-php-mode ()
   (setq php-mode-force-pear 1))

@@ -3,7 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-ansible ()
-  (add-to-list 'company-ansible company-backends))
+  (cl-pushnew 'company-ansible company-backends))
 
 ;; Packages
 

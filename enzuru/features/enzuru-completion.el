@@ -8,7 +8,7 @@
   (add-hook 'after-init-hook 'global-company-mode))
 
 (defun enzuru-configure-company-lsp ()
-  (add-to-list 'company-lsp company-backends))
+  (cl-pushnew 'company-lsp company-backends))
 
 (defun enzuru-initialize-emacs ()
   (defun crm-indicator (args)

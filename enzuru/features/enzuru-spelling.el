@@ -2,9 +2,9 @@
 
 ;; Configuration
 
-;; (use-package company-spell
-;;   :config (add-to-list 'company-spell company-backends)
-;;   :ensure t)
+(use-package company-spell
+  :config (cl-pushnew 'company-spell company-backends)
+  :ensure t)
 
 ;; Packages
 

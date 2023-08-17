@@ -3,7 +3,7 @@
 ;; Configure
 
 (defun enzuru-configure-company-ghci ()
-  (add-to-list 'company-ghci company-backends))
+  (cl-pushnew 'company-ghci company-backends))
 
 (defun enzuru-configure-haskell-mode ()
   (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)

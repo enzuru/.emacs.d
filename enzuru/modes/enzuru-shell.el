@@ -3,9 +3,9 @@
 ;; Functions
 
 (defun enzuru-configure-company-shell ()
-  (add-to-list 'company-shell company-backends)
-  (add-to-list 'company-shell-env company-backends)
-  (add-to-list 'company-fish-shell company-backends))
+  (cl-pushnew 'company-shell company-backends)
+  (cl-pushnew 'company-shell-env company-backends)
+  (cl-pushnew 'company-fish-shell company-backends))
 
 ;; Packages
 

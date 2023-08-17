@@ -3,7 +3,7 @@
 ;; Functions
 
 (defun enzuru-configure-company-terraform ()
-  (add-to-list 'company-terraform company-backends))
+  (cl-pushnew 'company-terraform company-backends))
 
 (defun enzuru-configure-terraform ()
   (add-hook 'terraform-mode-hook
