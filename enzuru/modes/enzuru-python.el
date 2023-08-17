@@ -16,7 +16,8 @@
 (use-package anaconda-mode
   :ensure t
   :hook ((python-mode . anaconda-mode)
-         (python-mode . anaconda-eldoc-mode))
+         (python-mode . anaconda-eldoc-mode)
+         (python-mode . eglot-ensure))
   :bind (:map python-mode-map (("C-x C-d" . anaconda-mode-show-doc)
                                ("C-x C-w" . anaconda-mode-find-definitions))))
 
