@@ -52,6 +52,7 @@
 
 (require 'enzuru-ansible)
 (require 'enzuru-c)
+(require 'enzuru-cpp)
 (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
 (require 'enzuru-elixir)

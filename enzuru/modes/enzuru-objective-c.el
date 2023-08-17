@@ -22,6 +22,11 @@
 
 ;; (define-key obj-c-mode-map (kbd "C-x C-d") 'enzuru-cocoa-open-documentation)
 
+(defun enzuru-configure-objc-mode ()
+  (add-hook 'objc-mode-hook 'eglot-ensure))
+
+(enzuru-configure-objc-mode)
+
 ;; Packages
 
 (provide 'enzuru-objective-c)
