@@ -73,7 +73,7 @@
   ;; (enzuru-setup-tab "bugs" "*Woodchuck Bugs*")
   (enzuru-setup-tab "hacking" "*dashboard*")
   (enzuru-setup-tab ".emacs.d" "init.el" "magit: .emacs.d")
-  (enzuru-setup-tab "ai" "*chatgpt*")
+  (enzuru-setup-tab "ai" "*chatgpt* 3.5t/Programming")
   (enzuru-setup-tab "eshell" "*eshell*")
   (enzuru-setup-tab "files" "*eFAR*")
   (enzuru-setup-tab "mail" "*Group*")
