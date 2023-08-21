@@ -7,7 +7,7 @@
 
 (defun enzuru-upgrade ()
   (interactive)
-  (shell-command "~/.emacs.d/bin/guix-upgrade")
+  (shell-command "~/bin/guix-upgrade")
   (straight-pull-all)
   (straight-freeze-versions))
 
