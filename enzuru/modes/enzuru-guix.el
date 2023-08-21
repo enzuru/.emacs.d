@@ -5,6 +5,12 @@
 (defun enzuru-configure-guix ()
   (add-hook 'scheme-mode-hook 'guix-devel-mode))
 
+(defun enzuru-upgrade ()
+  (interactive)
+  (shell-command "~/.emacs.d/bin/guix-upgrade")
+  (straight-pull-all)
+  (straight-freeze-versions))
+
 (geiser-custom--defcustom geiser-guix-manual-lookup-other-window nil
   "Non-nil means pop up the Info buffer in another window."
   :type 'boolean)

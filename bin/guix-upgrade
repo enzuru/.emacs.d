@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/src/profiles
+guix pull
+sudo guix system reconfigure configuration.scm
