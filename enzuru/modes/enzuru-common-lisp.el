@@ -1,11 +1,9 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; Directories
-
 ;; Functions
 
-(defun enzuru-configure-sly ()
-  (add-to-list 'sly-repl-ansi-color sly-contribs))
+(defun enzuru-configure-sly-repl-ansi-color ()
+  (add-to-list 'sly-contribs 'sly-repl-ansi-color))
 
 (defun enzuru-sly-describe-symbol-at-point ()
   (interactive)
@@ -20,7 +18,6 @@
 
 (use-package sly
   :ensure t
-  :config (enzuru-configure-sly)
   :bind ((:map lisp-mode-map
                ("C-x C-d" . enzuru-sly-describe-symbol-at-point)
                ("C-x C-w" . sly-edit-definition-other-window)
@@ -36,13 +33,13 @@
    :type git
    :host github
    :repo "PuercoPop/sly-repl-ansi-color"))
+(enzuru-configure-sly-repl-ansi-color)
 
 (straight-use-package
  '(completing-read-sly
    :type git
    :host github
    :repo "enzuru/completing-read-sly"))
-
 (enzuru-configure-completing-read-sly)
 
 (provide 'enzuru-common-lisp)
