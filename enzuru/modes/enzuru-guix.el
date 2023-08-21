@@ -7,7 +7,7 @@
 
 (defun enzuru-upgrade ()
   (interactive)
-  (shell-command "~/bin/guix-upgrade")
+  (async-shell-command "~/bin/guix-upgrade")
   (straight-pull-all)
   (straight-freeze-versions))
 
