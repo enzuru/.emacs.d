@@ -247,6 +247,7 @@ These are less powerful commands, mostly functions.
 - `C-x C-d(ocumentation)` let’s me search online documentation.
 - `C-x C-f(ile)` finds a file.
 - `C-x C-m(eta)` let’s me run an Emacs function.
+- `C-x C-n(ames of tabs)` let's me select a tab's name from a list
 - `C-x C-s(aves)` a buffer for me.
 - `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
 
