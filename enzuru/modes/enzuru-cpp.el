@@ -5,6 +5,4 @@
 
 (enzuru-configure-c++-mode)
 
-;; Packages
-
-(provide 'enzuru-c++-mode)
+(provide 'enzuru-cpp)
