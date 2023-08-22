@@ -14,7 +14,6 @@
 
 (use-package eros
   :ensure t
-  :defer t
   :config (eros-mode 1))
 
 (use-package package-build
