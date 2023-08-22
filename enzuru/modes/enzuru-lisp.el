@@ -7,7 +7,8 @@
     (when (eq this-command 'eval-expression)
       (lispy-mode 1)))
   (add-hook 'minibuffer-setup-hook 'conditionally-enable-lispy)
-  (setf lispy-eval-display-style "overlay"))
+  (setf lispy-eval-display-style "overlay")
+  (cl-pushnew 'cider lispy-compat))
 
 ;; Packages
 
@@ -21,6 +22,7 @@
          (geiser-repl-mode . lispy-mode)
          (sly-mrepl-mode . lispy-mode)
          (cider-repl-mode . lispy-mode)
+         (clojure-mode . lispy-mode)
          (scheme-mode . lispy-mode)))
 
 (provide 'enzuru-lisp)
