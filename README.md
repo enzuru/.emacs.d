@@ -203,7 +203,8 @@ Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, 
 - `C-x C-b(uffer)` helps me find a buffer.
 - `C-tab` (or `C-x o(ther)`) let’s me switch to another visible buffer.
 - `Shift-up`, `shift-left`, `shift-right`, and `shift-down` let me move to a buffer in that direction.
-- `C-x left` and `C-x right` let me run forward and backward through the list of buffers.
+- `C-x left` and `C-x right` let me run backward and forward through the list of buffers.
+- `C-c left` and `C-c right` let me run backward and forward through window arrangements
 - `C-x k(ill)` aggressively kills a buffer.
 
 ### Window management
@@ -228,7 +229,7 @@ These keystrokes encompass things one commonly does in a terminal.
 - `C-c(onsole) e(shell)` let’s me boot up an Emacs shell which is an awesome hybrid between a Lisp interpreter and a traditional POSIX shell.
 - `C-c(onsole) x(term)` let’s me boot up a real terminal.
 - `C-c(onsole) s(tatus)` let’s me bring up a dashboard with the current git status for the git repo that I am working in.
-- `C-c(onsole) C-p(ushes)` my current git branch to upstream.
+- `C-c(onsole) C-p(ushes)` my current git branch to origin.
 
 ### Primary commands
 
