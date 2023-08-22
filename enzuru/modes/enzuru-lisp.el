@@ -1,9 +1,19 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+;; Functions
+
+(defun enzuru-configure-lispy ()
+  (defun conditionally-enable-lispy ()
+    (when (eq this-command 'eval-expression)
+      (lispy-mode 1)))
+  (add-hook 'minibuffer-setup-hook 'conditionally-enable-lispy)
+  (setf lispy-eval-display-style "overlay"))
+
 ;; Packages
 
 (use-package lispy
   :ensure t
+  :config (enzuru-configure-lispy)
   :hook ((emacs-lisp-mode . lispy-mode)
          (ielm-mode . lispy-mode)
          (lisp-mode . lispy-mode)
