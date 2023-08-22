@@ -163,6 +163,8 @@ When you are on parenthesis, modal editing is activated via Lispy. You can use s
 - `w` move s-expression up
 - `s` move s-expression down
 - `r` raise s-expression
+- `C-1` view documentation
+- `C-2` view caller arguments
 
 ### Help
 
