@@ -9,7 +9,19 @@
         gnus-thread-hide-subtree t
         gnus-search-use-parsed-queries t
         gnus-verbose 10
-        gnus-verbose-backends 10))
+        gnus-verbose-backends 10
+        fill-column 72
+        mail-user-agent 'message-user-agent
+        message-auto-save-directory "~/mail/draft"
+        message-default-mail-headers "Cc: \nBcc: \n"
+        message-directory "~/mail/"
+        message-kill-buffer-on-exit t
+        message-send-mail-function 'message-smtpmail-send-it
+        send-mail-function 'smtpmail-send-it
+        smtpmail-smtp-server "mail.enzu.ru"
+        smtpmail-smtp-service 587
+        user-mail-address "me@enzu.ru"
+        user-full-name "Ahmed Khanzada"))
 
 (defun enzuru-configure-nnnotmuch ()
   (setq gnus-select-method '(nnnotmuch ""))
@@ -30,20 +42,8 @@
                             ("archive.9front" "tag:archive-9front")))))
 
 (defun enzuru-configure-notmuch ()
-  (setq fill-column 72
-        mail-user-agent 'message-user-agent
-        message-auto-save-directory "~/mail/draft"
-        message-default-mail-headers "Cc: \nBcc: \n"
-        message-directory "~/mail/"
-        message-kill-buffer-on-exit t
-        message-send-mail-function 'message-smtpmail-send-it
-        notmuch-search-oldest-first nil
-        notmuch-draft-save-plaintext nil
-        send-mail-function 'smtpmail-send-it
-        smtpmail-smtp-server "mail.enzu.ru"
-        smtpmail-smtp-service 587
-        user-mail-address "me@enzu.ru"
-        user-full-name "Ahmed Khanzada"))
+  (setq notmuch-search-oldest-first nil
+        notmuch-draft-save-plaintext nil))
 
 ;; Packages
 

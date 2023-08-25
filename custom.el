@@ -63,5 +63,7 @@
                (cl-pushnew root-dir* geiser-guile-load-path :test #'string-equal))))
      (eval setq-local guix-directory
            (locate-dominating-file default-directory ".dir-locals.el"))))
+ '(smtpmail-smtp-server "mail.enzu.ru")
+ '(smtpmail-smtp-service 587)
  '(tab-bar-show nil)
  '(warning-suppress-types '((server) (comp))))

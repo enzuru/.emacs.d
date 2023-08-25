@@ -1,6 +1,6 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; Configuration
+;; Packages
 
 (use-package eglot
   :ensure t
