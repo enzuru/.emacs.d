@@ -21,7 +21,7 @@
         smtpmail-smtp-server "mail.enzu.ru"
         smtpmail-smtp-service 587
         user-mail-address "me@enzu.ru"
-        user-full-name "Ahmed Khanzada"))
+        user-full-name "enzu.ru"))
 
 (defun enzuru-configure-nnnotmuch ()
   (setq gnus-select-method '(nnnotmuch ""))
