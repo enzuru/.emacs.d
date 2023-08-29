@@ -2,14 +2,14 @@
 
 (defun enzuru-fitness-monthly-pounds
     (daily-calories daily-training-hours days-home days-outside)
-  (let* ((rmr-home 2170)
-         (rmr-outside 2615)
-         (burned-per-hour 400)
-         (days-total (+ days-home days-outside)))
+  (let ((neat-home 2170)
+        (neat-outside 2615)
+        (burned-per-hour 400)
+        (days-total (+ days-home days-outside)))
     (/ (- (* days-total daily-calories)
           (* days-total daily-training-hours burned-per-hour)
-          (* days-home rmr-home)
-          (* days-outside rmr-outside))
+          (* days-home neat-home)
+          (* days-outside neat-outside))
        3500.0)))
 
 (defun success (message)
