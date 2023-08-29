@@ -2,7 +2,7 @@
 
 (defun enzuru-fitness-monthly-pounds
     (daily-calories daily-training-hours days-home days-outside)
-  (let* ((rmr-home 2175)
+  (let* ((rmr-home 2170)
          (rmr-outside 2615)
          (burned-per-hour 400)
          (days-total (+ days-home days-outside)))
@@ -37,12 +37,15 @@
   (if (eql (round (enzuru-fitness-monthly-pounds 2800 1.167 20 11)) 0)
       (success "June 2023")
     (failure "June 2023"))
-  (if (eql (round (enzuru-fitness-monthly-pounds 2567 0.867 24 7)) 0)
+  (if (eql (round (enzuru-fitness-monthly-pounds 2565 0.87 24 7)) 0)
       (success "July 2023")
     (failure "July 2023"))
-  (if (eql (round (enzuru-fitness-monthly-pounds 2567 1.2 19 12)) -2)
+  (if (eql (round (enzuru-fitness-monthly-pounds 2548 1.2 19 12)) -2)
       (success "August 2023")
-    (failure "August 2023")))
+    (failure "August 2023"))
+  (if (eql (round (enzuru-fitness-monthly-pounds 2500 1.4 30 0)) -2)
+      (success "September 2023")
+    (failure "September 2023")))
 
 (defun enzuru-fitness-vo2-max (ftp kilos)
   (+ (/ (* 10.8 ftp) kilos) 7))
