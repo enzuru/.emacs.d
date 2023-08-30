@@ -2,8 +2,21 @@
 
 ;; Configuration
 
+;; (setq gnus-select-method '(nntp "news.tilde.club"
+;;                                 (nntp-address "news.tilde.club")
+;;                                 (nntp-via-user-name "enzuru")
+;;                                 (nntp-via-address "tilde.institute")
+;;                                 (nntp-via-rlogin-command "ssh")
+;;                                 (nntp-via-rlogin-command-switches ("-C"))
+;;                                 (nntp-netcat-switches ("-w" "15"))
+;;                                 (nntp-open-connection-function nntp-open-via-rlogin-and-netcat)))
+
 (defun enzuru-configure-gnus ()
   (setq gnus-search-default-engines '(notmuch)
+        gnus-select-method '(nntp "news.tilde.club"
+                                  (nntp-open-connection-function nntp-open-tls-stream)
+                                  (nntp-port-number 563)
+                                  (nntp-address "news.tilde.club"))
         gnus-show-threads t
         gnus-thread-indent-level 1
         gnus-thread-hide-subtree t
@@ -25,7 +38,7 @@
   (gnus-add-configuration '(article (horizontal 1.0 (summary .5 point) (article 1.0)))))
 
 (defun enzuru-configure-nnnotmuch ()
-  (setq gnus-select-method '(nnnotmuch ""))
+  (setf gnus-secondary-select-methods '((nnnotmuch "")))
   (setq nnnotmuch-groups '((""
                             ("openbsd" "tag:openbsd")
                             ("openbsd.commits" "tag:openbsd-commits")
