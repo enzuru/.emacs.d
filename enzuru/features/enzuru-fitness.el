@@ -25,7 +25,7 @@
   (if (eql (round (enzuru-fitness-monthly-pounds 2679 1.14 28 0)) 0)
       (success "February 2023")
     (failure "February 2023"))
-  (if (eql (round (enzuru-fitness-monthly-pounds 2645 1.39 31 0)) -1)
+  (if (eql (round (enzuru-fitness-monthly-pounds 2742 1.39 31 0)) -1)
       (success "March 2023")
     (failure "March 2023"))
   (if (eql (round (enzuru-fitness-monthly-pounds 2567 1.267 30 0)) -1)
