@@ -95,7 +95,7 @@
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
   (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#security")
-  (tab-bar-select-tab-by-name "role-playing"))
+  (tab-bar-select-tab-by-name "tilde"))
 
 (defun enzuru-add-chats ()
   (interactive)
