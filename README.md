@@ -168,7 +168,7 @@ When you are on parenthesis, modal editing is activated via Lispy. You can use s
 
 ### Help
 
-These are the five most important keystrokes of all. If you know these five keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.
+These are the most important keystrokes of all. If you know these keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.
 
 - `C-h(elp) b(indings)` shows the keybindings available in the current buffer.
 - `C-h(elp) d(ocumentation)` lets you search through all available documentation.
