@@ -80,6 +80,7 @@
   (enzuru-setup-tab "gemini" "*elpher*")
   (enzuru-setup-tab "geiser" "*Geiser Guile REPL*")
   (enzuru-setup-tab "sly" "*sly-mrepl for sbcl*")
+  (enzuru-setup-tab "music" "*pianobar*")
   (tab-bar-select-tab-by-name "hacking"))
 
 (defun enzuru-arrange-chats ()

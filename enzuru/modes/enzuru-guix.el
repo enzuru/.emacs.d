@@ -11,6 +11,9 @@
   (straight-pull-all)
   (straight-freeze-versions))
 
+(defun enzuru-reboot ()
+  (shell-command "sudo reboot"))
+
 (geiser-custom--defcustom geiser-guix-manual-lookup-other-window nil
   "Non-nil means pop up the Info buffer in another window."
   :type 'boolean)
