@@ -1,5 +1,7 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+(require 'straight)
+
 ;; Functions
 
 (defun enzuru-configure-guix ()

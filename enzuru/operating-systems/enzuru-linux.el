@@ -4,16 +4,18 @@
 
 ;; Functions
 
-(defun enzuru-setup-desktop ()
-  (require 'enzuru-window-management)
-  (require 'enzuru-guix)
-  (with-eval-after-load 'geiser-guile
-    (add-to-list 'geiser-guile-load-path "~/src/guix")))
-
 (defun enzuru-async-term ()
   "Open terminal"
   (interactive)
   (start-process "urxvtc" "urxvtc" "urxvtc" "-fn" "xft:Iosevka:style=Regular:size=15"))
+
+(defun enzuru-setup-desktop ()
+  (require 'enzuru-window-management))
+
+(defun enzuru-setup-guix ()
+  (require 'enzuru-guix)
+  (with-eval-after-load 'geiser-guile
+    (add-to-list 'geiser-guile-load-path "~/src/guix")))
 
 ;; Variables
 
@@ -26,5 +28,7 @@
 ;; Keys
 
 (global-set-key (kbd "C-c x") 'enzuru-async-term)
+
+(enzuru-setup-guix)
 
 (provide 'enzuru-linux)
