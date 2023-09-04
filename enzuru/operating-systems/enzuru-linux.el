@@ -15,9 +15,6 @@
   (interactive)
   (start-process "urxvtc" "urxvtc" "urxvtc" "-fn" "xft:Iosevka:style=Regular:size=15"))
 
-(if window-system
-    (enzuru-setup-desktop))
-
 ;; Variables
 
 (setq consult-locate-args "locate -d /home/enzuru/locatedb.n"
