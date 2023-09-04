@@ -17,6 +17,7 @@
         gnus-search-use-parsed-queries t
         gnus-verbose 10
         gnus-verbose-backends 10
+        gnus-always-read-dribble-file t
         fill-column 72
         mail-user-agent 'message-user-agent
         message-auto-save-directory "~/mail/draft"
