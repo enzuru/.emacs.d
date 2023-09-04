@@ -15,7 +15,7 @@
 (use-package lispy
   :ensure t
   :config (enzuru-configure-lispy)
-  :bind (("C-y" . consult-yank-pop))
+  :bind (("C-y" . consult-yank-from-kill-ring))
   :hook ((emacs-lisp-mode . lispy-mode)
          (ielm-mode . lispy-mode)
          (lisp-mode . lispy-mode)
