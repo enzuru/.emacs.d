@@ -8,7 +8,7 @@
     (defun enzuru-incf-enzuru-irc-channels-count ()
       (cl-incf count)
       ;; (message (int-to-string count))
-      (when (equal count 34)
+      (when (equal count 35)
         (setf count 0)
         (enzuru-arrange-chats)))
     (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
