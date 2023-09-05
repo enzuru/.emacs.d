@@ -4,14 +4,13 @@
 
 (defun enzuru-configure-erc ()
   (add-to-list 'erc-modules 'completion)
-  (let ((count 0))
-    (defun enzuru-incf-enzuru-irc-channels-count ()
-      (cl-incf count)
-      ;; (message (int-to-string count))
-      (when (equal count 35)
-        (setf count 0)
+  (let ((in-channels '()))
+    (defun enzuru-channel-push ()
+      (cl-pushnew (buffer-name (current-buffer)) in-channels)
+      (when (eql (length in-channels) 35)
         (enzuru-arrange-chats)))
-    (add-hook 'erc-join-hook 'enzuru-incf-enzuru-irc-channels-count))
+
+    (add-hook 'erc-join-hook 'enzuru-channel-push))
 
     (setq erc-nick "enzuru"
           erc-user-full-name "enzu.ru"
@@ -21,7 +20,7 @@
           erc-join-buffer 'bury
           erc-track-minor-mode nil
           erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
-                                  "324" "329" "332" "333" "353" "477")))
+                                    "324" "329" "332" "333" "353" "477")))
 
 (defun enzuru-configure-znc ()
   (setq znc-detach-on-kill nil
