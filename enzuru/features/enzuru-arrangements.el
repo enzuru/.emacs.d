@@ -86,7 +86,7 @@
 (defun enzuru-arrange-chats ()
   (interactive)
   (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading" "Libera.Chat")
-  (enzuru-setup-tab "chat" "darkscience" "#darkscience")
+  (enzuru-setup-tab "chat" "darkscience" "#darkscience" "#security")
   (enzuru-setup-tab "feminism" "Libera.Chat" "##feminism")
   (enzuru-setup-tab "security" "#openbsd" "#tor-relay" "#bitcoin" "#ircv3")
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
@@ -96,7 +96,7 @@
   (enzuru-setup-tab "wms" "#exwm" "#stumpwm" "#gnustep")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
-  (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#security")
+  (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#books")
   (tab-bar-select-tab-by-name "tilde"))
 
 (defun enzuru-add-chats ()
