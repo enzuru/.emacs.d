@@ -123,7 +123,7 @@
   (enzuru-setup-tab "misc" "#emacs" "#exwm" "#stumpwm" "#gnustep")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure" "#lispgames")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
-  (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#books" "#politics")
+  (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#books" "#linux")
   (tab-bar-select-tab-by-name "tilde"))
 
 (defun enzuru-add-chats ()
