@@ -8,7 +8,7 @@
   (let ((in-channels '()))
     (defun enzuru-channel-push ()
       (cl-pushnew (buffer-name (current-buffer)) in-channels)
-      (if (eql (length in-channels) 36)
+      (if (eql (length in-channels) 37)
           (enzuru-arrange-chats)))
 
     (defun enzuru-channel-remove (buffer)
