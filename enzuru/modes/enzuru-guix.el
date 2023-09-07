@@ -11,6 +11,7 @@
   (interactive)
   (async-shell-command "~/bin/guix-upgrade")
   (async-shell-command "cd ~/quicklisp/local-projects/stumpwm && git pull")
+  (async-shell-command "cd ~/quicklisp/local-projects/clx-truetype && git pull")
   (async-shell-command "cd ~/.stumpwm.d/modules && git pull")
   (straight-pull-all)
   (straight-freeze-versions))
