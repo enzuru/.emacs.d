@@ -7,7 +7,7 @@
 (defun enzuru-async-term ()
   "Open terminal"
   (interactive)
-  (start-process "urxvtc" "urxvtc" "urxvtc" "-fn" "xft:Iosevka:style=Regular:size=15"))
+  (start-process "kitty" "kitty" "kitty"))
 
 (defun enzuru-setup-desktop ()
   (require 'enzuru-window-management))

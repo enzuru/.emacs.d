@@ -16,7 +16,7 @@
 (defun enzuru-async-term ()
   "Open terminal"
   (interactive)
-  (start-process "urxvtc" "urxvtc" "urxvtc"))
+  (start-process "kitty" "kitty" "kitty"))
 
 (global-set-key (kbd "C-x c") 'enzuru-async-term)
 
