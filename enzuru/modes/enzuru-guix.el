@@ -10,7 +10,8 @@
 (defun enzuru-upgrade ()
   (interactive)
   (async-shell-command "~/bin/guix-upgrade")
-  (async-shell-command "cd /home/enzuru/quicklisp/local-projects/stumpwm && git pull")
+  (async-shell-command "cd ~/quicklisp/local-projects/stumpwm && git pull")
+  (async-shell-command "cd ~/.stumpwm.d/modules && git pull")
   (straight-pull-all)
   (straight-freeze-versions))
 
