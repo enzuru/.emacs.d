@@ -85,7 +85,7 @@
 
 (defun enzuru-arrange-workspace ()
   (interactive)
-  (enzuru-setup-tab "tasks" "*Woodchuck Bugs*")
+  (enzuru-setup-tab "tasks" "*Guix Bugs*")
   (enzuru-setup-tab "hacking" "*dashboard*")
   (enzuru-setup-tab ".emacs.d" "init.el" "magit: .emacs.d")
   (enzuru-setup-tab "ai" "*chatgpt* 3.5t/Programming")
@@ -122,7 +122,7 @@
   (find-file "~/.emacs.d/init.el")
   (magit-status)
   (sly)
-  (debbugs-gnu '("wishlist") '("emacs" "gnus" "guix" "guile" "guix-patches" "hyperbole"))
+  (debbugs-gnu '("wishlist") '("emacs" "gnus" "guile" "guix-patches" "hyperbole" "guix"))
   (chatgpt-shell)
   (eshell)
   (enzuru-efar)
