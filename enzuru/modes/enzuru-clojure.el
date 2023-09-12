@@ -5,7 +5,7 @@
 (defun enzuru-configure-cider ()
   (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
   (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
-  (cider-auto-test-mode))
+  (cider-auto-test-mode 1))
 
 (defun enzuru-configure-completing-read-cider ()
   (require 'completing-read-cider)
