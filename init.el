@@ -126,6 +126,6 @@
 
 ;; Local customization
 
-(if (and (not (boundp 'enzuru-loaded-local))
-         (file-exists-p "~/.emacs.d/local.el"))
+(if (and (file-exists-p "~/.emacs.d/local.el")
+         (not (boundp 'enzuru-loaded-local)))
     (load "~/.emacs.d/local.el"))

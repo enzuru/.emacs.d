@@ -9,12 +9,13 @@
 
 (defun enzuru-upgrade ()
   (interactive)
-  (async-shell-command "~/bin/guix-upgrade")
-  (async-shell-command "cd ~/quicklisp/local-projects/stumpwm && git pull")
-  (async-shell-command "cd ~/quicklisp/local-projects/clx-truetype && git pull")
-  (async-shell-command "cd ~/.stumpwm.d/modules && git pull")
   (straight-pull-all)
-  (straight-freeze-versions))
+  (straight-freeze-versions)
+  (async-shell-command "~/bin/guix-upgrade" "*guix-upgrade*")
+  (async-shell-command "cd ~/quicklisp/local-projects/stumpwm && git pull" "*stumpwm-upgrade*")
+  (async-shell-command "cd ~/quicklisp/local-projects/clx-truetype && git pull" "*truetype-upgrade*")
+  (async-shell-command "cd ~/.stumpwm.d/modules && git pull" "*stumpwm-modules-upgrade*")
+  (enzuru-setup-tab "upgrading" "*stumpwm-upgrade*" "*guix-upgrade*" "*truetype-upgrade*" "*Messages*" "*stumpwm-modules-upgrade*"))
 
 (defun enzuru-reboot ()
   (shell-command "sudo reboot"))
