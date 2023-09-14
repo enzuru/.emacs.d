@@ -111,6 +111,7 @@
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure" "#lispgames")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
   (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#books")
+  (enzuru-setup-tab "hashbang" "hashbang.sh" "#!")
   (tab-bar-select-tab-by-name "tilde"))
 
 (defun enzuru-add-chats ()

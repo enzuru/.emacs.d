@@ -36,7 +36,8 @@
                              (OFTC "enzuru/OFTC" "password")
                              (IRCnet "enzuru/IRCnet" "password")
                              (DarkMyst "enzuru/DarkMyst" "password")
-                             (Tilde "enzuru/Tilde" "password"))))))
+                             (Tilde "enzuru/Tilde" "password")
+                             (hashbang "enzuru/hashbang" "password"))))))
 
 ;; Packages
 
