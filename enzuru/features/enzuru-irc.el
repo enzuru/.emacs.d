@@ -9,7 +9,7 @@
     (defun enzuru-channel-push ()
       (cl-pushnew (buffer-name (current-buffer)) in-channels)
       (message (number-to-string (length in-channels)))
-      (if (eql (length in-channels) 35)
+      (if (eql (length in-channels) 36)
           (enzuru-arrange-chats)))
 
     (defun enzuru-channel-remove (buffer)
