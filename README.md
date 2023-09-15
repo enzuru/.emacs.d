@@ -31,7 +31,7 @@ I provide an IDE and REPL for each major environment that I work in:
 | Environment | IDE                                                             | REPL                                                                 |
 |-------------|-----------------------------------------------------------------|----------------------------------------------------------------------|
 | Clojure     | [CIDER](https://github.com/clojure-emacs/cider)                 | [CIDER](https://github.com/clojure-emacs/cider)                      |
-| Common Lisp | [Sly](https://github.com/joaotavora/sly)                        | [Sly](https://github.com/joaotavora/sly)                             |
+| Common Lisp | [SLY](https://github.com/joaotavora/sly)                        | [SLY](https://github.com/joaotavora/sly)                             |
 | Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)     | [docker-tramp](https://github.com/emacs-pe/docker-tramp.el)          |
 | Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)             | [inf-elixir](https://github.com/J3RN/inf-elixir/)                    |
 | Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)               | [fish-completion](https://gitlab.com/ambrevar/emacs-fish-completion) |
@@ -143,7 +143,7 @@ Probably works on any modern version of Emacs. Here's what I've actually tested 
 
 ### Lisp
 
-These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, Sly, Geiser, or CIDER:
+These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
 
 - `C-x(ecute) c(ompile)` evaluate buffer
 - `C-x(ecute) r(egion)` evaluate region
