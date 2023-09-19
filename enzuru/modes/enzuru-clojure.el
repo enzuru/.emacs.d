@@ -6,7 +6,8 @@
   (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
   (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
   (cider-auto-test-mode 1)
-  (setq cider-test-show-report-on-success t))
+  (setq cider-test-show-report-on-success t)
+  (setq cider-session-name-template "%J:%h"))
 
 (defun enzuru-configure-completing-read-cider ()
   (require 'completing-read-cider)
