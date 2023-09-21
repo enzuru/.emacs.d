@@ -5,11 +5,12 @@
 (defun enzuru-configure-erc ()
   (add-to-list 'erc-modules 'completion)
 
-  (let ((in-channels '()))
+  (let ((in-channels '())
+        (total-channels 36))
     (defun enzuru-channel-push ()
       (cl-pushnew (buffer-name (current-buffer)) in-channels)
-      (message (number-to-string (length in-channels)))
-      (if (eql (length in-channels) 36)
+      (message (number-to-string (- total-channels (length in-channels))))
+      (if (eql (length in-channels) total-channels)
           (enzuru-arrange-chats)))
 
     (defun enzuru-channel-remove (buffer)
