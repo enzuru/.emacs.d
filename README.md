@@ -156,8 +156,9 @@ These bindings cover the most important things you'll do while hacking Lisp code
 When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate, edit, and evaluate code:
 
 - `e` evaluate s-expression
-- `]` move forward
-- `[` move backwards
+- `f` forward point through parens
+- `]` move point down
+- `[` move point up
 - `>` slurp up next s-expression
 - `<` barf up s-expression
 - `w` move s-expression up
