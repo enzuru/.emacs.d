@@ -6,6 +6,7 @@
 
 (setq mac-command-modifier 'control
       locate-command "mdfind"
+      consult-locate-args "mdfind"
       inferior-lisp-program "/opt/homebrew/bin/sbcl"
       locate-make-command-line (lambda (ss) (list locate-command "-name" ss)))
 
