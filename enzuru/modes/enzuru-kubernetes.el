@@ -11,8 +11,4 @@
   :commands (kubernetes-overview)
   :defer t)
 
-(use-package kubernetes-tramp
-  :ensure t
-  :defer t)
-
 (provide 'enzuru-kubernetes)

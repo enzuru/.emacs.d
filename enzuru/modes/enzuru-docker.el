@@ -6,10 +6,6 @@
   :bind ("C-c d" . 'docker)
   :ensure t)
 
-(use-package docker-tramp
-  :defer t
-  :ensure t)
-
 (use-package dockerfile-mode
   :mode (("Dockerfile" . dockerfile-mode))
   :ensure t)
