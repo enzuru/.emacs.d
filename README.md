@@ -135,9 +135,9 @@ Referencing my configuration requires use-package and straight.el.
 
 ### Versions
 
-Probably works on any modern version of Emacs. Here's what I've actually tested recently:
+I basically only support one version of Emacs at a time:
 
-- Emacs 28
+- Emacs 29
 
 ## Keystrokes
 
