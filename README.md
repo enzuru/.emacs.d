@@ -32,13 +32,13 @@ I provide an IDE and REPL for each major environment that I work in:
 |-------------|-----------------------------------------------------------------|----------------------------------------------------------------------|
 | Clojure     | [CIDER](https://github.com/clojure-emacs/cider)                 | [CIDER](https://github.com/clojure-emacs/cider)                      |
 | Common Lisp | [SLY](https://github.com/joaotavora/sly)                        | [SLY](https://github.com/joaotavora/sly)                             |
-| Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)     | [docker-tramp](https://github.com/emacs-pe/docker-tramp.el)          |
+| Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)     | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          |
 | Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)             | [inf-elixir](https://github.com/J3RN/inf-elixir/)                    |
 | Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)               | [fish-completion](https://gitlab.com/ambrevar/emacs-fish-completion) |
 | Go          | [go-mode](https://github.com/dominikh/go-mode.el)               | [go-playground](https://github.com/grafov/go-playground)             |
 | Haskell     | [Intero](https://chrisdone.github.io/intero/)                   | [Dante](https://github.com/jyp/dante)                                |
 | JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                    | [Indium](https://github.com/NicolasPetton/Indium/)                   |
-| Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el) | [kubernetes-tramp](https://github.com/gruggiero/kubernetes-tramp)    |
+| Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el) | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          |
 | PHP         | [php-mode](https://github.com/emacs-php/php-mode)               | [PsySH](https://github.com/emacs-php/psysh.el)                       |
 | Python      | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode)     | `run-python`                                                         |
 | Ruby        | [Robe](https://github.com/dgutov/robe)                          | [inf-ruby](https://github.com/nonsequitur/inf-ruby)                  |
