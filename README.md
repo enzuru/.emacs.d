@@ -97,7 +97,7 @@ This configuration ships with a great many helpful tools:
 
 There are many beautiful theme families for you to enjoy:
 
-- [arjen-grey-theme](https://github.com/credmp/arjen-grey-theme)
+- [arjen-grey](https://github.com/credmp/arjen-grey-theme)
 - [deep-thought](https://github.com/enzuru/emacs-deep-thought-theme)
 - [exotica](https://github.com/zenobht/exotica-theme)
 - [gotham](https://github.com/emacsmirror/gotham-theme)
