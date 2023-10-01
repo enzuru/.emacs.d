@@ -1,5 +1,9 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+;; Help
+
+(global-set-key (kbd "C-h s") 'describe-symbol)                  ;; C-h(elp) s(ymbol)
+
 ;; Text management
 
 (global-set-key (kbd "C-q") 'copy-region-as-kill)                ;; C-q(opy)
