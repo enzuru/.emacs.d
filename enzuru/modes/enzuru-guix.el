@@ -85,9 +85,6 @@
 
 ;; Packages
 
-(use-package guix
-  :ensure t
-  :config '(enzuru-configure-guix)
-  :defer t)
+(enzuru-configure-guix)
 
 (provide 'enzuru-guix)

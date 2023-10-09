@@ -13,9 +13,7 @@
   (require 'enzuru-window-management))
 
 (defun enzuru-setup-guix ()
-  (require 'enzuru-guix)
-  (with-eval-after-load 'geiser-guile
-    (add-to-list 'geiser-guile-load-path "~/src/guix")))
+  (require 'enzuru-guix))
 
 ;; Variables
 
