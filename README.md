@@ -2,7 +2,21 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware with the enzuru-deep-thought.el theme file loaded")
 
-This handcrafted repo contains my Lisp code harmoniously integrating a selection of around two hundred of the finest packages for Emacs.
+This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs.
+
+This means spicy choices like:
+
+- `use-package`
+- `eglot` over `lsp-mode`
+- `vert&co` over `helm` and `iy`
+- `straight.el` over `package.el`
+- `flymake` over `flycheck` (what a comeback!)
+- `lispy` over `paredit`
+- `SLY` over `SLIME`
+- `prism` over `rainbow-delimiters` and `rainbow-blocks`
+- `chatgpt-shell` over the ChatGPT client you made last weekend
+
+My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
