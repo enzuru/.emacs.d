@@ -6,7 +6,6 @@ This `.emacs.d` represents my libre attempt to build and document an advanced Em
 
 This means spicy choices like:
 
-- `use-package`
 - `eglot` over `lsp-mode`
 - `vert&co` over `helm` and `iy`
 - `straight.el` over `package.el`
