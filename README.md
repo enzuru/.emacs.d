@@ -198,6 +198,7 @@ These are the most important keystrokes of all. If you know these keys keystroke
 This is the stuff that you're used to doing in other editors.
 
 - `C-w` is my cut, `M-w` (or `C-q(opy)`) is my copy, `C-y` is my paste.
+- `C-k` deletes a line.
 - `C-g` cancels the current action.
 
 ### Navigation
@@ -226,6 +227,8 @@ Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, 
 
 - `C-x 0` deletes an Emacs window, whereas `C-x 1` deletes all other Emacs windows.
 - `C-x 2` does a horizontal split, and `C-x 3` does a vertical split.
+- `C-c(onfiguration) left` returns to an older layout of windows.
+- `C-c(onfiguration) right` changes to a more recent layout of windows.
 
 ### Tab management
 
