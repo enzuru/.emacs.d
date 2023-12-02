@@ -85,6 +85,7 @@
 (require 'enzuru-typescript)
 (require 'enzuru-terraform)
 (require 'enzuru-web)
+(require 'enzuru-wiki)
 (require 'enzuru-yaml)
 
 ;; Preferences
