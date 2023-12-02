@@ -155,32 +155,6 @@ I basically only support one version of Emacs at a time:
 
 ## Keystrokes
 
-#### Parenthesis
-
-When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate, edit, and evaluate code:
-
-- `e` evaluates s-expression
-- `f` forward point through parens
-- `]` move point down
-- `[` move point up
-- `>` slurp up next s-expression
-- `<` barf up s-expression
-- `w` move s-expression up
-- `s` move s-expression down
-- `r` raise s-expression
-- `C-1` view documentation
-- `C-2` view caller arguments
-
-### Lisp
-
-These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
-
-- `C-x(ecute) c(ompile)` evaluates a buffer.
-- `C-x(ecute) r(egion)` evaluates a region.
-- `C-x(ecute) C-d(ocumentation)` views documentation for the symbol at point.
-- `C-x(ecute) C-w(here)` jumps to da efinition for the symbol at point.
-- `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in.
-
 ### Help
 
 These are the most important keystrokes of all. If you know these keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.
@@ -269,6 +243,32 @@ These are less powerful commands, mostly functions.
 - `C-x C-n(ames of tabs)` let's me select a tab's name from a list.
 - `C-x C-s(aves)` a buffer for me.
 - `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
+
+### Lisp
+
+These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
+
+- `C-x(ecute) c(ompile)` evaluates a buffer.
+- `C-x(ecute) r(egion)` evaluates a region.
+- `C-x(ecute) C-d(ocumentation)` views documentation for the symbol at point.
+- `C-x(ecute) C-w(here)` jumps to da efinition for the symbol at point.
+- `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in.
+
+#### Parenthesis
+
+When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate, edit, and evaluate code:
+
+- `e` evaluate s-expression
+- `f` forward point through parens
+- `]` move point down
+- `[` move point up
+- `>` slurp up next s-expression
+- `<` barf up s-expression
+- `w` move s-expression up
+- `s` move s-expression down
+- `r` raise s-expression
+- `C-1` view documentation
+- `C-2` view caller arguments
 
 I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when `save-buffers-exit-emacs` will do.
 
