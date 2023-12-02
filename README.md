@@ -155,21 +155,11 @@ I basically only support one version of Emacs at a time:
 
 ## Keystrokes
 
-### Lisp
-
-These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
-
-- `C-x(ecute) c(ompile)` evaluate buffer
-- `C-x(ecute) r(egion)` evaluate region
-- `C-x(ecute) C-d(ocumentation)` view documentation for symbol at point
-- `C-x(ecute) C-w(here)` jump to definition for symbol at point
-- `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in
-
 #### Parenthesis
 
 When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate, edit, and evaluate code:
 
-- `e` evaluate s-expression
+- `e` evaluates s-expression
 - `f` forward point through parens
 - `]` move point down
 - `[` move point up
@@ -180,6 +170,16 @@ When you are on parenthesis, modal editing is activated via Lispy. You can use s
 - `r` raise s-expression
 - `C-1` view documentation
 - `C-2` view caller arguments
+
+### Lisp
+
+These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
+
+- `C-x(ecute) c(ompile)` evaluates a buffer.
+- `C-x(ecute) r(egion)` evaluates a region.
+- `C-x(ecute) C-d(ocumentation)` views documentation for the symbol at point.
+- `C-x(ecute) C-w(here)` jumps to da efinition for the symbol at point.
+- `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in.
 
 ### Help
 
@@ -220,15 +220,13 @@ Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, 
 - `C-tab` (or `C-x o(ther)`) let’s me switch to another visible buffer.
 - `Shift-up`, `shift-left`, `shift-right`, and `shift-down` let me move to a buffer in that direction.
 - `C-x left` and `C-x right` let me run backward and forward through the list of buffers.
-- `C-c left` and `C-c right` let me run backward and forward through window arrangements
 - `C-x k(ill)` aggressively kills a buffer.
 
 ### Window management
 
 - `C-x 0` deletes an Emacs window, whereas `C-x 1` deletes all other Emacs windows.
 - `C-x 2` does a horizontal split, and `C-x 3` does a vertical split.
-- `C-c(onfiguration) left` returns to an older configuration of windows.
-- `C-c(onfiguration) right` changes to a more recent configuration of windows.
+- `C-c(onfiguration) left` and `C-c(configuration) right` lets me iterate through window configurations.
 
 ### Tab management
 
@@ -268,7 +266,7 @@ These are less powerful commands, mostly functions.
 - `C-x C-d(ocumentation)` let’s me search online documentation.
 - `C-x C-f(ile)` finds a file.
 - `C-x C-m(eta)` let’s me run an Emacs function.
-- `C-x C-n(ames of tabs)` let's me select a tab's name from a list
+- `C-x C-n(ames of tabs)` let's me select a tab's name from a list.
 - `C-x C-s(aves)` a buffer for me.
 - `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
 
