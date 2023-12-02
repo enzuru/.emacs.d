@@ -104,6 +104,7 @@ This configuration ships with a great many helpful tools:
 | Syntax highlighter          | [prism](https://github.com/alphapapa/prism.el)                                        |
 | Undo visualizer             | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                             |
 | Version control             | [Magit](https://magit.vc)                                                             |
+| Wikipedia editor            | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                               |
 | Window manager              | [exwm](https://github.com/ch11ng/exwm)                                                |
 
 ### Themes
