@@ -227,8 +227,8 @@ Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, 
 
 - `C-x 0` deletes an Emacs window, whereas `C-x 1` deletes all other Emacs windows.
 - `C-x 2` does a horizontal split, and `C-x 3` does a vertical split.
-- `C-c(onfiguration) left` returns to an older layout of windows.
-- `C-c(onfiguration) right` changes to a more recent layout of windows.
+- `C-c(onfiguration) left` returns to an older configuration of windows.
+- `C-c(onfiguration) right` changes to a more recent configuration of windows.
 
 ### Tab management
 
