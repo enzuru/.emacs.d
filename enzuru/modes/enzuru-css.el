@@ -3,7 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-css-ts-mode ()
-  (add-to-list 'auto-mode-alist '("\\.css\\'" . css-ts-mode)))
+  (add-to-list 'auto-mode-alist '("\\.css$" . css-ts-mode)))
 
 (enzuru-configure-css-ts-mode)
 

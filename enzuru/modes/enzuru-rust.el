@@ -3,7 +3,7 @@
 ;; Functions
 
 (defun enzuru-configure-rust-ts-mode ()
-  (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
+  (add-to-list 'auto-mode-alist '("\\.rs$" . rust-ts-mode))
   (add-hook 'rust-ts-mode-hook 'racer-mode)
   (add-hook 'rust-ts-mode-hook 'eglot-ensure))
 

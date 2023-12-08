@@ -43,6 +43,7 @@
 (require 'enzuru-studying)
 (require 'enzuru-rest)
 (require 'enzuru-terminal)
+(require 'enzuru-tree-sitter)
 (require 'enzuru-uname)
 (require 'enzuru-undo)
 (require 'enzuru-version-control)

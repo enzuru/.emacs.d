@@ -3,7 +3,7 @@
 ;; Configuration
 
 (defun enzuru-configure-ruby-ts-mode ()
-  (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-ts-mode)))
+  (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-ts-mode)))
 
 (defun enzuru-configure-inf-ruby ()
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
