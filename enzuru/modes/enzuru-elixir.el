@@ -6,7 +6,7 @@
   :ensure t
   :defer t)
 
-(use-package elixir-mode
+(use-package elixir-ts-mode
   :ensure t
   :defer t)
 

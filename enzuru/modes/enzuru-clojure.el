@@ -25,7 +25,7 @@
               ("C-x C-d" . cider-doc)
               ("C-x c" . cider-eval-buffer)))
 
-(use-package clojure-mode
+(use-package clojure-ts-mode
   :ensure t
   :defer t)
 

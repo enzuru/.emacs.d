@@ -98,7 +98,7 @@
   (interactive)
   (enzuru-setup-tab "news" "##baseball" "#us-market-news" "#trading" "Libera.Chat")
   (enzuru-setup-tab "chat" "darkscience" "#darkscience")
-  (enzuru-setup-tab "feminism" "Libera.Chat" "##feminism")
+  (enzuru-setup-tab "feminism" "Libera.Chat" "##feminism" "##feminism-unregistered" "#books")
   (enzuru-setup-tab "security" "#openbsd" "#tor-relay" "#bitcoin" "#ircv3" "#security")
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
   (enzuru-setup-tab "demoscene" "#demoscene" "#c-64" "IRCnet")
@@ -106,7 +106,7 @@
   (enzuru-setup-tab "misc" "#emacs" "#exwm" "#stumpwm" "#gnustep")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure" "#lispgames")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
-  (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#books")
+  (enzuru-setup-tab "tilde" "#meta" "#institute" "#gemini" "#politics")
   (enzuru-setup-tab "hashbang" "hashbang.sh" "#!")
   (tab-bar-select-tab-by-name "tilde"))
 

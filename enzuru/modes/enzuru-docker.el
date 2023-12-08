@@ -6,8 +6,8 @@
   :bind ("C-c d" . 'docker)
   :ensure t)
 
-(use-package dockerfile-mode
-  :mode (("Dockerfile" . dockerfile-mode))
+(use-package dockerfile-ts-mode
+  :mode (("Dockerfile" . dockerfile-ts-mode))
   :ensure t)
 
 (provide 'enzuru-docker)

@@ -52,6 +52,7 @@
 
 (require 'enzuru-ansible)
 (require 'enzuru-c)
+(require 'enzuru-css)
 (require 'enzuru-cpp)
 (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
@@ -64,7 +65,9 @@
 (require 'enzuru-go)
 (require 'enzuru-groovy)
 (require 'enzuru-haskell)
+(require 'enzuru-java)
 (require 'enzuru-javascript)
+(require 'enzuru-json)
 (require 'enzuru-kotlin)
 (require 'enzuru-kubernetes)
 (require 'enzuru-lisp)

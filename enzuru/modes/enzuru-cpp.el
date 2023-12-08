@@ -1,8 +1,10 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(defun enzuru-configure-c++-mode ()
-  (add-hook 'c++-mode-hook 'eglot-ensure))
+(defun enzuru-configure-c++-ts-mode ()
+  (add-to-list 'auto-mode-alist '("\\.cpp\\'" . c++-ts-mode))
+  (add-to-list 'auto-mode-alist '("\\.hh\\'" . c++-ts-mode))
+  (add-hook 'c++-ts-mode-hook 'eglot-ensure))
 
-(enzuru-configure-c++-mode)
+(enzuru-configure-c++-ts-mode)
 
 (provide 'enzuru-cpp)

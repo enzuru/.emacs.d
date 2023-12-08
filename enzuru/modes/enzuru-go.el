@@ -2,10 +2,10 @@
 
 ;; Packages
 
-(use-package go-mode
+(use-package go-ts-mode
   :ensure t
   :defer t
-  :hook ((go-mode . eglot-ensure)))
+  :hook ((go-ts-mode . eglot-ensure)))
 
 (use-package go-playground
   :ensure t

@@ -2,6 +2,9 @@
 
 ;; Configuration
 
+(defun enzuru-configure-ruby-ts-mode ()
+  (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-ts-mode)))
+
 (defun enzuru-configure-inf-ruby ()
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
@@ -16,8 +19,8 @@
   :config (enzuru-configure-inf-ruby))
 
 (use-package robe
-  :hook ((ruby-mode . robe-mode)
-         (ruby-mode . eglot-ensure))
+  :hook ((ruby-ts-mode . robe-mode)
+         (ruby-ts-mode . eglot-ensure))
   :defer t
   :diminish robe-mode
   :ensure t)
@@ -28,9 +31,11 @@
   :config (enzuru-configure-rvm))
 
 (use-package yard-mode
-  :hook ((ruby-mode . yard-mode))
+  :hook ((ruby-ts-mode . yard-mode))
   :defer t
   :diminish yard-mode
   :ensure t)
+
+(enzuru-configure-ruby-ts-mode)
 
 (provide 'enzuru-ruby)

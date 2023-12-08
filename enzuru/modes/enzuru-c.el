@@ -11,6 +11,12 @@
 
 ;; Packages
 
+(use-package c-ts-mode
+  :ensure t
+  :defer t
+  :mode (("\\.c$" . c-ts-mode)
+         ("\\.h$" . c-ts-mode)))
+
 (use-package semantic
   :ensure t
   :defer t
