@@ -69,7 +69,7 @@ I support both Eglot and tree-sitter for the following languages:
 |-------------|-------------------------------------------------------------|---------------------------------------------------------------|-------|-------------|
 | C           | `c-ts-mode`                                                 |                                                               | Yes   | Yes         |
 | C++         | `c++-ts-mode`                                               |                                                               | Yes   | Yes         |
-| Go          | [go-mode](https://github.com/dominikh/go-mode.el)           | [go-playground](https://github.com/grafov/go-playground)      | Yes   | Yes         |
+| Go          | `go-ts-mode`                                                | [go-playground](https://github.com/grafov/go-playground)      | Yes   | Yes         |
 | Python      | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                  | Yes   | Yes         |
 | Ruby        | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   | Yes         |
 | Rust        | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   | Yes         |
