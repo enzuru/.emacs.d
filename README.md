@@ -76,7 +76,7 @@ I support both Eglot and tree-sitter for the following languages:
 
 #### Third class
 
-I do not support Eglot or tree-sitter for these environments:
+I do not support Eglot or tree-sitter for these environments. Generally it is because GNU Guix does not have an appropriate language server or tree-sitter grammar packaged for it yet:
 
 | Environment | IDE                                                                          | REPL                                                                 | Eglot | Tree-sitter |
 |-------------|------------------------------------------------------------------------------|----------------------------------------------------------------------|-------|-------------|
