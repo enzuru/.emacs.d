@@ -15,7 +15,7 @@ This means spicy choices like:
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
 - `chatgpt-shell` over the ChatGPT client you made last weekend
 
-My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
+My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own well-documented vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
