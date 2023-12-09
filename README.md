@@ -76,7 +76,7 @@ I support both Eglot and tree-sitter for the following languages:
 
 #### Third class
 
-I do not support Eglot or tree-sitter for these languages:
+I do not support Eglot or tree-sitter for these environments:
 
 | Environment | IDE                                                                          | REPL                                                                 | Eglot | Tree-sitter |
 |-------------|------------------------------------------------------------------------------|----------------------------------------------------------------------|-------|-------------|
