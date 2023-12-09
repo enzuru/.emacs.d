@@ -21,6 +21,14 @@ When I was starting off with Emacs, other people's customizations were deeply he
 
 You can draw inspiration from this repo, fork it for yourself, copy specific pieces of code, or even just add it as a submodule to your own Emacs directory.
 
+## Requirements
+
+This config makes extensive use of language servers and tree-sitter grammars. Most of my best supported languages will try to load a language server or tree-sitter grammar. If it fails to, it will warn you and give you a chance to install what is missing.
+
+I basically only support one version of Emacs at a time:
+
+- Emacs 30
+
 ## Features
 
 ### Operating systems
@@ -37,36 +45,55 @@ Additionally, this entire `.emacs.d` can be setup with native compilation, all n
 
 ### Development environments
 
-This Emacs configuration reflects my [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)-centered [exploratory programming style](https://en.wikipedia.org/wiki/Exploratory_programming). Additionally, [Eglot](https://github.com/joaotavora/eglot) will automatically spin up an [LSP](https://en.wikipedia.org/wiki/Language_Server_Protocol) for a language if it finds one.
+This Emacs configuration reflects my [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)-centered [exploratory programming style](https://en.wikipedia.org/wiki/Exploratory_programming).
 
-I provide an IDE and REPL for each major environment that I work in:
-
-| Environment | IDE                                                             | REPL                                                                 |
-|-------------|-----------------------------------------------------------------|----------------------------------------------------------------------|
-| Clojure     | [CIDER](https://github.com/clojure-emacs/cider)                 | [CIDER](https://github.com/clojure-emacs/cider)                      |
-| Common Lisp | [SLY](https://github.com/joaotavora/sly)                        | [SLY](https://github.com/joaotavora/sly)                             |
-| Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)     | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          |
-| Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)             | [inf-elixir](https://github.com/J3RN/inf-elixir/)                    |
-| Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)               | [fish-completion](https://gitlab.com/ambrevar/emacs-fish-completion) |
-| Go          | [go-mode](https://github.com/dominikh/go-mode.el)               | [go-playground](https://github.com/grafov/go-playground)             |
-| Haskell     | [Intero](https://chrisdone.github.io/intero/)                   | [Dante](https://github.com/jyp/dante)                                |
-| JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                    | [Indium](https://github.com/NicolasPetton/Indium/)                   |
-| Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el) | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          |
-| PHP         | [php-mode](https://github.com/emacs-php/php-mode)               | [PsySH](https://github.com/emacs-php/psysh.el)                       |
-| Python      | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode)     | `run-python`                                                         |
-| Ruby        | [Robe](https://github.com/dgutov/robe)                          | [inf-ruby](https://github.com/nonsequitur/inf-ruby)                  |
-| Rust        | [Racer](https://github.com/racer-rust/emacs-racer)              | [rust-playground](https://github.com/grafov/rust-playground/)        |
-| Scheme      | [Geiser](https://www.nongnu.org/geiser/)                        | [Geiser](https://www.nongnu.org/geiser/)                             |
-| SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)             | [emacsql](https://github.com/magit/emacsql)                          |
-| TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                  | [Indium](https://github.com/NicolasPetton/Indium/)                   |
+I provide an IDE and REPL for each major environment that I work in.
 
 One can debate about how many of the above languages Emacs is ideal for, but Emacs is certainly a best-in-class environment for Haskell, Elixir, Common Lisp, Scheme, and Clojure.
 
-The following major languages are not well-supported outside using an LSP server with Eglot:
+#### First class
 
-- C / Objective-C / C++
-- Java / Groovy / Kotlin
-- Swift
+The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot:
+
+| Environment | IDE                                             | REPL                                            | Eglot | Tree-sitter |
+|-------------|-------------------------------------------------|-------------------------------------------------|-------|-------------|
+| Clojure     | [CIDER](https://github.com/clojure-emacs/cider) | [CIDER](https://github.com/clojure-emacs/cider) | N/A   | Yes         |
+| Common Lisp | [SLY](https://github.com/joaotavora/sly)        | [SLY](https://github.com/joaotavora/sly)        | N/A   | No          |
+| Scheme      | [Geiser](https://www.nongnu.org/geiser/)        | [Geiser](https://www.nongnu.org/geiser/)        | N/A   | No          |
+
+#### Second class
+
+I support both Eglot and tree-sitter for the following languages:
+
+| Environment | IDE                                                         | REPL                                                          | Eglot | Tree-sitter |
+|-------------|-------------------------------------------------------------|---------------------------------------------------------------|-------|-------------|
+| C           | `c-ts-mode`                                                 |                                                               | Yes   | Yes         |
+| C++         | `c++-ts-mode`                                               |                                                               | Yes   | Yes         |
+| Go          | [go-mode](https://github.com/dominikh/go-mode.el)           | [go-playground](https://github.com/grafov/go-playground)      | Yes   | Yes         |
+| Python      | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                  | Yes   | Yes         |
+| Ruby        | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   | Yes         |
+| Rust        | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   | Yes         |
+
+#### Third class
+
+The following languages are not supported by Eglot, or tree-sitter, or both:
+
+| Environment | IDE                                                                          | REPL                                                                 | Eglot | Tree-sitter |
+|-------------|------------------------------------------------------------------------------|----------------------------------------------------------------------|-------|-------------|
+| Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)                  | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          | No    | Yes         |
+| Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                    | No    | Yes         |
+| Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://gitlab.com/ambrevar/emacs-fish-completion) | No    | No          |
+| Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                      | No    | No          |
+| Haskell     | [Intero](https://chrisdone.github.io/intero/)                                | [Dante](https://github.com/jyp/dante)                                | No    | No          |
+| Java        | `java-ts-mode`                                                               |                                                                      | No    | Yes         |
+| JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                                 | [Indium](https://github.com/NicolasPetton/Indium/)                   | No    | No          |
+| Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                      | No    | No          |
+| Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)              | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          | N/A   | N/A         |
+| Objective-C | `objc-mode`                                                                  |                                                                      | No    | No          |
+| PHP         | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el)                       | No    | No          |
+| SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)                          | No    | No          |
+| Swift       | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                                      | No    | No          |
+| TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                               | [Indium](https://github.com/NicolasPetton/Indium/)                   | No    | Yes         |
 
 ### Tools
 
@@ -146,12 +173,6 @@ Add something like this to your init:
 ```
 
 Referencing my configuration requires use-package and straight.el.
-
-### Versions
-
-I basically only support one version of Emacs at a time:
-
-- Emacs 29
 
 ## Keystrokes
 
