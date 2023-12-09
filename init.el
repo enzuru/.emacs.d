@@ -32,6 +32,7 @@
 (require 'enzuru-hyperlinking)
 (require 'enzuru-irc)
 (require 'enzuru-mail)
+(require 'enzuru-man)
 (require 'enzuru-modeline)
 (require 'enzuru-movement)
 (require 'enzuru-music)

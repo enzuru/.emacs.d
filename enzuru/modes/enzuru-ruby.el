@@ -21,6 +21,7 @@
 (use-package robe
   :hook ((ruby-ts-mode . robe-mode)
          (ruby-ts-mode . eglot-ensure))
+  :bind (:map ruby-ts-mode-map (("C-x C-d" . robe-doc)))
   :defer t
   :diminish robe-mode
   :ensure t)

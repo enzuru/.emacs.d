@@ -14,6 +14,7 @@
 (use-package c-ts-mode
   :ensure t
   :defer t
+  :bind (:map c-ts-mode-map (("C-x C-d" . enzuru-man-open)))
   :mode (("\\.c$" . c-ts-mode)
          ("\\.h$" . c-ts-mode)))
 

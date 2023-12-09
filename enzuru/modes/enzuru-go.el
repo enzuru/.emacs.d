@@ -5,6 +5,7 @@
 (use-package go-ts-mode
   :ensure t
   :defer t
+  :bind (:map go-ts-mode-map (("C-x C-d" . godoc-at-point)))
   :hook ((go-ts-mode . eglot-ensure)))
 
 (use-package go-playground
