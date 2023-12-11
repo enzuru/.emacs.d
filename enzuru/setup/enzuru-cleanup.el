@@ -9,6 +9,7 @@
   (diminish 'undo-tree-mode)
   (diminish 'company-mode)
   (diminish 'hyperbole-mode)
+  (diminish 'eldoc-mode)
   (eval-after-load "hideshow" '(diminish 'hs-minor-mode)))
 
 ;; Packages
