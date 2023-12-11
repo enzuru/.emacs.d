@@ -60,7 +60,7 @@
         (success month)
       (failure month)))
   (let ((month "November 2023"))
-    (if (eql (round (enzuru-fitness-monthly-pounds 2400 1.5 22 8)) -4)
+    (if (eql (round (enzuru-fitness-monthly-pounds 2633 0.867 25 5)) 0)
         (success month)
       (failure month))))
 
