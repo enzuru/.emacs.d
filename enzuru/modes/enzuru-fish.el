@@ -1,17 +1,16 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+(defun enzuru-configure-fish-completion ()
+  (when (and (executable-find "fish")
+           (require 'fish-completion nil t))
+    (global-fish-completion-mode)))
+
 ;; Packages
 
-(straight-use-package
- '(fish-completion
-   :protocol https
-   :type git
-   :host github
-   :repo "LemonBreezes/emacs-fish-completion"))
-
-(use-package emacs-fish-completion
-  :ensure t
-  :defer t)
+;; (use-package emacs-fish-completion
+;;   :ensure t
+;;   :defer t
+;;   :config (enzuru-configure-fish-completion))
 
 (use-package fish-mode
   :ensure t
