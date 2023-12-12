@@ -1,8 +1,10 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+;; Functions
+
 (defun enzuru-configure-fish-completion ()
   (when (and (executable-find "fish")
-           (require 'fish-completion nil t))
+             (require 'fish-completion nil t))
     (global-fish-completion-mode)))
 
 ;; Packages
