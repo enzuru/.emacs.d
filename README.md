@@ -25,8 +25,9 @@ You can draw inspiration from this repo, fork it for yourself, copy specific pie
 
 This config makes extensive use of language servers and tree-sitter grammars. Most of my best supported languages will try to load a language server or tree-sitter grammar. If it fails to, it will warn you and give you a chance to install what is missing.
 
-I basically only support one version of Emacs at a time:
+I usually only support one version of Emacs at a time. Currently I am supporting:
 
+- Emacs 29
 - Emacs 30
 
 ## Features
