@@ -56,7 +56,7 @@ One can debate about how many of the above languages Emacs is ideal for, but Ema
 
 The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot, and arguably Lisp with its ascetic syntax benefits significantly less from tree-sitter:
 
-| Environment | IDE                                             | REPL                                            | Eglot | Tree-sitter |
+| Language    | IDE                                             | REPL                                            | Eglot | Tree-sitter |
 |-------------|-------------------------------------------------|-------------------------------------------------|-------|-------------|
 | Clojure     | [CIDER](https://github.com/clojure-emacs/cider) | [CIDER](https://github.com/clojure-emacs/cider) | N/A   | Yes         |
 | Common Lisp | [SLY](https://github.com/joaotavora/sly)        | [SLY](https://github.com/joaotavora/sly)        | N/A   | No          |
@@ -66,22 +66,22 @@ The best supported developer environments are the Lisp languages. Since they hav
 
 I support both Eglot and tree-sitter for the following languages:
 
-| Environment | IDE                                                         | REPL                                                          | Eglot | Tree-sitter |
-|-------------|-------------------------------------------------------------|---------------------------------------------------------------|-------|-------------|
-| C           | `c-ts-mode`                                                 |                                                               | Yes   | Yes         |
-| C++         | `c++-ts-mode`                                               |                                                               | Yes   | Yes         |
-| Go          | `go-ts-mode`                                                | [go-playground](https://github.com/grafov/go-playground)      | Yes   | Yes         |
-| Python      | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                  | Yes   | Yes         |
-| Ruby        | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   | Yes         |
-| Rust        | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   | Yes         |
+| Language | IDE                                                         | REPL                                                          | Eglot | Tree-sitter |
+|----------|-------------------------------------------------------------|---------------------------------------------------------------|-------|-------------|
+| C        | `c-ts-mode`                                                 |                                                               | Yes   | Yes         |
+| C++      | `c++-ts-mode`                                               |                                                               | Yes   | Yes         |
+| Go       | `go-ts-mode`                                                | [go-playground](https://github.com/grafov/go-playground)      | Yes   | Yes         |
+| Python   | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                  | Yes   | Yes         |
+| Ruby     | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   | Yes         |
+| Rust     | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   | Yes         |
 
 #### Third class
 
-I do not support Eglot or tree-sitter for these environments. Generally it is because GNU Guix does not have an appropriate language server or tree-sitter grammar packaged for it yet:
+I do not support Eglot or tree-sitter for these languages. Generally it is because GNU Guix does not have an appropriate language server or tree-sitter grammar packaged for it yet:
 
-| Environment | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
+| Language    | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
 |-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|-------------|
-| Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)                  | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)              | No    | Yes         |
+| Dockerfile  | [docker.el](https://github.com/Silex/docker.el/tree/master)                  | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)              | No    | Yes         |
 | Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | No    | Yes         |
 | Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | No    | No          |
 | Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                          | No    | No          |
@@ -89,7 +89,6 @@ I do not support Eglot or tree-sitter for these environments. Generally it is be
 | Java        | `java-ts-mode`                                                               |                                                                          | No    | Yes         |
 | JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                                 | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    | No          |
 | Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                          | No    | No          |
-| Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)              | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)              | N/A   | N/A         |
 | Objective-C | `objc-mode`                                                                  |                                                                          | No    | No          |
 | PHP         | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el)                           | No    | No          |
 | SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)                              | No    | No          |
@@ -115,6 +114,7 @@ This configuration ships with a great many helpful tools:
 | HTTP browser                | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                   |
 | Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                  |
 | IRC client                  | [ERC](https://www.gnu.org/software/emacs/erc.html)                                    |
+| Kubernetes client           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                       |
 | LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                          |
 | Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html) |
 | Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                     |
