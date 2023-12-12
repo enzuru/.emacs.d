@@ -78,22 +78,22 @@ I support both Eglot and tree-sitter for the following languages:
 
 I do not support Eglot or tree-sitter for these environments. Generally it is because GNU Guix does not have an appropriate language server or tree-sitter grammar packaged for it yet:
 
-| Environment | IDE                                                                          | REPL                                                                 | Eglot | Tree-sitter |
-|-------------|------------------------------------------------------------------------------|----------------------------------------------------------------------|-------|-------------|
-| Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)                  | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          | No    | Yes         |
-| Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                    | No    | Yes         |
-| Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://gitlab.com/ambrevar/emacs-fish-completion) | No    | No          |
-| Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                      | No    | No          |
-| Haskell     | [Intero](https://chrisdone.github.io/intero/)                                | [Dante](https://github.com/jyp/dante)                                | No    | No          |
-| Java        | `java-ts-mode`                                                               |                                                                      | No    | Yes         |
-| JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                                 | [Indium](https://github.com/NicolasPetton/Indium/)                   | No    | No          |
-| Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                      | No    | No          |
-| Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)              | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)          | N/A   | N/A         |
-| Objective-C | `objc-mode`                                                                  |                                                                      | No    | No          |
-| PHP         | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el)                       | No    | No          |
-| SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)                          | No    | No          |
-| Swift       | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                                      | No    | No          |
-| TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                               | [Indium](https://github.com/NicolasPetton/Indium/)                   | No    | Yes         |
+| Environment | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
+|-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|-------------|
+| Docker      | [docker.el](https://github.com/Silex/docker.el/tree/master)                  | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)              | No    | Yes         |
+| Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | No    | Yes         |
+| Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | No    | No          |
+| Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                          | No    | No          |
+| Haskell     | [Intero](https://chrisdone.github.io/intero/)                                | [Dante](https://github.com/jyp/dante)                                    | No    | No          |
+| Java        | `java-ts-mode`                                                               |                                                                          | No    | Yes         |
+| JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                                 | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    | No          |
+| Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                          | No    | No          |
+| Kubernetes  | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)              | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)              | N/A   | N/A         |
+| Objective-C | `objc-mode`                                                                  |                                                                          | No    | No          |
+| PHP         | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el)                           | No    | No          |
+| SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)                              | No    | No          |
+| Swift       | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                                          | No    | No          |
+| TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                               | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    | Yes         |
 
 ### Tools
 

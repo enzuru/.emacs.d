@@ -6,8 +6,12 @@
  '(fish-completion
    :protocol https
    :type git
-   :host gitlab
-   :repo "Ambrevar/emacs-fish-completion"))
+   :host github
+   :repo "LemonBreezes/emacs-fish-completion"))
+
+(use-package emacs-fish-completion
+  :ensure t
+  :defer t)
 
 (use-package fish-mode
   :ensure t
