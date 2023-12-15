@@ -266,6 +266,8 @@ These are less powerful commands, mostly functions.
 - `C-x C-s(aves)` a buffer for me.
 - `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
 
+I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when `save-buffers-exit-emacs` will do.
+
 ### Lisp
 
 These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
@@ -291,8 +293,6 @@ When you are on parenthesis, modal editing is activated via Lispy. You can use s
 - `r` raise s-expression
 - `C-1` view documentation
 - `C-2` view caller arguments
-
-I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when `save-buffers-exit-emacs` will do.
 
 ## Learning
 
