@@ -5,6 +5,7 @@
 ;; Configuration
 
 (defun enzuru-configure-chatgpt-shell ()
+  (setq chatgpt-shell-model-version 2)
   (global-set-key (kbd "C-x i") 'chatgpt-shell)
   (setq chatgpt-shell-openai-key
         (auth-source-pick-first-password :host "api.openai.com")))

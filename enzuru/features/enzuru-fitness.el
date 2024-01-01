@@ -62,6 +62,10 @@
   (let ((month "November 2023"))
     (if (eql (round (enzuru-fitness-monthly-pounds 2633 0.867 25 5)) 0)
         (success month)
+      (failure month)))
+  (let ((month "December 2023"))
+    (if (eql (round (enzuru-fitness-monthly-pounds 2742 0.87 31 0)) 2)
+        (success month)
       (failure month))))
 
 (defun enzuru-fitness-vo2-max (ftp kilos)
