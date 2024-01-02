@@ -99,41 +99,42 @@ I do not support Eglot or tree-sitter for these languages. Generally it is becau
 
 This configuration ships with a great many helpful tools:
 
-| Feature                     | Tool                                                                                  |
-|-----------------------------|---------------------------------------------------------------------------------------|
-| Artificial intelligence     | [chatgpt-shell](https://github.com/xenodium/chatgpt-shell)                            |
-| Benchmarker                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)               |
-| Bug tracker                 | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                 |
-| Clipboard                   | [Clipetty](https://github.com/spudlyo/clipetty)                                       |
-| Completion (regular buffer) | [Company](https://company-mode.github.io)                                             |
-| Completion (minibuffer)     | [vert&co](https://github.com/minad/vertico#complementary-packages)                    |
-| Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                       |
-| Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                       |
-| File manager                | [eFar](https://github.com/suntsov/efar)                                               |
-| Gemini browser              | [Elpher](https://thelambdalab.xyz/elpher/)                                            |
-| HTTP browser                | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                   |
-| Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                  |
-| IRC client                  | [ERC](https://www.gnu.org/software/emacs/erc.html)                                    |
-| Kubernetes client           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                       |
-| LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                          |
-| Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html) |
-| Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                     |
-| Modal editor                | [lispy](https://github.com/abo-abo/lispy)                                             |
-| Modeline                    | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                       |
-| MUD client                  | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                        |
-| Music player                | [Emms](https://www.gnu.org/software/emms/)                                            |
-| Music streamer              | [pianobar.el](https://github.com/agrif/pianobar.el)                                   |
-| Organization                | [org-mode](https://orgmode.org)                                                       |
-| Project interaction         | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html) |
-| REST client                 | [restclient.el](https://github.com/pashky/restclient.el)                              |
-| Shell                       | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)             |
-| Spreadsheets                | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                   |
-| Syntax checker              | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)           |
-| Syntax highlighter          | [prism](https://github.com/alphapapa/prism.el)                                        |
-| Undo visualizer             | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                             |
-| Version control             | [Magit](https://magit.vc)                                                             |
-| Wikipedia editor            | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                               |
-| Window manager              | [exwm](https://github.com/ch11ng/exwm)                                                |
+| Feature                     | Tool                                                                                             |
+|-----------------------------|--------------------------------------------------------------------------------------------------|
+| Artificial intelligence     | [chatgpt-shell](https://github.com/xenodium/chatgpt-shell)                                       |
+| Benchmarker                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                          |
+| Bug tracker                 | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                            |
+| Clipboard                   | [Clipetty](https://github.com/spudlyo/clipetty)                                                  |
+| Completion (regular buffer) | [Company](https://company-mode.github.io)                                                        |
+| Completion (minibuffer)     | [vert&co](https://github.com/minad/vertico#complementary-packages)                               |
+| Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
+| Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
+| File manager                | [eFar](https://github.com/suntsov/efar)                                                          |
+| Gemini browser              | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
+| HTTP browser                | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
+| Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
+| IRC client                  | [ERC](https://www.gnu.org/software/emacs/erc.html)                                               |
+| Kubernetes client           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                  |
+| LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                                     |
+| Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)            |
+| Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                |
+| Modal editor                | [lispy](https://github.com/abo-abo/lispy)                                                        |
+| Modeline                    | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                  |
+| MUD client                  | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                   |
+| Music player                | [Emms](https://www.gnu.org/software/emms/)                                                       |
+| Music streamer              | [pianobar.el](https://github.com/agrif/pianobar.el)                                              |
+| Organization                | [org-mode](https://orgmode.org)                                                                  |
+| Project interaction         | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html)            |
+| REST client                 | [restclient.el](https://github.com/pashky/restclient.el)                                         |
+| Shell                       | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                        |
+| Spreadsheets                | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                              |
+| Syntax checker              | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                      |
+| Syntax highlighter          | [prism](https://github.com/alphapapa/prism.el)                                                   |
+| Undo visualizer             | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                        |
+| Version control             | [Magit](https://magit.vc)                                                                        |
+| Wikipedia editor            | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                          |
+| Window configuration        | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html) |
+| Window manager              | [exwm](https://github.com/ch11ng/exwm)                                                           |
 
 ### Themes
 
