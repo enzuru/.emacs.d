@@ -64,6 +64,7 @@
 (require 'enzuru-feature)
 (require 'enzuru-fish)
 (require 'enzuru-fountain)
+(require 'enzuru-gdscript)
 (require 'enzuru-go)
 (require 'enzuru-groovy)
 (require 'enzuru-haskell)

@@ -84,6 +84,7 @@ I do not support Eglot or tree-sitter for these languages. Generally it is becau
 | Dockerfile  | [docker.el](https://github.com/Silex/docker.el/tree/master)                  | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)              | No    | Yes         |
 | Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | No    | Yes         |
 | Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | No    | No          |
+| GDScript    | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)         |                                                                          | Yes   | No          |
 | Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                          | No    | No          |
 | Haskell     | [Intero](https://chrisdone.github.io/intero/)                                | [Dante](https://github.com/jyp/dante)                                    | No    | No          |
 | Java        | `java-ts-mode`                                                               |                                                                          | No    | Yes         |
