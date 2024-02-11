@@ -29,30 +29,16 @@
         smtpmail-smtp-server "mail.enzu.ru"
         smtpmail-smtp-service 587
         user-mail-address "me@enzu.ru"
-        user-full-name "Ahmed Khanzada")
-  (gnus-add-configuration '(article (horizontal 1.0 (summary .5 point) (article 1.0)))))
-
-(defun enzuru-configure-nnnotmuch ()
-  (setf gnus-secondary-select-methods '((nnnotmuch "")
+        user-full-name "Ahmed Khanzada"
+        gnus-secondary-select-methods '((nnmaildir "maildir"
+                                                   (directory "~/mail/me")
+                                                   (get-new-mail nil)
+                                                   (nnir-search-engine notmuch))
                                         (nntp "newshosting"
                                               (nntp-open-connection-function nntp-open-ssl-stream)
                                               (nntp-port-number 563)
                                               (nntp-address "news.newshosting.com"))))
-  (setq nnnotmuch-groups '((""
-                            ("openbsd" "tag:openbsd")
-                            ("openbsd.commits" "tag:openbsd-commits")
-                            ("openbsd.bugs" "tag:openbsd-bugs")
-                            ("gnu" "tag:gnu")
-                            ("gnu.commits" "tag:gnu-commits")
-                            ("gnu.bugs" "tag:gnu-bugs")
-                            ("9front" "tag:9front")
-                            ("archive.openbsd" "tag:archive-openbsd")
-                            ("archive.openbsd.commits" "tag:archive-openbsd-commits")
-                            ("archive.openbsd.bugs" "tag:archive-openbsd-bugs")
-                            ("archive.gnu" "tag:archive-gnu")
-                            ("archive.gnu.commits" "tag:archive-gnu-commits")
-                            ("archive.gnu.bugs" "tag:archive-gnu-bugs")
-                            ("archive.9front" "tag:archive-9front")))))
+  (gnus-add-configuration '(article (horizontal 1.0 (summary .5 point) (article 1.0)))))
 
 (defun enzuru-configure-notmuch ()
   (setq notmuch-search-oldest-first nil
@@ -69,14 +55,5 @@
   :ensure t
   :defer t
   :config (enzuru-configure-notmuch))
-
-(straight-use-package
- '(nnnotmuch
-   :type git
-   :host github
-   :repo "tlikonen/nnnotmuch"))
-(require 'nnnotmuch)
-
-(enzuru-configure-nnnotmuch)
 
 (provide 'enzuru-mail)
