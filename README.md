@@ -297,6 +297,13 @@ When you are on parenthesis, modal editing is activated via Lispy. You can use s
 - `C-1` view documentation
 - `C-2` view caller arguments
 
+Lispy has obligatory Vim-style navigation too:
+
+- `h` move left
+- `j` move down
+- `k` move up
+- `l` move right
+
 ## Learning
 
 Everything is very organized in the `enzuru` folder by feature, mode, preference, setup, operating system, and theme. While this repo should work immediately for you on a `git pull`, it's obviously a very personalized setup and many things won't appeal to you. If I were you, I would first take a look at my `init.el` and then pick a topical elisp file from there.
