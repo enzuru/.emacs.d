@@ -286,6 +286,7 @@ When you are on parenthesis, modal editing is activated via Lispy. You can use s
 
 - `e` evaluate s-expression
 - `f` forward point through parens
+- `b` undo
 - `]` move point down
 - `[` move point up
 - `>` slurp up next s-expression
