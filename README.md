@@ -106,8 +106,8 @@ This configuration ships with a great many helpful tools:
 | Benchmarker                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                          |
 | Bug tracker                 | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                            |
 | Clipboard                   | [Clipetty](https://github.com/spudlyo/clipetty)                                                  |
-| Completion (regular buffer) | [Company](https://company-mode.github.io)                                                        |
-| Completion (minibuffer)     | [vert&co](https://github.com/minad/vertico#complementary-packages)                               |
+| Completion (regular buffer) | [Corfu](https://github.com/minad/corfu)                                                          |
+| Completion (minibuffer)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                               |
 | Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
 | Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
 | File manager                | [eFar](https://github.com/suntsov/efar)                                                          |

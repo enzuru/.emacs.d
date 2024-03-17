@@ -1,14 +1,13 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; Configuration
+;; Initialization
 
-(defun enzuru-configure-company ()
-  (setq company-idle-delay 0
-        company-tooltip-align-annotations t)
-  (add-hook 'after-init-hook 'global-company-mode))
-
-(defun enzuru-configure-company-lsp ()
-  (cl-pushnew 'company-lsp company-backends))
+(defun enzuru-initialize-consult ()
+  (setq register-preview-delay 0.5
+        register-preview-function #'consult-register-format)
+  (advice-add #'register-preview :override #'consult-register-window)
+  (setq xref-show-xrefs-function #'consult-xref
+        xref-show-definitions-function #'consult-xref))
 
 (defun enzuru-initialize-emacs ()
   (defun crm-indicator (args)
@@ -21,19 +20,20 @@
   (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
   (setq minibuffer-prompt-properties '(read-only t cursor-intangible t face minibuffer-prompt))
   (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
-  (setq enable-recursive-minibuffers t))
+  (setq enable-recursive-minibuffers t)
+  (setq completion-cycle-threshold 3)
+  (setq tab-always-indent 'complete))
+
+(defun enzuru-initialize-embark ()
+  (setq prefix-help-command #'embark-prefix-help-command)
+  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target))
 
 (defun enzuru-initialize-orderless ()
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
 
-(defun enzuru-initialize-consult ()
-  (setq register-preview-delay 0.5
-        register-preview-function #'consult-register-format)
-  (advice-add #'register-preview :override #'consult-register-window)
-  (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref))
+;; Configuration
 
 (defun enzuru-configure-consult ()
   (consult-customize consult-theme :preview-key '(:debounce 0.2 any)
@@ -44,9 +44,12 @@
                      :preview-key '(:debounce 0.4 any))
   (setq consult-narrow-key "<"))
 
-(defun enzuru-initialize-embark ()
-  (setq prefix-help-command #'embark-prefix-help-command)
-  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target))
+(defun enzuru-configure-corfu ()
+  (corfu-popupinfo-mode 1))
+
+(defun enzuru-configure-corfu-terminal ()
+  (unless (display-graphic-p)
+    (corfu-terminal-mode +1)))
 
 (defun enzuru-configure-embark ()
   (add-to-list 'display-buffer-alist
@@ -55,27 +58,22 @@
 
 ;; Packages
 
-(use-package company
-  :ensure t
-  :diminish company-mode
-  :config (enzuru-configure-company))
+(use-package cape
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-elisp-block)
+  (add-to-list 'completion-at-point-functions #'cape-history)
+  (add-to-list 'completion-at-point-functions #'cape-keyword)
+  ;;(add-to-list 'completion-at-point-functions #'cape-tex)
+  ;;(add-to-list 'completion-at-point-functions #'cape-sgml)
+  ;;(add-to-list 'completion-at-point-functions #'cape-rfc1345)
+  ;;(add-to-list 'completion-at-point-functions #'cape-abbrev)
+  (add-to-list 'completion-at-point-functions #'cape-dict)
+  (add-to-list 'completion-at-point-functions #'cape-elisp-symbol)
+  ;; (add-to-list 'completion-at-point-functions #'cape-line)
+  )
 
-(use-package flymake-collection
-  :ensure t)
-
-(use-package vertico
-  :init (vertico-mode))
-
-(use-package savehist
-  :init (savehist-mode))
-
-(use-package emacs
-  :init (enzuru-initialize-emacs))
-
-(use-package orderless
-  :init (enzuru-initialize-orderless))
-
-;; Example configuration for Consult
 (use-package consult
   :bind (("C-s" . consult-line)
          ("C-y" . consult-yank-pop)
@@ -132,10 +130,27 @@
   :ensure t
   :bind (("C-x C-c" . consult-ag)))
 
-(use-package marginalia
-  :bind (:map minibuffer-local-map
-              ("M-A" . marginalia-cycle))
-  :init (marginalia-mode))
+(use-package corfu
+  :custom
+  ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+  (corfu-auto t) ;; Enable auto completion
+  ;; (corfu-separator ?\s)          ;; Orderless field separator
+  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+  (corfu-quit-no-match 'separator)
+  ;; (corfu-preview-current nil)    ;; Disable current candidate preview
+  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+  ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
+  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+  :init (global-corfu-mode)
+  :config (enzuru-configure-corfu))
+
+(use-package dabbrev
+  :bind (("M-/" . dabbrev-completion)
+         ("C-M-/" . dabbrev-expand))
+  :config
+  (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
+  (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
+  (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode))
 
 (use-package embark
   :ensure t
@@ -149,5 +164,29 @@
 (use-package embark-consult
   :ensure t
   :hook (embark-collect-mode . consult-preview-at-point-mode))
+
+(use-package flymake-collection
+  :ensure t)
+
+(use-package marginalia
+  :bind (:map minibuffer-local-map
+              ("M-A" . marginalia-cycle))
+  :init (marginalia-mode))
+
+(use-package orderless
+  :init (enzuru-initialize-orderless))
+
+(use-package savehist
+  :init (savehist-mode))
+
+(use-package vertico
+  :init (vertico-mode))
+
+(straight-use-package
+ '(corfu-terminal
+   :type git
+   :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
+
+(enzuru-configure-corfu-terminal)
 
 (provide 'enzuru-completion)

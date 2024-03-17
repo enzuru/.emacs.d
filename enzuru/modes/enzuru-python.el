@@ -2,9 +2,6 @@
 
 ;; Configuration
 
-(defun enzuru-configure-company-anaconda ()
-  (cl-pushnew 'company-anaconda company-backends))
-
 (defun enzuru-configure-python-ts-mode ()
   (add-to-list 'auto-mode-alist '("\\.py$" . python-ts-mode))
   (add-hook 'python-ts-mode-hook
@@ -21,10 +18,6 @@
          (python-ts-mode . eglot-ensure))
   :bind (:map python-ts-mode-map (("C-x C-d" . anaconda-mode-show-doc)
                                ("C-x C-w" . anaconda-mode-find-definitions))))
-
-(use-package company-anaconda
-  :ensure t
-  :hook ((python-ts-mode . enzuru-configure-company-anaconda)))
 
 (enzuru-configure-python-ts-mode)
 

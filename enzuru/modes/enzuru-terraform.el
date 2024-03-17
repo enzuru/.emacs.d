@@ -2,19 +2,12 @@
 
 ;; Functions
 
-(defun enzuru-configure-company-terraform ()
-  (cl-pushnew 'company-terraform company-backends))
-
 (defun enzuru-configure-terraform ()
   (add-hook 'terraform-mode-hook
             (lambda ()
               (add-hook 'before-save-hook 'terraform-format-buffer))))
 
 ;; Packages
-
-(use-package company-terraform
-  :ensure t
-  :hook ((terraform-mode . enzuru-configure-company-terraform)))
 
 (use-package terraform-doc
   :ensure t

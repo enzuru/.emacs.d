@@ -2,17 +2,10 @@
 
 ;; Functions
 
-(defun enzuru-configure-company-php ()
-  (cl-pushnew 'company-ac-php-backend company-backends))
-
 (defun enzuru-configure-php-mode ()
   (setq php-mode-force-pear 1))
 
 ;; Packages
-
-(use-package company-php
-  :ensure t
-  :hook ((php-mode . enzuru-configure-company-php)))
 
 (use-package php-mode
   :ensure t

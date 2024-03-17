@@ -2,10 +2,6 @@
 
 ;; Packages
 
-(use-package company-restclient
-  :ensure t
-  :defer t)
-
 (use-package restclient
   :ensure t
   :mode (("\\.http$" . restclient-mode))

@@ -2,19 +2,12 @@
 
 ;; Configure
 
-(defun enzuru-configure-company-ghci ()
-  (cl-pushnew 'company-ghci company-backends))
-
 (defun enzuru-configure-haskell-mode ()
   (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
   (add-hook 'haskell-mode-hook 'turn-on-haskeull-indent)
   (put 'downcase-region 'disabled nil))
 
 ;; Packages
-
-(use-package company-ghci
-  :ensure t
-  :hook ((haskell-mode . enzuru-configure-company-ghci)))
 
 (use-package dante
   :ensure t

@@ -20,8 +20,7 @@
 
 (use-package racer
   :ensure t
-  :hook ((racer-mode . eldoc-mode)
-         (racer-mode . company-mode)))
+  :hook ((racer-mode . eldoc-mode)))
 
 (use-package rust-playground
   :ensure t

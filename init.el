@@ -52,7 +52,6 @@
 
 ;; Modes
 
-(require 'enzuru-ansible)
 (require 'enzuru-c)
 (require 'enzuru-css)
 (require 'enzuru-cpp)

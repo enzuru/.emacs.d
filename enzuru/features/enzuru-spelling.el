@@ -1,12 +1,9 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; Configuration
+;; Packages
 
 (use-package company-spell
-  :config (cl-pushnew 'company-spell company-backends)
   :ensure t)
-
-;; Packages
 
 (use-package flymake-aspell
   :ensure t
