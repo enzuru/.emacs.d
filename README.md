@@ -8,6 +8,7 @@ This means spicy choices like:
 
 - `eglot` over `lsp-mode`
 - `vert&co` over `helm` and `iy`
+- `corfu` over `company`
 - `straight.el` over `package.el`
 - `flymake` over `flycheck` (what a comeback!)
 - `lispy` over `paredit`
