@@ -54,7 +54,7 @@ One can debate about how many of the above languages Emacs is ideal for, but Ema
 
 #### First class
 
-The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot, and arguably Lisp with its ascetic syntax benefits significantly less from tree-sitter:
+The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot, and arguably Lisp with its ascetic syntax benefits less from tree-sitter:
 
 | Language    | IDE                                             | REPL                                            | Eglot | Tree-sitter |
 |-------------|-------------------------------------------------|-------------------------------------------------|-------|-------------|
