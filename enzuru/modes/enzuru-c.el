@@ -2,7 +2,7 @@
 
 ;; Configuration
 
-(defun enzuru-configure-c-mode ()
+(defun enzuru-configure-c-ts-mode ()
   (add-hook 'c-mode-hook 'eglot-ensure))
 
 (defun enzuru-configure-semantic ()
@@ -13,6 +13,7 @@
 
 (use-package c-ts-mode
   :ensure t
+  :config (enzuru-configure-c-ts-mode)
   :defer t
   :bind (:map c-ts-mode-map (("C-x C-d" . enzuru-man-open)))
   :mode (("\\.c$" . c-ts-mode)
