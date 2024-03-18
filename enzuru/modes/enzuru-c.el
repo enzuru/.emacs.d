@@ -24,6 +24,4 @@
   :defer t
   :config (enzuru-configure-semantic))
 
-(enzuru-configure-c-mode)
-
 (provide 'enzuru-c)
