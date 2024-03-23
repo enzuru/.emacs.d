@@ -103,7 +103,7 @@
   (enzuru-setup-tab "role-playing" "#DarkMyst" "#rpg-hub" "#imarel" "#imarel_ooc")
   (enzuru-setup-tab "demoscene" "#demoscene" "#c-64" "IRCnet")
   (enzuru-setup-tab "gnu" "#gnu" "#gnu-linux-libre" "#guix" "#guile")
-  (enzuru-setup-tab "misc" "#emacs" "#exwm" "#stumpwm" "#gnustep")
+  (enzuru-setup-tab "misc" "#emacs" "#exwm" "#stumpwm" "#gnustep" "#dri-devel")
   (enzuru-setup-tab "lisp" "#lisp" "#commonlisp" "#scheme" "#clojure" "#lispgames")
   (enzuru-setup-tab "9fans" "#cat-v" "##9fans" "OFTC")
   (enzuru-setup-tab "tilde" "#gemini" "#institute" "#meta" "#politics" "#books")
