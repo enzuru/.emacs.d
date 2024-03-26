@@ -6,7 +6,7 @@
   (add-to-list 'erc-modules 'completion)
 
   (let ((in-channels '())
-        (total-channels 30))
+        (total-channels 28))
     (defun enzuru-channel-push ()
       (cl-pushnew (buffer-name (current-buffer)) in-channels)
       (message (number-to-string (- total-channels (length in-channels))))
