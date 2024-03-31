@@ -14,18 +14,18 @@
 
 ;; Packages
 
+(use-package clojure-ts-mode
+  :ensure t
+  :defer t)
+
 (use-package cider
   :ensure t
   :defer t
   :config (enzuru-configure-cider)
-  :bind (:map clojure-ts-mode-map
+  :bind (:map clojure-mode-map
               ("C-x C-w" . cider-test-jump)
               ("C-x C-d" . cider-doc)
               ("C-x c" . cider-eval-buffer)))
-
-(use-package clojure-ts-mode
-  :ensure t
-  :defer t)
 
 (straight-use-package
  '(completing-read-cider
