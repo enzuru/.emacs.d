@@ -18,7 +18,7 @@
   :ensure t
   :defer t
   :config (enzuru-configure-cider)
-  :bind (:map clojure-mode-map
+  :bind (:map clojure-ts-mode-map
               ("C-x C-w" . cider-test-jump)
               ("C-x C-d" . cider-doc)
               ("C-x c" . cider-eval-buffer)))
