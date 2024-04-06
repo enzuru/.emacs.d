@@ -25,9 +25,9 @@
 
 (defun enzuru-fitness-test-algo ()
   (enzuru-test-weight-loss "2010"
-                           (enzuru-fitness-monthly-pounds 1500 (/ 12 7) 30 0) -10)
+                           (enzuru-fitness-monthly-pounds 1500 (/ 12 7.0) 30 0) -10)
   (enzuru-test-weight-loss "2019"
-                           (enzuru-fitness-monthly-pounds 2500 (/ 10 7) 30 0) -2)
+                           (enzuru-fitness-monthly-pounds 2500 (/ 10 7.0) 30 0) -2)
   (enzuru-test-weight-loss "January 2024"
                            (enzuru-fitness-monthly-pounds 2500 0.97 31 0) -2)
   (enzuru-test-weight-loss "February 2024"
