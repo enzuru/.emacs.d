@@ -17,4 +17,8 @@
         (rust-mode . rust-ts-mode)
         (typescript-mode . typescript-ts-mode)))
 
+(use-package treesit-auto
+  :custom (treesit-auto-install 'prompt)
+  :config (global-treesit-auto-mode))
+
 (provide 'enzuru-tree-sitter)
