@@ -9,7 +9,7 @@
 
 (defun enzuru-configure-operating-systems ()
   (if (eq system-type 'darwin)
-      (require 'enzuru-molokai))
+      (require 'enzuru-exotica))
   (if (eq system-type 'windows-nt)
       (require 'enzuru-arjen-grey))
   (if (eq (enzuru-uname) 'FreeBSD)
