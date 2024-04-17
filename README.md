@@ -144,12 +144,17 @@ There are many beautiful theme families for you to enjoy:
 
 - [arjen-grey](https://github.com/credmp/arjen-grey-theme)
 - [deep-thought](https://github.com/enzuru/emacs-deep-thought-theme)
+- [dracula](https://github.com/dracula/emacs)
 - [exotica](https://github.com/zenobht/exotica-theme)
 - [gotham](https://github.com/emacsmirror/gotham-theme)
 - [molokai](https://github.com/alloy-d/color-theme-molokai)
 - [omtose-phellack](https://github.com/franksn/omtose-phellack-theme)
 - [purple-haze](https://github.com/emacsfodder/emacs-purple-haze-theme)
 - [sanityinc-tomorrow](https://github.com/purcell/color-theme-sanityinc-tomorrow)
+- [timu-caribbean](https://gitlab.com/aimebertrand/timu-caribbean-theme)
+- [timu-macos](https://gitlab.com/aimebertrand/timu-macos-theme)
+- [timu-rouge](https://gitlab.com/aimebertrand/timu-rouge-theme)
+- [timu-spacegrey](https://gitlab.com/aimebertrand/timu-spacegrey-theme)
 - [zenburn](https://github.com/bbatsov/zenburn-emacs)
 
 ### Package managers
