@@ -10,7 +10,7 @@
 
 (defun enzuru-configure-pianobar ()
   (setq pianobar-username "lenzuru@gmail.com"
-        pianobar-station "13"
+        pianobar-station "66"
         pianobar-enable-modeline nil))
 
 ;; Packages
