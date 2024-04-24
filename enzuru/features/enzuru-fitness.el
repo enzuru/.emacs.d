@@ -2,8 +2,8 @@
 
 (defun enzuru-fitness-monthly-pounds
     (daily-calories daily-training-hours days-home days-outside)
-  (let ((neat-home 2300)
-        (neat-outside 2700)
+  (let ((neat-home 2170)
+        (neat-outside 2615)
         (burned-per-hour 400)
         (days-total (+ days-home days-outside)))
     (/ (- (* days-total daily-calories)
@@ -35,7 +35,7 @@
   (enzuru-test-weight-loss "March 2024"
                            (enzuru-fitness-monthly-pounds 2677 1.26 31 0) -1)
   (enzuru-test-weight-loss "April 2024"
-                           (enzuru-fitness-monthly-pounds 2000 2 30 0) -8))
+                           (enzuru-fitness-monthly-pounds 2300 1.5 30 0) -4))
 
 (defun enzuru-fitness-vo2-max (ftp kilos)
   (+ (/ (* 10.8 ftp) kilos) 7))
