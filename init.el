@@ -75,6 +75,7 @@
 (require 'enzuru-lisp)
 (require 'enzuru-log)
 (require 'enzuru-markdown)
+(require 'enzuru-nix)
 (require 'enzuru-objective-c)
 (require 'enzuru-org)
 (require 'enzuru-php)
@@ -90,6 +91,7 @@
 (require 'enzuru-typescript)
 (require 'enzuru-terraform)
 (require 'enzuru-web)
+(require 'enzuru-vala)
 (require 'enzuru-wiki)
 (require 'enzuru-yaml)
 
