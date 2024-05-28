@@ -4,21 +4,14 @@
 
 ;; Configuration
 
-(defun enzuru-configure-chatgpt-shell ()
-  (setq chatgpt-shell-model-version 2)
-  (global-set-key (kbd "C-x i") 'chatgpt-shell)
-  (setq chatgpt-shell-openai-key
-        (auth-source-pick-first-password :host "api.openai.com")))
+(defun enzuru-configure-gptel ()
+  (global-set-key (kbd "C-x i") 'gptel))
 
 ;; Packages
 
-(use-package shell-maker
-  :straight (:host github :repo "xenodium/chatgpt-shell" :files ("shell-maker.el")))
-
-(use-package chatgpt-shell
-  :requires shell-maker
-  :straight (:host github :repo "xenodium/chatgpt-shell" :files ("chatgpt-shell.el")))
-
-(enzuru-configure-chatgpt-shell)
+(use-package gptel
+  :config (enzuru-configure-gptel)
+  :bind (:map gptel-mode-map
+              ("C-x c" . gptel-send)))
 
 (provide 'enzuru-ai)

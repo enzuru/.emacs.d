@@ -14,7 +14,7 @@ This means spicy choices like:
 - `lispy` over `paredit`
 - `SLY` over `SLIME`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
-- `chatgpt-shell` over the ChatGPT client you made last weekend
+- `gptel` over the ChatGPT client you made last weekend
 
 My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own well-documented vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
 
@@ -103,7 +103,6 @@ This configuration ships with a great many helpful tools:
 
 | Feature                     | Tool                                                                                             |
 |-----------------------------|--------------------------------------------------------------------------------------------------|
-| Artificial intelligence     | [chatgpt-shell](https://github.com/xenodium/chatgpt-shell)                                       |
 | Benchmarker                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                          |
 | Bug tracker                 | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                            |
 | Clipboard                   | [Clipetty](https://github.com/spudlyo/clipetty)                                                  |
@@ -117,6 +116,7 @@ This configuration ships with a great many helpful tools:
 | Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
 | IRC client                  | [ERC](https://www.gnu.org/software/emacs/erc.html)                                               |
 | Kubernetes client           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                  |
+| LLM client                  | [gptel](https://github.com/karthink/gptel)                                                       |
 | LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                                     |
 | Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)            |
 | Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                |
@@ -257,7 +257,7 @@ These are the most powerful commands, mostly applications.
 
 - `C-x c(ompile)` let’s me run a compile command on any buffer I’m working on. This can be used to run a REPL for your language too.
 - `C-x f(ile)` starts a file manager.
-- `C-x i(ntelligence)` starts an AI session.
+- `C-x i(ntelligence)` starts an LLM client.
 - `C-x l(ocate)` locates a file on your disk.
 - `C-x s(tring replace)` let’s me replace all strings in a buffer or selection.
 - `C-x u(ndo)` will launch an undo-tree visualizer
