@@ -6,7 +6,6 @@
   (require 'geiser-guile)
   (add-hook 'scheme-mode-hook 'turn-on-geiser-mode)
   (add-hook 'scheme-mode-hook 'lispy-mode)
-  (add-hook 'scheme-mode-hook 'guix-devel-mode)
   (setq geiser-debug-show-debug t)
   (define-key scheme-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
   (define-key scheme-mode-map (kbd "C-x r") 'geiser-eval-region)
