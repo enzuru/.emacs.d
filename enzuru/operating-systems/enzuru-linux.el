@@ -12,9 +12,6 @@
 (defun enzuru-setup-desktop ()
   (require 'enzuru-window-management))
 
-(defun enzuru-setup-guix ()
-  (require 'enzuru-guix))
-
 ;; Variables
 
 (setq consult-locate-args "locate -d /home/enzuru/locatedb.n"
@@ -26,7 +23,5 @@
 ;; Keys
 
 (global-set-key (kbd "C-c x") 'enzuru-async-term)
-
-(enzuru-setup-guix)
 
 (provide 'enzuru-linux)

@@ -10,8 +10,10 @@
 ;; Packages
 
 (use-package gptel
+  :ensure t
+  :defer t
   :config (enzuru-configure-gptel)
   :bind (:map gptel-mode-map
               ("C-x c" . gptel-send)))
 
-(provide 'enzuru-ai)
+(provide 'enzuru-llm)

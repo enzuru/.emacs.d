@@ -13,7 +13,6 @@
 
 ;; Features
 
-(require 'enzuru-ai)
 (require 'enzuru-arrangements)
 (require 'enzuru-benchmarks)
 (require 'enzuru-browser)
@@ -26,6 +25,7 @@
 (require 'enzuru-file-management)
 (require 'enzuru-fitness)
 (require 'enzuru-language-servers)
+(require 'enzuru-llm)
 (require 'enzuru-gaming)
 (require 'enzuru-gemini)
 (require 'enzuru-help)
