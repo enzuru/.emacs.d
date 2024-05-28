@@ -4,6 +4,8 @@
 
 (defun enzuru-configure-geiser-guile ()
   (require 'geiser-guile)
+  (add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))
+  (add-to-list 'auto-mode-alist '("\\.guile$" . scheme-mode))
   (add-hook 'scheme-mode-hook 'turn-on-geiser-mode)
   (add-hook 'scheme-mode-hook 'lispy-mode)
   (setq geiser-debug-show-debug t)
@@ -31,12 +33,6 @@
    :type git
    :host github
    :repo "enzuru/completing-read-geiser"))
-
-(use-package scheme
-  :ensure t
-  :defer t
-  :mode (("\\.scm$" . scheme-mode)
-         ("\\.guile$" . scheme-mode)))
 
 (enzuru-configure-geiser-guile)
 (enzuru-configure-completing-read-geiser)
