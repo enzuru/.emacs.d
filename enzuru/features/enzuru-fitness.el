@@ -32,7 +32,11 @@
   (enzuru-test-weight-loss "March 2024"
                            (enzuru-fitness-monthly-pounds 2677 1.26 31) -1)
   (enzuru-test-weight-loss "April 2024"
-                           (enzuru-fitness-monthly-pounds 2300 1.5 30) -4))
+                           (enzuru-fitness-monthly-pounds 2367 1.33 30) -3)
+  (enzuru-test-weight-loss "May 2024"
+                           (enzuru-fitness-monthly-pounds 2467 1.23 30) -4)
+  (enzuru-test-weight-loss "June 2024"
+                           (enzuru-fitness-monthly-pounds 2200 1 30) -3))
 
 (defun enzuru-fitness-vo2-max (ftp kilos)
   (+ (/ (* 10.8 ftp) kilos) 7))
