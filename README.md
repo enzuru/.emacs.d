@@ -165,25 +165,6 @@ Package management is provided by:
 - [use-package](https://github.com/jwiegley/use-package)
 - [straight.el](https://github.com/radian-software/straight.el)
 
-### Modularity
-
-If you wanted to reference my `.emacs.d` from your own, you could add it as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to your Emacs directory, add that folder to your load path, and then reference specific files of mine that you like.
-
-Run something like this in your Emacs directory:
-
-```
-git submodule add https://github.com/enzuru/.emacs.d enzuru
-```
-
-Add something like this to your init:
-
-```
-(add-to-list 'load-path "~/.emacs.d/enzuru/enzuru/features")
-(require 'enzuru-file-management)
-```
-
-Referencing my configuration requires use-package and straight.el.
-
 ## Keystrokes
 
 This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only active in Lisp mode when in front of a `(` symbol.
