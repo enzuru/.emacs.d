@@ -179,7 +179,7 @@ Run `meow-tutor` to learn Meow.
 
 ### Lisp editing
 
-Lisp editing is activated only in Lisp mode when in front of parens.
+Lisp editing is activated only in major modes for Lisp languages when in front of parens.
 
 - `e` evaluate s-expression
 - `f` forward point through parens
