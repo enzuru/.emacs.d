@@ -203,7 +203,7 @@ This is a modal editing setup that uses two different modal editors: Meow and Li
 
 #### Normal editing
 
-[[file:https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png]]
+[file:https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png]
 
 [Meow documentation](https://github.com/meow-edit/meow/blob/master/KEYBINDING_QWERTY.org).
 
