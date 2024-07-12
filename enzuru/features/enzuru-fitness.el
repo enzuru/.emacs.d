@@ -36,7 +36,7 @@
   (enzuru-fitness-weight-test "May 2024"
                               (enzuru-fitness-monthly-pounds 2483 1.23 31) -4)
   (enzuru-fitness-weight-test "June 2024"
-                              (enzuru-fitness-monthly-pounds 2567 1.867 30) -3))
+                              (enzuru-fitness-monthly-pounds 2750 1.567 30) 8))
 
 (defun enzuru-fitness-vo2-max (ftp kilos)
   (+ (/ (* 10.8 ftp) kilos) 7))
