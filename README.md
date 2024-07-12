@@ -120,7 +120,7 @@ This configuration ships with a great many helpful tools:
 | LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                                     |
 | Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)            |
 | Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                |
-| Modal editor                | [lispy](https://github.com/abo-abo/lispy)                                                        |
+| Modal editor                | [Meow](https://github.com/meow-edit/meow), [lispy](https://github.com/abo-abo/lispy)             |
 | Modeline                    | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                  |
 | MUD client                  | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                   |
 | Music player                | [Emms](https://www.gnu.org/software/emms/)                                                       |
@@ -199,116 +199,19 @@ These are the most important keystrokes of all. If you know these keys keystroke
 
 ### Basics
 
-This is the stuff that you're used to doing in other editors.
+This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only active in Lisp mode when in front of a `(` symbol.
 
-- `C-w` is my cut, `M-w` (or `C-q(opy)`) is my copy, `C-y` is my paste.
-- `C-k` deletes a line.
-- `C-g` cancels the current action.
+#### Normal editing
 
-### Navigation
+[[file:https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png]]
 
-These keystrokes are for navigating Emacs. They are not intuitive at all, but are unfortunately necessary to memorize.
+[Meow documentation](https://github.com/meow-edit/meow/blob/master/KEYBINDING_QWERTY.org).
 
-- `C-up` and `C-down` let me skip up and down paragraphs respectively.
-- `C-x up` and `C-x down` let me get to the top and bottom of a buffer respectively.
-- `C-a` and `C-e` get me between the front and end of a line respectively.
-- `C-f` and `C-v` let me scroll up and down respectively.
-- `C-s` let’s me search a buffer.
-- `M-g` let’s me quickly jump to any line number.
+#### Lisp editing
 
-### Buffer management
+Lisp editing is activated only in Lisp mode when in front of a `(` character.
 
-Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, but I personally don’t. I don’t deny that they are a little slower.
-
-- `C-x C-b(uffer)` helps me find a buffer.
-- `C-tab` (or `C-x o(ther)`) let’s me switch to another visible buffer.
-- `Shift-up`, `shift-left`, `shift-right`, and `shift-down` let me move to a buffer in that direction.
-- `C-x left` and `C-x right` let me run backward and forward through the list of buffers.
-- `C-x k(ill)` aggressively kills a buffer.
-
-### Window management
-
-- `C-x 0` deletes an Emacs window, whereas `C-x 1` deletes all other Emacs windows.
-- `C-x 2` does a horizontal split, and `C-x 3` does a vertical split.
-- `C-c(onfiguration) left` and `C-c(configuration) right` lets me iterate through window configurations.
-
-### Tab management
-
-I have keystrokes setup to emulate tmux/screen using Emacs tabs.
-
-- `C-z(one) c(reates)` a new workspace.
-- `C-z(one) k(ills)` a current workspace.
-- `C-z(one) n(ext)` workspace.
-- `C-z(one) p(revious)` workspace.
-
-### Console actions
-
-These keystrokes encompass things one commonly does in a terminal.
-
-- `C-c(onsole) d(ocker)` brings up tools for managing and shelling into Docker containers.
-- `C-c(onsole) e(shell)` let’s me boot up an Emacs shell which is an awesome hybrid between a Lisp interpreter and a traditional POSIX shell.
-- `C-c(onsole) x(term)` let’s me boot up a real terminal.
-- `C-c(onsole) s(tatus)` let’s me bring up a dashboard with the current git status for the git repo that I am working in.
-- `C-c(onsole) C-p(ushes)` my current git branch to origin.
-
-### Primary commands
-
-These are the most powerful commands, mostly applications.
-
-- `C-x c(ompile)` let’s me run a compile command on any buffer I’m working on. This can be used to run a REPL for your language too.
-- `C-x f(ile)` starts a file manager.
-- `C-x i(ntelligence)` starts an LLM client.
-- `C-x l(ocate)` locates a file on your disk.
-- `C-x s(tring replace)` let’s me replace all strings in a buffer or selection.
-- `C-x u(ndo)` will launch an undo-tree visualizer
-
-### Secondary commands
-
-These are less powerful commands, mostly functions.
-
-- `C-x C-c(onsult)` let’s me search for a word at point in a project.
-- `C-x C-d(ocumentation)` let’s me search online documentation.
-- `C-x C-f(ile)` finds a file.
-- `C-x C-m(eta)` let’s me run an Emacs function.
-- `C-x C-n(ames of tabs)` let's me select a tab's name from a list.
-- `C-x C-s(aves)` a buffer for me.
-- `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
-
-I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when `save-buffers-exit-emacs` will do.
-
-### Lisp
-
-These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
-
-- `C-x(ecute) c(ompile)` evaluates a buffer.
-- `C-x(ecute) r(egion)` evaluates a region.
-- `C-x(ecute) C-d(ocumentation)` views documentation for the symbol at point.
-- `C-x(ecute) C-w(here)` jumps to da efinition for the symbol at point.
-- `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in.
-
-#### Parenthesis
-
-When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate, edit, and evaluate code:
-
-- `e` evaluate s-expression
-- `f` forward point through parens
-- `b` undo
-- `]` move point down
-- `[` move point up
-- `>` slurp up next s-expression
-- `<` barf up s-expression
-- `w` move s-expression up
-- `s` move s-expression down
-- `r` raise s-expression
-- `C-1` view documentation
-- `C-2` view caller arguments
-
-Lispy has obligatory Vim-style navigation too:
-
-- `h` move left
-- `j` move down
-- `k` move up
-- `l` move right
+[Lispy documentation](https://oremacs.com/lispy/)
 
 ## Learning
 
