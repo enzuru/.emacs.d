@@ -192,11 +192,26 @@ This is a modal editing setup that uses two different modal editors: Meow and Li
 
 ![Meow cheat sheet](https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png "Meow cheat sheet")
 
-[Meow documentation](https://github.com/meow-edit/meow/blob/master/KEYBINDING_QWERTY.org).
+Run `meow-tutor` to learn Meow.
+
+[Meow documentation](https://github.com/meow-edit/meow/blob/master/KEYBINDING_QWERTY.org)
 
 ### Lisp editing
 
 Lisp editing is activated only in Lisp mode when in front of a `(` character.
+
+- `e` evaluate s-expression
+- `f` forward point through parens
+- `b` undo
+- `]` move point down
+- `[` move point up
+- `>` slurp up next s-expression
+- `<` barf up s-expression
+- `w` move s-expression up
+- `s` move s-expression down
+- `r` raise s-expression
+- `C-1` view documentation
+- `C-2` view caller arguments
 
 [Lispy documentation](https://oremacs.com/lispy/)
 
