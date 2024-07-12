@@ -167,7 +167,7 @@ Package management is provided by:
 
 ## Keystrokes
 
-This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only active in Lisp mode when in front of parens.
+This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only for Lisp languages.
 
 ### Normal editing
 
@@ -179,7 +179,7 @@ Run `meow-tutor` to learn Meow.
 
 ### Lisp editing
 
-Lisp editing is activated only in major modes for Lisp languages when in front of parens.
+Lispy editing is activated only in major modes for Lisp languages when around parens in Meow's insert mode.
 
 - `e` evaluate s-expression
 - `f` forward point through parens
