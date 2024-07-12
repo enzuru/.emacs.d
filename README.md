@@ -13,7 +13,7 @@ This means spicy choices like:
 - `flymake` over `flycheck` (what a comeback!)
 - `meow` over `evil`
 - `lispy` over `paredit`
-- `SLY` over `SLIME`
+- `sly` over `slime`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
 - `gptel` over the dozens of other clients
 
@@ -121,7 +121,7 @@ This configuration ships with a great many helpful tools:
 | LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                                     |
 | Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)            |
 | Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                |
-| Modal editor                | [Meow](https://github.com/meow-edit/meow), [lispy](https://github.com/abo-abo/lispy)             |
+| Modal editor                | [Meow](https://github.com/meow-edit/meow), [Lispy](https://github.com/abo-abo/lispy)             |
 | Modeline                    | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                  |
 | MUD client                  | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                   |
 | Music player                | [Emms](https://www.gnu.org/software/emms/)                                                       |
