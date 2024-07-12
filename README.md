@@ -11,10 +11,11 @@ This means spicy choices like:
 - `corfu` over `company`
 - `straight.el` over `package.el`
 - `flymake` over `flycheck` (what a comeback!)
+- `meow` over `evil`
 - `lispy` over `paredit`
 - `SLY` over `SLIME`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
-- `gptel` over the ChatGPT client you made last weekend
+- `gptel` over the dozens of other clients
 
 My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own well-documented vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
 
@@ -185,29 +186,15 @@ Referencing my configuration requires use-package and straight.el.
 
 ## Keystrokes
 
-### Help
-
-These are the most important keystrokes of all. If you know these keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.
-
-- `C-h(elp) b(indings)` shows the keybindings available in the current buffer.
-- `C-h(elp) d(ocumentation)` lets you search through all available documentation.
-- `C-h(elp) f(unction)` displays the current list of available functions.
-- `C-h(elp) i(nfo)` shows the info docs installed on your computer (no need to have a browser open just to read documentation).
-- `C-h(elp) m(ode)` shows information about all the modes in the buffer.
-- `C-h(elp) k(ey)` let’s you type a keystroke and find out what it does.
-- `C-h(elp) v(ariable)` displays the list of available variables.
-
-### Basics
-
 This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only active in Lisp mode when in front of a `(` symbol.
 
-#### Normal editing
+### Normal editing
 
 [file:https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png]
 
 [Meow documentation](https://github.com/meow-edit/meow/blob/master/KEYBINDING_QWERTY.org).
 
-#### Lisp editing
+### Lisp editing
 
 Lisp editing is activated only in Lisp mode when in front of a `(` character.
 
