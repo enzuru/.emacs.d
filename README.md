@@ -7,7 +7,7 @@ This `.emacs.d` represents my libre attempt to build and document an advanced Em
 This means spicy choices like:
 
 - `eglot` over `lsp-mode`
-- `vert&co` over `helm` and `iy`
+- `vert&co` over `helm` and `ivy`
 - `corfu` over `company`
 - `straight.el` over `package.el`
 - `flymake` over `flycheck` (what a comeback!)
