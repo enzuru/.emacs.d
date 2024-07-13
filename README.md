@@ -215,7 +215,7 @@ I have keystrokes setup to emulate tmux/screen using Emacs tabs.
 
 ### Custom keystrokes
 
-These are custom keystrokes I have setup:
+These are custom keystrokes that I have setup:
 
 - `SPC a(g)` search git repo using ag
 - `SPC c(ompile)` compiles the buffer in a language appropriate way
