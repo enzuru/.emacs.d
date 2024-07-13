@@ -15,7 +15,7 @@ This means spicy choices like:
 - `lispy` over `paredit`
 - `sly` over `slime`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
-- `gptel` over the dozens of other clients
+- `gptel` over the dozens of other LLM clients
 
 My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own well-documented vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
 
@@ -111,7 +111,6 @@ This configuration ships with a great many helpful tools:
 | Completion (minibuffer)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                               |
 | Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
 | Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
-| File manager                | [eFar](https://github.com/suntsov/efar)                                                          |
 | Gemini browser              | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
 | HTTP browser                | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
 | Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
@@ -133,10 +132,12 @@ This configuration ships with a great many helpful tools:
 | Spreadsheets                | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                              |
 | Syntax checker              | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                      |
 | Syntax highlighter          | [prism](https://github.com/alphapapa/prism.el)                                                   |
+| Terminal                    | [Eat](https://codeberg.org/akib/emacs-eat/)                                                      |
 | Undo visualizer             | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                        |
 | Version control             | [Magit](https://magit.vc)                                                                        |
 | Wikipedia editor            | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                          |
 | Window configuration        | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html) |
+| Window handling             | [windmove](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)    |
 | Window manager              | [exwm](https://github.com/ch11ng/exwm)                                                           |
 
 ### Themes
@@ -169,6 +170,8 @@ Package management is provided by:
 
 This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only for Lisp languages.
 
+I [maintain the default Emacs keybindings](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf), so I will not document them here. Meow will help you discover keystrokes after you hit `SPC`.
+
 ### Normal editing
 
 ![Meow cheat sheet](https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png "Meow cheat sheet")
@@ -195,6 +198,41 @@ Lispy editing is activated only in major modes for Lisp languages when around pa
 - `C-2` view caller arguments
 
 [Lispy documentation](https://oremacs.com/lispy/)
+
+### Movement between buffers
+
+Movement between buffers is accomplished with windmove:
+
+- `Shift-up`
+- `Shift-left`
+- `Shift-right`
+- `Shift-down`
+
+### Tab management
+
+I have keystrokes setup to emulate tmux/screen using Emacs tabs.
+
+- `C-z(one) c(reates)` a new workspace.
+- `C-z(one) k(ills)` a current workspace.
+- `C-z(one) n(ext)` workspace.
+- `C-z(one) p(revious)` workspace.
+
+### Custom keystrokes
+
+These are custom keystrokes I have setup:
+
+- `SPC a(g)` search git repo using ag
+- `SPC c(ompile)` compiles the buffer in a language appropriate way
+- `SPC d(ocumentation)` brings up documentation for symbol under cursor
+- `SPC e(at)` brings up the Eat terminal
+- `SPC l(locate)` locate a file
+- `SPC p(ush)` pushes the current git branch
+- `SPC r(eplace string)` replace all occurrences of a string after point
+- `SPC s(tatus)` shows the current git status
+- `SPC t(abs)` search through tabs
+- `SPC <left>` previous buffer
+- `SPC <right>` next buffer
+- `SPC y(mbol)` searches symbols if using a Lisp language
 
 ## Learning
 

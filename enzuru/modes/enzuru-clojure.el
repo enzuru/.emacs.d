@@ -9,8 +9,8 @@
 
 (defun enzuru-configure-completing-read-cider ()
   (require 'completing-read-cider)
-  (define-key clojure-mode-map (kbd "C-h s") 'completing-read-cider)
-  (define-key cider-repl-mode-map (kbd "C-h s") 'completing-read-cider))
+  (define-key clojure-mode-map (kbd "C-c y") 'completing-read-cider)
+  (define-key cider-repl-mode-map (kbd "C-c y") 'completing-read-cider))
 
 ;; Packages
 
@@ -23,9 +23,8 @@
   :defer t
   :config (enzuru-configure-cider)
   :bind (:map clojure-mode-map
-              ("C-x C-w" . cider-test-jump)
-              ("C-x C-d" . cider-doc)
-              ("C-x c" . cider-eval-buffer)))
+              ("C-c d" . cider-doc)
+              ("C-c c" . cider-eval-buffer)))
 
 (straight-use-package
  '(completing-read-cider

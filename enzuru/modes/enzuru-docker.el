@@ -3,7 +3,6 @@
 ;; Packages
 
 (use-package docker
-  :bind ("C-c d" . 'docker)
   :ensure t)
 
 (use-package dockerfile-ts-mode

@@ -9,15 +9,14 @@
   (add-hook 'scheme-mode-hook 'turn-on-geiser-mode)
   (add-hook 'scheme-mode-hook 'lispy-mode)
   (setq geiser-debug-show-debug t)
-  (define-key scheme-mode-map (kbd "C-x c") 'geiser-load-current-buffer)
+  (define-key scheme-mode-map (kbd "C-c c") 'geiser-load-current-buffer)
   (define-key scheme-mode-map (kbd "C-x r") 'geiser-eval-region)
-  (define-key scheme-mode-map (kbd "C-x C-w") 'geiser-edit-symbol-at-point)
-  (define-key scheme-mode-map (kbd "C-x C-d") 'geiser-doc-symbol-at-point))
+  (define-key scheme-mode-map (kbd "C-c d") 'geiser-doc-symbol-at-point))
 
 (defun enzuru-configure-completing-read-geiser ()
   (require 'completing-read-geiser)
-  (define-key scheme-mode-map (kbd "C-h s") 'completing-read-geiser)
-  (define-key geiser-repl-mode-map (kbd "C-h s") 'completing-read-geiser))
+  (define-key scheme-mode-map (kbd "C-c y") 'completing-read-geiser)
+  (define-key geiser-repl-mode-map (kbd "C-c y") 'completing-read-geiser))
 
 ;; Packages
 

@@ -11,17 +11,16 @@
 
 (defun enzuru-configure-completing-read-sly ()
   (require 'completing-read-sly)
-  (define-key lisp-mode-map (kbd "C-h s") 'completing-read-sly)
-  (define-key sly-mode-map (kbd "C-h s") 'completing-read-sly))
+  (define-key lisp-mode-map (kbd "C-c y") 'completing-read-sly)
+  (define-key sly-mode-map (kbd "C-c y") 'completing-read-sly))
 
 ;; Packages
 
 (use-package sly
   :ensure t
   :bind ((:map lisp-mode-map
-               ("C-x C-d" . enzuru-sly-describe-symbol-at-point)
-               ("C-x C-w" . sly-edit-definition-other-window)
-               ("C-x c" . sly-eval-buffer)
+               ("C-c d" . enzuru-sly-describe-symbol-at-point)
+               ("C-c c" . sly-eval-buffer)
                ("C-x r" . sly-eval-region))))
 
 (use-package sly-quicklisp

@@ -16,8 +16,7 @@
   :hook ((python-ts-mode . anaconda-mode)
          (python-ts-mode . anaconda-eldoc-mode)
          (python-ts-mode . eglot-ensure))
-  :bind (:map python-ts-mode-map (("C-x C-d" . anaconda-mode-show-doc)
-                               ("C-x C-w" . anaconda-mode-find-definitions))))
+  :bind (:map python-ts-mode-map (("C-c d" . anaconda-mode-show-doc))))
 
 (enzuru-configure-python-ts-mode)
 

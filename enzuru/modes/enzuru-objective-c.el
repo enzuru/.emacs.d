@@ -20,7 +20,7 @@
         (browse-url foundation-url))
       (switch-to-buffer previous-buffer))))
 
-;; (define-key obj-c-mode-map (kbd "C-x C-d") 'enzuru-cocoa-open-documentation)
+;; (define-key obj-c-mode-map (kbd "C-c d") 'enzuru-cocoa-open-documentation)
 
 (defun enzuru-configure-objc-mode ()
   (add-hook 'objc-mode-hook 'eglot-ensure))

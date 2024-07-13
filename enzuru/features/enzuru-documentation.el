@@ -4,6 +4,6 @@
 
 (use-package devdocs
   :ensure t
-  :bind (("C-x C-d" . devdocs-search)))
+  :bind (("C-c d" . devdocs-search)))
 
 (provide 'enzuru-documentation)

@@ -18,7 +18,7 @@
   (interactive)
   (start-process "kitty" "kitty" "kitty"))
 
-(global-set-key (kbd "C-x c") 'enzuru-async-term)
+(global-set-key (kbd "C-c c") 'enzuru-async-term)
 
 (find-file "~/org/index.org")
 

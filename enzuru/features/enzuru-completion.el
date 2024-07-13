@@ -78,13 +78,11 @@
   :bind (("C-s" . consult-line)
          ("C-y" . consult-yank-pop)
          ("C-c M-x" . consult-mode-command)
-         ("C-x C-m" . execute-extended-command)
          ("C-c h" . consult-history)
          ("C-c k" . consult-kmacro)
          ("C-c m" . consult-man)
-         ("C-c i" . consult-info)
          ([remap Info-search] . consult-info)
-         ("C-x l" . consult-locate)
+         ("C-c l" . consult-locate)
          ("C-x M-:" . consult-complex-command)
          ("C-x b" . consult-buffer)
          ("C-x C-b" . consult-buffer)
@@ -128,7 +126,7 @@
 
 (use-package consult-ag
   :ensure t
-  :bind (("C-x C-c" . consult-ag)))
+  :bind (("C-c a" . consult-ag)))
 
 (use-package corfu
   :custom

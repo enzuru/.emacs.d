@@ -19,7 +19,6 @@
 
 (use-package eshell
   :ensure t
-  :bind (("C-c e" . eshell))
   :config (enzuru-configure-eshell))
 
 (use-package multi-term
@@ -32,9 +31,9 @@
   :defer t
   :config (enzuru-configure-shell))
 
-;; (use-package vterm
-;;   :ensure t
-;;   ;; :bind (("C-c v" . vterm))
-;;   )
+(use-package eat
+  :ensure t
+  :bind (("C-c e" . eat))
+  :defer t)
 
 (provide 'enzuru-terminal)
