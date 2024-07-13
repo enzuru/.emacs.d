@@ -11,5 +11,7 @@
 
 (global-set-key (kbd "C-c <left>") 'previous-buffer)
 (global-set-key (kbd "C-c <right>") 'next-buffer)
+(global-set-key (kbd "C-c <up>") 'beginning-of-buffer)
+(global-set-key (kbd "C-c <down>") 'end-of-buffer)
 
 (provide 'enzuru-keys)

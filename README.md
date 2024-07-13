@@ -226,9 +226,14 @@ These are custom keystrokes I have setup:
 - `SPC r(eplace string)` replace all occurrences of a string after point
 - `SPC s(tatus)` shows the current git status
 - `SPC t(abs)` search through tabs
+- `SPC y(mbol)` searches symbols if using a Lisp language
+
+The arrow keys help you manage buffers:
+
 - `SPC <left>` previous buffer
 - `SPC <right>` next buffer
-- `SPC y(mbol)` searches symbols if using a Lisp language
+- `SPC <up>` beginning of buffer
+- `SPC <bottom>` bottom of buffer
 
 ## Learning
 
