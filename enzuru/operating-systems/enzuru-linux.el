@@ -20,8 +20,4 @@
       inferior-lisp-program "sbcl"
       multi-term-program "fish")
 
-;; Keys
-
-(global-set-key (kbd "C-c x") 'enzuru-async-term)
-
 (provide 'enzuru-linux)

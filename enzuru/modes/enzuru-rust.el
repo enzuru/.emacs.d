@@ -30,7 +30,7 @@
 ;; (use-package rustic
 ;;   :ensure t
 ;;   :init (enzuru-configure-rustic)
-;;   :bind (:map rust-ts-mode-map (("C-x C-d" . enzuru-rust-search-doc))))
+;;   :bind (:map rust-ts-mode-map (("C-c d" . enzuru-rust-search-doc))))
 
 (enzuru-configure-rust-ts-mode)
 

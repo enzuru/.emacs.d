@@ -2,7 +2,7 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware with the enzuru-deep-thought.el theme file loaded")
 
-This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs.
+This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. My code harmoniously integrates around 200 different packages.
 
 This means spicy choices like:
 
@@ -11,16 +11,13 @@ This means spicy choices like:
 - `corfu` over `company`
 - `straight.el` over `package.el`
 - `flymake` over `flycheck` (what a comeback!)
+- `meow` over `evil`
 - `lispy` over `paredit`
-- `SLY` over `SLIME`
+- `sly` over `slime`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
-- `gptel` over the ChatGPT client you made last weekend
-
-My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own well-documented vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
+- `gptel` over the dozens of other LLM clients
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
-
-You can draw inspiration from this repo, fork it for yourself, copy specific pieces of code, or even just add it as a submodule to your own Emacs directory.
 
 ## Requirements
 
@@ -110,7 +107,6 @@ This configuration ships with a great many helpful tools:
 | Completion (minibuffer)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                               |
 | Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
 | Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
-| File manager                | [eFar](https://github.com/suntsov/efar)                                                          |
 | Gemini browser              | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
 | HTTP browser                | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
 | Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
@@ -120,7 +116,7 @@ This configuration ships with a great many helpful tools:
 | LSP client                  | [Eglot](https://github.com/joaotavora/eglot)                                                     |
 | Mail client                 | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)            |
 | Mail indexer                | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                |
-| Modal editor                | [lispy](https://github.com/abo-abo/lispy)                                                        |
+| Modal editor                | [Meow](https://github.com/meow-edit/meow), [Lispy](https://github.com/abo-abo/lispy)             |
 | Modeline                    | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                  |
 | MUD client                  | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                   |
 | Music player                | [Emms](https://www.gnu.org/software/emms/)                                                       |
@@ -132,10 +128,12 @@ This configuration ships with a great many helpful tools:
 | Spreadsheets                | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                              |
 | Syntax checker              | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                      |
 | Syntax highlighter          | [prism](https://github.com/alphapapa/prism.el)                                                   |
+| Terminal                    | [Eat](https://codeberg.org/akib/emacs-eat/)                                                      |
 | Undo visualizer             | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                        |
 | Version control             | [Magit](https://magit.vc)                                                                        |
 | Wikipedia editor            | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                          |
 | Window configuration        | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html) |
+| Window handling             | [windmove](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)    |
 | Window manager              | [exwm](https://github.com/ch11ng/exwm)                                                           |
 
 ### Themes
@@ -164,131 +162,23 @@ Package management is provided by:
 - [use-package](https://github.com/jwiegley/use-package)
 - [straight.el](https://github.com/radian-software/straight.el)
 
-### Modularity
-
-If you wanted to reference my `.emacs.d` from your own, you could add it as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to your Emacs directory, add that folder to your load path, and then reference specific files of mine that you like.
-
-Run something like this in your Emacs directory:
-
-```
-git submodule add https://github.com/enzuru/.emacs.d enzuru
-```
-
-Add something like this to your init:
-
-```
-(add-to-list 'load-path "~/.emacs.d/enzuru/enzuru/features")
-(require 'enzuru-file-management)
-```
-
-Referencing my configuration requires use-package and straight.el.
-
 ## Keystrokes
 
-### Help
+This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only for Lisp languages.
 
-These are the most important keystrokes of all. If you know these keys keystrokes, you can get helpful information whenever you are stuck! These keystrokes are far more helpful than Google.
+I [maintain the default Emacs keybindings](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf), so I will not document them here. Meow will help you discover keystrokes after you hit `SPC`.
 
-- `C-h(elp) b(indings)` shows the keybindings available in the current buffer.
-- `C-h(elp) d(ocumentation)` lets you search through all available documentation.
-- `C-h(elp) f(unction)` displays the current list of available functions.
-- `C-h(elp) i(nfo)` shows the info docs installed on your computer (no need to have a browser open just to read documentation).
-- `C-h(elp) m(ode)` shows information about all the modes in the buffer.
-- `C-h(elp) k(ey)` let’s you type a keystroke and find out what it does.
-- `C-h(elp) v(ariable)` displays the list of available variables.
+### Normal editing
 
-### Basics
+![Meow cheat sheet](https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png "Meow cheat sheet")
 
-This is the stuff that you're used to doing in other editors.
+Run `meow-tutor` to learn Meow.
 
-- `C-w` is my cut, `M-w` (or `C-q(opy)`) is my copy, `C-y` is my paste.
-- `C-k` deletes a line.
-- `C-g` cancels the current action.
+[Meow documentation](https://github.com/meow-edit/meow/blob/master/KEYBINDING_QWERTY.org)
 
-### Navigation
+### Lisp editing
 
-These keystrokes are for navigating Emacs. They are not intuitive at all, but are unfortunately necessary to memorize.
-
-- `C-up` and `C-down` let me skip up and down paragraphs respectively.
-- `C-x up` and `C-x down` let me get to the top and bottom of a buffer respectively.
-- `C-a` and `C-e` get me between the front and end of a line respectively.
-- `C-f` and `C-v` let me scroll up and down respectively.
-- `C-s` let’s me search a buffer.
-- `M-g` let’s me quickly jump to any line number.
-
-### Buffer management
-
-Some Vim and Emacs users share a distaste for the arrow keys for speed reasons, but I personally don’t. I don’t deny that they are a little slower.
-
-- `C-x C-b(uffer)` helps me find a buffer.
-- `C-tab` (or `C-x o(ther)`) let’s me switch to another visible buffer.
-- `Shift-up`, `shift-left`, `shift-right`, and `shift-down` let me move to a buffer in that direction.
-- `C-x left` and `C-x right` let me run backward and forward through the list of buffers.
-- `C-x k(ill)` aggressively kills a buffer.
-
-### Window management
-
-- `C-x 0` deletes an Emacs window, whereas `C-x 1` deletes all other Emacs windows.
-- `C-x 2` does a horizontal split, and `C-x 3` does a vertical split.
-- `C-c(onfiguration) left` and `C-c(configuration) right` lets me iterate through window configurations.
-
-### Tab management
-
-I have keystrokes setup to emulate tmux/screen using Emacs tabs.
-
-- `C-z(one) c(reates)` a new workspace.
-- `C-z(one) k(ills)` a current workspace.
-- `C-z(one) n(ext)` workspace.
-- `C-z(one) p(revious)` workspace.
-
-### Console actions
-
-These keystrokes encompass things one commonly does in a terminal.
-
-- `C-c(onsole) d(ocker)` brings up tools for managing and shelling into Docker containers.
-- `C-c(onsole) e(shell)` let’s me boot up an Emacs shell which is an awesome hybrid between a Lisp interpreter and a traditional POSIX shell.
-- `C-c(onsole) x(term)` let’s me boot up a real terminal.
-- `C-c(onsole) s(tatus)` let’s me bring up a dashboard with the current git status for the git repo that I am working in.
-- `C-c(onsole) C-p(ushes)` my current git branch to origin.
-
-### Primary commands
-
-These are the most powerful commands, mostly applications.
-
-- `C-x c(ompile)` let’s me run a compile command on any buffer I’m working on. This can be used to run a REPL for your language too.
-- `C-x f(ile)` starts a file manager.
-- `C-x i(ntelligence)` starts an LLM client.
-- `C-x l(ocate)` locates a file on your disk.
-- `C-x s(tring replace)` let’s me replace all strings in a buffer or selection.
-- `C-x u(ndo)` will launch an undo-tree visualizer
-
-### Secondary commands
-
-These are less powerful commands, mostly functions.
-
-- `C-x C-c(onsult)` let’s me search for a word at point in a project.
-- `C-x C-d(ocumentation)` let’s me search online documentation.
-- `C-x C-f(ile)` finds a file.
-- `C-x C-m(eta)` let’s me run an Emacs function.
-- `C-x C-n(ames of tabs)` let's me select a tab's name from a list.
-- `C-x C-s(aves)` a buffer for me.
-- `C-x C-w(here)` let’s me find where a function is defined in a language agnostic basis.
-
-I redefine C-x C-c because advanced Emacs users almost never exit Emacs and therefore don’t need a hotkey when `save-buffers-exit-emacs` will do.
-
-### Lisp
-
-These bindings cover the most important things you'll do while hacking Lisp code in either Elisp, SLY, Geiser, or CIDER:
-
-- `C-x(ecute) c(ompile)` evaluates a buffer.
-- `C-x(ecute) r(egion)` evaluates a region.
-- `C-x(ecute) C-d(ocumentation)` views documentation for the symbol at point.
-- `C-x(ecute) C-w(here)` jumps to da efinition for the symbol at point.
-- `C-h(elp) s(ymbol)` displays the available symbols in whatever Lisp environment you are in.
-
-#### Parenthesis
-
-When you are on parenthesis, modal editing is activated via Lispy. You can use single keystrokes to navigate, edit, and evaluate code:
+Lispy editing is activated only in major modes for Lisp languages when around parens in Meow's insert mode.
 
 - `e` evaluate s-expression
 - `f` forward point through parens
@@ -303,12 +193,42 @@ When you are on parenthesis, modal editing is activated via Lispy. You can use s
 - `C-1` view documentation
 - `C-2` view caller arguments
 
-Lispy has obligatory Vim-style navigation too:
+[Lispy documentation](https://oremacs.com/lispy/)
 
-- `h` move left
-- `j` move down
-- `k` move up
-- `l` move right
+### Movement between buffers
+
+Movement between buffers is accomplished with windmove:
+
+- `Shift-up`
+- `Shift-left`
+- `Shift-right`
+- `Shift-down`
+
+### Tab management
+
+I have keystrokes setup to emulate tmux/screen using Emacs tabs.
+
+- `C-z(one) c(reates)` a new workspace.
+- `C-z(one) k(ills)` a current workspace.
+- `C-z(one) n(ext)` workspace.
+- `C-z(one) p(revious)` workspace.
+
+### Custom keystrokes
+
+These are custom keystrokes I have setup:
+
+- `SPC a(g)` search git repo using ag
+- `SPC c(ompile)` compiles the buffer in a language appropriate way
+- `SPC d(ocumentation)` brings up documentation for symbol under cursor
+- `SPC e(at)` brings up the Eat terminal
+- `SPC l(locate)` locate a file
+- `SPC p(ush)` pushes the current git branch
+- `SPC r(eplace string)` replace all occurrences of a string after point
+- `SPC s(tatus)` shows the current git status
+- `SPC t(abs)` search through tabs
+- `SPC <left>` previous buffer
+- `SPC <right>` next buffer
+- `SPC y(mbol)` searches symbols if using a Lisp language
 
 ## Learning
 

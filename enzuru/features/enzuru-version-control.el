@@ -13,7 +13,7 @@
   :defer t
   :diminish magit-auto-revert-mode
   :bind (("C-c s" . magit-status)
-         ("C-c C-p" . magit-push-current-to-upstream))
+         ("C-c p" . magit-push-current-to-upstream))
   :config (enzuru-configure-magit))
 
 (provide 'enzuru-version-control)

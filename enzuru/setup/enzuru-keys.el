@@ -2,36 +2,14 @@
 
 ;; Help
 
-(global-set-key (kbd "C-h s") 'describe-symbol)                  ;; C-h(elp) s(ymbol)
+(global-set-key (kbd "C-x k") 'enzuru-volatile-kill-buffer)
 
-;; Text management
+(global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c r") 'replace-string)
+(global-set-key (kbd "C-c t") 'tab-bar-select-tab-by-name)
+(global-set-key (kbd "C-c y") 'describe-symbol)
 
-(global-set-key (kbd "C-q") 'copy-region-as-kill)                ;; C-q(opy)
-
-;; Arrow keys for movement and buffer management
-
-(global-set-key (kbd "C-<up>") 'backward-paragraph)              ;; C-<up>(buffer)
-(global-set-key (kbd "C-<down>") 'forward-paragraph)             ;; C-<down>(buffer)
-(global-set-key (kbd "C-x <up>") 'beginning-of-buffer)           ;; C-x(tremely)<up>
-(global-set-key (kbd "C-x <down>") 'end-of-buffer)               ;; C-x(tremely)(bottom)
-(global-set-key (kbd "C-x <left>") 'previous-buffer)             ;; C-x <left>(buffer)
-(global-set-key (kbd "C-x <right>") 'next-buffer)                ;; C-x <right>(buffer)
-
-;; Execute: C-x(ecute) letter
-
-(global-set-key (kbd "C-x c") 'compile)
-(global-set-key (kbd "C-x k") 'enzuru-volatile-kill-buffer)      ;; C-x(ecute) k(ill)
-(global-set-key (kbd "C-x s") 'replace-string)                   ;; C-x(ecute) s(tring replacement)
-(global-set-key (kbd "C-x g") 'org-agenda)                       ;; C-x(ecute) a(g)enda
-
-;; Execute under point: C-x(ecute) C-letter
-
-(global-set-key (kbd "C-x C-r") 'eval-region)                    ;; C-x(ecute) C-r(egion)
-(global-set-key (kbd "C-x C-w") 'xref-find-definitions)          ;; C-x(ecute) C-w(here is this code)
-(global-set-key (kbd "C-x C-n") 'tab-bar-select-tab-by-name)
-
-;; Buffer browsing & management: ergonomic & simple but not memorable
-
-(global-set-key (kbd "<C-tab>") 'other-window)                   ;; psuedo tab-like functionality
+(global-set-key (kbd "C-c <left>") 'previous-buffer)
+(global-set-key (kbd "C-c <right>") 'next-buffer)
 
 (provide 'enzuru-keys)
