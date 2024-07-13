@@ -218,10 +218,10 @@ I have keystrokes setup to emulate tmux/screen using Emacs tabs.
 These are custom keystrokes that I have setup:
 
 - `SPC a(g)` search git repo using ag
-- `SPC c(ompile)` compiles the buffer in a language appropriate way
 - `SPC d(ocumentation)` brings up documentation for symbol under cursor
 - `SPC e(at)` brings up the Eat terminal
 - `SPC l(locate)` locate a file
+- `SPC o(mpile)` compiles the buffer in a language appropriate way
 - `SPC p(ush)` pushes the current git branch
 - `SPC r(eplace string)` replace all occurrences of a string after point
 - `SPC s(tatus)` shows the current git status

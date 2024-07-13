@@ -35,7 +35,7 @@
           (lambda ()
             (eldoc-mode)
             (define-key emacs-lisp-mode-map (kbd "C-c d") 'enzuru-elisp-documentation-search)
-            (define-key emacs-lisp-mode-map (kbd "C-c c") 'eval-buffer)
+            (define-key emacs-lisp-mode-map (kbd "C-c o") 'eval-buffer)
             (define-key emacs-lisp-mode-map (kbd "C-x r") 'eval-region)
             (define-key emacs-lisp-mode-map (kbd "C-c y") 'describe-symbol)))
 

@@ -18,8 +18,6 @@
   (interactive)
   (start-process "kitty" "kitty" "kitty"))
 
-(global-set-key (kbd "C-c c") 'enzuru-async-term)
-
 (find-file "~/org/index.org")
 
 (provide 'enzuru-freebsd)

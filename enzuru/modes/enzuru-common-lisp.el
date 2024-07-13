@@ -20,7 +20,7 @@
   :ensure t
   :bind ((:map lisp-mode-map
                ("C-c d" . enzuru-sly-describe-symbol-at-point)
-               ("C-c c" . sly-eval-buffer)
+               ("C-c o" . sly-eval-buffer)
                ("C-x r" . sly-eval-region))))
 
 (use-package sly-quicklisp

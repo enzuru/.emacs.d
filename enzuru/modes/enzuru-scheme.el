@@ -9,7 +9,7 @@
   (add-hook 'scheme-mode-hook 'turn-on-geiser-mode)
   (add-hook 'scheme-mode-hook 'lispy-mode)
   (setq geiser-debug-show-debug t)
-  (define-key scheme-mode-map (kbd "C-c c") 'geiser-load-current-buffer)
+  (define-key scheme-mode-map (kbd "C-c o") 'geiser-load-current-buffer)
   (define-key scheme-mode-map (kbd "C-x r") 'geiser-eval-region)
   (define-key scheme-mode-map (kbd "C-c d") 'geiser-doc-symbol-at-point))
 

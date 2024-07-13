@@ -98,7 +98,10 @@
 
 (defun enzuru-configure-meow ()
   (meow-setup)
-  (meow-global-mode 1))
+  (meow-global-mode 1)
+  (meow-leader-define-key '("d" . "C-c d"))
+  (meow-leader-define-key '("o" . "C-c o"))
+  (meow-leader-define-key '("y" . "C-c y")))
 
 ;; Packages
 

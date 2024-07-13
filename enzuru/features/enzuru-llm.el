@@ -8,6 +8,6 @@
   :ensure t
   :defer t
   :bind (:map gptel-mode-map
-              ("C-c c" . gptel-send)))
+              ("C-c o" . gptel-send)))
 
 (provide 'enzuru-llm)

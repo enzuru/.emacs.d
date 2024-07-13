@@ -24,7 +24,7 @@
   :config (enzuru-configure-cider)
   :bind (:map clojure-mode-map
               ("C-c d" . cider-doc)
-              ("C-c c" . cider-eval-buffer)))
+              ("C-c o" . cider-eval-buffer)))
 
 (straight-use-package
  '(completing-read-cider

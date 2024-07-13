@@ -4,7 +4,7 @@
 
 (global-set-key (kbd "C-x k") 'enzuru-volatile-kill-buffer)
 
-(global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c o") 'compile)
 (global-set-key (kbd "C-c r") 'replace-string)
 (global-set-key (kbd "C-c t") 'tab-bar-select-tab-by-name)
 (global-set-key (kbd "C-c y") 'describe-symbol)
