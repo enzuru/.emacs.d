@@ -2,7 +2,7 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware with the enzuru-deep-thought.el theme file loaded")
 
-This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs.
+This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. My code harmoniously integrates around 200 different packages.
 
 This means spicy choices like:
 
@@ -17,11 +17,7 @@ This means spicy choices like:
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
 - `gptel` over the dozens of other LLM clients
 
-My code harmoniously integrates around 200 different packages. I provide a modular code architecture that is easy to fork, mold into your own, and rebrand. If you want your own well-documented vanilla `.emacs.d` (rather than a starter kit) but also don't want to start from scratch, this repo is for you.
-
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
-
-You can draw inspiration from this repo, fork it for yourself, copy specific pieces of code, or even just add it as a submodule to your own Emacs directory.
 
 ## Requirements
 
