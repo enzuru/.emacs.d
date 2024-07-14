@@ -101,7 +101,9 @@
   (meow-global-mode 1)
   (meow-leader-define-key '("d" . "C-c d"))
   (meow-leader-define-key '("o" . "C-c o"))
-  (meow-leader-define-key '("y" . "C-c y")))
+  (meow-leader-define-key '("y" . "C-c y"))
+  (cl-pushnew '(sly-mrepl-mode . insert) meow-mode-state-list)
+  (cl-pushnew '(inferior-emacs-lisp-mode . insert) meow-mode-state-list))
 
 ;; Packages
 

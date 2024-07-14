@@ -221,6 +221,7 @@ These are custom keystrokes that I have setup:
 - `SPC b(uffer)` switch buffers with autocompletion
 - `SPC d(ocumentation)` brings up documentation for symbol under cursor
 - `SPC e(at)` brings up the Eat terminal
+- `SPC k(ill)` kill buffer unconditionally
 - `SPC l(locate)` locate a file
 - `SPC o(mpile)` compiles the buffer in a language appropriate way
 - `SPC p(ush)` pushes the current git branch

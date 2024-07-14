@@ -13,14 +13,6 @@
   (let ((buffer-modified-p nil))
     (kill-buffer (current-buffer))))
 
-(defun enzuru-kill-if-sunrise (buffer)
-  (if (cl-search "Sunrise" (buffer-name buffer))
-      (kill-buffer buffer)))
-
-(defun enzuru-kill-sunrise-buffers ()
-  (interactive)
-  (mapc 'kill-if-sunrise (buffer-list)))
-
 ;; Configuration
 
 (defun enzuru-configure-uniquify ()
