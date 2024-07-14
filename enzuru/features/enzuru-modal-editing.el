@@ -104,7 +104,8 @@
   (meow-leader-define-key '("y" . "C-c y"))
   (cl-pushnew '(sly-mrepl-mode . insert) meow-mode-state-list)
   (cl-pushnew '(inferior-emacs-lisp-mode . insert) meow-mode-state-list)
-  (cl-pushnew '(eat-mode . insert) meow-mode-state-list))
+  (cl-pushnew '(eat-mode . insert) meow-mode-state-list)
+  (cl-pushnew '(text-mode . insert) meow-mode-state-list))
 
 ;; Packages
 
