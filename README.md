@@ -218,6 +218,7 @@ I have keystrokes setup to emulate tmux/screen using Emacs tabs.
 These are custom keystrokes that I have setup:
 
 - `SPC a(g)` search git repo using ag
+- `SPC b(uffer)` switch buffers with autocompletion
 - `SPC d(ocumentation)` brings up documentation for symbol under cursor
 - `SPC e(at)` brings up the Eat terminal
 - `SPC l(locate)` locate a file

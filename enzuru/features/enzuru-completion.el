@@ -84,7 +84,7 @@
          ([remap Info-search] . consult-info)
          ("C-c l" . consult-locate)
          ("C-x M-:" . consult-complex-command)
-         ("C-x b" . consult-buffer)
+         ("C-c b" . consult-buffer)
          ("C-x C-b" . consult-buffer)
          ("C-x 4 b" . consult-buffer-other-window)
          ("C-x 5 b" . consult-buffer-other-frame)
