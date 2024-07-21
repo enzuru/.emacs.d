@@ -6,6 +6,12 @@
   (interactive)
   (describe-symbol (intern (thing-at-point 'symbol))))
 
+(defun enzuru-configure-emacs-lisp-mode ()
+  (eldoc-mode)
+  (define-key emacs-lisp-mode-map (kbd "C-c d") 'enzuru-elisp-documentation-search)
+  (define-key emacs-lisp-mode-map (kbd "C-c o") 'eval-buffer)
+  (define-key emacs-lisp-mode-map (kbd "C-c b") 'describe-symbol))
+
 ;; Packages
 
 (use-package checkdoc
@@ -29,14 +35,6 @@
   :hook ((emacs-lisp-mode . package-lint-flymake-setup))
   :defer t)
 
-;; Hooks
-
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (eldoc-mode)
-            (define-key emacs-lisp-mode-map (kbd "C-c d") 'enzuru-elisp-documentation-search)
-            (define-key emacs-lisp-mode-map (kbd "C-c o") 'eval-buffer)
-            (define-key emacs-lisp-mode-map (kbd "C-x r") 'eval-region)
-            (define-key emacs-lisp-mode-map (kbd "C-c y") 'describe-symbol)))
+(enzuru-configure-emacs-lisp-mode)
 
 (provide 'enzuru-emacs-lisp)

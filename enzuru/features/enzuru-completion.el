@@ -76,7 +76,7 @@
 
 (use-package consult
   :bind (("C-s" . consult-line)
-         ("C-y" . consult-yank-pop)
+         ("C-c y" . consult-yank-pop)
          ("C-c M-x" . consult-mode-command)
          ("C-c h" . consult-history)
          ("C-c k" . consult-kmacro)

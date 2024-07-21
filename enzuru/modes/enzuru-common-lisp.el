@@ -11,8 +11,8 @@
 
 (defun enzuru-configure-completing-read-sly ()
   (require 'completing-read-sly)
-  (define-key lisp-mode-map (kbd "C-c y") 'completing-read-sly)
-  (define-key sly-mode-map (kbd "C-c y") 'completing-read-sly))
+  (define-key lisp-mode-map (kbd "C-c b") 'completing-read-sly)
+  (define-key sly-mode-map (kbd "C-c b") 'completing-read-sly))
 
 ;; Packages
 

@@ -219,16 +219,17 @@ These are custom keystrokes that I have setup:
 
 - `SPC a(g)` search git repo using ag
 - `SPC b(uffer)` switch buffers with autocompletion
+- `SPC i(sp)` search through Lisp symbols (defaults to Emacs Lisp)
 - `SPC d(ocumentation)` brings up documentation for symbol under cursor
 - `SPC e(at)` brings up the Eat terminal
 - `SPC k(ill)` kill buffer unconditionally
-- `SPC l(locate)` locate a file
+- `SPC l(ocate)` locate a file
 - `SPC o(mpile)` compiles the buffer in a language appropriate way
 - `SPC p(ush)` pushes the current git branch
 - `SPC r(eplace string)` replace all occurrences of a string after point
 - `SPC s(tatus)` shows the current git status
 - `SPC t(abs)` search through tabs
-- `SPC y(mbol)` searches symbols if using a Lisp language
+- `SPC y(ank)` show list of yanked items
 
 The arrow keys help you manage buffers:
 

@@ -15,8 +15,8 @@
 
 (defun enzuru-configure-completing-read-geiser ()
   (require 'completing-read-geiser)
-  (define-key scheme-mode-map (kbd "C-c y") 'completing-read-geiser)
-  (define-key geiser-repl-mode-map (kbd "C-c y") 'completing-read-geiser))
+  (define-key scheme-mode-map (kbd "C-c b") 'completing-read-geiser)
+  (define-key geiser-repl-mode-map (kbd "C-c b") 'completing-read-geiser))
 
 ;; Packages
 
