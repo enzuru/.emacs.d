@@ -48,7 +48,7 @@ This Emacs configuration reflects my [REPL](https://en.wikipedia.org/wiki/Read%E
 
 I provide an IDE and REPL for each major environment that I work in.
 
-One can debate about how many of the above languages Emacs is ideal for, but Emacs is certainly a best-in-class environment for Haskell, Elixir, Common Lisp, Scheme, and Clojure.
+One can debate about which languages Emacs is actually ideal for, but Emacs is certainly a best-in-class environment for Haskell, Elixir, Common Lisp, Scheme, and Clojure.
 
 #### First class
 
