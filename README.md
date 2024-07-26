@@ -2,7 +2,7 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware with the enzuru-deep-thought.el theme file loaded")
 
-This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. This is a maximalist configuration; my Lisp code harmoniously integrates around 200 different packages. 
+This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. This is a maximalist configuration; my Lisp code harmoniously integrates around 200 different packages.
 
 This means spicy choices like:
 
@@ -79,20 +79,26 @@ I do not support Eglot or tree-sitter for these languages. Generally it is becau
 
 | Language    | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
 |-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|-------------|
-| Dockerfile  | [docker.el](https://github.com/Silex/docker.el/tree/master)                  | [TRAMP](https://www.gnu.org/software/tramp/#Inline-methods)              | No    | Yes         |
 | Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | No    | Yes         |
 | Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | No    | No          |
-| GDScript    | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)         |                                                                          | Yes   | No          |
-| Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                          | No    | No          |
 | Haskell     | [Intero](https://chrisdone.github.io/intero/)                                | [Dante](https://github.com/jyp/dante)                                    | No    | No          |
-| Java        | `java-ts-mode`                                                               |                                                                          | No    | Yes         |
 | JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                                 | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    | No          |
-| Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                          | No    | No          |
-| Objective-C | `objc-mode`                                                                  |                                                                          | No    | No          |
 | PHP         | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el)                           | No    | No          |
 | SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)                              | No    | No          |
-| Swift       | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                                          | No    | No          |
 | TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                               | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    | Yes         |
+
+#### Fourth class
+
+I don't even have a REPL for these languages, and quite frankly, most of these languages are best used within their respective IDEs.
+
+| Language    | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
+|-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|-------------|
+| GDScript    | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)         |                                                                          | Yes   | No          |
+| Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                          | No    | No          |
+| Java        | `java-ts-mode`                                                               |                                                                          | No    | Yes         |
+| Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                          | No    | No          |
+| Objective-C | `objc-mode`                                                                  |                                                                          | No    | No          |
+| Swift       | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                                          | No    | No          |
 
 ### Tools
 
@@ -106,6 +112,7 @@ This configuration ships with a great many helpful tools:
 | Completion (regular buffer) | [Corfu](https://github.com/minad/corfu)                                                          |
 | Completion (minibuffer)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                               |
 | Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
+| Docker client               | [docker.el](https://github.com/Silex/docker.el)                                                  |
 | Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
 | Gemini browser              | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
 | HTTP browser                | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
