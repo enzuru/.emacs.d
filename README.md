@@ -52,7 +52,7 @@ One can debate about which languages Emacs is actually ideal for, but Emacs is c
 
 #### First class
 
-The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot, and arguably Lisp with its ascetic syntax benefits less from tree-sitter:
+The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot, and arguably Lisp with its ascetic syntax benefits less from tree-sitter.
 
 | Language    | IDE                                             | REPL                                            | Eglot | Tree-sitter |
 |-------------|-------------------------------------------------|-------------------------------------------------|-------|-------------|
@@ -62,7 +62,7 @@ The best supported developer environments are the Lisp languages. Since they hav
 
 #### Second class
 
-I support both Eglot and tree-sitter for the following languages:
+These languages have support for both Eglot and tree-sitter.
 
 | Language | IDE                                                         | REPL                                                          | Eglot | Tree-sitter |
 |----------|-------------------------------------------------------------|---------------------------------------------------------------|-------|-------------|
@@ -75,7 +75,7 @@ I support both Eglot and tree-sitter for the following languages:
 
 #### Third class
 
-I do not support Eglot or tree-sitter for these languages. Generally it is because GNU Guix does not have an appropriate language server or tree-sitter grammar packaged for it yet:
+I do not support Eglot for these languages. Generally it is because GNU Guix does not have an appropriate language server packaged for them yet.
 
 | Language    | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
 |-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|-------------|
