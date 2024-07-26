@@ -19,8 +19,6 @@
   :defer t
   :hook ((org-mode . hyperbole-mode)
          (org-mode . enzuru-hook-org-mode))
-  :bind (:map org-mode-map
-              ("C-c b" . org-insert-heading))
   :config (enzuru-configure-org))
 
 (provide 'enzuru-org)

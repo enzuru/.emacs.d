@@ -12,19 +12,11 @@
         (setq path-separator " ")
         (setq shell-switcher-mode t)))
 
-(defun enzuru-configure-multi-term ()
-  (setq multi-term-scroll-show-maximum-output t))
-
 ;; Packages
 
 (use-package eshell
   :ensure t
   :config (enzuru-configure-eshell))
-
-(use-package multi-term
-  :ensure t
-  :defer t
-  :config (enzuru-configure-multi-term))
 
 (use-package shell
   :ensure t

@@ -9,8 +9,8 @@
 
 (defun enzuru-configure-completing-read-cider ()
   (require 'completing-read-cider)
-  (define-key clojure-mode-map (kbd "C-c b") 'completing-read-cider)
-  (define-key cider-repl-mode-map (kbd "C-c b") 'completing-read-cider))
+  (define-key clojure-mode-map (kbd "C-c i") 'completing-read-cider)
+  (define-key cider-repl-mode-map (kbd "C-c i") 'completing-read-cider))
 
 ;; Packages
 

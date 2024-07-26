@@ -12,10 +12,12 @@
 
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
    '("k" . meow-prev)
    '("<escape>" . ignore))
+
   (meow-leader-define-key
    ;; SPC j/k will run the original command in MOTION state.
    '("j" . "H-j")
@@ -32,7 +34,11 @@
    '("9" . meow-digit-argument)
    '("0" . meow-digit-argument)
    '("/" . meow-keypad-describe-key)
-   '("?" . meow-cheatsheet))
+   '("?" . meow-cheatsheet)
+   '("d" . "C-c d")
+   '("o" . "C-c o")
+   '("i" . "C-c i"))
+
   (meow-normal-define-key
    '("0" . meow-expand-0)
    '("9" . meow-expand-9)
@@ -99,8 +105,6 @@
 (defun enzuru-configure-meow ()
   (meow-setup)
   (meow-global-mode 1)
-  (meow-leader-define-key '("d" . "C-c d"))
-  (meow-leader-define-key '("o" . "C-c o"))
   (cl-pushnew '(sly-mrepl-mode . insert) meow-mode-state-list)
   (cl-pushnew '(inferior-emacs-lisp-mode . insert) meow-mode-state-list)
   (cl-pushnew '(eat-mode . insert) meow-mode-state-list)

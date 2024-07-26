@@ -10,7 +10,7 @@
   (eldoc-mode)
   (define-key emacs-lisp-mode-map (kbd "C-c d") 'enzuru-elisp-documentation-search)
   (define-key emacs-lisp-mode-map (kbd "C-c o") 'eval-buffer)
-  (define-key emacs-lisp-mode-map (kbd "C-c b") 'describe-symbol))
+  (define-key emacs-lisp-mode-map (kbd "C-c i") 'describe-symbol))
 
 ;; Packages
 

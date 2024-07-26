@@ -3,6 +3,7 @@
 ;; Functions
 
 (defun enzuru-debugging-on ()
+  (interactive)
   (setq debug-on-error t
         debug-on-event t
         debug-on-message t
