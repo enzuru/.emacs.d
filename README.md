@@ -2,7 +2,7 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware with the enzuru-deep-thought.el theme file loaded")
 
-This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. My code harmoniously integrates around 200 different packages.
+This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. This is a maximalist configuration; my Lisp code harmoniously integrates around 200 different packages. 
 
 This means spicy choices like:
 
