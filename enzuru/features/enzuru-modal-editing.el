@@ -12,6 +12,9 @@
 
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  (meow-leader-define-key '("d" . "C-c d"))
+  (meow-leader-define-key '("o" . "C-c o"))
+  (meow-leader-define-key '("i" . "C-c i"))
 
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
@@ -34,10 +37,7 @@
    '("9" . meow-digit-argument)
    '("0" . meow-digit-argument)
    '("/" . meow-keypad-describe-key)
-   '("?" . meow-cheatsheet)
-   '("d" . "C-c d")
-   '("o" . "C-c o")
-   '("i" . "C-c i"))
+   '("?" . meow-cheatsheet))
 
   (meow-normal-define-key
    '("0" . meow-expand-0)

@@ -6,7 +6,8 @@
 (global-set-key (kbd "C-c o") 'compile)
 (global-set-key (kbd "C-c r") 'replace-string)
 (global-set-key (kbd "C-c t") 'tab-bar-select-tab-by-name)
-(global-set-key (kbd "C-c b") 'describe-symbol)
+(global-set-key (kbd "C-c b") 'consult-buffer)
+(global-set-key (kbd "C-c i") 'describe-symbol)
 
 (global-set-key (kbd "C-c <left>") 'previous-buffer)
 (global-set-key (kbd "C-c <right>") 'next-buffer)
