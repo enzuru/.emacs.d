@@ -11,10 +11,10 @@
 
 (defun weight-change
     (calories-consumed calories-burned days)
-  (let ((rmr 1.9))
+  (let ((neat 2.2))
     (/ (- (* days calories-consumed)
           (* days calories-burned)
-          (* days rmr))
+          (* days neat))
        3.5)))
 
 (defun enzuru-fitness-success (message)
