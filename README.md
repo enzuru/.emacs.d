@@ -114,6 +114,7 @@ This configuration ships with a great many helpful tools:
 | Dashboard                   | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
 | Docker client               | [docker.el](https://github.com/Silex/docker.el)                                                  |
 | Documentation searcher      | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
+| Evaluation overlay          | [eros](https://github.com/xiongtx/eros)                                                          |
 | Gemini browser              | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
 | HTTP browser                | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
 | Hyperlinker                 | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
