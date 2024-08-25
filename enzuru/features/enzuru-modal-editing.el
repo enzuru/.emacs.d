@@ -12,6 +12,7 @@
 
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  (meow-leader-define-key '("k" . "C-c k"))
   (meow-leader-define-key '("d" . "C-c d"))
   (meow-leader-define-key '("o" . "C-c o"))
   (meow-leader-define-key '("i" . "C-c i"))

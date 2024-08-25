@@ -23,7 +23,6 @@
 (require 'enzuru-dashboard)
 (require 'enzuru-debugging)
 (require 'enzuru-documentation)
-(require 'enzuru-fitness)
 (require 'enzuru-language-servers)
 (require 'enzuru-llm)
 (require 'enzuru-gaming)
