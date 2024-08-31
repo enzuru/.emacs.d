@@ -5,14 +5,6 @@
 (savehist-mode 1)
 (save-place-mode 1)
 
-;; Functions
-
-(defun enzuru-volatile-kill-buffer ()
-  "Kill current buffer unconditionally."
-  (interactive)
-  (let ((buffer-modified-p nil))
-    (kill-buffer (current-buffer))))
-
 ;; Configuration
 
 (defun enzuru-configure-uniquify ()

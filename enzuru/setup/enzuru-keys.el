@@ -1,5 +1,13 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+;; Functions
+
+(defun enzuru-volatile-kill-buffer ()
+  "Kill current buffer unconditionally."
+  (interactive)
+  (let ((buffer-modified-p nil))
+    (kill-buffer (current-buffer))))
+
 ;; Help
 
 (global-set-key (kbd "C-c k") 'enzuru-volatile-kill-buffer)
