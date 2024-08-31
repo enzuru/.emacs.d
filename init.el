@@ -10,7 +10,6 @@
 (add-to-list 'load-path "~/.emacs.d/enzuru/themes")
 
 (require 'enzuru-packages)
-(require 'enzuru-keys)
 
 ;; Features
 
