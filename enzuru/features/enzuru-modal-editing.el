@@ -1,7 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(require 'enzuru-keys)
-
 ;; Functions
 
 (defun enzuru-configure-lispy ()
