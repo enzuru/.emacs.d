@@ -37,11 +37,7 @@
                                                    (get-new-mail nil)
                                                    (gnus-search-engine gnus-search-notmuch
                                                                        (remove-prefix "/home/enzuru/mail/me/")
-                                                                       (config-file "/home/enzuru/.notmuch-config")))
-                                        (nntp "newshosting"
-                                              (nntp-open-connection-function nntp-open-ssl-stream)
-                                              (nntp-port-number 563)
-                                              (nntp-address "news.newshosting.com"))))
+                                                                       (config-file "/home/enzuru/.notmuch-config")))))
   (gnus-add-configuration '(article (horizontal 1.0 (summary .5 point) (article 1.0)))))
 
 (defun enzuru-configure-notmuch ()
