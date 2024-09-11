@@ -85,7 +85,7 @@
 
 (defun enzuru-arrange-apps ()
   (interactive)
-  (enzuru-setup-tab "tasks" "*Guix Bugs*")
+  ;; (enzuru-setup-tab "tasks" "*Guix Bugs*")
   (enzuru-setup-tab "hacking" "*dashboard*")
   (enzuru-setup-tab ".emacs.d" "init.el" "magit: .emacs.d")
   (enzuru-setup-tab "mail" "*Group*")
@@ -117,7 +117,7 @@
   (interactive)
   (find-file "~/.emacs.d/init.el")
   (magit-status)
-  (debbugs-gnu '("wishlist") '("emacs" "gnus" "guile" "guix-patches" "hyperbole" "guix"))
+  ;; (debbugs-gnu '("wishlist") '("emacs" "gnus" "guile" "guix-patches" "hyperbole" "guix"))
   (sly)
   (gnus)
   (elpher)
