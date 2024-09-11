@@ -4,9 +4,8 @@
 
 (defun enzuru-configure-erc ()
   (add-to-list 'erc-modules 'completion)
-
   (let ((in-channels '())
-        (total-channels 28))
+        (total-channels 27))
     (defun enzuru-channel-push ()
       (cl-pushnew (buffer-name (current-buffer)) in-channels)
       (message (number-to-string (- total-channels (length in-channels))))
