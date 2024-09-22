@@ -123,6 +123,10 @@
   :ensure t
   :config (enzuru-configure-lispy)
   :bind (("C-y" . consult-yank-from-kill-ring))
+  :straight (lispy
+       :type git
+       :host github
+       :repo "enzuru/lispy")
   :hook ((emacs-lisp-mode . lispy-mode)
          (ielm-mode . lispy-mode)
          (lisp-mode . lispy-mode)
