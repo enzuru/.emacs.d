@@ -2,7 +2,7 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware with the enzuru-deep-thought.el theme file loaded")
 
-This `.emacs.d` represents my libre attempt to build and document an advanced Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. This is a maximalist configuration; my Lisp code harmoniously integrates around 200 different packages.
+This `.emacs.d` represents my libre attempt to build and document a maximalist Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. This involves around 200 different packages.
 
 This means spicy choices like:
 
@@ -52,53 +52,53 @@ One can debate about which languages Emacs is actually ideal for, but Emacs is c
 
 #### First class
 
-The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot, and arguably Lisp with its ascetic syntax benefits less from tree-sitter.
+The best supported developer environments are the Lisp languages. Since they have feature rich IDEs with powerful REPLs, they do not need Eglot.
 
-| Language    | IDE                                             | REPL                                            | Eglot | Tree-sitter |
-|-------------|-------------------------------------------------|-------------------------------------------------|-------|-------------|
-| Clojure     | [CIDER](https://github.com/clojure-emacs/cider) | [CIDER](https://github.com/clojure-emacs/cider) | N/A   | Yes         |
-| Common Lisp | [SLY](https://github.com/joaotavora/sly)        | [SLY](https://github.com/joaotavora/sly)        | N/A   | No          |
-| Scheme      | [Geiser](https://www.nongnu.org/geiser/)        | [Geiser](https://www.nongnu.org/geiser/)        | N/A   | No          |
+| Language    | IDE                                             | REPL                                            | Eglot |
+|-------------|-------------------------------------------------|-------------------------------------------------|-------|
+| Clojure     | [CIDER](https://github.com/clojure-emacs/cider) | [CIDER](https://github.com/clojure-emacs/cider) | N/A   |
+| Common Lisp | [SLY](https://github.com/joaotavora/sly)        | [SLY](https://github.com/joaotavora/sly)        | N/A   |
+| Scheme      | [Geiser](https://www.nongnu.org/geiser/)        | [Geiser](https://www.nongnu.org/geiser/)        | N/A   |
 
 #### Second class
 
-These languages have support for both Eglot and tree-sitter.
+Guix comes with pre-packaged language servers for these languages.
 
-| Language | IDE                                                         | REPL                                                          | Eglot | Tree-sitter |
-|----------|-------------------------------------------------------------|---------------------------------------------------------------|-------|-------------|
-| C        | `c-ts-mode`                                                 |                                                               | Yes   | Yes         |
-| C++      | `c++-ts-mode`                                               |                                                               | Yes   | Yes         |
-| Go       | `go-ts-mode`                                                | [go-playground](https://github.com/grafov/go-playground)      | Yes   | Yes         |
-| Python   | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                  | Yes   | Yes         |
-| Ruby     | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   | Yes         |
-| Rust     | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   | Yes         |
+| Language | IDE                                                         | REPL                                                          | Eglot |
+|----------|-------------------------------------------------------------|---------------------------------------------------------------|-------|
+| C        | `c-ts-mode`                                                 |                                                               | Yes   |
+| C++      | `c++-ts-mode`                                               |                                                               | Yes   |
+| Go       | `go-ts-mode`                                                | [go-playground](https://github.com/grafov/go-playground)      | Yes   |
+| Python   | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                  | Yes   |
+| Ruby     | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   |
+| Rust     | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   |
 
 #### Third class
 
-I do not support Eglot for these languages. Generally it is because GNU Guix does not have an appropriate language server packaged for them yet.
+Guix lacks pre-packaged language servers for these languages.
 
-| Language    | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
-|-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|-------------|
-| Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | No    | Yes         |
-| Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | No    | No          |
-| Haskell     | [Intero](https://chrisdone.github.io/intero/)                                | [Dante](https://github.com/jyp/dante)                                    | No    | No          |
-| JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                                 | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    | No          |
-| PHP         | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el)                           | No    | No          |
-| SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)                              | No    | No          |
-| TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                               | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    | Yes         |
+| Language    | IDE                                                                          | REPL                                                                     | Eglot |
+|-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|
+| Elixir      | [Alchemist](https://github.com/tonini/alchemist.el)                          | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | No    |
+| Fish        | [fish-mode](https://github.com/wwwjfy/emacs-fish)                            | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | No    |
+| Haskell     | [Intero](https://chrisdone.github.io/intero/)                                | [Dante](https://github.com/jyp/dante)                                    | No    |
+| JavaScript  | [js2-mode](https://github.com/mooz/js2-mode)                                 | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    |
+| PHP         | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el)                           | No    |
+| SQL         | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)                              | No    |
+| TypeScript  | [Tide](https://github.com/ananthakumaran/tide)                               | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    |
 
 #### Fourth class
 
 I don't even have a REPL for these languages, and quite frankly, most of these languages are best used within their respective IDEs.
 
-| Language    | IDE                                                                          | REPL                                                                     | Eglot | Tree-sitter |
-|-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|-------------|
-| GDScript    | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)         |                                                                          | Yes   | No          |
-| Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                          | No    | No          |
-| Java        | `java-ts-mode`                                                               |                                                                          | No    | Yes         |
-| Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                          | No    | No          |
-| Objective-C | `objc-mode`                                                                  |                                                                          | No    | No          |
-| Swift       | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                                          | No    | No          |
+| Language    | IDE                                                                          | REPL                                                                     | Eglot |
+|-------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------|
+| GDScript    | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)         |                                                                          | Yes   |
+| Groovy      | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                                          | No    |
+| Java        | `java-ts-mode`                                                               |                                                                          | No    |
+| Kotlin      | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                                          | No    |
+| Objective-C | `objc-mode`                                                                  |                                                                          | No    |
+| Swift       | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                                          | No    |
 
 ### Tools
 
