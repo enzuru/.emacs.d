@@ -14,13 +14,18 @@
   (define-key lisp-mode-map (kbd "C-c i") 'completing-read-sly)
   (define-key sly-mode-map (kbd "C-c i") 'completing-read-sly))
 
+(defun enzuru-sly-eval-to-repl ()
+  (interactive)
+  (sly-eval-buffer)
+  (switch-to-buffer-other-window "*sly-mrepl for sbcl*"))
+
 ;; Packages
 
 (use-package sly
   :ensure t
   :bind ((:map lisp-mode-map
                ("C-c d" . enzuru-sly-describe-symbol-at-point)
-               ("C-c o" . sly-eval-buffer)
+               ("C-c o" . enzuru-sly-eval-to-repl)
                ("C-x r" . sly-eval-region))))
 
 (use-package sly-quicklisp
