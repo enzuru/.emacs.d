@@ -89,7 +89,7 @@
   (enzuru-setup-tab "hacking" "*dashboard*")
   (enzuru-setup-tab ".emacs.d" "init.el" "magit: .emacs.d")
   (enzuru-setup-tab "mail" "*Group*")
-  (enzuru-setup-tab "gemini" "*elpher*")
+  ;; (enzuru-setup-tab "gemini" "*elpher*")
   (enzuru-setup-tab "geiser" "*Geiser Guile REPL*")
   (enzuru-setup-tab "sly" "*sly-mrepl for sbcl*")
   (tab-bar-select-tab-by-name "hacking"))
@@ -112,7 +112,7 @@
   ;; (debbugs-gnu '("wishlist") '("emacs" "gnus" "guile" "guix-patches" "hyperbole" "guix"))
   (sly)
   (gnus)
-  (elpher)
+  ;; (elpher)
   (geiser 'guile)
   (enzuru-arrange-apps))
 
