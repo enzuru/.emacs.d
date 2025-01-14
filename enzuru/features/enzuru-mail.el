@@ -11,8 +11,8 @@
                                   (nntp-via-rlogin-command-switches ("-C"))
                                   (nntp-netcat-switches ("-w" "15"))
                                   (nntp-open-connection-function nntp-open-via-rlogin-and-netcat))
-        gnus-large-newsgroup 10000
-        gnus-large-ephemeral-newsgroup 10000
+        gnus-large-newsgroup 1000
+        gnus-large-ephemeral-newsgroup 1000
         gnus-show-threads t
         gnus-thread-indent-level 1
         gnus-thread-hide-subtree t
