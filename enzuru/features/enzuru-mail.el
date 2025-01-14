@@ -28,7 +28,7 @@
         message-kill-buffer-on-exit t
         message-send-mail-function 'message-smtpmail-send-it
         send-mail-function 'smtpmail-send-it
-        smtpmail-smtp-server "mail.enzu.ru"
+        smtpmail-smtp-server "smtp.fastmail.com"
         smtpmail-smtp-service 587
         user-mail-address "me@enzu.ru"
         user-full-name "Ahmed Khanzada"

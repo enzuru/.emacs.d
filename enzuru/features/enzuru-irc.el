@@ -5,7 +5,7 @@
 (defun enzuru-configure-erc ()
   (add-to-list 'erc-modules 'completion)
   (let ((in-channels '())
-        (total-channels 27))
+        (total-channels 8))
     (defun enzuru-channel-push ()
       (cl-pushnew (buffer-name (current-buffer)) in-channels)
       (message (number-to-string (- total-channels (length in-channels))))
@@ -31,13 +31,9 @@
 (defun enzuru-configure-znc ()
   (setq znc-detach-on-kill nil
         znc-servers
-        '(("enzu.ru" 7001 t ((darkscience "enzuru/darkscience" "password")
-                             (Libera "enzuru/Libera" "password")
-                             (OFTC "enzuru/OFTC" "password")
-                             (IRCnet "enzuru/IRCnet" "password")
-                             (DarkMyst "enzuru/DarkMyst" "password")
-                             (Tilde "enzuru/Tilde" "password")
-                             (hashbang "enzuru/hashbang" "password"))))))
+        '(("enzuru.znchost.com" 4000 t ((Libera "enzuru/liberachat" "password")
+                                        (OFTC "enzuru/oftc" "password")
+                                        (Tilde "enzuru/tilde" "password"))))))
 
 ;; Packages
 

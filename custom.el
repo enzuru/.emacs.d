@@ -78,7 +78,7 @@
                            #'string-equal))))
      (eval setq-local guix-directory
            (locate-dominating-file default-directory ".dir-locals.el"))))
- '(smtpmail-smtp-server "mail.enzu.ru" t)
+ '(smtpmail-smtp-server "smtp.fastmail.com" t)
  '(smtpmail-smtp-service 587 t)
  '(tab-bar-show nil)
  '(warning-suppress-types '((server) (comp))))
