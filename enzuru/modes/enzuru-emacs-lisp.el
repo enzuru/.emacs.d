@@ -12,6 +12,10 @@
   (define-key emacs-lisp-mode-map (kbd "C-c o") 'eval-buffer)
   (define-key emacs-lisp-mode-map (kbd "C-c i") 'describe-symbol))
 
+(defun enzuru-run-ert-tests ()
+  (eval-buffer)
+  (ert-run-tests-interactively t))
+
 ;; Packages
 
 (use-package checkdoc
