@@ -116,4 +116,12 @@
   (geiser 'guile)
   (enzuru-arrange-apps))
 
+;; Packages
+
+(use-package activities
+  :init
+  (activities-mode)
+  (activities-tabs-mode)
+  (setq edebug-inhibit-emacs-lisp-mode-bindings t))
+
 (provide 'enzuru-arrangements)
