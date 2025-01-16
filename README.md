@@ -143,6 +143,7 @@ This configuration ships with a great many helpful tools:
 | Window configuration        | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html) |
 | Window handling             | [windmove](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)    |
 | Window manager              | [exwm](https://github.com/ch11ng/exwm)                                                           |
+| Workspace manager           | [activities.el](https://github.com/alphapapa/activities.el)                                      |
 
 ### Themes
 
@@ -174,7 +175,7 @@ Package management is provided by:
 
 This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only for Lisp languages.
 
-I [maintain the default Emacs keybindings](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf), so I will not document them here. Meow will help you discover keystrokes after you hit `SPC`.
+I [maintain the default Emacs keybindings](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf), so I will not document them here. Meow will help you discover keystrokes after you hit `SPC` in keypad mode.
 
 ### Normal editing
 
@@ -223,28 +224,27 @@ I have keystrokes setup to emulate tmux/screen using Emacs tabs.
 
 ### Custom keystrokes
 
-These are custom keystrokes that I have setup:
+These are custom keystrokes that I have setup.
 
-- `SPC a(g)` search git repo using ag
-- `SPC b(uffer)` switch buffers with autocompletion
-- `SPC i(sp)` search through Lisp symbols (defaults to Emacs Lisp)
-- `SPC d(ocumentation)` brings up documentation for symbol under cursor
-- `SPC e(at)` brings up the Eat terminal
-- `SPC k(ill)` kill buffer unconditionally
-- `SPC l(ocate)` locate a file
-- `SPC o(mpile)` compiles the buffer in a language appropriate way
-- `SPC p(ush)` pushes the current git branch
-- `SPC r(eplace string)` replace all occurrences of a string after point
-- `SPC s(tatus)` shows the current git status
-- `SPC t(abs)` search through tabs
-- `SPC y(ank)` show list of yanked items
+When in Meow's insert mode, prepend with `C-c`. When in Meow's keypad mode, prepend with `SPC`.
 
-The arrow keys help you manage buffers:
-
-- `SPC <left>` previous buffer
-- `SPC <right>` next buffer
-- `SPC <up>` beginning of buffer
-- `SPC <bottom>` bottom of buffer
+- `a(g)` search git repo using ag
+- `b(uffer)` switch buffers with autocompletion
+- `i(sp)` search through Lisp symbols (defaults to Emacs Lisp)
+- `d(ocumentation)` brings up documentation for symbol under cursor
+- `e(at)` brings up the Eat terminal
+- `k(ill)` kill buffer unconditionally
+- `l(ocate)` locate a file
+- `o(mpile)` compiles the buffer in a language appropriate way
+- `p(ush)` pushes the current git branch
+- `r(eplace string)` replace all occurrences of a string after point
+- `s(tatus)` shows the current git status
+- `t(abs)` search through tabs
+- `y(ank)` show list of yanked items
+- `<left>` previous buffer
+- `<right>` next buffer
+- `<up>` beginning of buffer
+- `<bottom>` bottom of buffer
 
 ## Learning
 

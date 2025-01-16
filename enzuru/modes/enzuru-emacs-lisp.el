@@ -13,8 +13,10 @@
   (define-key emacs-lisp-mode-map (kbd "C-c i") 'describe-symbol))
 
 (defun enzuru-run-ert-tests ()
-  (eval-buffer)
-  (ert-run-tests-interactively t))
+  (let ((window (selected-window)))
+    (eval-buffer)
+    (ert-run-tests-interactively t)
+    (select-window window)))
 
 ;; Packages
 

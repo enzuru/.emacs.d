@@ -29,12 +29,15 @@ anaconda-mode/
 .DS_Store
 ede-projects.el
 archive-contents.signed
-elpa/archives
 transient/
 eln-cache/
-elpa/
 local.el
 straight/build
 straight/repos
 straight/modified
 straight/build-cache.el
+elpa
+elpa/archives
+tree-sitter
+chatgpt
+.efar-state

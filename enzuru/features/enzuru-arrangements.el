@@ -122,6 +122,7 @@
   :init
   (activities-mode)
   (activities-tabs-mode)
+  (setq activities-bookmark-store t)
   (setq edebug-inhibit-emacs-lisp-mode-bindings t))
 
 (provide 'enzuru-arrangements)
