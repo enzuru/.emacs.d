@@ -126,7 +126,7 @@
 
 (use-package consult-ag
   :ensure t
-  :bind (("C-c a" . consult-ag)))
+  :bind (("C-c a" . consult-git-grep)))
 
 (use-package corfu
   :custom
