@@ -130,10 +130,8 @@ This configuration ships with a great many helpful tools:
 | Music player                | [Emms](https://www.gnu.org/software/emms/)                                                       |
 | Music streamer              | [pianobar.el](https://github.com/agrif/pianobar.el)                                              |
 | Organization                | [org-mode](https://orgmode.org)                                                                  |
-| Project interaction         | [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html)            |
 | REST client                 | [restclient.el](https://github.com/pashky/restclient.el)                                         |
 | Shell                       | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                        |
-| Spreadsheets                | [Dismal](https://elpa.gnu.org/packages/dismal.html)                                              |
 | Syntax checker              | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                      |
 | Syntax highlighter          | [prism](https://github.com/alphapapa/prism.el)                                                   |
 | Terminal                    | [Eat](https://codeberg.org/akib/emacs-eat/)                                                      |
