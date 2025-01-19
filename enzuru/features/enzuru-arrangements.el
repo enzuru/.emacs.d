@@ -97,7 +97,7 @@
 (defun enzuru-arrange-chats ()
   (interactive)
   (enzuru-setup-tab "libera" "Libera.Chat" "#emacs" "#gnu" "#guile" "#guix" "#guix-hpc")
-  (enzuru-setup-tab "tilde" "tilde.chat" "#books" "#gemini" "#institute" "#meta" "#politics")
+  (enzuru-setup-tab "tilde" "tilde.chat" "#politics" "#gemini" "#meta" "#institute" "#books")
   (enzuru-setup-tab "oftc" "OFTC" "#cat-v" "#dri-devel" "#kernelnewbies")
   (tab-bar-select-tab-by-name "tilde"))
 

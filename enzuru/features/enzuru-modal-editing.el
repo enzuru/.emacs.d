@@ -86,7 +86,7 @@
    '("n" . meow-search)
    '("o" . meow-block)
    '("O" . meow-to-block)
-   '("p" . meow-yank)
+   '("p" . consult-yank-from-kill-ring)
    '("q" . meow-quit)
    '("Q" . meow-goto-line)
    '("r" . meow-replace)
