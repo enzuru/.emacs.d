@@ -33,4 +33,9 @@
   :ensure t
   :mode (("\\.js\\'" . rjsx-mode)))
 
+(use-package vue-mode
+  :ensure t
+  :defer t
+  :mode (("\\.vue\\'" . vue-mode)))
+
 (provide 'enzuru-javascript)

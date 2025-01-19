@@ -9,8 +9,8 @@
         org-startup-folded nil))
 
 (defun enzuru-hook-org-mode ()
-  (setq-local completion-at-point-functions
-              (mapcar #'cape-company-to-capf (list #'company-spell))))
+  ;; (setq-local completion-at-point-functions (mapcar #'cape-company-to-capf (list #'company-spell)))
+  )
 
 ;; Packages
 
