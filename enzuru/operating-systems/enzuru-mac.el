@@ -15,7 +15,7 @@
 ;; Faces
 
 (set-face-attribute 'default nil
-                    :family "Monaco" :height 145 :weight 'normal)
+                    :family "Monaco" :height 150 :weight 'normal)
 (set-face-attribute 'variable-pitch nil
                     :family "Bookerly" :height 135 :weight 'normal)
 

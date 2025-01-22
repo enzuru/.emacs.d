@@ -54,7 +54,7 @@
 (require 'enzuru-c)
 (require 'enzuru-css)
 (require 'enzuru-cpp)
-(require 'enzuru-clojure)
+;; (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
 (require 'enzuru-elixir)
 (require 'enzuru-emacs-lisp)
