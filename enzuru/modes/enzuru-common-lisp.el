@@ -17,7 +17,8 @@
 (defun enzuru-sly-eval-to-repl ()
   (interactive)
   (sly-eval-buffer)
-  (switch-to-buffer-other-window "*sly-mrepl for sbcl*"))
+  (switch-to-buffer-other-window "*sly-mrepl for sbcl*")
+  (end-of-buffer))
 
 ;; Packages
 
