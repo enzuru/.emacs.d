@@ -15,6 +15,7 @@ This means spicy choices like:
 - `lispy` over `paredit`
 - `sly` over `slime`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
+- `eat` over all the other terminal emulators
 - `gptel` over the dozens of other LLM clients
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
