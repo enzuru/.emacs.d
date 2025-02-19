@@ -1,7 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(require 'enzuru-window-management)
-
 (setq locate-command "locate"
       inferior-lisp-program "/usr/local/bin/ecl"
       elpy-rpc-python-command "python3"

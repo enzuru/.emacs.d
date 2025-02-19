@@ -2,10 +2,6 @@
 
 ;; Configuration
 
-;; (defun enzuru-load-counsel-tabs ()
-;;   (straight-use-package '(counsel-tabs :type git :host github :repo "enzuru/counsel-tabs"))
-;;   (require 'counsel-tabs))
-
 (defun enzuru-configure-tab-bar-mode ()
   (tab-bar-mode)
   (define-prefix-command 'tab-map)

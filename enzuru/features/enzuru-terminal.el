@@ -14,18 +14,12 @@
 
 ;; Packages
 
-(use-package eshell
-  :ensure t
-  :config (enzuru-configure-eshell))
-
-(use-package shell
-  :ensure t
-  :defer t
-  :config (enzuru-configure-shell))
-
 (use-package eat
   :ensure t
   :bind (("C-c e" . eat))
   :defer t)
+
+(enzuru-configure-shell)
+(enzuru-configure-eshell)
 
 (provide 'enzuru-terminal)

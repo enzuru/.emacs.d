@@ -9,11 +9,6 @@
   (setq browse-url-browser-function 'eww-browse-url)
   (global-set-key (kbd "") 'enzuru-search))
 
-;; Packages
-
-(use-package eww
-  :ensure t
-  :defer t
-  :config (enzuru-configure-eww))
+(enzuru-configure-eww)
 
 (provide 'enzuru-browser)

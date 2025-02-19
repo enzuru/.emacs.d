@@ -9,9 +9,6 @@
   (interactive)
   (start-process "kitty" "kitty" "kitty"))
 
-(defun enzuru-setup-desktop ()
-  (require 'enzuru-window-management))
-
 ;; Variables
 
 (setq consult-locate-args "locate -d /home/enzuru/locatedb.n"

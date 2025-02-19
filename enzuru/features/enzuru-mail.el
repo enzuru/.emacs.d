@@ -46,14 +46,11 @@
 
 ;; Packages
 
-(use-package gnus
-  :ensure t
-  :defer t
-  :config (enzuru-configure-gnus))
-
 (use-package notmuch
   :ensure t
   :defer t
   :config (enzuru-configure-notmuch))
+
+(enzuru-configure-gnus)
 
 (provide 'enzuru-mail)

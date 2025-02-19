@@ -13,7 +13,6 @@
 ;; Packages
 
 (use-package c-ts-mode
-  :ensure t
   :config (enzuru-configure-c-ts-mode)
   :defer t
   :bind (:map c-ts-mode-map (("C-c d" . enzuru-man-open)))
@@ -22,7 +21,6 @@
          ("\\.h$" . c-ts-mode)))
 
 (use-package semantic
-  :ensure t
   :defer t
   :config (enzuru-configure-semantic))
 

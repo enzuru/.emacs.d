@@ -18,8 +18,8 @@
   :defer t
   :config (enzuru-configure-haskell-mode))
 
-(use-package intero
-  :ensure t
-  :hook ((haskell-mode . intero-mode)))
+;;(use-package intero
+;;  :ensure t
+;;  :hook ((haskell-mode . intero-mode)))
 
 (provide 'enzuru-haskell)

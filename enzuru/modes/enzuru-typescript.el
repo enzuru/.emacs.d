@@ -16,7 +16,6 @@
   :hook ((typescript-ts-mode . enzuru-configure-tide)))
 
 (use-package typescript-ts-mode
-  :ensure t
   :defer t
   :config (enzuru-configure-typescript-ts-mode))
 

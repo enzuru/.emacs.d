@@ -11,7 +11,8 @@
 
 ;; Packages
 
-(straight-use-package '(purple-haze-theme :type git :host github :repo "emacsfodder/emacs-purple-haze-theme"))
-(enzuru-configure-purple-haze-theme)
+(use-package purple-haze-theme
+  :ensure (:host github :repo "emacsfodder/emacs-purple-haze-theme")
+  :config (enzuru-configure-purple-haze-theme))
 
 (provide 'enzuru-purple-haze)

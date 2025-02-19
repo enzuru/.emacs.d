@@ -20,20 +20,12 @@
 
 ;; Packages
 
-(straight-use-package
- '(geiser-guile
-   :protocol https
-   :type git
-   :host gitlab
-   :repo "emacs-geiser/guile"))
+(use-package geiser-guile
+ :ensure (:host github :repo "emacs-geiser/guile")
+ :config (enzuru-configure-geiser-guile))
 
-(straight-use-package
- '(completing-read-geiser
-   :type git
-   :host github
-   :repo "enzuru/completing-read-geiser"))
-
-(enzuru-configure-geiser-guile)
-(enzuru-configure-completing-read-geiser)
+(use-package completing-read-geiser
+ :ensure (:host github :repo "enzuru/completing-read-geiser")
+ :config (enzuru-configure-completing-read-geiser))
 
 (provide 'enzuru-scheme)

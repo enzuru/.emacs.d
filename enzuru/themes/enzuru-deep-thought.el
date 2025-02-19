@@ -14,7 +14,8 @@
 
 ;; Packages
 
-(straight-use-package '(deep-thought-theme :type git :host github :repo "enzuru/emacs-deep-thought-theme"))
-(enzuru-configure-deep-thought-theme)
+(use-package deep-thought-theme
+  :ensure t (:host github :repo "enzuru/emacs-deep-thought-theme")
+  :config (enzuru-configure-deep-thought-theme))
 
 (provide 'enzuru-deep-thought)

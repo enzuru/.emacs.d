@@ -9,7 +9,7 @@ This means spicy choices like:
 - `eglot` over `lsp-mode`
 - `vert&co` over `helm` and `ivy`
 - `corfu` over `company`
-- `straight.el` over `package.el`
+- `elpaca` over `package.el` and `straight.el`
 - `flymake` over `flycheck` (what a comeback!)
 - `meow` over `evil`
 - `lispy` over `paredit`
@@ -131,6 +131,7 @@ This configuration ships with a great many helpful tools:
 | Music player                | [Emms](https://www.gnu.org/software/emms/)                                                       |
 | Music streamer              | [pianobar.el](https://github.com/agrif/pianobar.el)                                              |
 | Organization                | [org-mode](https://orgmode.org)                                                                  |
+| Package manager             | [elpaca](https://github.com/progfolio/elpaca)                                                    |
 | REST client                 | [restclient.el](https://github.com/pashky/restclient.el)                                         |
 | Shell                       | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                        |
 | Syntax checker              | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                      |
@@ -162,13 +163,6 @@ There are many beautiful theme families for you to enjoy:
 - [timu-rouge](https://gitlab.com/aimebertrand/timu-rouge-theme)
 - [timu-spacegrey](https://gitlab.com/aimebertrand/timu-spacegrey-theme)
 - [zenburn](https://github.com/bbatsov/zenburn-emacs)
-
-### Package managers
-
-Package management is provided by:
-
-- [use-package](https://github.com/jwiegley/use-package)
-- [straight.el](https://github.com/radian-software/straight.el)
 
 ## Keystrokes
 

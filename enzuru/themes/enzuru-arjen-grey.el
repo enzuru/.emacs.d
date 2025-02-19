@@ -16,7 +16,8 @@
 
 ;; Packages
 
-(straight-use-package '(arjen-grey-theme :type git :host github :repo "credmp/arjen-grey-theme"))
-(enzuru-configure-arjen-grey-theme)
+(use-package arjen-grey-theme
+  :ensure (:host github :repo "credmp/arjen-grey-theme")
+  :config (enzuru-configure-arjen-grey-theme))
 
 (provide 'enzuru-arjen-grey)

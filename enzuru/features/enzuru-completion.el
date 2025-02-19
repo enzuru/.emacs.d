@@ -59,6 +59,7 @@
 ;; Packages
 
 (use-package cape
+  :ensure t
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file)
@@ -75,6 +76,7 @@
   )
 
 (use-package consult
+  :ensure t
   :bind (("C-s" . consult-line)
          ("C-c y" . consult-yank-pop)
          ("C-c M-x" . consult-mode-command)
@@ -129,6 +131,7 @@
   :bind (("C-c a" . consult-git-grep)))
 
 (use-package corfu
+  :ensure t
   :custom
   ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
   (corfu-auto t) ;; Enable auto completion
@@ -141,14 +144,6 @@
   ;; (corfu-scroll-margin 5)        ;; Use scroll margin
   :init (global-corfu-mode)
   :config (enzuru-configure-corfu))
-
-(use-package dabbrev
-  :bind (("M-/" . dabbrev-completion)
-         ("C-M-/" . dabbrev-expand))
-  :config
-  (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
-  (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
-  (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode))
 
 (use-package embark
   :ensure t
@@ -163,28 +158,26 @@
   :ensure t
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
+(use-package eldoc
+  :ensure t)
+
 (use-package flymake-collection
   :ensure t)
 
 (use-package marginalia
+  :ensure t
   :bind (:map minibuffer-local-map
               ("M-A" . marginalia-cycle))
   :init (marginalia-mode))
 
 (use-package orderless
+  :ensure t
   :init (enzuru-initialize-orderless))
 
-(use-package savehist
-  :init (savehist-mode))
-
 (use-package vertico
+  :ensure t
   :init (vertico-mode))
 
-(straight-use-package
- '(corfu-terminal
-   :type git
-   :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
-
-(enzuru-configure-corfu-terminal)
+(savehist-mode)
 
 (provide 'enzuru-completion)

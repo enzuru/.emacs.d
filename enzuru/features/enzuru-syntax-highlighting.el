@@ -13,8 +13,7 @@
 ;; Packages
 
 (use-package prism
-  :straight (:host github :repo "alphapapa/prism.el"))
-
-(enzuru-configure-prism)
+  :ensure (:host github :repo "alphapapa/prism.el")
+  :config (enzuru-configure-prism))
 
 (provide 'enzuru-syntax-highlighting)

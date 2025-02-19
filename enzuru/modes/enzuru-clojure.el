@@ -26,12 +26,8 @@
               ("C-c d" . cider-doc)
               ("C-c o" . cider-eval-buffer)))
 
-(straight-use-package
- '(completing-read-cider
-   :type git
-   :host github
-   :repo "enzuru/completing-read-cider"))
-
-(enzuru-configure-completing-read-cider)
+(use-package completing-read-cider
+  :ensure (:host github :repo "enzuru/completing-read-cider")
+  :config (enzuru-configure-completing-read-cider))
 
 (provide 'enzuru-clojure)

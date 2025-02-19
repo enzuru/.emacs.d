@@ -4,6 +4,9 @@
 
 ;; Packages
 
+(use-package transient
+  :ensure t)
+
 (use-package gptel
   :ensure t
   :defer t

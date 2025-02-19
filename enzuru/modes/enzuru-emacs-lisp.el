@@ -21,7 +21,6 @@
 ;; Packages
 
 (use-package checkdoc
-  :ensure
   :defer t)
 
 (use-package eros

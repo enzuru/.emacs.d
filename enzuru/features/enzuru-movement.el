@@ -8,8 +8,6 @@
 
 ;; Packages
 
-(use-package windmove
-  :ensure t
-  :config (enzuru-configure-windmove))
+(enzuru-configure-windmove)
 
 (provide 'enzuru-movement)

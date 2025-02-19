@@ -3,7 +3,6 @@
 ;; Packages
 
 (use-package go-ts-mode
-  :ensure t
   :defer t
   :bind (:map go-ts-mode-map (("C-c d" . godoc-at-point)))
   :hook ((go-ts-mode . eglot-ensure)))
