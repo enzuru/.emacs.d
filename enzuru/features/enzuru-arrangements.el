@@ -1,5 +1,12 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+;; Functions
+
+(defun enzuru-configure-activities ()
+  (activities-mode)
+  (activities-tabs-mode)
+  (setq activities-bookmark-store t))
+
 (defun enzuru-tab-exists-p (tab-name)
   "Check if a tab exists with the given TAB-NAME."
   (catch 'tab-exists
@@ -119,10 +126,7 @@
 ;; Packages
 
 (use-package activities
-  :init
-  (activities-mode)
-  (activities-tabs-mode)
-  (setq activities-bookmark-store t)
-  (setq edebug-inhibit-emacs-lisp-mode-bindings t))
+  :ensure (:host github :repo "alphapapa/activities.el")
+  :config (enzuru-configure-activities))
 
 (provide 'enzuru-arrangements)

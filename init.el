@@ -13,7 +13,7 @@
 
 ;; Features
 
-;;(require 'enzuru-arrangements)
+(require 'enzuru-arrangements)
 (require 'enzuru-benchmarks)
 (require 'enzuru-browser)
 (require 'enzuru-bug-tracking)
@@ -26,7 +26,7 @@
 (require 'enzuru-gaming)
 (require 'enzuru-gemini)
 (require 'enzuru-help)
-;;(require 'enzuru-hyperlinking)
+(require 'enzuru-hyperlinking)
 (require 'enzuru-irc)
 (require 'enzuru-mail)
 (require 'enzuru-man)
@@ -53,7 +53,7 @@
 (require 'enzuru-c)
 (require 'enzuru-css)
 (require 'enzuru-cpp)
-;; (require 'enzuru-clojure)
+(require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
 (require 'enzuru-elixir)
 (require 'enzuru-emacs-lisp)
