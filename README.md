@@ -109,15 +109,15 @@ This configuration ships with a great many helpful tools:
 
 | Feature                                                               | Tool                                                                                             |
 |-----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| [Benchmarker](./enzuru/features/enzuru-benchmarks.el]                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                          |
-| [Bug tracker](./enzuru/features/enzuru-bug-tracking.el]               | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                            |
-| [Clipboard](./enzuru/features/enzuru-clipboard.el]                    | [Clipetty](https://github.com/spudlyo/clipetty)                                                  |
+| [Benchmarker](./enzuru/features/enzuru-benchmarks.el)                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                          |
+| [Bug tracker](./enzuru/features/enzuru-bug-tracking.el)               | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                            |
+| [Clipboard](./enzuru/features/enzuru-clipboard.el)                    | [Clipetty](https://github.com/spudlyo/clipetty)                                                  |
 | [Completion (regular buffer)](./enzuru/features/enzuru-completion.el) | [Corfu](https://github.com/minad/corfu)                                                          |
 | [Completion (minibuffer)](./enzuru/features/enzuru-completion.el)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                               |
-| [Dashboard](./enzuru/features/enzuru-dashboard.el]                    | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
-| [Docker client](./enzuru/features/enzuru-docker.el]                   | [docker.el](https://github.com/Silex/docker.el)                                                  |
+| [Dashboard](./enzuru/features/enzuru-dashboard.el)                    | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
+| [Docker client](./enzuru/features/enzuru-docker.el)                   | [docker.el](https://github.com/Silex/docker.el)                                                  |
 | [Documentation searcher](./enzuru/features/enzuru-documentation.el)   | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
-| [Evaluation overlay](./enzuru/features/enzuru-overlay.el]             | [eros](https://github.com/xiongtx/eros)                                                          |
+| [Evaluation overlay](./enzuru/features/enzuru-overlay.el)             | [eros](https://github.com/xiongtx/eros)                                                          |
 | [Gemini browser](./enzuru/features/enzuru-gemini.el)                  | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
 | [HTTP browser](./enzuru/features/enzuru-browser.el)                   | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
 | [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
