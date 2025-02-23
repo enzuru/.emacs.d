@@ -35,11 +35,11 @@ I usually only support one version of Emacs at a time. Currently I am supporting
 
 The following operating systems are supported:
 
-- [FreeBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-freebsd.el)
-- [GNU/Linux](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-linux.el)
-- [macOS](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-mac.el)
-- [OpenBSD](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-openbsd.el)
-- [Windows](https://github.com/enzuru/.emacs.d/blob/master/enzuru/operating-systems/enzuru-windows.el)
+- [FreeBSD](./enzuru/operating-systems/enzuru-freebsd.el)
+- [GNU/Linux](./enzuru/operating-systems/enzuru-linux.el)
+- [macOS](./enzuru/operating-systems/enzuru-mac.el)
+- [OpenBSD](./enzuru/operating-systems/enzuru-openbsd.el)
+- [Windows](./enzuru/operating-systems/enzuru-windows.el)
 
 Additionally, this entire `.emacs.d` can be setup with native compilation, all necessary development environments below, and as your window manager by visiting my [profiles](https://github.com/enzuru/profiles) repo, which can be executed on the [Guix](https://guix.gnu.org) GNU/Linux distribution.
 
