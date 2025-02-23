@@ -129,6 +129,8 @@
 
 ;; Local customization
 
-(if (and (file-exists-p "~/.emacs.d/local.el")
-         (not (boundp 'enzuru-loaded-local)))
-    (load "~/.emacs.d/local.el"))
+(add-hook 'elpaca-after-init-hook
+          (lambda ()
+            (if (and (file-exists-p "~/.emacs.d/local.el")
+                     (not (boundp 'enzuru-loaded-local)))
+                (load "~/.emacs.d/local.el"))))
