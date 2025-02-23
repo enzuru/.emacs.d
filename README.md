@@ -43,7 +43,7 @@ The following operating systems are supported:
 - [OpenBSD](./enzuru/operating-systems/enzuru-openbsd.el)
 - [Windows](./enzuru/operating-systems/enzuru-windows.el)
 
-Additionally, this entire `.emacs.d` can be setup with native compilation, all necessary development environments below, and as your window manager by visiting my [profiles](https://github.com/enzuru/profiles) repo, which can be executed on the [Guix](https://guix.gnu.org) GNU/Linux distribution.
+Additionally, this entire `.emacs.d` can be setup with most of the below development environments by visiting my [profiles](https://github.com/enzuru/profiles) repo, which can be executed on the [Guix](https://guix.gnu.org) GNU/Linux distribution.
 
 ### Development environments
 
