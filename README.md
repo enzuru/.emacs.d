@@ -221,7 +221,7 @@ These are custom keystrokes that I have setup.
 
 When in Meow's insert mode, prepend with `C-c`. When in Meow's keypad mode, prepend with `SPC`.
 
-- `a(g)` search git repo using ag
+- `a(g)` search git repo using ag or grep
 - `b(uffer)` switch buffers with autocompletion
 - `i(sp)` search through Lisp symbols (defaults to Emacs Lisp)
 - `d(ocumentation)` brings up documentation for symbol under cursor
