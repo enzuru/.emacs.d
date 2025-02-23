@@ -23,10 +23,6 @@
 (use-package checkdoc
   :defer t)
 
-(use-package eros
-  :ensure t
-  :config (eros-mode 1))
-
 (use-package package-build
   :ensure t
   :defer t)
