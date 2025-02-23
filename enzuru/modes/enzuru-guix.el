@@ -9,8 +9,8 @@
 
 (defun enzuru-upgrade ()
   (interactive)
-  (straight-pull-all)
-  (straight-freeze-versions)
+  (elpaca-pull-all)
+  (elpaca-write-lock-file elpaca-lock-file)
   (async-shell-command "~/bin/guix-upgrade" "*guix-upgrade*")
   (async-shell-command "cd ~/quicklisp/local-projects/stumpwm && git pull" "*stumpwm-upgrade*")
   (async-shell-command "cd ~/quicklisp/local-projects/clx-truetype && git pull" "*truetype-upgrade*")
