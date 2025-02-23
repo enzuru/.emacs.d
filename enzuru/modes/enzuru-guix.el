@@ -19,7 +19,8 @@
                     "*stumpwm-modules-upgrade*" "*zpb-ttf-upgrade*"))
 
 (defun enzuru-reboot ()
-  (shell-command "sudo reboot"))
+  (interactive)
+  (async-shell-command "sudo reboot"))
 
 ;; Packages
 
