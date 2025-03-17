@@ -3,7 +3,8 @@
 ;; Functions
 
 (defun enzuru-configure-gnugo ()
-  (setf gnugo-xpms (gnugo-imgen-create-xpms 19)))
+  (setf gnugo-xpms (gnugo-imgen-create-xpms 19))
+  (add-hook 'gnugo-start-game-hook (lambda () (gnugo-image-display-mode))))
 
 (defun enzuru-load-mu ()
   (autoload 'mu-open "mu" "Play on MUSHes and MUDs" t)
