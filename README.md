@@ -28,7 +28,6 @@ This config makes extensive use of language servers and tree-sitter grammars. Mo
 
 I usually only support one version of Emacs at a time. Currently I am supporting:
 
-- Emacs 29
 - Emacs 30
 
 ## Features
@@ -119,6 +118,7 @@ This configuration ships with a great many helpful tools:
 | [Documentation searcher](./enzuru/features/enzuru-documentation.el)   | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
 | [Evaluation overlay](./enzuru/features/enzuru-overlay.el)             | [eros](https://github.com/xiongtx/eros)                                                          |
 | [Gemini browser](./enzuru/features/enzuru-gemini.el)                  | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
+| [Go client](./enzuru/features/enzuru-gaming.el)                       | [gnugo.el](https://github.com/emacsmirror/gnugo/)                                                |
 | [HTTP browser](./enzuru/features/enzuru-browser.el)                   | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
 | [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
 | [IRC client](./enzuru/features/enzuru-irc.el)                         | [ERC](https://www.gnu.org/software/emacs/erc.html)                                               |

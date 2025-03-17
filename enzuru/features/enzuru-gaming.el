@@ -1,6 +1,9 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; Configuration
+;; Functions
+
+(defun enzuru-configure-gnugo ()
+  (setf gnugo-xpms (gnugo-imgen-create-xpms 19)))
 
 (defun enzuru-load-mu ()
   (autoload 'mu-open "mu" "Play on MUSHes and MUDs" t)
@@ -10,5 +13,9 @@
 
 (use-package mu
   :ensure (:host github :repo "kensanata/mu"))
+
+(use-package gnugo
+  :config (enzuru-configure-gnugo)
+  :ensure (:host github :repo "emacsmirror/gnugo" :branch "master"))
 
 (provide 'enzuru-gaming)
