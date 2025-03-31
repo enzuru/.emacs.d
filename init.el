@@ -9,8 +9,6 @@
 (add-to-list 'load-path "~/.emacs.d/enzuru/operating-systems")
 (add-to-list 'load-path "~/.emacs.d/enzuru/themes")
 
-(require 'enzuru-packages)
-
 ;; Features
 
 (require 'enzuru-arrangements)

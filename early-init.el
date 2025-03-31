@@ -43,9 +43,6 @@
 
 (elpaca elpaca-use-package
   ;; Enable use-package :ensure support for Elpaca.
-	(elpaca-use-package-mode))
-
+  (elpaca-use-package-mode))
 
 (setq elpaca-lock-file (concat user-emacs-directory "elpaca.lock"))
-
-(provide 'enzuru-packages)
