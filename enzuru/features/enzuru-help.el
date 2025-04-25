@@ -23,4 +23,6 @@
          ("C-h v" . helpful-variable)
          ("C-h p" . helpful-at-point)))
 
+(add-hook 'elpaca-after-init-hook 'enzuru-configure-which-key)
+
 (provide 'enzuru-help)
