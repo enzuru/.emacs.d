@@ -10,6 +10,8 @@
       inferior-lisp-program "/opt/homebrew/bin/sbcl"
       locate-make-command-line (lambda (ss) (list locate-command "-name" ss)))
 
+(menu-bar-mode)
+
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
 ;; Faces
