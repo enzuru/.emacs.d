@@ -117,6 +117,7 @@ This configuration ships with a great many helpful tools:
 | [Docker client](./enzuru/features/enzuru-docker.el)                   | [docker.el](https://github.com/Silex/docker.el)                                                  |
 | [Documentation searcher](./enzuru/features/enzuru-documentation.el)   | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
 | [Evaluation overlay](./enzuru/features/enzuru-overlay.el)             | [eros](https://github.com/xiongtx/eros)                                                          |
+| [Key binding display](./enzuru/features/enzuru-help.el)               | [which-key](https://elpa.gnu.org/packages/which-key.html)                                        |
 | [Gemini browser](./enzuru/features/enzuru-gemini.el)                  | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
 | [Go client](./enzuru/features/enzuru-gaming.el)                       | [gnugo.el](https://github.com/emacsmirror/gnugo/)                                                |
 | [HTTP browser](./enzuru/features/enzuru-browser.el)                   | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |

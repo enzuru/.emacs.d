@@ -24,15 +24,17 @@
 
 (use-package sly
   :ensure t
-  :bind ((:map lisp-mode-map
+  :bind ((:map sly-mode-map
+               ("C-c i" . completing-read-sly)
+               :map lisp-mode-map
                ("C-c d" . enzuru-sly-describe-symbol-at-point)
                ("C-c o" . enzuru-sly-eval-to-repl)
+               ("C-c i" . completing-read-sly)
                ("C-x r" . sly-eval-region))))
 
 (use-package sly-quicklisp
   :ensure t
   :defer t)
-
 
 (use-package sly-repl-ansi-color
   :ensure (:host github :repo "PuercoPop/sly-repl-ansi-color")
@@ -41,5 +43,7 @@
 (use-package completing-read-sly
   :ensure (:host github :repo "enzuru/completing-read-sly")
   :config (enzuru-configure-completing-read-sly))
+
+(add-hook 'elpaca-after-init-hook 'enzuru-configure-completing-read-sly)
 
 (provide 'enzuru-common-lisp)

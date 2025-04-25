@@ -7,7 +7,6 @@
   (describe-symbol (intern (thing-at-point 'symbol))))
 
 (defun enzuru-configure-emacs-lisp-mode ()
-  (eldoc-mode)
   (define-key emacs-lisp-mode-map (kbd "C-c d") 'enzuru-elisp-documentation-search)
   (define-key emacs-lisp-mode-map (kbd "C-c o") 'eval-buffer)
   (define-key emacs-lisp-mode-map (kbd "C-c i") 'describe-symbol))
@@ -35,6 +34,8 @@
   :ensure t
   :hook ((emacs-lisp-mode . package-lint-flymake-setup))
   :defer t)
+
+(add-hook 'elpaca-after-init-hook 'eldoc-mode)
 
 (enzuru-configure-emacs-lisp-mode)
 

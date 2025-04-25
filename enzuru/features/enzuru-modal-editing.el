@@ -1,8 +1,13 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(require 'enzuru-keys)
-
 ;; Functions
+
+(defun enzuru-configure-meow-after-elpaca ()
+  (meow-leader-define-key '("k" . "C-c k"))
+  (meow-leader-define-key '("d" . "C-c d"))
+  (meow-leader-define-key '("o" . "C-c o"))
+  (meow-leader-define-key '("i" . "C-c i"))
+  (global-set-key (kbd "C-c k") 'enzuru-volatile-kill-buffer))
 
 (defun enzuru-configure-lispy ()
   (defun conditionally-enable-lispy ()
@@ -14,11 +19,6 @@
 
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
-
-  (meow-leader-define-key '("k" . "C-c k"))
-  (meow-leader-define-key '("d" . "C-c d"))
-  (meow-leader-define-key '("o" . "C-c o"))
-  (meow-leader-define-key '("i" . "C-c i"))
 
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
@@ -109,6 +109,7 @@
 (defun enzuru-configure-meow ()
   (meow-setup)
   (meow-global-mode 1)
+  (setf meow-use-clipboard t)
   (cl-pushnew '(sly-mrepl-mode . insert) meow-mode-state-list)
   (cl-pushnew '(inferior-emacs-lisp-mode . insert) meow-mode-state-list)
   (cl-pushnew '(eat-mode . insert) meow-mode-state-list)
@@ -134,5 +135,7 @@
          (cider-repl-mode . lispy-mode)
          (clojure-mode . lispy-mode)
          (scheme-mode . lispy-mode)))
+
+(add-hook 'elpaca-after-init-hook 'enzuru-configure-meow-after-elpaca)
 
 (provide 'enzuru-modal-editing)
