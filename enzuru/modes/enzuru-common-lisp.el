@@ -12,7 +12,8 @@
 (defun enzuru-configure-completing-read-sly ()
   (require 'completing-read-sly)
   (define-key lisp-mode-map (kbd "C-c i") 'completing-read-sly)
-  (define-key sly-mode-map (kbd "C-c i") 'completing-read-sly))
+  (add-hook 'sly-mode-hook (lambda ()
+                             (define-key sly-mode-map (kbd "C-c i") 'completing-read-sly))))
 
 (defun enzuru-sly-eval-to-repl ()
   (interactive)
