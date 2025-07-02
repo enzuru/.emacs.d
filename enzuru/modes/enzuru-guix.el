@@ -2,9 +2,6 @@
 
 ;; Functions
 
-(defun enzuru-configure-guix ()
-  (add-hook 'scheme-mode-hook 'guix-devel-mode))
-
 (defun enzuru-upgrade ()
   (interactive)
   (elpaca-pull-all)
@@ -21,12 +18,5 @@
 (defun enzuru-reboot ()
   (interactive)
   (async-shell-command "sudo reboot"))
-
-;; Packages
-
-(use-package guix
-  :ensure t)
-
-(enzuru-configure-guix)
 
 (provide 'enzuru-guix)
