@@ -4,13 +4,15 @@
 
 (defun enzuru-configure-gnus ()
   (setq gnus-search-default-engines '(notmuch)
-        gnus-select-method '(nntp "news.tilde.club"
-                                  (nntp-address "news.tilde.club")
-                                  (nntp-via-address "tilde.institute")
-                                  (nntp-via-rlogin-command "ssh")
-                                  (nntp-via-rlogin-command-switches ("-C"))
-                                  (nntp-netcat-switches ("-w" "15"))
-                                  (nntp-open-connection-function nntp-open-via-rlogin-and-netcat))
+        gnus-select-method '(nnmaildir "maildir"
+                                       (directory "~/mail/me")
+                                       (get-new-mail nil)
+                                       (gnus-search-engine gnus-search-notmuch
+                                                           (remove-prefix "/home/enzuru/mail/me/")
+                                                           (config-file "/home/enzuru/.notmuch-config")))
+        gnus-secondary-select-methods '((nntp "lore.kernel.org"
+                                              (nntp-address "nntp.lore.kernel.org")
+                                              (nntp-via-address "tilde.institute")))
         gnus-large-newsgroup 1000
         gnus-large-ephemeral-newsgroup 1000
         gnus-show-threads t
@@ -31,13 +33,7 @@
         smtpmail-smtp-server "smtp.fastmail.com"
         smtpmail-smtp-service 587
         user-mail-address "me@enzu.ru"
-        user-full-name "Ahmed Khanzada"
-        gnus-secondary-select-methods '((nnmaildir "maildir"
-                                                   (directory "~/mail/me")
-                                                   (get-new-mail nil)
-                                                   (gnus-search-engine gnus-search-notmuch
-                                                                       (remove-prefix "/home/enzuru/mail/me/")
-                                                                       (config-file "/home/enzuru/.notmuch-config")))))
+        user-full-name "Ahmed Khanzada")
   (gnus-add-configuration '(article (horizontal 1.0 (summary .5 point) (article 1.0)))))
 
 (defun enzuru-configure-notmuch ()
