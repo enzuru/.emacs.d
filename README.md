@@ -106,46 +106,46 @@ I don't even have a REPL for these languages, and quite frankly, most of these l
 
 This configuration ships with a great many helpful tools:
 
-| Feature                                                               | Tool                                                                                             |
-|-----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| [Benchmarker](./enzuru/features/enzuru-benchmarks.el)                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                          |
-| [Bug tracker](./enzuru/features/enzuru-bug-tracking.el)               | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                            |
-| [Clipboard](./enzuru/features/enzuru-clipboard.el)                    | [Clipetty](https://github.com/spudlyo/clipetty)                                                  |
-| [Completion (regular buffer)](./enzuru/features/enzuru-completion.el) | [Corfu](https://github.com/minad/corfu)                                                          |
-| [Completion (minibuffer)](./enzuru/features/enzuru-completion.el)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                               |
-| [Dashboard](./enzuru/features/enzuru-dashboard.el)                    | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                  |
-| [Docker client](./enzuru/features/enzuru-docker.el)                   | [docker.el](https://github.com/Silex/docker.el)                                                  |
-| [Documentation searcher](./enzuru/features/enzuru-documentation.el)   | [devdocs](https://github.com/astoff/devdocs.el)                                                  |
-| [Evaluation overlay](./enzuru/features/enzuru-overlay.el)             | [eros](https://github.com/xiongtx/eros)                                                          |
-| [Key binding display](./enzuru/features/enzuru-help.el)               | [which-key](https://elpa.gnu.org/packages/which-key.html)                                        |
-| [Gemini browser](./enzuru/features/enzuru-gemini.el)                  | [Elpher](https://thelambdalab.xyz/elpher/)                                                       |
-| [Go client](./enzuru/features/enzuru-gaming.el)                       | [gnugo.el](https://github.com/emacsmirror/gnugo/)                                                |
-| [HTTP browser](./enzuru/features/enzuru-browser.el)                   | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                              |
-| [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                             |
-| [IRC client](./enzuru/features/enzuru-irc.el)                         | [ERC](https://www.gnu.org/software/emacs/erc.html)                                               |
-| [Kubernetes client](./enzuru/features/enzuru-kubernetes.el)           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                  |
-| [LLM client](./enzuru/features/enzuru-llm.el)                         | [gptel](https://github.com/karthink/gptel)                                                       |
-| [LSP client](./enzuru/features/enzuru-lsp.el)                         | [Eglot](https://github.com/joaotavora/eglot)                                                     |
-| [Mail client](./enzuru/features/enzuru-mail.el)                       | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)            |
-| [Mail indexer](./enzuru/features/enzuru-mail.el)                      | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                |
-| [Modal editor](./enzuru/features/enzuru-modal-editing.el)             | [Meow](https://github.com/meow-edit/meow), [Lispy](https://github.com/abo-abo/lispy)             |
-| [Modeline](./enzuru/features/enzuru-modeline.el)                      | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                  |
-| [MUD client](./enzuru/features/enzuru-gaming.el)                      | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                   |
-| [Music player](./enzuru/features/enzuru-music.el)                     | [Emms](https://www.gnu.org/software/emms/)                                                       |
-| [Music streamer](./enzuru/features/enzuru-music.el)                   | [pianobar.el](https://github.com/agrif/pianobar.el)                                              |
-| [Organization](./enzuru/modes/enzuru-org.el)                          | [org-mode](https://orgmode.org)                                                                  |
-| [Package manager](./enzuru/preferences/enzuru-packages.el)            | [elpaca](https://github.com/progfolio/elpaca)                                                    |
-| [REST client](./enzuru/features/enzuru-rest.el)                       | [restclient.el](https://github.com/pashky/restclient.el)                                         |
-| [Shell](./enzuru/features/enzuru-terminal.el)                         | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                        |
-| [Syntax checker](./enzuru/features/enzuru-syntax-checking.el)         | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html)                      |
-| [Syntax highlighter](./enzuru/features/enzuru-syntax-highlighting.el) | [prism](https://github.com/alphapapa/prism.el)                                                   |
-| [Terminal](./enzuru/features/enzuru-terminal.el)                      | [Eat](https://codeberg.org/akib/emacs-eat/)                                                      |
-| [Undo visualizer](./enzuru/features/enzuru-undo.el)                   | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                        |
-| [Version control](./enzuru/features/enzuru-version-control.el)        | [Magit](https://magit.vc)                                                                        |
-| [Wikipedia editor](./enzuru/features/enzuru-wiki.el)                  | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                          |
-| [Window configuration](./enzuru/preferences/enzuru-frames.el)         | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html) |
-| [Window handling](./enzuru/features/enzuru-movement.el)               | [windmove](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)    |
-| [Workspace manager](./enzuru/features/enzuru-arrangements.el)         | [activities.el](https://github.com/alphapapa/activities.el)                                      |
+| Feature                                                               | Tool                                                                                                                          |
+|-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| [Benchmarker](./enzuru/features/enzuru-benchmarks.el)                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                                                       |
+| [Bug tracker](./enzuru/features/enzuru-bug-tracking.el)               | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                                         |
+| [Clipboard](./enzuru/features/enzuru-clipboard.el)                    | [Clipetty](https://github.com/spudlyo/clipetty)                                                                               |
+| [Completion (regular buffer)](./enzuru/features/enzuru-completion.el) | [Corfu](https://github.com/minad/corfu)                                                                                       |
+| [Completion (minibuffer)](./enzuru/features/enzuru-completion.el)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                                                            |
+| [Dashboard](./enzuru/features/enzuru-dashboard.el)                    | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                               |
+| [Docker client](./enzuru/features/enzuru-docker.el)                   | [docker.el](https://github.com/Silex/docker.el)                                                                               |
+| [Documentation searcher](./enzuru/features/enzuru-documentation.el)   | [devdocs](https://github.com/astoff/devdocs.el)                                                                               |
+| [Evaluation overlay](./enzuru/features/enzuru-overlay.el)             | [eros](https://github.com/xiongtx/eros)                                                                                       |
+| [Key binding display](./enzuru/features/enzuru-help.el)               | [which-key](https://elpa.gnu.org/packages/which-key.html)                                                                     |
+| [Gemini browser](./enzuru/features/enzuru-gemini.el)                  | [Elpher](https://thelambdalab.xyz/elpher/)                                                                                    |
+| [Go client](./enzuru/features/enzuru-gaming.el)                       | [gnugo.el](https://github.com/emacsmirror/gnugo/)                                                                             |
+| [HTTP browser](./enzuru/features/enzuru-browser.el)                   | [EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html)                                                           |
+| [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                                          |
+| [IRC client](./enzuru/features/enzuru-irc.el)                         | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                                            |
+| [Kubernetes client](./enzuru/features/enzuru-kubernetes.el)           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                                               |
+| [LLM client](./enzuru/features/enzuru-llm.el)                         | [gptel](https://github.com/karthink/gptel)                                                                                    |
+| [LSP client](./enzuru/features/enzuru-lsp.el)                         | [Eglot](https://github.com/joaotavora/eglot)                                                                                  |
+| [Mail client](./enzuru/features/enzuru-mail.el)                       | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)                                         |
+| [Mail indexer](./enzuru/features/enzuru-mail.el)                      | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                                             |
+| [Modal editor](./enzuru/features/enzuru-modal-editing.el)             | [Meow](https://github.com/meow-edit/meow), [Lispy](https://github.com/abo-abo/lispy)                                          |
+| [Modeline](./enzuru/features/enzuru-modeline.el)                      | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                                               |
+| [MUD client](./enzuru/features/enzuru-gaming.el)                      | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                                                |
+| [Music player](./enzuru/features/enzuru-music.el)                     | [Emms](https://www.gnu.org/software/emms/)                                                                                    |
+| [Music streamer](./enzuru/features/enzuru-music.el)                   | [pianobar.el](https://github.com/agrif/pianobar.el)                                                                           |
+| [Organization](./enzuru/modes/enzuru-org.el)                          | [org-mode](https://orgmode.org)                                                                                               |
+| [Package manager](./enzuru/preferences/enzuru-packages.el)            | [elpaca](https://github.com/progfolio/elpaca)                                                                                 |
+| [REST client](./enzuru/features/enzuru-rest.el)                       | [restclient.el](https://github.com/pashky/restclient.el)                                                                      |
+| [Shell](./enzuru/features/enzuru-terminal.el)                         | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                                     |
+| [Syntax checker](./enzuru/features/enzuru-syntax-checking.el)         | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html), [flyover](https://github.com/konrad1977/flyover) |
+| [Syntax highlighter](./enzuru/features/enzuru-syntax-highlighting.el) | [prism](https://github.com/alphapapa/prism.el)                                                                                |
+| [Terminal](./enzuru/features/enzuru-terminal.el)                      | [Eat](https://codeberg.org/akib/emacs-eat/)                                                                                   |
+| [Undo visualizer](./enzuru/features/enzuru-undo.el)                   | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                                     |
+| [Version control](./enzuru/features/enzuru-version-control.el)        | [Magit](https://magit.vc)                                                                                                     |
+| [Wikipedia editor](./enzuru/features/enzuru-wiki.el)                  | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                                                       |
+| [Window configuration](./enzuru/preferences/enzuru-frames.el)         | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)                              |
+| [Window handling](./enzuru/features/enzuru-movement.el)               | [windmove](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)                                 |
+| [Workspace manager](./enzuru/features/enzuru-arrangements.el)         | [activities.el](https://github.com/alphapapa/activities.el)                                                                   |
 
 ### Themes
 

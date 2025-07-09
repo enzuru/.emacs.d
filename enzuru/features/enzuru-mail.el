@@ -11,8 +11,7 @@
                                                            (remove-prefix "/home/enzuru/mail/me/")
                                                            (config-file "/home/enzuru/.notmuch-config")))
         gnus-secondary-select-methods '((nntp "lore.kernel.org"
-                                              (nntp-address "nntp.lore.kernel.org")
-                                              (nntp-via-address "tilde.institute")))
+                                              (nntp-address "nntp.lore.kernel.org")))
         gnus-large-newsgroup 1000
         gnus-large-ephemeral-newsgroup 1000
         gnus-show-threads t

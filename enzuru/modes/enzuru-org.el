@@ -1,6 +1,6 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; Configuration
+;; Functions
 
 (defun enzuru-configure-org ()
   (setq org-agenda-files (directory-files "~/" t ".org$" t)
@@ -20,5 +20,10 @@
   :hook ((org-mode . hyperbole-mode)
          (org-mode . enzuru-hook-org-mode))
   :config (enzuru-configure-org))
+
+(use-package org-novelist
+  :defer t
+  :ensure (:host github :repo "sympodius/org-novelist")
+  :custom (org-novelist-automatic-referencing-p t))
 
 (provide 'enzuru-org)

@@ -33,6 +33,11 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
 
+(defun enzuru-configure-flyover ()
+  (setq flyover-background-lightness 25)
+  (setq flyover-levels '(error warning info))
+  (setq flyover-use-theme-colors t))
+
 ;; Configuration
 
 (defun enzuru-configure-consult ()
@@ -163,6 +168,11 @@
 
 (use-package flymake-collection
   :ensure t)
+
+(use-package flyover
+  :ensure (:host github :repo "konrad1977/flyover")
+  :hook ((flymake-mode . flyover-mode))
+  :config (enzuru-configure-flyover))
 
 (use-package marginalia
   :ensure t
