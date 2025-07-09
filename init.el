@@ -79,7 +79,7 @@
 (require 'enzuru-python)
 (require 'enzuru-ruby)
 (require 'enzuru-rust)
-;;(require 'enzuru-scheme)
+(require 'enzuru-scheme)
 (require 'enzuru-shell)
 (require 'enzuru-sql)
 (require 'enzuru-swift)

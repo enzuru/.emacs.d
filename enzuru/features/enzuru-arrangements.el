@@ -97,7 +97,7 @@
   (enzuru-setup-tab ".emacs.d" "init.el" "magit: .emacs.d")
   (enzuru-setup-tab "mail" "*Group*")
   ;; (enzuru-setup-tab "gemini" "*elpher*")
-  (enzuru-setup-tab "geiser" "*Geiser Guile REPL*")
+  ;; (enzuru-setup-tab "geiser" "*Geiser Guile REPL*")
   (enzuru-setup-tab "sly" "*sly-mrepl for sbcl*")
   (tab-bar-select-tab-by-name "hacking"))
 
@@ -120,7 +120,7 @@
   (sly)
   (gnus)
   ;; (elpher)
-  (geiser 'guile)
+  ;; (geiser 'guile)
   (enzuru-arrange-apps))
 
 ;; Packages

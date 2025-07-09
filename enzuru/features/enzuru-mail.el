@@ -12,8 +12,8 @@
                                                            (config-file "/home/enzuru/.notmuch-config")))
         gnus-secondary-select-methods '((nntp "lore.kernel.org"
                                               (nntp-address "nntp.lore.kernel.org")))
-        gnus-large-newsgroup 1000
-        gnus-large-ephemeral-newsgroup 1000
+        gnus-large-newsgroup 5000
+        gnus-large-ephemeral-newsgroup 5000
         gnus-show-threads t
         gnus-thread-indent-level 1
         gnus-thread-hide-subtree t
