@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-syntax-highlighting.el --- Enhanced syntax highlighting -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, syntax, highlighting, prism
+
+;;; Commentary:
+
+;; This module configures enhanced syntax highlighting using Prism
+;; for better code visualization.
+
+;;; Code:
 
 ;; Configuration
 
@@ -17,3 +31,5 @@
   :config (enzuru-configure-prism))
 
 (provide 'enzuru-syntax-highlighting)
+
+;;; enzuru-syntax-highlighting.el ends here

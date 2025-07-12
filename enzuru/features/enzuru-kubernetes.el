@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-kubernetes.el --- Kubernetes tools configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, kubernetes, containers
+
+;;; Commentary:
+
+;; This module configures Kubernetes development tools and documentation.
+
+;;; Code:
 
 ;; Packages
 
@@ -12,3 +25,5 @@
   :defer t)
 
 (provide 'enzuru-kubernetes)
+
+;;; enzuru-kubernetes.el ends here

@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-modal-editing.el --- Modal editing configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, editing, modal, meow, lispy
+
+;;; Commentary:
+
+;; This module configures modal editing using Meow and Lispy for
+;; efficient text manipulation and Lisp editing.
+
+;;; Code:
 
 ;; Functions
 
@@ -141,3 +155,5 @@
 (add-hook 'elpaca-after-init-hook 'enzuru-configure-meow-after-elpaca)
 
 (provide 'enzuru-modal-editing)
+
+;;; enzuru-modal-editing.el ends here

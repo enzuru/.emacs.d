@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-guix.el --- GNU Guix package manager integration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: languages, guix, package-manager, gnu
+
+;;; Commentary:
+
+;; This module provides GNU Guix package manager integration and
+;; system upgrade utilities.
+
+;;; Code:
 
 ;; Functions
 
@@ -20,3 +34,5 @@
   (async-shell-command "sudo reboot"))
 
 (provide 'enzuru-guix)
+
+;;; enzuru-guix.el ends here

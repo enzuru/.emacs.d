@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-irc.el --- IRC client configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: comm, irc
+
+;;; Commentary:
+
+;; This file configures IRC client functionality using ERC.
+;; It provides configuration for connecting to multiple networks via ZNC.
+
+;;; Code:
 
 ;; Configuration
 
@@ -16,10 +30,7 @@
       (cl-remove (buffer-name buffer) in-channels))
 
     (add-hook 'erc-join-hook 'enzuru-channel-push)
-    (add-hook 'erc-part-hook 'enzuru-channel-remove))
-
-)
-
+    (add-hook 'erc-part-hook 'enzuru-channel-remove)))
 
 ;; Packages
 
@@ -51,3 +62,5 @@
                                                 (Tilde "enzuru/tilde" "password"))))))
 
 (provide 'enzuru-irc)
+
+;;; enzuru-irc.el ends here

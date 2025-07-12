@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-openbsd.el --- OpenBSD specific configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: os, openbsd
+
+;;; Commentary:
+
+;; Configuration specific to OpenBSD operating system.
+
+;;; Code:
 
 (setq locate-command "locate"
       inferior-lisp-program "/usr/local/bin/ecl"
@@ -19,3 +32,5 @@
 (find-file "~/org/index.org")
 
 (provide 'enzuru-openbsd)
+
+;;; enzuru-openbsd.el ends here

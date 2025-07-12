@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-keys.el --- Global key bindings configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: keyboard, keys
+
+;;; Commentary:
+
+;; This file configures global key bindings for the enzuru configuration.
+
+;;; Code:
 
 ;; Functions
 
@@ -24,3 +37,5 @@
 ;; (add-hook 'elpaca-after-init-hook 'which-key-mode)
 
 (provide 'enzuru-keys)
+
+;;; enzuru-keys.el ends here

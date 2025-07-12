@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-mail.el --- Email configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, mail, gnus, notmuch
+
+;;; Commentary:
+
+;; This module configures email handling using Gnus and Notmuch for
+;; reading and sending mail.
+
+;;; Code:
 
 ;; Packages
 
@@ -46,3 +60,5 @@
   (notmuch-draft-save-plaintext nil))
 
 (provide 'enzuru-mail)
+
+;;; enzuru-mail.el ends here

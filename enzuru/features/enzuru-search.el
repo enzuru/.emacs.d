@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-search.el --- Code search configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, search, dumb-jump, xref
+
+;;; Commentary:
+
+;; This module configures code search and navigation tools including
+;; Dumb Jump for finding definitions.
+
+;;; Code:
 
 ;; Configuration
 
@@ -16,3 +30,5 @@
   :init (enzuru-initialize-dumb-jump))
 
 (provide 'enzuru-search)
+
+;;; enzuru-search.el ends here

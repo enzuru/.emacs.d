@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-deep-thought.el --- Deep Thought theme configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: themes, faces
+
+;;; Commentary:
+
+;; Configuration for the Deep Thought color theme.
+
+;;; Code:
 
 ;; Configuration
 
@@ -19,3 +32,5 @@
   :config (enzuru-configure-deep-thought-theme))
 
 (provide 'enzuru-deep-thought)
+
+;;; enzuru-deep-thought.el ends here

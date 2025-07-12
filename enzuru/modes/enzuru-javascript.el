@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-javascript.el --- JavaScript programming configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: languages, javascript
+
+;;; Commentary:
+
+;; Configuration for JavaScript programming.
+
+;;; Code:
 
 ;; Configuration
 
@@ -38,3 +51,5 @@
   :mode (("\\.vue\\'" . vue-mode)))
 
 (provide 'enzuru-javascript)
+
+;;; enzuru-javascript.el ends here

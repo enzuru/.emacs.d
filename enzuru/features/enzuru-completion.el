@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-completion.el --- Completion framework configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, completion, corfu, vertico, consult
+
+;;; Commentary:
+
+;; This module configures the completion framework using Vertico, Corfu,
+;; Consult, Cape, and related packages for enhanced completion experience.
+
+;;; Code:
 
 ;; Functions
 
@@ -203,3 +217,5 @@
 (savehist-mode)
 
 (provide 'enzuru-completion)
+
+;;; enzuru-completion.el ends here

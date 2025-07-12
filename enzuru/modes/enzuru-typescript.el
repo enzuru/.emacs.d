@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-typescript.el --- TypeScript programming configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: languages, typescript
+
+;;; Commentary:
+
+;; Configuration for TypeScript programming.
+
+;;; Code:
 
 ;; Configuration
 
@@ -19,3 +32,5 @@
   (typescript-indent-level 2))
 
 (provide 'enzuru-typescript)
+
+;;; enzuru-typescript.el ends here

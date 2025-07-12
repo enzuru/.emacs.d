@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-gui.el --- GUI appearance and theme configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: faces, gui, themes, appearance
+
+;;; Commentary:
+
+;; This module configures GUI appearance including minimalistic settings
+;; and operating system-specific theme selection.
+
+;;; Code:
 
 ;; Functions
 
@@ -23,3 +37,5 @@
 (enzuru-configure-operating-systems)
 
 (provide 'enzuru-gui)
+
+;;; enzuru-gui.el ends here

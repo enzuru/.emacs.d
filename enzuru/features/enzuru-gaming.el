@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-gaming.el --- Gaming and MUD/MUSH configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: games, mud, mush, gnugo
+
+;;; Commentary:
+
+;; This module configures gaming packages including GNU Go and MU for
+;; connecting to MUDs and MUSHes.
+
+;;; Code:
 
 ;; Functions
 
@@ -23,3 +37,5 @@
   (gnugo-xpms (gnugo-imgen-create-xpms 19)))
 
 (provide 'enzuru-gaming)
+
+;;; enzuru-gaming.el ends here

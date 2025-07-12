@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-terminal.el --- Terminal and shell configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, terminal, shell, eshell, eat
+
+;;; Commentary:
+
+;; This module configures terminal emulators and shell environments
+;; including Eshell and EAT.
+
+;;; Code:
 
 ;; Configuration
 
@@ -23,3 +37,5 @@
 (enzuru-configure-eshell)
 
 (provide 'enzuru-terminal)
+
+;;; enzuru-terminal.el ends here

@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-php.el --- PHP programming configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: languages, php
+
+;;; Commentary:
+
+;; Configuration for PHP programming.
+
+;;; Code:
 
 ;; Functions
 
@@ -16,3 +29,5 @@
   :defer t)
 
 (provide 'enzuru-php)
+
+;;; enzuru-php.el ends here

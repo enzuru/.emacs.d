@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-help.el --- Help system configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, help, which-key, helpful
+
+;;; Commentary:
+
+;; This module configures the help system including Which-Key for
+;; key binding discovery and Helpful for enhanced help buffers.
+
+;;; Code:
 
 ;; Functions
 
@@ -26,3 +40,5 @@
 (add-hook 'elpaca-after-init-hook 'enzuru-configure-which-key)
 
 (provide 'enzuru-help)
+
+;;; enzuru-help.el ends here

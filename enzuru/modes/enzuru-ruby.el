@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-ruby.el --- Ruby programming configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: languages, ruby
+
+;;; Commentary:
+
+;; Configuration for Ruby programming.
+
+;;; Code:
 
 ;; Configuration
 
@@ -40,3 +53,5 @@
 (enzuru-configure-ruby-ts-mode)
 
 (provide 'enzuru-ruby)
+
+;;; enzuru-ruby.el ends here

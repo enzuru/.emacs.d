@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-frames.el --- Frame and window preferences configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, frames, windows
+
+;;; Commentary:
+
+;; Configuration for frame and window management preferences.
+
+;;; Code:
 
 ;; Configuration
 
@@ -21,3 +34,5 @@
 (enzuru-configure-winner-mode)
 
 (provide 'enzuru-frames)
+
+;;; enzuru-frames.el ends here

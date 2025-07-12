@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-mac.el --- macOS specific configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: os, macos
+
+;;; Commentary:
+
+;; Configuration specific to macOS operating system.
+
+;;; Code:
 
 (require 'enzuru-dash)
 
@@ -39,3 +52,5 @@
   :config (enzuru-configure-osx-browse))
 
 (provide 'enzuru-mac)
+
+;;; enzuru-mac.el ends here

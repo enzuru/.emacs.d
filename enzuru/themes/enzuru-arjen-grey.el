@@ -1,4 +1,17 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-arjen-grey.el --- Arjen Grey theme configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: themes, faces
+
+;;; Commentary:
+
+;; Configuration for the Arjen Grey color theme.
+
+;;; Code:
 
 ;; Configuration
 
@@ -21,3 +34,5 @@
   :config (enzuru-configure-arjen-grey-theme))
 
 (provide 'enzuru-arjen-grey)
+
+;;; enzuru-arjen-grey.el ends here

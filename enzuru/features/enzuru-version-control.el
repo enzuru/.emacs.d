@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-version-control.el --- Version control configuration -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, version-control, git, magit
+
+;;; Commentary:
+
+;; This module configures version control tools including Magit for
+;; Git integration.
+
+;;; Code:
 
 ;; Packages
 
@@ -18,3 +32,5 @@
   (global-auto-revert-mode t))
 
 (provide 'enzuru-version-control)
+
+;;; enzuru-version-control.el ends here

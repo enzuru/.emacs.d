@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-hyperlinking.el --- Hyperbole hyperlinking system -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: convenience, hypermedia, hyperbole, linking
+
+;;; Commentary:
+
+;; This module configures the Hyperbole hypermedia system for
+;; advanced linking and action capabilities.
+
+;;; Code:
 
 ;; Configuration
 
@@ -16,3 +30,5 @@
   :config (enzuru-configure-hyperbole))
 
 (provide 'enzuru-hyperlinking)
+
+;;; enzuru-hyperlinking.el ends here

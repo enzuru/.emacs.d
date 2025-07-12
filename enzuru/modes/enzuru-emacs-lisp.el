@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-emacs-lisp.el --- Emacs Lisp programming support -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: languages, lisp, emacs-lisp, programming
+
+;;; Commentary:
+
+;; This module configures Emacs Lisp programming support with package
+;; development tools, linting, and enhanced documentation features.
+
+;;; Code:
 
 ;; Functions
 
@@ -40,3 +54,5 @@
 (enzuru-configure-emacs-lisp-mode)
 
 (provide 'enzuru-emacs-lisp)
+
+;;; enzuru-emacs-lisp.el ends here

@@ -1,4 +1,18 @@
-;; -*- coding: utf-8; lexical-binding: t -*-
+;;; enzuru-common-lisp.el --- Common Lisp programming language support -*- coding: utf-8; lexical-binding: t -*-
+
+;; Copyright (C) 2025
+
+;; Author: enzuru
+;; Version: 1.0
+;; Package-Requires: ((emacs "30"))
+;; Keywords: languages, lisp, common-lisp, programming, sly
+
+;;; Commentary:
+
+;; This module configures Common Lisp programming language support
+;; with SLY for REPL interaction and enhanced development tools.
+
+;;; Code:
 
 ;; Functions
 
@@ -49,3 +63,5 @@
 (add-hook 'elpaca-after-init-hook 'enzuru-configure-completing-read-sly)
 
 (provide 'enzuru-common-lisp)
+
+;;; enzuru-common-lisp.el ends here
