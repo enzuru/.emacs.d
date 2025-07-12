@@ -20,7 +20,7 @@
 (require 'enzuru-dashboard)
 (require 'enzuru-debugging)
 (require 'enzuru-documentation)
-(require 'enzuru-llm)
+;; (require 'enzuru-llm)
 (require 'enzuru-gaming)
 (require 'enzuru-gemini)
 (require 'enzuru-help)
@@ -130,7 +130,6 @@
 ;; Local customization
 
 (add-hook 'elpaca-after-init-hook
-          (lambda ()
-            (if (and (file-exists-p "~/.emacs.d/local.el")
-                     (not (boundp 'enzuru-loaded-local)))
-                (load "~/.emacs.d/local.el"))))
+          (lambda () (if (and (file-exists-p "~/.emacs.d/local.el")
+                              (not (boundp 'enzuru-loaded-local)))
+                         (load "~/.emacs.d/local.el"))))

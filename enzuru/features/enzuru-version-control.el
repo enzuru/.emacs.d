@@ -8,6 +8,10 @@
 
 ;; Packages
 
+(use-package transient
+  :ensure t
+  :defer t)
+
 (use-package magit
   :ensure t
   :defer t
