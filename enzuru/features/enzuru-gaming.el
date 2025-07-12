@@ -12,10 +12,12 @@
 ;; Packages
 
 (use-package mu
-  :ensure (:host github :repo "kensanata/mu"))
+  :ensure (:host github :repo "kensanata/mu")
+  :defer t)
 
 (use-package gnugo
   :ensure (:host github :repo "emacsmirror/gnugo" :branch "master")
+  :defer t
   :config (enzuru-configure-gnugo)
   :custom
   (gnugo-xpms (gnugo-imgen-create-xpms 19)))

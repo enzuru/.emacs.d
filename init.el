@@ -20,7 +20,6 @@
 (require 'enzuru-dashboard)
 (require 'enzuru-debugging)
 (require 'enzuru-documentation)
-;; (require 'enzuru-llm)
 (require 'enzuru-large-language-models)
 (require 'enzuru-gaming)
 (require 'enzuru-gemini)

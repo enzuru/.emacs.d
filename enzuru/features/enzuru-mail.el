@@ -3,6 +3,7 @@
 ;; Packages
 
 (use-package gnus
+  :defer t
   :custom
   (gnus-search-default-engines '(notmuch))
   (gnus-select-method '(nnmaildir "maildir"

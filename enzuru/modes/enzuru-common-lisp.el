@@ -43,6 +43,7 @@
 
 (use-package completing-read-sly
   :ensure (:host github :repo "enzuru/completing-read-sly")
+  :defer t
   :config (enzuru-configure-completing-read-sly))
 
 (add-hook 'elpaca-after-init-hook 'enzuru-configure-completing-read-sly)
