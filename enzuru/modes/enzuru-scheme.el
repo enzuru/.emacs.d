@@ -21,7 +21,7 @@
 ;; Packages
 
 (use-package geiser-guile
- :ensure (:host github :repo "emacs-geiser/guile")
+ :ensure (:host gitlab :repo "emacs-geiser/guile")
  :config (enzuru-configure-geiser-guile))
 
 (use-package completing-read-geiser

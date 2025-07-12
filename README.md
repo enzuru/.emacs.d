@@ -124,7 +124,7 @@ This configuration ships with a great many helpful tools:
 | [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                                          |
 | [IRC client](./enzuru/features/enzuru-irc.el)                         | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                                            |
 | [Kubernetes client](./enzuru/features/enzuru-kubernetes.el)           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                                               |
-| [LLM client](./enzuru/features/enzuru-llm.el)                         | [gptel](https://github.com/karthink/gptel)                                                                                    |
+| [LLM client](./enzuru/features/enzuru-llm.el)                         | [gptel](https://github.com/karthink/gptel), [claude-code.el](https://github.com/stevemolitor/claude-code.el)                  |
 | [LSP client](./enzuru/features/enzuru-lsp.el)                         | [Eglot](https://github.com/joaotavora/eglot)                                                                                  |
 | [Mail client](./enzuru/features/enzuru-mail.el)                       | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)                                         |
 | [Mail indexer](./enzuru/features/enzuru-mail.el)                      | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                                             |
