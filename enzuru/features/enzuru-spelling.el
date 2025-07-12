@@ -2,9 +2,6 @@
 
 ;; Packages
 
-(use-package company-spell
-  :ensure t)
-
 (use-package flymake-aspell
   :ensure t
   :hook ((text-mode-hook . flymake-aspell-setup)))
