@@ -4,25 +4,25 @@
 
 (defun enzuru-configure-emms ()
   (emms-all)
-  (setq emms-player-list '(emms-player-vlc)
-        emms-source-file-default-directory "~/music/")
   (emms-add-directory-tree "~/music/"))
 
-(defun enzuru-configure-pianobar ()
-  (setq pianobar-username "lenzuru@gmail.com"
-        pianobar-station "66"
-        pianobar-enable-modeline nil))
 
 ;; Packages
 
 (use-package emms
   :ensure t
   :defer t
+  :custom
+  (emms-player-list '(emms-player-vlc))
+  (emms-source-file-default-directory "~/music/")
   :config (enzuru-configure-emms))
 
 (use-package pianobar
   :ensure t
   :defer t
-  :config (enzuru-configure-pianobar))
+  :custom
+  (pianobar-username "lenzuru@gmail.com")
+  (pianobar-station "66")
+  (pianobar-enable-modeline nil))
 
 (provide 'enzuru-music)

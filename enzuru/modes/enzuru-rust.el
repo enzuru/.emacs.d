@@ -10,8 +10,6 @@
 ;; (defun enzuru-configure-rustic ()
 ;;   (rustic-doc-setup))
 
-(defun enzuru-configure-rust-playground ()
-  (setf rust-playground-basedir "~/"))
 
 ;; (defun enzuru-rust-search-doc ()
 ;;   (rustic-doc-search (intern (thing-at-point 'word))))
@@ -24,8 +22,9 @@
 
 (use-package rust-playground
   :ensure t
-  :config (enzuru-configure-rust-playground)
-  :defer t)
+  :defer t
+  :custom
+  (rust-playground-basedir "~/"))
 
 ;; (use-package rustic
 ;;   :ensure t

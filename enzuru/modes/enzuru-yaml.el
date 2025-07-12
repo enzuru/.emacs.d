@@ -2,14 +2,13 @@
 
 ;; Configuration
 
-(defun enzuru-configure-yaml-mode ()
-  (setq yaml-indent-offset 2))
 
 ;; Packages
 
 (use-package yaml-mode
   :ensure t
   :defer t
-  :config (enzuru-configure-yaml-mode))
+  :custom
+  (yaml-indent-offset 2))
 
 (provide 'enzuru-yaml)

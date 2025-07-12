@@ -3,7 +3,6 @@
 ;; Functions
 
 (defun enzuru-configure-gnugo ()
-  (setf gnugo-xpms (gnugo-imgen-create-xpms 19))
   (add-hook 'gnugo-start-game-hook (lambda () (gnugo-image-display-mode))))
 
 (defun enzuru-load-mu ()
@@ -16,7 +15,9 @@
   :ensure (:host github :repo "kensanata/mu"))
 
 (use-package gnugo
+  :ensure (:host github :repo "emacsmirror/gnugo" :branch "master")
   :config (enzuru-configure-gnugo)
-  :ensure (:host github :repo "emacsmirror/gnugo" :branch "master"))
+  :custom
+  (gnugo-xpms (gnugo-imgen-create-xpms 19)))
 
 (provide 'enzuru-gaming)

@@ -3,9 +3,7 @@
 ;; Functions
 
 (defun enzuru-configure-cider ()
-  (cider-auto-test-mode 1)
-  (setq cider-test-show-report-on-success t)
-  (setq cider-session-name-template "%J:%h"))
+  (cider-auto-test-mode 1))
 
 (defun enzuru-configure-completing-read-cider ()
   (require 'completing-read-cider)
@@ -21,6 +19,9 @@
 (use-package cider
   :ensure t
   :defer t
+  :custom
+  (cider-test-show-report-on-success t)
+  (cider-session-name-template "%J:%h")
   :config (enzuru-configure-cider)
   :bind (:map clojure-mode-map
               ("C-c d" . cider-doc)

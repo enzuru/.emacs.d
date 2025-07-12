@@ -1,66 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; Initialization
-
-(defun enzuru-initialize-consult ()
-  (setq register-preview-delay 0.5
-        register-preview-function #'consult-register-format)
-  (advice-add #'register-preview :override #'consult-register-window)
-  (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref))
-
-(defun enzuru-initialize-emacs ()
-  (defun crm-indicator (args)
-    (cons (format "[CRM%s] %s"
-                  (replace-regexp-in-string
-                   "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
-                   crm-separator)
-                  (car args))
-          (cdr args)))
-  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
-  (setq minibuffer-prompt-properties '(read-only t cursor-intangible t face minibuffer-prompt))
-  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
-  (setq enable-recursive-minibuffers t)
-  (setq completion-cycle-threshold 3)
-  (setq tab-always-indent 'complete))
-
-(defun enzuru-initialize-embark ()
-  (setq prefix-help-command #'embark-prefix-help-command)
-  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target))
-
-(defun enzuru-initialize-orderless ()
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
-
-(defun enzuru-configure-flyover ()
-  (setq flyover-background-lightness 25)
-  (setq flyover-levels '(error warning info))
-  (setq flyover-use-theme-colors t))
-
-;; Configuration
-
-(defun enzuru-configure-consult ()
-  (consult-customize consult-theme :preview-key '(:debounce 0.2 any)
-                     consult-ripgrep consult-git-grep consult-grep
-                     consult-bookmark consult-recent-file consult-xref
-                     consult--source-bookmark consult--source-file-register
-                     consult--source-recent-file consult--source-project-recent-file
-                     :preview-key '(:debounce 0.4 any))
-  (setq consult-narrow-key "<"))
-
-(defun enzuru-configure-corfu ()
-  (corfu-popupinfo-mode 1))
-
-(defun enzuru-configure-corfu-terminal ()
-  (unless (display-graphic-p)
-    (corfu-terminal-mode +1)))
-
-(defun enzuru-configure-embark ()
-  (add-to-list 'display-buffer-alist
-               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*" nil
-                 (window-parameters (mode-line-format . none)))))
-
 ;; Packages
 
 (use-package cape
@@ -128,8 +67,21 @@
          ("M-s" . consult-history)
          ("M-r" . consult-history))
   :hook (completion-list-mode . consult-preview-at-point-mode)
-  :init (enzuru-initialize-consult)
-  :config (enzuru-configure-consult))
+  :custom
+  (register-preview-delay 0.5)
+  (register-preview-function #'consult-register-format)
+  (xref-show-xrefs-function #'consult-xref)
+  (xref-show-definitions-function #'consult-xref)
+  (consult-narrow-key "<")
+  :init
+  (advice-add #'register-preview :override #'consult-register-window)
+  :config
+  (consult-customize consult-theme :preview-key '(:debounce 0.2 any)
+                     consult-ripgrep consult-git-grep consult-grep
+                     consult-bookmark consult-recent-file consult-xref
+                     consult--source-bookmark consult--source-file-register
+                     consult--source-recent-file consult--source-project-recent-file
+                     :preview-key '(:debounce 0.4 any)))
 
 (use-package consult-ag
   :ensure t
@@ -148,7 +100,7 @@
   ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
   ;; (corfu-scroll-margin 5)        ;; Use scroll margin
   :init (global-corfu-mode)
-  :config (enzuru-configure-corfu))
+  :config (corfu-popupinfo-mode 1))
 
 (use-package embark
   :ensure t
@@ -156,8 +108,14 @@
          ("C-;" . embark-dwim)
          ("C-h b" . embark-bindings)
          ("C-h B" . embark-bindings))
-  :init (enzuru-initialize-embark)
-  :config (enzuru-configure-embark))
+  :custom
+  (prefix-help-command #'embark-prefix-help-command)
+  :init
+  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+  :config
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*" nil
+                 (window-parameters (mode-line-format . none)))))
 
 (use-package embark-consult
   :ensure t
@@ -172,7 +130,10 @@
 (use-package flyover
   :ensure (:host github :repo "konrad1977/flyover")
   :hook ((flymake-mode . flyover-mode))
-  :config (enzuru-configure-flyover))
+  :custom
+  (flyover-background-lightness 25)
+  (flyover-levels '(error warning info))
+  (flyover-use-theme-colors t))
 
 (use-package marginalia
   :ensure t
@@ -182,11 +143,29 @@
 
 (use-package orderless
   :ensure t
-  :init (enzuru-initialize-orderless))
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package vertico
   :ensure t
   :init (vertico-mode))
+
+(defun crm-indicator (args)
+  (cons (format "[CRM%s] %s"
+                (replace-regexp-in-string
+                 "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'"
+                 crm-separator)
+                (car args))
+        (cdr args)))
+
+(advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+(setq minibuffer-prompt-properties '(read-only t cursor-intangible t face minibuffer-prompt))
+(add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+(setq enable-recursive-minibuffers t)
+(setq completion-cycle-threshold 3)
+(setq tab-always-indent 'complete)
 
 (savehist-mode)
 

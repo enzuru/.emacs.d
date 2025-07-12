@@ -2,15 +2,14 @@
 
 ;; Configuration
 
-(defun enzuru-configure-web-mode ()
-  (setq web-mode-markup-indent-offset 2
-        web-mode-code-indent-offset 2))
 
 ;; Packages
 
 (use-package web-mode
   :ensure t
-  :config (enzuru-configure-web-mode)
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-code-indent-offset 2)
   :mode (("\\.twig$" . web-mode)
          ("\\.erb$" . web-mode)))
 

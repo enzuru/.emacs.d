@@ -2,15 +2,14 @@
 
 ;; Functions
 
-(defun enzuru-configure-php-mode ()
-  (setq php-mode-force-pear 1))
 
 ;; Packages
 
 (use-package php-mode
   :ensure t
   :mode (("\.php$" . php-mode))
-  :config (enzuru-configure-php-mode))
+  :custom
+  (php-mode-force-pear 1))
 
 (use-package psysh
   :ensure t

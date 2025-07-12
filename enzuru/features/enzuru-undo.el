@@ -1,8 +1,7 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
 (defun enzuru-configure-undo-tree ()
-  (global-undo-tree-mode)
-  (setq undo-tree-auto-save-history nil))
+  (global-undo-tree-mode))
 
 ;; Packages
 
@@ -10,6 +9,8 @@
   :ensure t
   :diminish undo-tree-mode
   :bind (("C-c u" . undo-tree-visualize))
+  :custom
+  (undo-tree-auto-save-history nil)
   :config (enzuru-configure-undo-tree))
 
 (provide 'enzuru-undo)

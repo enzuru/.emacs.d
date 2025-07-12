@@ -14,7 +14,6 @@
     (when (eq this-command 'eval-expression)
       (lispy-mode 1)))
   (add-hook 'minibuffer-setup-hook 'conditionally-enable-lispy)
-  (setf lispy-eval-display-style "overlay")
   (cl-pushnew 'cider lispy-compat))
 
 (defun meow-setup ()
@@ -109,7 +108,6 @@
 (defun enzuru-configure-meow ()
   (meow-setup)
   (meow-global-mode 1)
-  (setf meow-use-clipboard t)
   (cl-pushnew '(sly-mrepl-mode . insert) meow-mode-state-list)
   (cl-pushnew '(inferior-emacs-lisp-mode . insert) meow-mode-state-list)
   (cl-pushnew '(eat-mode . insert) meow-mode-state-list)
@@ -119,13 +117,17 @@
 ;; Packages
 
 (use-package meow
-  :config (enzuru-configure-meow)
-  :ensure t)
+  :ensure t
+  :custom
+  (meow-use-clipboard t)
+  :config (enzuru-configure-meow))
 
 (use-package lispy
-  :config (enzuru-configure-lispy)
-  :bind (("C-y" . consult-yank-from-kill-ring))
   :ensure (:host github :repo "enzuru/lispy")
+  :bind (("C-y" . consult-yank-from-kill-ring))
+  :custom
+  (lispy-eval-display-style "overlay")
+  :config (enzuru-configure-lispy)
   :hook ((emacs-lisp-mode . lispy-mode)
          (ielm-mode . lispy-mode)
          (lisp-mode . lispy-mode)

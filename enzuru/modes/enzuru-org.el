@@ -2,12 +2,6 @@
 
 ;; Functions
 
-(defun enzuru-configure-org ()
-  (setq org-agenda-files (directory-files "~/" t ".org$" t)
-        org-log-done t
-        org-src-fontify-natively t
-        org-startup-folded nil))
-
 (defun enzuru-hook-org-mode ()
   ;; (setq-local completion-at-point-functions (mapcar #'cape-company-to-capf (list #'company-spell)))
   )
@@ -19,7 +13,11 @@
   :defer t
   :hook ((org-mode . hyperbole-mode)
          (org-mode . enzuru-hook-org-mode))
-  :config (enzuru-configure-org))
+  :custom
+  (org-agenda-files (directory-files "~/" t ".org$" t))
+  (org-log-done t)
+  (org-src-fontify-natively t)
+  (org-startup-folded nil))
 
 (use-package org-novelist
   :defer t

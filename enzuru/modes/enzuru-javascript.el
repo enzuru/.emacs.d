@@ -2,11 +2,6 @@
 
 ;; Configuration
 
-(defun enzuru-configure-js2-mode ()
-  (setq-default js2-basic-offset 2)
-  (setq js2-strict-trailing-comma-warning nil
-        js2-strict-missing-semi-warning nil
-        js-indent-level 2))
 
 (defun enzuru-configure-mmm-mode ()
   (add-hook 'mmm-mode-hook
@@ -22,7 +17,11 @@
 (use-package js2-mode
   :ensure t
   :defer t
-  :config (enzuru-configure-js2-mode))
+  :custom
+  (js2-basic-offset 2)
+  (js2-strict-trailing-comma-warning nil)
+  (js2-strict-missing-semi-warning nil)
+  (js-indent-level 2))
 
 (use-package mmm-mode
   :ensure t

@@ -4,8 +4,7 @@
 
 (defun enzuru-configure-activities ()
   (activities-mode)
-  (activities-tabs-mode)
-  (setq activities-bookmark-store t))
+  (activities-tabs-mode))
 
 (defun enzuru-tab-exists-p (tab-name)
   "Check if a tab exists with the given TAB-NAME."
@@ -127,6 +126,8 @@
 
 (use-package activities
   :ensure (:host github :repo "alphapapa/activities.el")
-  :config (enzuru-configure-activities))
+  :config (enzuru-configure-activities)
+  :custom
+  (activities-bookmark-store t))
 
 (provide 'enzuru-arrangements)

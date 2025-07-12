@@ -6,8 +6,6 @@
   (tide-setup)
   (tide-hl-identifier-mode +1))
 
-(defun enzuru-configure-typescript-ts-mode ()
-  (setq-default typescript-indent-level 2))
 
 ;; Packages
 
@@ -17,6 +15,7 @@
 
 (use-package typescript-ts-mode
   :defer t
-  :config (enzuru-configure-typescript-ts-mode))
+  :custom
+  (typescript-indent-level 2))
 
 (provide 'enzuru-typescript)

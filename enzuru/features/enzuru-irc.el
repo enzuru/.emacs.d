@@ -18,27 +18,22 @@
     (add-hook 'erc-join-hook 'enzuru-channel-push)
     (add-hook 'erc-part-hook 'enzuru-channel-remove))
 
-  (setq erc-nick "enzuru"
-        erc-user-full-name "enzu.ru"
-        erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306")
-        erc-hide-timestamps t
-        erc-track-position-in-mode-line nil
-        erc-join-buffer 'bury
-        erc-track-minor-mode nil
-        erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
-                                  "324" "329" "332" "333" "353" "477")))
+)
 
-(defun enzuru-configure-znc ()
-  (setq znc-detach-on-kill nil
-        znc-servers
-        '(("enzuru.znchost.com" 4000 t ((Libera "enzuru/liberachat" "password")
-                                        (OFTC "enzuru/oftc" "password")
-                                        (Tilde "enzuru/tilde" "password"))))))
 
 ;; Packages
 
 (use-package erc
   :ensure t
+  :custom
+  (erc-nick "enzuru")
+  (erc-user-full-name "enzu.ru")
+  (erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306"))
+  (erc-hide-timestamps t)
+  (erc-track-position-in-mode-line nil)
+  (erc-join-buffer 'bury)
+  (erc-track-minor-mode nil)
+  (erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "324" "329" "332" "333" "353" "477"))
   :config (enzuru-configure-erc))
 
 (use-package erc-hl-nicks
@@ -49,6 +44,10 @@
 (use-package znc
   :ensure t
   :after erc
-  :config (enzuru-configure-znc))
+  :custom
+  (znc-detach-on-kill nil)
+  (znc-servers '(("enzuru.znchost.com" 4000 t ((Libera "enzuru/liberachat" "password")
+                                                (OFTC "enzuru/oftc" "password")
+                                                (Tilde "enzuru/tilde" "password"))))))
 
 (provide 'enzuru-irc)
