@@ -19,6 +19,7 @@
 (require 'enzuru-completion)
 (require 'enzuru-dashboard)
 (require 'enzuru-debugging)
+(require 'enzuru-digital-garden)
 (require 'enzuru-documentation)
 (require 'enzuru-large-language-models)
 (require 'enzuru-gaming)
