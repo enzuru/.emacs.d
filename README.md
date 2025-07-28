@@ -22,6 +22,8 @@ When I was starting off with Emacs, other people's customizations were deeply he
 
 Where possible, the documentation directly links to the Emacs Lisp files that implement the mode or feature. Click around.
 
+Using [org-roam-ui](https://github.com/org-roam/org-roam-ui), you can [navigate a tree visualizing](https://enzuru.github.io/lisp-user-space/) how my [Lisp user space](https://github.com/enzuru) tools work together on the [GNU operating system](https://gnu.org).
+
 ## Requirements
 
 This config makes extensive use of language servers and tree-sitter grammars. Most of my best supported languages will try to load a language server or tree-sitter grammar. If it fails to, it will warn you and give you a chance to install what is missing.
