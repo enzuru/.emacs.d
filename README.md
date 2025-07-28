@@ -247,7 +247,3 @@ When in Meow's insert mode, prepend with `C-c`. When in Meow's keypad mode, prep
 Everything is very organized in the `enzuru` folder by feature, mode, preference, setup, operating system, and theme. While this repo should work immediately for you on a `git pull`, it's obviously a very personalized setup and many things won't appeal to you. If I were you, I would first take a look at my `init.el` and then pick a topical elisp file from there.
 
 Happy hacking!
-
-## License
-
-Licensed under the GPLv3; copyright is assigned to my eponymous charity [enzu.ru](https://enzu.ru)
