@@ -30,10 +30,11 @@
   (global-set-key (kbd "C-c <left>") 'previous-buffer)
   (global-set-key (kbd "C-c <right>") 'next-buffer)
   (global-set-key (kbd "C-c <up>") 'beginning-of-buffer)
-  (global-set-key (kbd "C-c <down>") 'end-of-buffer)
-  (enzuru-configure-completing-read-sly))
+  (global-set-key (kbd "C-c <down>") 'end-of-buffer))
 
+(enzuru-set-global-keys)
 (add-hook 'elpaca-after-init-hook 'enzuru-set-global-keys)
+(add-hook 'elpaca-after-init-hook 'enzuru-configure-completing-read-sly)
 ;; (add-hook 'elpaca-after-init-hook 'which-key-mode)
 
 (provide 'enzuru-keys)
