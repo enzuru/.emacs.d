@@ -20,6 +20,10 @@
   (emms-all)
   (emms-add-directory-tree "~/music/"))
 
+(defun enzuru-configure-pianobar ()
+  (setq pianobar-username "lenzuru@gmail.com")
+  (setq pianobar-station "66")
+  (setq pianobar-enable-modeline nil))
 
 ;; Packages
 
@@ -34,10 +38,7 @@
 (use-package pianobar
   :ensure t
   :defer t
-  :custom
-  (pianobar-username "lenzuru@gmail.com")
-  (pianobar-station "66")
-  (pianobar-enable-modeline nil))
+  :config (enzuru-configure-pianobar))
 
 (provide 'enzuru-music)
 

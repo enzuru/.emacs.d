@@ -16,8 +16,12 @@
 
 ;; Configuration
 
+(defun enzuru-disable-whitespace-hook ()
+  (remove-hook 'before-save-hook #'whitespace-cleanup t))
+
 (defun enzuru-configure-c-ts-mode ()
-  (add-hook 'c-mode-hook 'eglot-ensure)
+  (add-hook 'c-ts-mode-hook 'eglot-ensure)
+  (add-hook 'c-ts-mode-hook #'enzuru-disable-whitespace-hook)
   (setq c-default-style "linux"))
 
 (defun enzuru-configure-semantic ()

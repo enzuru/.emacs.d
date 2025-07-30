@@ -17,6 +17,8 @@
 ;; Configuration
 
 (defun enzuru-configure-erc ()
+  (setq erc-track-position-in-mode-line nil)
+  (setq erc-track-minor-mode nil)
   (add-to-list 'erc-modules 'completion)
   (let ((in-channels '())
         (total-channels 13))
@@ -41,9 +43,7 @@
   (erc-user-full-name "enzu.ru")
   (erc-hide-list '("JOIN" "PART" "QUIT" "332" "333" "353" "324" "003" "329" "301" "305" "306"))
   (erc-hide-timestamps t)
-  (erc-track-position-in-mode-line nil)
   (erc-join-buffer 'bury)
-  (erc-track-minor-mode nil)
   (erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "324" "329" "332" "333" "353" "477"))
   :config (enzuru-configure-erc))
 
