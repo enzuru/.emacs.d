@@ -22,7 +22,8 @@
 
 (use-package dashboard
   :ensure t
-  :config (enzuru-configure-dashboard))
+  :config (enzuru-configure-dashboard)
+  :custom (inhibit-startup-screen t))
 
 (provide 'enzuru-dashboard)
 
