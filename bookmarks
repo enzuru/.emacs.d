@@ -15,10 +15,9 @@
  (location . "gemini://medusae.space/")
  (handler . elpher-bookmark-jump))
 ("Gemini"
- (position . 563)
- (location . "gemini://gemini.circumlunar.space/")
- (handler . elpher-bookmark-jump)
- (annotation . "Midnight Pub"))
+ (position . 1)
+ (location . "gemini://geminiprotocol.net/")
+ (handler . elpher-bookmark-jump))
 ("Spacewalk"
  (position . 546)
  (location . "gemini://rawtext.club/~sloum/spacewalk.gmi")
