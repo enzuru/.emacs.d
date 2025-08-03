@@ -19,6 +19,8 @@
       mouse-wheel-progressive-speed nil
       mouse-wheel-follow-mouse 't)
 
+(pixel-scroll-precision-mode)
+
 (provide 'enzuru-scrolling)
 
 ;;; enzuru-scrolling.el ends here
