@@ -19,8 +19,7 @@
 (defun enzuru-configure-cape ()
   (defun enzuru-setup-human-language-completion ()
     (setq-local completion-at-point-functions
-                (list (cape-company-to-capf #'company-spell)
-                      #'cape-dict
+                (list #'cape-dict
                       #'cape-dabbrev
                       #'cape-file
                       #'cape-history
@@ -61,7 +60,10 @@
 
 (use-package cape
   :ensure t
-  :config (enzuru-configure-cape))
+  :config (enzuru-configure-cape)
+  :custom (cape-dict-file (list
+                           (concat user-emacs-directory "dict/english.txt")
+                           (concat user-emacs-directory "dict/portuguese.txt"))))
 
 (use-package consult
   :ensure t
@@ -165,8 +167,8 @@
   :ensure t
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
-(use-package eldoc
-  :ensure t)
+;; (use-package eldoc
+;;   :ensure t)
 
 (use-package flymake-collection
   :ensure t)
@@ -195,9 +197,6 @@
 (use-package vertico
   :ensure t
   :init (vertico-mode))
-
-(use-package company-spell
-  :ensure t)
 
 (defun crm-indicator (args)
   (cons (format "[CRM%s] %s"
