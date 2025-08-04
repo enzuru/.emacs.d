@@ -17,7 +17,7 @@
 
 (defun enzuru-configure-molokai-theme ()
   (load-theme 'molokai t)
-  (sml/apply-theme 'respectful))
+  (sml/apply-theme 'dark))
 
 ;; Packages
 
