@@ -169,6 +169,15 @@ There are many beautiful theme families for you to enjoy:
 - [timu-spacegrey](https://gitlab.com/aimebertrand/timu-spacegrey-theme)
 - [zenburn](https://github.com/bbatsov/zenburn-emacs)
 
+## Languages
+
+I currently provide spellchecking for:
+
+- English
+- Portuguese
+
+These dictionaries are stored in the [dict](https://github.com/enzuru/.emacs.d/tree/master/dict) folder.
+
 ## Keystrokes
 
 This is a modal editing setup that uses two different modal editors: Meow and Lispy. Lispy is only for Lisp languages.
