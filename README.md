@@ -116,7 +116,7 @@ This configuration ships with a great many helpful tools:
 | [Completion (regular buffer)](./enzuru/features/enzuru-completion.el) | [Corfu](https://github.com/minad/corfu)                                                                                       |
 | [Completion (minibuffer)](./enzuru/features/enzuru-completion.el)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                                                            |
 | [Dashboard](./enzuru/features/enzuru-dashboard.el)                    | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                               |
-| [Digital garden](./enzuru/features/enzuru-digital-garden)             | [org-roam](https://www.orgroam.com/)                                                                                           |
+| [Digital garden](./enzuru/features/enzuru-digital-garden)             | [org-roam](https://www.orgroam.com/)                                                                                          |
 | [Docker client](./enzuru/features/enzuru-docker.el)                   | [docker.el](https://github.com/Silex/docker.el)                                                                               |
 | [Documentation searcher](./enzuru/features/enzuru-documentation.el)   | [devdocs](https://github.com/astoff/devdocs.el)                                                                               |
 | [Evaluation overlay](./enzuru/features/enzuru-overlay.el)             | [eros](https://github.com/xiongtx/eros)                                                                                       |
