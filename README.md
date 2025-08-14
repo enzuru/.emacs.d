@@ -22,7 +22,7 @@ When I was starting off with Emacs, other people's customizations were deeply he
 
 Where possible, the documentation directly links to the Emacs Lisp files that implement the mode or feature. Click around.
 
-Using [org-roam-ui](https://github.com/org-roam/org-roam-ui), you can [navigate a tree visualizing](https://enzuru.github.io/lisp-user-space/) how my [Lisp user space](https://github.com/enzuru) tools work together on the [GNU operating system](https://gnu.org).
+Using [org-roam-ui](https://github.com/org-roam/org-roam-ui), you can [navigate a map visualizing](https://enzuru.github.io/lisp-user-space/) how my Lisp user space tools work together on the [GNU operating system](https://gnu.org).
 
 ## Requirements
 
@@ -43,8 +43,6 @@ The following operating systems are supported:
 - [macOS](./enzuru/operating-systems/enzuru-mac.el)
 - [OpenBSD](./enzuru/operating-systems/enzuru-openbsd.el)
 - [Windows](./enzuru/operating-systems/enzuru-windows.el)
-
-Additionally, this entire `.emacs.d` can be setup with most of the below development environments by visiting my [profiles](https://github.com/enzuru/profiles) repo, which can be executed on the [Guix](https://guix.gnu.org) GNU/Linux distribution.
 
 ### Development environments
 
