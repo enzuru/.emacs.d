@@ -30,6 +30,7 @@
 (use-package js2-mode
   :ensure t
   :defer t
+  :hook ((js2-mode . eglot-ensure))
   :custom
   (js2-basic-offset 2)
   (js2-strict-trailing-comma-warning nil)

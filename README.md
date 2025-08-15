@@ -64,43 +64,36 @@ The best supported developer environments are the Lisp languages. Since they hav
 
 #### Second class
 
-Guix comes with pre-packaged language servers for these languages.
+NixOS comes with pre-packaged language servers for these languages.
 
-| Language                                  | IDE                                                         | REPL                                                          | Eglot |
-|-------------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------|-------|
-| [C](./enzuru/modes/enzuru-c.el)           | `c-ts-mode`                                                 |                                                               | Yes   |
-| [C++](./enzuru/modes/enzuru-cpp.el)       | `c++-ts-mode`                                               |                                                               | Yes   |
-| [Go](./enzuru/modes/enzuru-go.el)         | `go-ts-mode`                                                | [go-playground](https://github.com/grafov/go-playground)      | Yes   |
-| [Python](./enzuru/modes/enzuru-python.el) | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                  | Yes   |
-| [Ruby](./enzuru/modes/enzuru-ruby.el)     | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   |
-| [Rust](./enzuru/modes/enzuru-rust.el)     | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   |
+| Language                                          | IDE                                                         | REPL                                                                     | Eglot |
+|---------------------------------------------------|-------------------------------------------------------------|--------------------------------------------------------------------------|-------|
+| [C](./enzuru/modes/enzuru-c.el)                   | `c-ts-mode`                                                 |                                                                          | Yes   |
+| [C++](./enzuru/modes/enzuru-cpp.el)               | `c++-ts-mode`                                               |                                                                          | Yes   |
+| [Elixir](./enzuru/modes/enzuru-elixir.el)         | [Alchemist](https://github.com/tonini/alchemist.el)         | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | Yes   |
+| [Fish](./enzuru/modes/enzuru-fish.el)             | [fish-mode](https://github.com/wwwjfy/emacs-fish)           | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | Yes   |
+| [JavaScript](./enzuru/modes/enzuru-javascript.el) | [js2-mode](https://github.com/mooz/js2-mode)                | [Indium](https://github.com/NicolasPetton/Indium/)                       | Yes   |
+| [Go](./enzuru/modes/enzuru-go.el)                 | `go-ts-mode`                                                | [go-playground](https://github.com/grafov/go-playground)                 | Yes   |
+| [Haskell](./enzuru/modes/enzuru-haskell.el)       | [Intero](https://chrisdone.github.io/intero/)               | [Dante](https://github.com/jyp/dante)                                    | Yes   |
+| [Python](./enzuru/modes/enzuru-python.el)         | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode) | `run-python`                                                             | Yes   |
+| [Ruby](./enzuru/modes/enzuru-ruby.el)             | [Robe](https://github.com/dgutov/robe)                      | [inf-ruby](https://github.com/nonsequitur/inf-ruby)                      | Yes   |
+| [Rust](./enzuru/modes/enzuru-rust.el)             | [Racer](https://github.com/racer-rust/emacs-racer)          | [rust-playground](https://github.com/grafov/rust-playground/)            | Yes   |
+| [TypeScript](./enzuru/modes/enzuru-typescript.el) | [Tide](https://github.com/ananthakumaran/tide)              | [Indium](https://github.com/NicolasPetton/Indium/)                       | Yes   |
 
 #### Third class
 
-Guix lacks pre-packaged language servers for these languages.
+Quite frankly, most of these languages are best used within their respective IDEs, or I rarely use them at all.
 
-| Language                                          | IDE                                                 | REPL                                                                     | Eglot |
-|---------------------------------------------------|-----------------------------------------------------|--------------------------------------------------------------------------|-------|
-| [Elixir](./enzuru/modes/enzuru-elixir.el)         | [Alchemist](https://github.com/tonini/alchemist.el) | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | No    |
-| [Fish](./enzuru/modes/enzuru-fish.el)             | [fish-mode](https://github.com/wwwjfy/emacs-fish)   | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | No    |
-| [Haskell](./enzuru/modes/enzuru-haskell.el)       | [Intero](https://chrisdone.github.io/intero/)       | [Dante](https://github.com/jyp/dante)                                    | No    |
-| [JavaScript](./enzuru/modes/enzuru-javascript.el) | [js2-mode](https://github.com/mooz/js2-mode)        | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    |
-| [PHP](./enzuru/modes/enzuru-php.el)               | [php-mode](https://github.com/emacs-php/php-mode)   | [PsySH](https://github.com/emacs-php/psysh.el)                           | No    |
-| [SQL](./enzuru/modes/enzuru-sql.el)               | [sql-mode](https://www.emacswiki.org/emacs/SqlMode) | [emacsql](https://github.com/magit/emacsql)                              | No    |
-| [TypeScript](./enzuru/modes/enzuru-typescript.el) | [Tide](https://github.com/ananthakumaran/tide)      | [Indium](https://github.com/NicolasPetton/Indium/)                       | No    |
-
-#### Fourth class
-
-I don't even have a REPL for these languages, and quite frankly, most of these languages are best used within their respective IDEs.
-
-| Language                                            | IDE                                                                          | REPL | Eglot |
-|-----------------------------------------------------|------------------------------------------------------------------------------|------|-------|
-| [GDScript](./enzuru/modes/enzuru-gdscript.el)       | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)         |      | Yes   |
-| [Groovy](./enzuru/modes/enzuru-groovy.el)           | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |      | No    |
-| [Java](./enzuru/modes/enzuru-java.el)               | `java-ts-mode`                                                               |      | No    |
-| [Kotlin](./enzuru/modes/enzuru-kotlin.el)           | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |      | No    |
-| [Objective-C](./enzuru/modes/enzuru-objective-c.el) | `objc-mode`                                                                  |      | No    |
-| [Swift](./enzuru/modes/enzuru-swift.el)             | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |      | No    |
+| Language                                            | IDE                                                                          | REPL                                           | Eglot |
+|-----------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------|-------|
+| [GDScript](./enzuru/modes/enzuru-gdscript.el)       | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)         |                                                | Yes   |
+| [Groovy](./enzuru/modes/enzuru-groovy.el)           | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                | No    |
+| [Java](./enzuru/modes/enzuru-java.el)               | `java-ts-mode`                                                               |                                                | No    |
+| [Kotlin](./enzuru/modes/enzuru-kotlin.el)           | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                | No    |
+| [Objective-C](./enzuru/modes/enzuru-objective-c.el) | `objc-mode`                                                                  |                                                | No    |
+| [PHP](./enzuru/modes/enzuru-php.el)                 | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el) | No    |
+| [Swift](./enzuru/modes/enzuru-swift.el)             | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                | No    |
+| [SQL](./enzuru/modes/enzuru-sql.el)                 | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)    | No    |
 
 ### Tools
 

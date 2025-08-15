@@ -16,8 +16,8 @@
 ;; Configure
 
 (defun enzuru-configure-haskell-mode ()
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-  (add-hook 'haskell-mode-hook 'turn-on-haskeull-indent)
+  (add-hook 'haskell-ts-mode-hook 'turn-on-haskell-doc-mode)
+  (add-hook 'haskell-ts-mode-hook 'turn-on-haskeull-indent)
   (put 'downcase-region 'disabled nil))
 
 ;; Packages
@@ -26,10 +26,11 @@
   :ensure t
   :defer t)
 
-(use-package haskell-mode
+(use-package haskell-ts-mode
   :ensure t
   :defer t
-  :config (enzuru-configure-haskell-mode))
+  :config (enzuru-configure-haskell-mode)
+  :hook ((haskell-mode . eglot-ensure)))
 
 ;;(use-package intero
 ;;  :ensure t

@@ -32,7 +32,6 @@
   :hook ((org-mode . hyperbole-mode)
          (org-mode . enzuru-hook-org-mode))
   :custom
-  (org-agenda-files (directory-files "~/" t ".org$" t))
   (org-log-done t)
   (org-src-fontify-natively t)
   (org-startup-folded nil))

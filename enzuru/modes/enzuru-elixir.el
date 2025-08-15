@@ -22,7 +22,8 @@
 
 (use-package elixir-ts-mode
   :ensure t
-  :defer t)
+  :defer t
+  :hook ((elixir-ts-mode . eglot-ensure)))
 
 (use-package inf-elixir
   :ensure t

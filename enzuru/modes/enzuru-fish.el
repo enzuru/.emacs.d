@@ -29,7 +29,8 @@
 
 (use-package fish-mode
   :ensure t
-  :defer t)
+  :defer t
+  :hook ((fish-mode . eglot-ensure)))
 
 (provide 'enzuru-fish)
 
