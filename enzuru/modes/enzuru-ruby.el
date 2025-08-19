@@ -15,9 +15,6 @@
 
 ;; Configuration
 
-(defun enzuru-configure-ruby-ts-mode ()
-  (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-ts-mode)))
-
 (defun enzuru-configure-inf-ruby ()
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
@@ -49,8 +46,6 @@
   :defer t
   :diminish yard-mode
   :ensure t)
-
-(enzuru-configure-ruby-ts-mode)
 
 (provide 'enzuru-ruby)
 
