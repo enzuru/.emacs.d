@@ -64,7 +64,7 @@ The best supported developer environments are the Lisp languages. Since they hav
 
 #### Second class
 
-NixOS comes with pre-packaged language servers for these languages.
+Nix comes with pre-packaged language servers for these languages.
 
 | Language                                          | IDE                                                         | REPL                                                                     | Eglot |
 |---------------------------------------------------|-------------------------------------------------------------|--------------------------------------------------------------------------|-------|
