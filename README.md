@@ -91,7 +91,6 @@ Quite frankly, most of these languages are best used within their respective IDE
 | [Java](./enzuru/modes/enzuru-java.el)               | `java-ts-mode`                                                               |                                                | No    |
 | [Kotlin](./enzuru/modes/enzuru-kotlin.el)           | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                | No    |
 | [Objective-C](./enzuru/modes/enzuru-objective-c.el) | `objc-mode`                                                                  |                                                | No    |
-| [PHP](./enzuru/modes/enzuru-php.el)                 | [php-mode](https://github.com/emacs-php/php-mode)                            | [PsySH](https://github.com/emacs-php/psysh.el) | No    |
 | [Swift](./enzuru/modes/enzuru-swift.el)             | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                | No    |
 | [SQL](./enzuru/modes/enzuru-sql.el)                 | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)    | No    |
 
