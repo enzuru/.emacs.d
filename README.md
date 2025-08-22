@@ -48,8 +48,6 @@ The following operating systems are supported:
 
 This Emacs configuration reflects my [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)-centered [exploratory programming style](https://en.wikipedia.org/wiki/Exploratory_programming).
 
-I provide an IDE and REPL for each major environment that I work in.
-
 One can debate about which languages Emacs is actually ideal for, but Emacs is certainly a best-in-class environment for Haskell, Elixir, Common Lisp, Scheme, and Clojure.
 
 #### First class
