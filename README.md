@@ -149,7 +149,7 @@ There are many beautiful theme families for you to enjoy:
 - [gotham](https://github.com/emacsmirror/gotham-theme)
 - [molokai](https://github.com/alloy-d/color-theme-molokai)
 - [omtose-phellack](https://github.com/franksn/omtose-phellack-theme)
-- [purple-haze](https://github.com/emacsfodder/emacs-purple-haze-theme)
+- [purple-haze](https://github.com/enzuru/emacs-purple-haze-theme)
 - [sanityinc-tomorrow](https://github.com/purcell/color-theme-sanityinc-tomorrow)
 - [timu-caribbean](https://gitlab.com/aimebertrand/timu-caribbean-theme)
 - [timu-macos](https://gitlab.com/aimebertrand/timu-macos-theme)
