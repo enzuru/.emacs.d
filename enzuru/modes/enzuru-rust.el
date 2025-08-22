@@ -20,13 +20,6 @@
   (add-hook 'rust-ts-mode-hook 'racer-mode)
   (add-hook 'rust-ts-mode-hook 'eglot-ensure))
 
-;; (defun enzuru-configure-rustic ()
-;;   (rustic-doc-setup))
-
-
-;; (defun enzuru-rust-search-doc ()
-;;   (rustic-doc-search (intern (thing-at-point 'word))))
-
 ;; Packages
 
 (use-package racer
@@ -38,11 +31,6 @@
   :defer t
   :custom
   (rust-playground-basedir "~/"))
-
-;; (use-package rustic
-;;   :ensure t
-;;   :init (enzuru-configure-rustic)
-;;   :bind (:map rust-ts-mode-map (("C-c d" . enzuru-rust-search-doc))))
 
 (enzuru-configure-rust-ts-mode)
 

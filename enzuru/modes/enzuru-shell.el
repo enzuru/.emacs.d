@@ -21,10 +21,10 @@
   (setq eshell-smart-space-goes-to-end t))
 
 (defun enzuru-configure-eshell ()
-      (add-hook 'eshell-mode-hook
-                (lambda ()
-                  (setq-local corfu-auto nil)
-                  (corfu-mode))))
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              (setq-local corfu-auto nil)
+              (corfu-mode))))
 
 ;; Packages
 
