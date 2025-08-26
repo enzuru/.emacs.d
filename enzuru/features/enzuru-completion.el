@@ -171,11 +171,13 @@
 ;;   :ensure t)
 
 (use-package flymake-collection
-  :ensure t)
+  :ensure t
+  :diminish (flymake-mode))
 
 (use-package flyover
   :ensure (:host github :repo "konrad1977/flyover")
   :hook ((flymake-mode . flyover-mode))
+  :diminish (flyover-mode)
   :custom
   (flyover-background-lightness 25)
   (flyover-levels '(error warning info))
