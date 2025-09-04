@@ -16,7 +16,7 @@
 
 (if window-system
     (require 'enzuru-gui)
-  (progn (require 'enzuru-molokai)
+  (progn (require 'enzuru-zenburn)
          (xterm-mouse-mode t)))
 
 (provide 'enzuru-interface)
