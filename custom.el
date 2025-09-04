@@ -23,17 +23,6 @@
       "Main Page")))
  '(mu-worlds
    '(["SquareSoft" "uossmud.sandwich.net" 9000 "guest" "guest"]))
- '(org-agenda-files
-   '("/home/enzuru/src/notes/areas/emacs.org"
-     "/home/enzuru/src/notes/areas/gnome.org"
-     "/home/enzuru/src/notes/areas/kernel.org"
-     "/home/enzuru/src/notes/areas/nix.org"
-     "/home/enzuru/src/notes/areas/portuguese.org"
-     "/home/enzuru/src/notes/projects/accessibility.org"
-     "/home/enzuru/src/notes/projects/joseki.org"
-     "/home/enzuru/src/notes/projects/security-tools.org"
-     "/home/enzuru/src/notes/resources/gnu.org"
-     "/home/enzuru/src/notes/nightly.org"))
  '(org-fold-core-style 'overlays)
  '(package-selected-packages 'nil)
  '(safe-local-variable-values
