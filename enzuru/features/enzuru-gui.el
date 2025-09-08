@@ -31,7 +31,7 @@
   (if (eq (enzuru-uname) 'OpenBSD)
       (require 'enzuru-omtose-darker))
   (if (eq system-type 'gnu/linux)
-      (require 'enzuru-molokai)))
+      (require 'enzuru-catppuccin)))
 
 (enzuru-configure-minimalism)
 (enzuru-configure-operating-systems)

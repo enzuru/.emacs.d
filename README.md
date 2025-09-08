@@ -140,11 +140,12 @@ This configuration ships with a great many helpful tools:
 
 ### Themes
 
-There are many beautiful theme families for you to enjoy:
+I have many beautiful theme families:
 
 - [arjen-grey](https://github.com/credmp/arjen-grey-theme)
 - [deep-thought](https://github.com/enzuru/emacs-deep-thought-theme)
 - [dracula](https://github.com/dracula/emacs)
+- [catppuccin](https://github.com/catppuccin/emacs)
 - [exotica](https://github.com/zenobht/exotica-theme)
 - [gotham](https://github.com/emacsmirror/gotham-theme)
 - [molokai](https://github.com/alloy-d/color-theme-molokai)
