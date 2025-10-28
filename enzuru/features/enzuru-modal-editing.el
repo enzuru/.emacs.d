@@ -141,6 +141,7 @@
   :bind (("C-y" . consult-yank-from-kill-ring))
   :custom
   (lispy-eval-display-style "overlay")
+  (lispy-colon-p nil)
   :config (enzuru-configure-lispy)
   :hook ((emacs-lisp-mode . lispy-mode)
          (ielm-mode . lispy-mode)
