@@ -15,7 +15,7 @@
 
 ;; Configuration
 
-(defun enzuru-configure-geiser-guile ()
+(defun enzuru-configure-geiser ()
   (require 'geiser-guile)
   (add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))
   (add-to-list 'auto-mode-alist '("\\.guile$" . scheme-mode))
@@ -33,13 +33,16 @@
 
 ;; Packages
 
+(use-package geiser
+  :ensure (:host gitlab :repo "emacs-geiser/geiser")
+  :config (enzuru-configure-geiser))
+
 (use-package geiser-guile
- :ensure (:host gitlab :repo "emacs-geiser/guile")
- :config (enzuru-configure-geiser-guile))
+  :ensure (:host gitlab :repo "emacs-geiser/guile"))
 
 (use-package completing-read-geiser
- :ensure (:host github :repo "enzuru/completing-read-geiser")
- :config (enzuru-configure-completing-read-geiser))
+  :ensure (:host github :repo "enzuru/completing-read-geiser")
+  :config (enzuru-configure-completing-read-geiser))
 
 (provide 'enzuru-scheme)
 
