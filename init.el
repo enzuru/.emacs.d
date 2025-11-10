@@ -36,6 +36,7 @@
 (require 'enzuru-overlay)
 (require 'enzuru-server)
 (require 'enzuru-syntax-checking)
+(require 'enzuru-system-monitoring)
 (require 'enzuru-studying)
 (require 'enzuru-rest)
 (require 'enzuru-terminal)
