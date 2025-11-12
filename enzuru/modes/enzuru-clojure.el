@@ -1,17 +1,5 @@
 ;;; enzuru-clojure.el --- Clojure programming language support -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: languages, clojure, lisp, programming, cider
-
-;;; Commentary:
-
-;; This module configures Clojure programming language support with
-;; CIDER for REPL interaction and enhanced development tools.
-
 ;;; Code:
 
 ;; Functions

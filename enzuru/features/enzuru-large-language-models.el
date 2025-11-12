@@ -1,17 +1,5 @@
 ;;; enzuru-large-language-models.el --- Large language model integration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: convenience, ai, llm, claude, gpt
-
-;;; Commentary:
-
-;; This module configures large language model integrations including
-;; GPTel and Claude Code for AI assistance in Emacs.
-
 ;;; Code:
 
 (require 'auth-source)

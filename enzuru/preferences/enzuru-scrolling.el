@@ -1,16 +1,5 @@
 ;;; enzuru-scrolling.el --- Scrolling preferences configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: convenience, scrolling
-
-;;; Commentary:
-
-;; Configuration for scrolling behavior preferences.
-
 ;;; Code:
 
 (setq scroll-step 1

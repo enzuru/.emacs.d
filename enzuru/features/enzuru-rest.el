@@ -1,16 +1,5 @@
 ;;; enzuru-rest.el --- REST client configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: convenience, http, rest, api
-
-;;; Commentary:
-
-;; This module configures REST client tools for testing HTTP APIs.
-
 ;;; Code:
 
 ;; Packages

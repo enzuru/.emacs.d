@@ -1,16 +1,5 @@
 ;;; enzuru-digital-garden.el --- Tools for managing a digital garden -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: digital garden
-
-;;; Commentary:
-
-;; This module provides tools for a digital garden
-
 ;;; Code:
 
 (use-package org-roam

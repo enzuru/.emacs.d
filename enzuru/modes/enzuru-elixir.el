@@ -1,17 +1,5 @@
 ;;; enzuru-elixir.el --- Elixir programming language support -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: languages, elixir, programming, functional
-
-;;; Commentary:
-
-;; This module configures Elixir programming language support with
-;; Alchemist and Tree-sitter for enhanced development experience.
-
 ;;; Code:
 
 ;; Packages

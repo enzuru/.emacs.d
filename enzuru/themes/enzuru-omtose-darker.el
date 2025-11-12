@@ -1,16 +1,5 @@
 ;;; enzuru-omtose-darker.el --- Omtose Darker theme configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: themes, faces
-
-;;; Commentary:
-
-;; Configuration for the Omtose Darker color theme.
-
 ;;; Code:
 
 ;; Configuration

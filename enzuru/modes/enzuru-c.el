@@ -1,17 +1,5 @@
 ;;; enzuru-c.el --- C programming language support -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: languages, c, programming
-
-;;; Commentary:
-
-;; This module configures C programming language support with Tree-sitter,
-;; Eglot, and Semantic for enhanced development experience.
-
 ;;; Code:
 
 ;; Configuration

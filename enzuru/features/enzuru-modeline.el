@@ -1,16 +1,5 @@
 ;;; enzuru-modeline.el --- Mode line configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: convenience, modeline, smart-mode-line
-
-;;; Commentary:
-
-;; This module configures the mode line appearance using Smart Mode Line.
-
 ;;; Code:
 
 ;; Configuration

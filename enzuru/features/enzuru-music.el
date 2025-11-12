@@ -1,17 +1,5 @@
 ;;; enzuru-music.el --- Music player configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: convenience, music, emms, pianobar
-
-;;; Commentary:
-
-;; This module configures music players including EMMS and Pianobar
-;; for playing music from within Emacs.
-
 ;;; Code:
 
 ;; Configuration

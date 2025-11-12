@@ -1,17 +1,5 @@
 ;;; enzuru-gui.el --- GUI appearance and theme configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: faces, gui, themes, appearance
-
-;;; Commentary:
-
-;; This module configures GUI appearance including minimalistic settings
-;; and operating system-specific theme selection.
-
 ;;; Code:
 
 ;; Functions
@@ -23,7 +11,7 @@
 
 (defun enzuru-configure-operating-systems ()
   (if (eq system-type 'darwin)
-      (require 'enzuru-exotica))
+      (require 'enzuru-timu-macos))
   (if (eq system-type 'windows-nt)
       (require 'enzuru-arjen-grey))
   (if (eq (enzuru-uname) 'FreeBSD)
@@ -31,7 +19,7 @@
   (if (eq (enzuru-uname) 'OpenBSD)
       (require 'enzuru-omtose-darker))
   (if (eq system-type 'gnu/linux)
-      (require 'enzuru-catppuccin)))
+      (require 'enzuru-exotica)))
 
 (enzuru-configure-minimalism)
 (enzuru-configure-operating-systems)

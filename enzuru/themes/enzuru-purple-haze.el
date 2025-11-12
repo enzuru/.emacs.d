@@ -1,16 +1,5 @@
 ;;; enzuru-purple-haze.el --- Purple Haze theme configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: themes, faces
-
-;;; Commentary:
-
-;; Configuration for the Purple Haze color theme.
-
 ;;; Code:
 
 ;; Configuration

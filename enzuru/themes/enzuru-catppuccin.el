@@ -1,16 +1,5 @@
 ;;; enzuru-catppuccin.el --- Catppuccin theme configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: themes, faces
-
-;;; Commentary:
-
-;; Configuration for the Catppuccin color theme.
-
 ;;; Code:
 
 ;; Configuration

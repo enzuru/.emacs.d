@@ -1,16 +1,5 @@
 ;;; enzuru-shell.el --- Shell configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: tools, shell
-
-;;; Commentary:
-
-;; Configuration for shell scripting and eshell.
-
 ;;; Code:
 
 ;; Functions

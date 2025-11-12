@@ -1,16 +1,5 @@
 ;;; enzuru-freebsd.el --- FreeBSD specific configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: os, freebsd
-
-;;; Commentary:
-
-;; Configuration specific to FreeBSD operating system.
-
 ;;; Code:
 
 (setq locate-command "locate"

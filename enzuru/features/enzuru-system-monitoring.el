@@ -1,16 +1,5 @@
 ;;; enzuru-system-monitoring.el --- System monitoring. -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: monitoring
-
-;;; Commentary:
-
-;; This module enables system monitoring.
-
 ;;; Code:
 
 (use-package lemon

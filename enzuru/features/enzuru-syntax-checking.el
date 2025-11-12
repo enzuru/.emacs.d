@@ -1,17 +1,5 @@
 ;;; enzuru-syntax-checking.el --- Syntax checking configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: convenience, syntax, checking, flymake
-
-;;; Commentary:
-
-;; This module configures syntax checking using Flymake for real-time
-;; error detection in code.
-
 ;;; Code:
 
 ;; Configuration

@@ -1,17 +1,5 @@
 ;;; enzuru-go.el --- Go programming language support -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: languages, go, golang, programming
-
-;;; Commentary:
-
-;; This module configures Go programming language support with Tree-sitter
-;; and playground integration.
-
 ;;; Code:
 
 ;; Packages

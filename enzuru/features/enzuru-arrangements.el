@@ -1,18 +1,5 @@
 ;;; enzuru-arrangements.el --- Window and tab arrangements configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: convenience, windows, tabs, activities
-
-;;; Commentary:
-
-;; This module provides functions for arranging windows and tabs in Emacs,
-;; including setting up predefined tab layouts for different workflows like
-;; development, chat, and application management.
-
 ;;; Code:
 
 ;; Functions

@@ -1,16 +1,5 @@
 ;;; enzuru-fish.el --- Fish shell scripting support -*- coding: utf-8; lexical-binding: t -*-
 
-;; Copyright (C) 2025
-
-;; Author: enzuru
-;; Version: 1.0
-;; Package-Requires: ((emacs "30"))
-;; Keywords: languages, fish, shell, scripting
-
-;;; Commentary:
-
-;; This module configures Fish shell scripting support.
-
 ;;; Code:
 
 ;; Functions
