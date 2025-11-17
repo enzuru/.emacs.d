@@ -121,7 +121,7 @@ This configuration ships with a great many helpful tools:
 | [Mail indexer](./enzuru/features/enzuru-mail.el)                      | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                                             |
 | [Modal editor](./enzuru/features/enzuru-modal-editing.el)             | [Meow](https://github.com/meow-edit/meow), [Lispy](https://github.com/abo-abo/lispy)                                          |
 | [Modeline](./enzuru/features/enzuru-modeline.el)                      | [Smart Mode Line](https://github.com/Malabarba/smart-mode-line)                                                               |
-| [MUD client](./enzuru/features/enzuru-gaming.el)                      | [mu.el](https://www.emacswiki.org/emacs/mu.el)                                                                                |
+| [MUD client](./enzuru/features/enzuru-gaming.el)                      | [mu.el](https://github.com/enzuru/mu)                                                                                         |
 | [Music player](./enzuru/features/enzuru-music.el)                     | [Emms](https://www.gnu.org/software/emms/)                                                                                    |
 | [Music streamer](./enzuru/features/enzuru-music.el)                   | [pianobar.el](https://github.com/agrif/pianobar.el)                                                                           |
 | [Organization](./enzuru/modes/enzuru-org.el)                          | [org-mode](https://orgmode.org)                                                                                               |

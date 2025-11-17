@@ -14,7 +14,7 @@
 ;; Packages
 
 (use-package mu
-  :ensure (:host github :repo "kensanata/mu")
+  :ensure (:host github :repo "enzuru/mu")
   :defer t)
 
 (use-package gnugo
