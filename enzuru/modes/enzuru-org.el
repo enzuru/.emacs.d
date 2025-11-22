@@ -3,6 +3,7 @@
 ;;; Code:
 
 ;; Functions
+
 (defun enzuru-configure-org ()
   (setq org-agenda-files (directory-files-recursively "~/src/notes/" "\\.org$")))
 
