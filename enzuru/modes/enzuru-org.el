@@ -6,6 +6,9 @@
 (defun enzuru-configure-org ()
   (setq org-agenda-files (directory-files-recursively "~/src/notes/" "\\.org$")))
 
+(defun enzuru-org-files-by-tag (tag)
+  (directory-files-recursively "~/src/notes/" (concat "^" tag "-.*\\.org$")))
+
 (defun enzuru-hook-org-mode ()
   ;; (setq-local completion-at-point-functions (mapcar #'cape-company-to-capf (list #'company-spell)))
   )
