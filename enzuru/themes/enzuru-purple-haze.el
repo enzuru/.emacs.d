@@ -6,10 +6,7 @@
 
 (defun enzuru-configure-purple-haze-theme ()
   (load-theme 'purple-haze t)
-  (set-face-background 'hl-line "#222222")
-  (set-face-attribute 'fringe nil :background "#000000" :foreground "#FFFFFF")
-  (set-face-attribute 'region nil :background "#666")
-  (sml/apply-theme 'dark))
+  (sml/apply-theme 'respectful))
 
 ;; Packages
 
