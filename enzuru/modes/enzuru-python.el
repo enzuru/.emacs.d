@@ -13,12 +13,9 @@
 
 ;; Packages
 
-(use-package anaconda-mode
-  :ensure t
-  :hook ((python-ts-mode . anaconda-mode)
-         (python-ts-mode . anaconda-eldoc-mode)
-         (python-ts-mode . eglot-ensure))
-  :bind (:map python-ts-mode-map (("C-c d" . anaconda-mode-show-doc))))
+(use-package python-ts-mode
+  :defer t
+  :hook ((python-ts-mode . eglot-ensure)))
 
 (enzuru-configure-python-ts-mode)
 

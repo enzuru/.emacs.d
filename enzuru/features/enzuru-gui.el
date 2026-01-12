@@ -19,7 +19,7 @@
   (if (eq (enzuru-uname) 'OpenBSD)
       (require 'enzuru-omtose-darker))
   (if (eq system-type 'gnu/linux)
-      (require 'enzuru-purple-haze)))
+      (require 'enzuru-catppuccin)))
 
 (enzuru-configure-minimalism)
 (enzuru-configure-operating-systems)

@@ -17,24 +17,14 @@
   :defer t
   :config (enzuru-configure-inf-ruby))
 
-(use-package robe
-  :hook ((ruby-ts-mode . robe-mode)
-         (ruby-ts-mode . eglot-ensure))
-  :bind (:map ruby-ts-mode-map (("C-c d" . robe-doc)))
+(use-package ruby-ts-mode
   :defer t
-  :diminish robe-mode
-  :ensure t)
+  :hook ((ruby-ts-mode . eglot-ensure)))
 
-(use-package rvm
+(use-package ruby-end
   :ensure t
-  :defer t
-  :config (enzuru-configure-rvm))
-
-(use-package yard-mode
-  :hook ((ruby-ts-mode . yard-mode))
-  :defer t
-  :diminish yard-mode
-  :ensure t)
+  :custom ((ruby-end-insert-newline nil))
+  :hook (ruby-ts-mode . ruby-end-mode))
 
 (provide 'enzuru-ruby)
 

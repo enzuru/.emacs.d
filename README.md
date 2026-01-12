@@ -74,8 +74,8 @@ Nix comes with pre-packaged language servers for these languages.
 | [JavaScript](./enzuru/modes/enzuru-javascript.el) | [js2-mode](https://github.com/mooz/js2-mode)                         | [Indium](https://github.com/NicolasPetton/Indium/)                       | Yes   |
 | [Go](./enzuru/modes/enzuru-go.el)                 | `go-ts-mode`                                                         | [go-playground](https://github.com/grafov/go-playground)                 | Yes   |
 | [Haskell](./enzuru/modes/enzuru-haskell.el)       | [Intero](https://chrisdone.github.io/intero/)                        | [Dante](https://github.com/jyp/dante)                                    | Yes   |
-| [Python](./enzuru/modes/enzuru-python.el)         | [Anaconda](https://github.com/pythonic-emacs/anaconda-mode)          | `run-python`                                                             | Yes   |
-| [Ruby](./enzuru/modes/enzuru-ruby.el)             | [Robe](https://github.com/dgutov/robe)                               | [inf-ruby](https://github.com/nonsequitur/inf-ruby)                      | Yes   |
+| [Python](./enzuru/modes/enzuru-python.el)         | `python-ts-mode`                                                     | `run-python`                                                             | Yes   |
+| [Ruby](./enzuru/modes/enzuru-ruby.el)             | `ruby-ts-mode`                                                       | [inf-ruby](https://github.com/nonsequitur/inf-ruby)                      | Yes   |
 | [Rust](./enzuru/modes/enzuru-rust.el)             | [Racer](https://github.com/racer-rust/emacs-racer)                   | [rust-playground](https://github.com/grafov/rust-playground/)            | Yes   |
 | [TypeScript](./enzuru/modes/enzuru-typescript.el) | [Tide](https://github.com/ananthakumaran/tide)                       | [Indium](https://github.com/NicolasPetton/Indium/)                       | Yes   |
 
