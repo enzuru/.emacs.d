@@ -11,10 +11,6 @@
 
 ;; Packages
 
-(use-package dante
-  :ensure t
-  :defer t)
-
 (use-package haskell-mode
   :ensure t
   :defer t
@@ -26,10 +22,6 @@
   :defer t
   :config (enzuru-configure-haskell-ts-mode)
   :hook ((haskell-mode . eglot-ensure)))
-
-;;(use-package intero
-;;  :ensure t
-;;  :hook ((haskell-mode . intero-mode)))
 
 (provide 'enzuru-haskell)
 

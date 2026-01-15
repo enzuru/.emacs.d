@@ -4,14 +4,15 @@
 
 ;; Packages
 
-(use-package alchemist
+(use-package apprentice
   :ensure t
   :defer t)
 
 (use-package elixir-ts-mode
   :ensure t
   :defer t
-  :hook ((elixir-ts-mode . eglot-ensure)))
+  :hook ((elixir-ts-mode . eglot-ensure)
+         (elixir-ts-mode . apprentice)))
 
 (use-package inf-elixir
   :ensure t
