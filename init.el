@@ -92,6 +92,7 @@
 (require 'enzuru-frames)
 (require 'enzuru-highlighting)
 (require 'enzuru-margin)
+(require 'enzuru-pairing)
 (require 'enzuru-recent-files)
 (require 'enzuru-remote)
 (require 'enzuru-saving)

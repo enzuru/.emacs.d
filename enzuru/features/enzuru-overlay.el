@@ -13,6 +13,7 @@
   :hook ((flymake-mode . flyover-mode))
   :diminish (flyover-mode)
   :custom
+  (flyover-line-position-offset 0)
   (flyover-levels '(error warning info))
   (flyover-checkers '(flymake))
   (flyover-border-style 'pill)

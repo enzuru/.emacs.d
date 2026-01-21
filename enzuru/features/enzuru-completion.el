@@ -8,43 +8,45 @@
   (defun enzuru-setup-human-language-completion ()
     (setq-local completion-at-point-functions
                 (list #'cape-dict
-                      #'cape-dabbrev
                       #'cape-file
-                      #'cape-history
-                      #'cape-keyword))
-    "Setup completion for human language buffers with cape-dict first.")
+                      #'cape-dabbrev)))
 
   (defun enzuru-setup-programming-completion ()
     "Setup completion for programming buffers."
     (setq-local completion-at-point-functions
-                (list
-                 ;; #'cape-dabbrev
-                 #'cape-file
-                 #'cape-elisp-block
-                 #'cape-history
-                 #'cape-keyword
-                 ;; #'cape-dict
-                 #'cape-elisp-symbol
-                 )))
+                (list #'cape-keyword
+                      #'cape-dabbrev
+                      #'cape-file
+                      #'cape-history)))
 
-  ;; Set up hooks for human language modes
-  (add-hook 'text-mode-hook #'enzuru-setup-human-language-completion)
-  (add-hook 'markdown-mode-hook #'enzuru-setup-human-language-completion)
-  (add-hook 'org-mode-hook #'enzuru-setup-human-language-completion)
-  (add-hook 'latex-mode-hook #'enzuru-setup-human-language-completion)
-  (add-hook 'tex-mode-hook #'enzuru-setup-human-language-completion)
+  (defun enzuru-setup-elisp-completion ()
+    (setq-local completion-at-point-functions
+                (list #'cape-elisp-block
+                      #'cape-elisp-symbol
+                      #'cape-keyword
+                      #'cape-dabbrev
+                      #'cape-file
+                      #'cape-history)))
 
-  ;; Set up hooks for programming modes
-  (add-hook 'prog-mode-hook #'enzuru-setup-programming-completion)
+    ;; Set up hooks for human language modes
+    (add-hook 'text-mode-hook #'enzuru-setup-human-language-completion)
+    (add-hook 'markdown-mode-hook #'enzuru-setup-human-language-completion)
+    (add-hook 'org-mode-hook #'enzuru-setup-human-language-completion)
+    (add-hook 'latex-mode-hook #'enzuru-setup-human-language-completion)
+    (add-hook 'tex-mode-hook #'enzuru-setup-human-language-completion)
 
-  ;; Default global setup (for modes not covered by hooks)
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-elisp-block)
-  (add-to-list 'completion-at-point-functions #'cape-history)
-  (add-to-list 'completion-at-point-functions #'cape-keyword)
-  (add-to-list 'completion-at-point-functions #'cape-dict)
-  (add-to-list 'completion-at-point-functions #'cape-elisp-symbol))
+    ;; Set up hooks for programming modes
+    (add-hook 'prog-mode-hook #'enzuru-setup-programming-completion)
+    (add-hook 'emacs-lisp-mode-hook #'enzuru-setup-elisp-completion)
+
+    ;; Default global setup (for modes not covered by hooks)
+    (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+    (add-to-list 'completion-at-point-functions #'cape-file)
+    (add-to-list 'completion-at-point-functions #'cape-elisp-block)
+    (add-to-list 'completion-at-point-functions #'cape-history)
+    (add-to-list 'completion-at-point-functions #'cape-keyword)
+    (add-to-list 'completion-at-point-functions #'cape-dict)
+    (add-to-list 'completion-at-point-functions #'cape-elisp-symbol))
 
 ;; Packages
 
