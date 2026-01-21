@@ -14,14 +14,15 @@
 (use-package haskell-mode
   :ensure t
   :defer t
+  :hook ((haskell-mode . eglot-ensure))
   :mode (("\\.hs$" . haskell-mode)
          ("\\.lhs$" . haskell-mode)))
 
-(use-package haskell-ts-mode
-  :ensure t
-  :defer t
-  :config (enzuru-configure-haskell-ts-mode)
-  :hook ((haskell-mode . eglot-ensure)))
+;; (use-package haskell-ts-mode
+;;   :ensure t
+;;   :defer t
+;;   :config (enzuru-configure-haskell-ts-mode)
+;;   :hook ((haskell-ts-mode . eglot-ensure)))
 
 (provide 'enzuru-haskell)
 

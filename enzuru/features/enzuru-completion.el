@@ -17,13 +17,15 @@
   (defun enzuru-setup-programming-completion ()
     "Setup completion for programming buffers."
     (setq-local completion-at-point-functions
-                (list #'cape-dabbrev
-                      #'cape-file
-                      #'cape-elisp-block
-                      #'cape-history
-                      #'cape-keyword
-                      #'cape-dict
-                      #'cape-elisp-symbol)))
+                (list
+                 ;; #'cape-dabbrev
+                 #'cape-file
+                 #'cape-elisp-block
+                 #'cape-history
+                 #'cape-keyword
+                 ;; #'cape-dict
+                 #'cape-elisp-symbol
+                 )))
 
   ;; Set up hooks for human language modes
   (add-hook 'text-mode-hook #'enzuru-setup-human-language-completion)
