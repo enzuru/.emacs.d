@@ -25,6 +25,7 @@
 (add-hook 'elpaca-after-init-hook 'enzuru-set-global-keys)
 (add-hook 'after-init-hook 'enzuru-set-global-keys)
 (add-hook 'elpaca-after-init-hook 'enzuru-configure-completing-read-sly)
+(run-at-time "5 sec" nil 'enzuru-set-global-keys)
 ;;(add-hook 'after-init-hook 'enzuru-configure-completing-read-sly)
 ;;(add-hook 'elpaca-after-init-hook 'which-key-mode)
 

@@ -52,7 +52,7 @@
 (require 'enzuru-cpp)
 (require 'enzuru-clojure)
 (require 'enzuru-common-lisp)
-(require 'enzuru-elixir)
+;;(require 'enzuru-elixir)
 (require 'enzuru-emacs-lisp)
 (require 'enzuru-feature)
 (require 'enzuru-fish)
