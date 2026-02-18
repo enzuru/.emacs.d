@@ -1,18 +1,10 @@
 ;;; enzuru-undo.el --- Undo system configuration -*- coding: utf-8; lexical-binding: t -*-
 
-;;; Code:
-
-(defun enzuru-configure-undo-tree ()
-  (setq undo-tree-auto-save-history nil)
-  (global-undo-tree-mode))
-
 ;; Packages
 
-(use-package undo-tree
+(use-package vundo
   :ensure t
-  :diminish undo-tree-mode
-  :bind (("C-c u" . undo-tree-visualize))
-  :config (enzuru-configure-undo-tree))
+  :bind (("C-c u" . vundo)))
 
 (provide 'enzuru-undo)
 

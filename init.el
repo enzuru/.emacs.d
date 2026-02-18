@@ -2,12 +2,8 @@
 
 ;; Paths & packages
 
-(add-to-list 'load-path "~/.emacs.d/enzuru/features")
-(add-to-list 'load-path "~/.emacs.d/enzuru/modes")
-(add-to-list 'load-path "~/.emacs.d/enzuru/preferences")
-(add-to-list 'load-path "~/.emacs.d/enzuru/setup")
-(add-to-list 'load-path "~/.emacs.d/enzuru/operating-systems")
-(add-to-list 'load-path "~/.emacs.d/enzuru/themes")
+(let ((default-directory "~/.emacs.d/enzuru"))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; Features
 

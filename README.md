@@ -2,7 +2,7 @@
 
 ![exwm on Slackware](images/exwm.png "My .emacs.d running exwm on Slackware with the enzuru-deep-thought.el theme file loaded")
 
-This `.emacs.d` documents a maximalist Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. This involves around 150 different packages.
+This `.emacs.d` documents a maximalist Emacs configuration utilizing most (but not all) of the latest trends in the Emacs community, tailored of course to my personal taste and needs. This involves 100+ different packages.
 
 This means spicy choices like:
 
@@ -115,7 +115,7 @@ This configuration ships with a great many helpful tools:
 | [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                                          |
 | [IRC client](./enzuru/features/enzuru-irc.el)                         | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                                            |
 | [Kubernetes client](./enzuru/features/enzuru-kubernetes.el)           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                                               |
-| [LLM client](./enzuru/features/enzuru-large-language-models.el)       | [gptel](https://github.com/karthink/gptel), [claude-code.el](https://github.com/stevemolitor/claude-code.el)                  |
+| [LLM client](./enzuru/features/enzuru-large-language-models.el)       | [efrit](https://github.com/steveyegge/efrit), [claude-code-ide](https://github.com/manzaltu/claude-code-ide.el)               |
 | [LSP client](./enzuru/features/enzuru-lsp.el)                         | [Eglot](https://github.com/joaotavora/eglot)                                                                                  |
 | [Mail client](./enzuru/features/enzuru-mail.el)                       | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)                                         |
 | [Mail indexer](./enzuru/features/enzuru-mail.el)                      | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                                             |
@@ -131,7 +131,7 @@ This configuration ships with a great many helpful tools:
 | [Syntax checker](./enzuru/features/enzuru-syntax-checking.el)         | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html), [flyover](https://github.com/konrad1977/flyover) |
 | [Syntax highlighter](./enzuru/features/enzuru-syntax-highlighting.el) | [prism](https://github.com/alphapapa/prism.el)                                                                                |
 | [Terminal](./enzuru/features/enzuru-terminal.el)                      | [Eat](https://codeberg.org/akib/emacs-eat/)                                                                                   |
-| [Undo visualizer](./enzuru/features/enzuru-undo.el)                   | [undo-tree](https://elpa.gnu.org/packages/undo-tree.html)                                                                     |
+| [Undo visualizer](./enzuru/features/enzuru-undo.el)                   | [vundo](https://github.com/casouri/vundo)                                                                                     |
 | [Version control](./enzuru/features/enzuru-version-control.el)        | [Magit](https://magit.vc)                                                                                                     |
 | [Wikipedia editor](./enzuru/features/enzuru-wiki.el)                  | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                                                       |
 | [Window configuration](./enzuru/preferences/enzuru-frames.el)         | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)                              |

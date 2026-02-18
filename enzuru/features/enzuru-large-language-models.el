@@ -2,31 +2,24 @@
 
 ;;; Code:
 
-(require 'auth-source)
-
 ;; Functions
 
-(defun enzuru-configure-claude-code ()
-  (claude-code-mode))
+(defun enzuru-configure-efrit ()
+  (let ((default-directory "~/.emacs.d/elpaca/repos/efrit/lisp"))
+    (add-to-list 'load-path default-directory)
+    (normal-top-level-add-subdirs-to-load-path))
+  (require 'efrit))
 
-(defun enzuru-configure-gptel ()
-  (setq gptel-model 'claude-3-7-sonnet-20250219)
-  (setq gptel-backend (gptel-make-anthropic "Claude" :stream t :key 'gptel-api-key-from-auth-source)))
 
-;; Packages
+(use-package efrit
+  :ensure (:type git :host github :repo "riwatt/efrit")
+  :config (enzuru-configure-efrit))
 
-(use-package claude-code
-  :ensure (:type git :host github :repo "enzuru/claude-code.el" :branch "update-transient")
-  :defer t
-  :bind-keymap ("C-c c" . claude-code-command-map) ;; or your preferred key
-  :config (enzuru-configure-claude-code))
-
-(use-package gptel
-  :ensure t
-  :defer t
-  :bind (:map gptel-mode-map
-              ("C-c o" . gptel-send))
-  :config (enzuru-configure-gptel))
+(use-package claude-code-ide
+  :ensure (:type git :host github :repo "manzaltu/claude-code-ide.el" :rev :newest)
+  :custom (claude-code-ide-terminal-backend 'eat)
+  :config (claude-code-ide-emacs-tools-setup)
+  :defer t)
 
 (provide 'enzuru-large-language-models)
 

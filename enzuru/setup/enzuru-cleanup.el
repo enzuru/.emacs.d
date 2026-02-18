@@ -8,7 +8,6 @@
   (diminish 'abbrev-mode)
   (diminish 'auto-revert-mode)
   (diminish 'eldoc-mode)
-  (diminish 'undo-tree-mode)
   (diminish 'hyperbole-mode)
   (diminish 'eldoc-mode)
   (eval-after-load "hideshow" '(diminish 'hs-minor-mode)))
