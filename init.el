@@ -84,6 +84,7 @@
 (require 'enzuru-bars)
 (require 'enzuru-bell)
 (require 'enzuru-buffers)
+(require 'enzuru-compile)
 (require 'enzuru-customization)
 (require 'enzuru-frames)
 (require 'enzuru-highlighting)
