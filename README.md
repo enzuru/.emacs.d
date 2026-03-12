@@ -16,7 +16,7 @@ This means spicy choices like:
 - `sly` over `slime`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
 - `eat` over all the other terminal emulators
-- `gptel` over the dozens of other LLM clients
+- `agent-shell` over the dozens of other LLM clients
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
@@ -115,7 +115,7 @@ This configuration ships with a great many helpful tools:
 | [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                                          |
 | [IRC client](./enzuru/features/enzuru-irc.el)                         | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                                            |
 | [Kubernetes client](./enzuru/features/enzuru-kubernetes.el)           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                                               |
-| [LLM client](./enzuru/features/enzuru-large-language-models.el)       | [efrit](https://github.com/steveyegge/efrit), [claude-code-ide](https://github.com/manzaltu/claude-code-ide.el)               |
+| [LLM client](./enzuru/features/enzuru-large-language-models.el)       | [agent-shell](https://github.com/xenodium/agent-shell), [efrit](https://github.com/steveyegge/efrit)                                         |
 | [LSP client](./enzuru/features/enzuru-lsp.el)                         | [Eglot](https://github.com/joaotavora/eglot)                                                                                  |
 | [Mail client](./enzuru/features/enzuru-mail.el)                       | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)                                         |
 | [Mail indexer](./enzuru/features/enzuru-mail.el)                      | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                                             |
