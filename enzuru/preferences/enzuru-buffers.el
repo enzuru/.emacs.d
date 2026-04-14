@@ -4,7 +4,6 @@
 
 ;; Variables
 
-(savehist-mode 1)
 (save-place-mode 1)
 
 ;; Configuration

@@ -4,6 +4,7 @@
 
 (setq make-backup-files nil)
 (add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'after-save-hook #'executable-make-buffer-file-executable-if-script-p)
 
 (provide 'enzuru-saving)
 

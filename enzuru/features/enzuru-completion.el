@@ -195,6 +195,8 @@
 (setq tab-always-indent 'complete)
 
 (savehist-mode)
+(setq savehist-additional-variables
+      '(search-ring regexp-search-ring kill-ring))
 
 (provide 'enzuru-completion)
 
