@@ -14,9 +14,9 @@
     (normal-top-level-add-subdirs-to-load-path))
   (require 'efrit))
 
-(use-package efrit
-  :ensure (:type git :host github :repo "riwatt/efrit")
-  :config (enzuru-configure-efrit))
+;; (use-package efrit
+;;   :ensure (:type git :host github :repo "riwatt/efrit")
+;;   :config (enzuru-configure-efrit))
 
 (provide 'enzuru-large-language-models)
 
