@@ -20,7 +20,7 @@
 (require 'enzuru-gaming)
 (require 'enzuru-gemini)
 (require 'enzuru-help)
-(require 'enzuru-hyperlinking)
+;; (require 'enzuru-hyperlinking)
 (require 'enzuru-irc)
 (require 'enzuru-kubernetes)
 (require 'enzuru-mail)

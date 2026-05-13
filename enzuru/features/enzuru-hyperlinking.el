@@ -13,8 +13,7 @@
 (use-package hyperbole
   :ensure t
   :diminish hyperbole-mode
-  :mode (("\\.hypb$" . lisp-mode)
-         ("\\.org$" . org-mode))
+  :mode (("\\.hypb$" . lisp-mode))
   :config (enzuru-configure-hyperbole))
 
 (provide 'enzuru-hyperlinking)

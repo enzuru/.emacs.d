@@ -19,10 +19,8 @@
 ;; Packages
 
 (use-package org
-  :ensure t
-  :defer t
-  :hook ((org-mode . hyperbole-mode)
-         (org-mode . enzuru-hook-org-mode))
+  :ensure t t
+  :hook ((org-mode . enzuru-hook-org-mode))
   :config (enzuru-configure-org)
   :custom
   (org-log-done t)
