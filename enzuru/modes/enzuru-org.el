@@ -8,6 +8,7 @@
   (add-hook 'org-mode-hook (lambda ()
                              (add-hook 'before-save-hook #'org-update-all-dblocks nil t)))
   (setq org-agenda-span 'month)
+  (setq org-deadline-warning-days 0)
   (setq org-agenda-files (directory-files-recursively "~/src/notes/" "\\.org$")))
 
 (defun enzuru-org-files-by-tag (tag)
