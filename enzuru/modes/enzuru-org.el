@@ -7,6 +7,7 @@
 (defun enzuru-configure-org ()
   (add-hook 'org-mode-hook (lambda ()
                              (add-hook 'before-save-hook #'org-update-all-dblocks nil t)))
+  (setq org-agenda-span 'month)
   (setq org-agenda-files (directory-files-recursively "~/src/notes/" "\\.org$")))
 
 (defun enzuru-org-files-by-tag (tag)
@@ -28,6 +29,11 @@
   (org-log-done t)
   (org-src-fontify-natively t)
   (org-startup-folded nil))
+
+(use-package org-super-agenda
+  :ensure t
+  :defer t
+  :config (org-super-agenda-mode))
 
 (use-package org-novelist
   :defer t
