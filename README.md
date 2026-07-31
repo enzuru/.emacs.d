@@ -7,7 +7,7 @@ This `.emacs.d` documents a maximalist Emacs configuration utilizing most (but n
 This means spicy choices like:
 
 - `eglot` over `lsp-mode`
-- `vert&co` over `helm` and `ivy`
+- `icomplete` over `vert&co`, `helm`, `ivy`
 - `corfu` over `company`
 - `elpaca` over `package.el` and `straight.el`
 - `flymake` over `flycheck` (what a comeback!)
@@ -17,6 +17,8 @@ This means spicy choices like:
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
 - `eat` over all the other terminal emulators
 - `agent-shell` over the dozens of other LLM clients
+
+There is a recent trend in Emacs configs of favoring default packages, so my config now reflects that, as can be seen above.
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
 
@@ -101,8 +103,8 @@ This configuration ships with a great many helpful tools:
 | [Benchmarker](./enzuru/features/enzuru-benchmarks.el)                 | [elisp-benchmarks](https://elpa.gnu.org/packages/elisp-benchmarks.html)                                                       |
 | [Bug tracker](./enzuru/features/enzuru-bug-tracking.el)               | [debbugs](https://elpa.gnu.org/packages/debbugs.html)                                                                         |
 | [Clipboard](./enzuru/features/enzuru-clipboard.el)                    | [Clipetty](https://github.com/spudlyo/clipetty)                                                                               |
-| [Completion (regular buffer)](./enzuru/features/enzuru-completion.el) | [Corfu](https://github.com/minad/corfu)                                                                                       |
-| [Completion (minibuffer)](./enzuru/features/enzuru-completion.el)     | [Vert&co](https://github.com/minad/vertico#complementary-packages)                                                            |
+| [Completion (regular buffer)](./enzuru/features/enzuru-completion.el) | `icomplete`                                                                                                                   |
+| [Completion (minibuffer)](./enzuru/features/enzuru-completion.el)     | `icomplete`                                                                                                                   |
 | [Dashboard](./enzuru/features/enzuru-dashboard.el)                    | [Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                               |
 | [Digital garden](./enzuru/features/enzuru-digital-garden)             | [org-roam](https://www.orgroam.com/)                                                                                          |
 | [Docker client](./enzuru/features/enzuru-docker.el)                   | [docker.el](https://github.com/Silex/docker.el)                                                                               |
@@ -115,7 +117,7 @@ This configuration ships with a great many helpful tools:
 | [Hyperlinker](./enzuru/features/enzuru-hyperlinking.el)               | [Hyperbole](https://www.gnu.org/software/hyperbole/)                                                                          |
 | [IRC client](./enzuru/features/enzuru-irc.el)                         | [ERC](https://www.gnu.org/software/emacs/erc.html)                                                                            |
 | [Kubernetes client](./enzuru/features/enzuru-kubernetes.el)           | [kubernetes-el](https://github.com/kubernetes-el/kubernetes-el)                                                               |
-| [LLM client](./enzuru/features/enzuru-large-language-models.el)       | [agent-shell](https://github.com/xenodium/agent-shell), [efrit](https://github.com/steveyegge/efrit)                                         |
+| [LLM client](./enzuru/features/enzuru-large-language-models.el)       | [agent-shell](https://github.com/xenodium/agent-shell), [efrit](https://github.com/steveyegge/efrit)                          |
 | [LSP client](./enzuru/features/enzuru-lsp.el)                         | [Eglot](https://github.com/joaotavora/eglot)                                                                                  |
 | [Mail client](./enzuru/features/enzuru-mail.el)                       | [Gnus](https://www.gnu.org/software/emacs/manual/html_node/gnus/Don_0027t-Panic.html)                                         |
 | [Mail indexer](./enzuru/features/enzuru-mail.el)                      | [Notmuch](https://notmuchmail.org/notmuch-emacs/)                                                                             |

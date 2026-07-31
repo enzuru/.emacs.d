@@ -87,7 +87,7 @@
    '("n" . meow-search)
    '("o" . meow-block)
    '("O" . meow-to-block)
-   '("p" . consult-yank-from-kill-ring)
+   '("p" . yank-from-kill-ring)
    '("q" . meow-quit)
    '("Q" . meow-goto-line)
    '("r" . meow-replace)
@@ -126,7 +126,7 @@
 
 (use-package lispy
   :ensure (:host github :repo "enzuru/lispy")
-  :bind (("C-y" . consult-yank-from-kill-ring))
+  :bind (("C-y" . yank-from-kill-ring))
   :custom
   (lispy-eval-display-style "overlay")
   (lispy-colon-p nil)

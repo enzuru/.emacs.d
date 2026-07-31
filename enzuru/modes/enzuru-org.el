@@ -19,7 +19,7 @@
 ;; Packages
 
 (use-package org
-  :ensure t t
+  :ensure t
   :hook ((org-mode . enzuru-hook-org-mode))
   :config (enzuru-configure-org)
   :custom
@@ -31,7 +31,6 @@
 
 (use-package org-super-agenda
   :ensure t
-  :defer t
   :config (org-super-agenda-mode))
 
 (use-package org-novelist

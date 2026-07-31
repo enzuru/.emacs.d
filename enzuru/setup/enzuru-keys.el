@@ -11,6 +11,8 @@
     (kill-buffer (current-buffer))))
 
 (defun enzuru-set-global-keys ()
+  (global-set-key (kbd "C-c a") 'vc-git-grep)
+  (global-set-key (kbd "C-c b") 'switch-to-buffer)
   (global-set-key (kbd "C-c i") 'describe-symbol)
   (global-set-key (kbd "C-c o") 'compile)
   (global-set-key (kbd "C-c k") 'enzuru-volatile-kill-buffer)
