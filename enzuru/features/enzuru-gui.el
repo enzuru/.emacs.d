@@ -22,7 +22,7 @@
       (require 'enzuru-catppuccin)))
 
 (enzuru-configure-minimalism)
-(enzuru-configure-operating-systems)
+;; (enzuru-configure-operating-systems)
 
 (provide 'enzuru-gui)
 
