@@ -13,7 +13,7 @@
 
 ;; Variables
 
-(setq consult-locate-args "locate -d /home/enzuru/locatedb.n"
+(setq consult-locate-args "locate -d /var/cache/locatedb"
       ccls-executable "ccls"
       browse-url-browser-function 'eww-browse-url
       inferior-lisp-program "sbcl"
