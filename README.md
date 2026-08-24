@@ -147,6 +147,7 @@ I have many beautiful theme families:
 - [dracula](https://github.com/dracula/emacs)
 - [catppuccin](https://github.com/catppuccin/emacs)
 - [exotica](https://github.com/zenobht/exotica-theme)
+- [kusanagi](https://github.com/LionyxML/kusanagi-theme)
 - [gotham](https://github.com/emacsmirror/gotham-theme)
 - [molokai](https://github.com/alloy-d/color-theme-molokai)
 - [omtose-phellack](https://github.com/franksn/omtose-phellack-theme)
