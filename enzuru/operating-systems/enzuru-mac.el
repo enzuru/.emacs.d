@@ -25,8 +25,8 @@
 
 ;; Fullscreen
 
-(add-to-list 'default-frame-alist '(fullscreen . fullboth))
-(setq ns-use-native-fullscreen t)
+;;(add-to-list 'default-frame-alist '(fullscreen . fullboth))
+;;(setq ns-use-native-fullscreen t)
 
 ;; Functions
 

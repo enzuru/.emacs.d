@@ -19,7 +19,8 @@
 ;; Packages
 
 (use-package org
-  :ensure t t
+  :ensure t
+  :defer t
   :hook ((org-mode . enzuru-hook-org-mode))
   :config (enzuru-configure-org)
   :custom

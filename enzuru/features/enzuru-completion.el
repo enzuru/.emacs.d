@@ -28,25 +28,25 @@
                       #'cape-file
                       #'cape-history)))
 
-    ;; Set up hooks for human language modes
-    (add-hook 'text-mode-hook #'enzuru-setup-human-language-completion)
-    (add-hook 'markdown-mode-hook #'enzuru-setup-human-language-completion)
-    (add-hook 'org-mode-hook #'enzuru-setup-human-language-completion)
-    (add-hook 'latex-mode-hook #'enzuru-setup-human-language-completion)
-    (add-hook 'tex-mode-hook #'enzuru-setup-human-language-completion)
+  ;; Set up hooks for human language modes
+  (add-hook 'text-mode-hook #'enzuru-setup-human-language-completion)
+  (add-hook 'markdown-mode-hook #'enzuru-setup-human-language-completion)
+  (add-hook 'org-mode-hook #'enzuru-setup-human-language-completion)
+  (add-hook 'latex-mode-hook #'enzuru-setup-human-language-completion)
+  (add-hook 'tex-mode-hook #'enzuru-setup-human-language-completion)
 
-    ;; Set up hooks for programming modes
-    (add-hook 'prog-mode-hook #'enzuru-setup-programming-completion)
-    (add-hook 'emacs-lisp-mode-hook #'enzuru-setup-elisp-completion)
+  ;; Set up hooks for programming modes
+  (add-hook 'prog-mode-hook #'enzuru-setup-programming-completion)
+  (add-hook 'emacs-lisp-mode-hook #'enzuru-setup-elisp-completion)
 
-    ;; Default global setup (for modes not covered by hooks)
-    (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-    (add-to-list 'completion-at-point-functions #'cape-file)
-    (add-to-list 'completion-at-point-functions #'cape-elisp-block)
-    (add-to-list 'completion-at-point-functions #'cape-history)
-    (add-to-list 'completion-at-point-functions #'cape-keyword)
-    (add-to-list 'completion-at-point-functions #'cape-dict)
-    (add-to-list 'completion-at-point-functions #'cape-elisp-symbol))
+  ;; Default global setup (for modes not covered by hooks)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-elisp-block)
+  (add-to-list 'completion-at-point-functions #'cape-history)
+  (add-to-list 'completion-at-point-functions #'cape-keyword)
+  (add-to-list 'completion-at-point-functions #'cape-dict)
+  (add-to-list 'completion-at-point-functions #'cape-elisp-symbol))
 
 ;; Packages
 
