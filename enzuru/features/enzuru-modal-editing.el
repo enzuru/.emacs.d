@@ -105,6 +105,7 @@
    '("Y" . meow-sync-grab)
    '("z" . meow-pop-selection)
    '("'" . repeat)
+   '("?" . enzuru-explain-region)
    '("<escape>" . ignore)))
 
 (defun enzuru-configure-meow ()
