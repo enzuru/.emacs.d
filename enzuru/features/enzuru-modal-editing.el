@@ -106,6 +106,7 @@
    '("z" . meow-pop-selection)
    '("'" . repeat)
    '("?" . enzuru-explain-region)
+   '("!" . enzuru-agent-shell-send)
    '("<escape>" . ignore)))
 
 (defun enzuru-configure-meow ()

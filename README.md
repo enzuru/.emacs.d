@@ -174,13 +174,19 @@ This is a modal editing setup that uses two different modal editors: Meow and Li
 
 I [maintain the default Emacs keybindings](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf), so I will not document them here. Meow will help you discover keystrokes after you hit `SPC` in keypad mode.
 
-### Normal editing
+### Meow editing
 
 ![Meow cheat sheet](https://user-images.githubusercontent.com/11796018/144638475-160ff071-7f66-4155-b8b6-28f3db15afd7.png "Meow cheat sheet")
 
 Run `meow-tutor` to learn Meow.
 
 [Meow documentation](https://github.com/meow-edit/meow/blob/master/KEYBINDING_QWERTY.org)
+
+#### Additional keystrokes
+
+##### Normal mode
+- `!` sends a selection to `agent-shell` with a note
+- `?` sends a selection to `agent-shell` for an explanation
 
 ### Lisp editing
 
