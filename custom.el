@@ -78,7 +78,7 @@
            (locate-dominating-file default-directory ".dir-locals.el"))))
  '(smtpmail-smtp-server "smtp.fastmail.com" t)
  '(smtpmail-smtp-service 587 t)
- '(tab-bar-show nil)
+ '(tab-bar-show t)
  '(warning-suppress-types '((server) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -18,6 +18,10 @@
 
 ;; Packages
 
+(use-package vim-tab-bar
+  :ensure t
+  :config (vim-tab-bar-mode))
+
 ;; (enzuru-load-counsel-tabs)
 (enzuru-configure-tab-bar-mode)
 (enzuru-configure-winner-mode)

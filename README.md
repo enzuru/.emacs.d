@@ -232,6 +232,7 @@ These are custom keystrokes that I have setup.
 When in Meow's insert mode, prepend with `C-c`. When in Meow's keypad mode, prepend with `SPC`.
 
 - `a(g)` search git repo using ag or grep
+- `A(gent)` start a new LLM agent
 - `b(uffer)` switch buffers with autocompletion
 - `i(sp)` search through Lisp symbols (defaults to Emacs Lisp)
 - `d(ocumentation)` brings up documentation for symbol under cursor
@@ -240,6 +241,7 @@ When in Meow's insert mode, prepend with `C-c`. When in Meow's keypad mode, prep
 - `l(ocate)` locate a file
 - `o(mpile)` compiles the buffer in a language appropriate way
 - `p(ush)` pushes the current git branch
+- `P(project)` opens a project with agent-shell and magit
 - `r(eplace string)` replace all occurrences of a string after point
 - `s(tatus)` shows the current git status
 - `t(abs)` search through tabs
