@@ -141,6 +141,7 @@
          (sly-mrepl-mode . lispy-mode)
          (cider-repl-mode . lispy-mode)
          (clojure-mode . lispy-mode)
+         (clojure-ts-mode . lispy-mode)
          (scheme-mode . lispy-mode)))
 
 (add-hook 'elpaca-after-init-hook 'enzuru-configure-meow-after-elpaca)
