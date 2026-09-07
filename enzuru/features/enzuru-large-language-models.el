@@ -13,7 +13,8 @@
 (defun enzuru-configure-agent-shell ()
   (setq agent-shell-permission-responder-function
         #'agent-shell-permission-allow-always)
-  (setq agent-shell-anthropic-default-session-mode-id "auto"))
+  (setq agent-shell-anthropic-default-session-mode-id "auto")
+  (setq agent-shell-preferred-agent-config 'claude-code))
 
 (defun enzuru-agent-shell-language ()
   "Return the current major mode as a markdown code fence language."
