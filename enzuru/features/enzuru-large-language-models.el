@@ -135,7 +135,7 @@ Interactively, prompt for a known project."
 
 (use-package agent-shell
   :ensure t
-  :defer t
+  :demand t
   :bind (("C-c A" . enzuru-agent-shell-new-shell))
   :config (enzuru-configure-agent-shell))
 

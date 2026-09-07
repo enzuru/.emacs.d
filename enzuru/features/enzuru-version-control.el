@@ -10,7 +10,7 @@
 
 (use-package magit
   :ensure t
-  :defer t
+  :demand t
   :diminish magit-auto-revert-mode
   :bind (("C-c s" . magit-status)
          ("C-c p" . magit-push-current-to-upstream))

@@ -16,9 +16,9 @@
 
 ;; Packages
 
-(use-package eat
+(use-package ghostel
   :ensure t
-  :bind (("C-c e" . eat))
+  :bind (("C-c e" . ghostel-project))
   :defer t)
 
 (enzuru-configure-shell)
