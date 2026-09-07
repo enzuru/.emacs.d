@@ -91,38 +91,6 @@
       (other-window 1)
       (switch-to-buffer eight))))
 
-(defun enzuru-arrange-apps ()
-  (interactive)
-  ;; (enzuru-setup-tab "tasks" "*Guix Bugs*")
-  (enzuru-setup-tab ".emacs.d" "init.el" "magit: .emacs.d")
-  (enzuru-setup-tab "mail" "*Group*")
-  ;; (enzuru-setup-tab "gemini" "*elpher*")
-  ;; (enzuru-setup-tab "geiser" "*Geiser Guile REPL*")
-  (enzuru-setup-tab "sly" "*sly-mrepl for sbcl*")
-  (enzuru-setup-tab "hacking" "*dashboard*"))
-
-(defun enzuru-arrange-chats ()
-  (interactive)
-  (enzuru-setup-tab "libera" "Libera.Chat" "#emacs" "#gnu" "#guile" "#guix" "#guix-hpc")
-  (enzuru-setup-tab "tilde" "tilde.chat" "#politics" "#gemini" "#meta" "#institute" "#books")
-  (enzuru-setup-tab "oftc" "OFTC" "#cat-v" "#dri-devel" "#kernelnewbies")
-  (tab-bar-select-tab-by-name "hacking"))
-
-(defun enzuru-add-chats ()
-  (interactive)
-  (znc-all))
-
-(defun enzuru-add-apps ()
-  (interactive)
-  (find-file "~/.emacs.d/init.el")
-  (magit-status)
-  ;; (debbugs-gnu '("wishlist") '("emacs" "gnus" "guile" "guix-patches" "hyperbole" "guix"))
-  (sly)
-  (gnus)
-  ;; (elpher)
-  ;; (geiser 'guile)
-  (enzuru-arrange-apps))
-
 ;; Packages
 
 (use-package activities

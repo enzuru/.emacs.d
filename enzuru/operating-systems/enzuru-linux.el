@@ -2,8 +2,6 @@
 
 ;;; Code:
 
-(require 'enzuru-docker)
-
 ;; Functions
 
 (defun enzuru-async-term ()

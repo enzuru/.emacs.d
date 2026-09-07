@@ -4,9 +4,9 @@
 
 ;; Packages
 
-(use-package apprentice
-  :ensure t
-  :defer t)
+;; (use-package apprentice
+;;   :ensure t
+;;   :defer t)
 
 (use-package elixir-ts-mode
   :ensure t
