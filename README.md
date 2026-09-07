@@ -113,7 +113,7 @@ This configuration ships with a great many helpful tools:
 |[Dashboard](./enzuru/features/enzuru-dashboard.el)                   |[Dashboard](https://github.com/emacs-dashboard/emacs-dashboard)                                                              |
 |[Documentation searcher](./enzuru/features/enzuru-documentation.el)  |[devdocs](https://github.com/astoff/devdocs.el)                                                                              |
 |[Evaluation overlay](./enzuru/features/enzuru-overlay.el)            |[eros](https://github.com/xiongtx/eros)                                                                                      |
-|[Key binding display](./enzuru/features/enzuru-help.el)              |[which-key](https://elpa.gnu.org/packages/which-key.html)                                                                    |
+|[Help](./enzuru/features/enzuru-help.el)                             |[which-key](https://elpa.gnu.org/packages/which-key.html), [helpful](https://github.com/Wilfred/helpful)                     |
 |[Gemini browser](./enzuru/features/enzuru-gemini.el)                 |[Elpher](https://thelambdalab.xyz/elpher/)                                                                                   |
 |[LLM client](./enzuru/features/enzuru-large-language-models.el)      |[agent-shell](https://github.com/xenodium/agent-shell), [efrit](https://github.com/steveyegge/efrit)                         |
 |[LSP client](./enzuru/features/enzuru-lsp.el)                        |[Eglot](https://github.com/joaotavora/eglot)                                                                                 |
