@@ -15,7 +15,7 @@ This means spicy choices like:
 - `lispy` over `paredit`
 - `sly` over `slime`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
-- `eat` over all the other terminal emulators
+- `ghostel` over all the other terminal emulators
 - `agent-shell` over the dozens of other LLM clients
 
 When I was starting off with Emacs, other people's customizations were deeply helpful for me as a starting point; some of those customizations still find a home in my Emacs instance today. In the spirit of free software, I hope that I can pass on the good will.
@@ -23,6 +23,14 @@ When I was starting off with Emacs, other people's customizations were deeply he
 Where possible, the documentation directly links to the Emacs Lisp files that implement the mode or feature. Click around.
 
 Using [org-roam-ui](https://github.com/org-roam/org-roam-ui), you can [navigate a map visualizing](https://enzuru.github.io/lisp-user-space/) how my Lisp user space tools work together on the [GNU operating system](https://gnu.org).
+
+## Quick start guide
+
+- Learn keystrokes via `M-x meow-tutor`
+- Open a project directory with `C-c P(project)` which creates a new tab with `agent-shell` and `magit`
+- Open a terminal with `C-c e(rminal)`
+
+There are many more keystrokes below, but by using `meow`, `agent-shell`, `magit`, and `ghostel` you get 80% of the value of this setup.
 
 ## Requirements
 
@@ -130,7 +138,7 @@ This configuration ships with a great many helpful tools:
 | [Shell](./enzuru/features/enzuru-terminal.el)                         | [Eshell](https://www.gnu.org/software/emacs/manual/html_mono/eshell.html)                                                     |
 | [Syntax checker](./enzuru/features/enzuru-syntax-checking.el)         | [flymake](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html), [flyover](https://github.com/konrad1977/flyover) |
 | [Syntax highlighter](./enzuru/features/enzuru-syntax-highlighting.el) | [prism](https://github.com/alphapapa/prism.el)                                                                                |
-| [Terminal](./enzuru/features/enzuru-terminal.el)                      | [Eat](https://codeberg.org/akib/emacs-eat/)                                                                                   |
+| [Terminal](./enzuru/features/enzuru-terminal.el)                      | [ghostel](https://github.com/dakra/ghostel)                                                                                   |
 | [Undo visualizer](./enzuru/features/enzuru-undo.el)                   | [vundo](https://github.com/casouri/vundo)                                                                                     |
 | [Version control](./enzuru/features/enzuru-version-control.el)        | [Magit](https://magit.vc)                                                                                                     |
 | [Wikipedia editor](./enzuru/features/enzuru-wiki.el)                  | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                                                       |
@@ -236,7 +244,7 @@ When in Meow's insert mode, prepend with `C-c`. When in Meow's keypad mode, prep
 - `b(uffer)` switch buffers with autocompletion
 - `i(sp)` search through Lisp symbols (defaults to Emacs Lisp)
 - `d(ocumentation)` brings up documentation for symbol under cursor
-- `e(at)` brings up the Eat terminal
+- `e(rminal)` brings up a terminal for the project
 - `k(ill)` kill buffer unconditionally
 - `l(ocate)` locate a file
 - `o(mpile)` compiles the buffer in a language appropriate way
