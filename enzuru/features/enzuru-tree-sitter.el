@@ -4,10 +4,9 @@
 
 ;; Configuration
 
-(use-package treesit-auto
-  :ensure t
-  :custom (treesit-auto-install 'prompt)
-  :config (global-treesit-auto-mode))
+(use-package treesit
+  :ensure nil
+  :custom (treesit-enabled-modes t))
 
 (provide 'enzuru-tree-sitter)
 

@@ -12,10 +12,12 @@
 
 ;; Packages
 
-(use-package nix-mode
+(use-package nix-ts-mode
   :ensure t
   :config (enzuru-configure-nix)
-  :mode (("\.nix$" . nix-mode)))
+  :mode (("\\.nix\\'" . nix-ts-mode))
+  :custom
+  (nix-ts-mode-indent-offset 2))
 
 (provide 'enzuru-nix)
 

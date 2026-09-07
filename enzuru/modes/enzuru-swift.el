@@ -7,12 +7,12 @@
 
 ;; Packages
 
-(use-package swift-mode
+(use-package swift-ts-mode
   :ensure t
   :defer t
+  :mode (("\\.swift\\'" . swift-ts-mode))
   :custom
-  (swift-tab-width 4)
-  (swift-indent-offset 4))
+  (swift-ts-mode-indent-offset 4))
 
 (provide 'enzuru-swift)
 

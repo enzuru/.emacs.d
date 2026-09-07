@@ -7,10 +7,12 @@
 
 ;; Packages
 
-(use-package kotlin-mode
+(use-package kotlin-ts-mode
   :ensure t
+  :defer t
+  :mode (("\\.kts?\\'" . kotlin-ts-mode))
   :custom
-  (kotlin-tab-width 4))
+  (kotlin-ts-mode-indent-offset 4))
 
 (provide 'enzuru-kotlin)
 

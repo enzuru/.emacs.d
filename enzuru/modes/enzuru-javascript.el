@@ -31,9 +31,11 @@
   :defer t
   :config (enzuru-configure-mmm-mode))
 
-(use-package rjsx-mode
-  :ensure t
-  :mode (("\\.js\\'" . rjsx-mode)))
+(use-package js
+  :ensure nil
+  :defer t
+  :mode (("\\.jsx?\\'" . js-ts-mode))
+  :hook ((js-ts-mode . eglot-ensure)))
 
 (use-package vue-mode
   :ensure t
