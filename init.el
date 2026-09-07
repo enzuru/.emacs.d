@@ -90,6 +90,7 @@
 (require 'enzuru-frames)
 (require 'enzuru-highlighting)
 (require 'enzuru-killing)
+(require 'enzuru-lines)
 (require 'enzuru-margin)
 (require 'enzuru-pairing)
 (require 'enzuru-processes)
