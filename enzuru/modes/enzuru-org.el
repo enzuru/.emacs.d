@@ -34,11 +34,6 @@
   :defer t
   :config (org-super-agenda-mode))
 
-(use-package org-novelist
-  :defer t
-  :ensure (:host github :repo "enzuru/org-novelist" :branch "zerop-org-next-visible-heading")
-  :custom (org-novelist-automatic-referencing-p t))
-
 (provide 'enzuru-org)
 
 ;;; enzuru-org.el ends here

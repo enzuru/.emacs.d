@@ -4,14 +4,13 @@
 
 ;; Functions
 
-
 ;; Packages
 
-(use-package elpher
-  :ensure t
-  :defer t
-  :custom
-  (elpher-default-url-type "gemini"))
+;;(use-package elpher
+;;  :ensure t
+;;  :defer t
+;;  :custom
+;;  (elpher-default-url-type "gemini"))
 
 (provide 'enzuru-gemini)
 
