@@ -2,10 +2,22 @@
 
 ;; Upgrade Elpaca here
 
+(defun enzuru-nixos-p ()
+  "Return t if operating system is NixOS, nil otherwise."
+  (file-exists-p "/etc/NIXOS"))
+
+(defun enzuru-get-emacs-build-date ()
+  "Return NixOS Emacs build date."
+  (string-match "--prefix.*emacs.*\\([[:digit:]]\\{8\\}\\)" system-configuration-options)
+  (string-to-number (match-string 1 system-configuration-options)))
+
+(when (setq elpaca-core-date (list (enzuru-get-emacs-build-date))))
+
 (defvar elpaca-installer-version 0.12)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
 (defvar elpaca-sources-directory (expand-file-name "sources/" elpaca-directory))
+
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
                               :ref nil :depth 1 :inherit ignore
                               :files (:defaults "elpaca-test.el" (:exclude "extensions"))
