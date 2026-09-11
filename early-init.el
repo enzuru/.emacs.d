@@ -11,7 +11,8 @@
   (string-match "--prefix.*emacs.*\\([[:digit:]]\\{8\\}\\)" system-configuration-options)
   (string-to-number (match-string 1 system-configuration-options)))
 
-(when (setq elpaca-core-date (list (enzuru-get-emacs-build-date))))
+(when (enzuru-nixos-p)
+  (setq elpaca-core-date (list (enzuru-get-emacs-build-date))))
 
 (defvar elpaca-installer-version 0.12)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
