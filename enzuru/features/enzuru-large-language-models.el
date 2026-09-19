@@ -114,13 +114,20 @@ Use Magit when ROOT is a git repo, and Dired otherwise."
         (magit-status-setup-buffer root))
     (dired root)))
 
+(defun enzuru-project-tab-terminal (root)
+  "Show the ghostel terminal for ROOT in the selected window.
+
+Reuse the project's terminal when it already exists."
+  (let ((default-directory root))
+    (ghostel-project)))
+
 (defun enzuru-project-tab (directory)
   "Switch to the tab dedicated to the project in DIRECTORY.
 
 The tab is named after the project.  The first visit creates the tab
-with two windows side by side: the project status on the left and the
-project's agent shell on the right.  Later visits reuse the tab, its
-windows and its shell.
+with three windows: the project status on the top left, the project's
+ghostel terminal below it, and the project's agent shell on the right.
+Later visits reuse the tab, its windows, its terminal and its shell.
 
 Interactively, prompt for a known project."
   (interactive (progn (require 'project)
@@ -134,10 +141,14 @@ Interactively, prompt for a known project."
     (when fresh
       (delete-other-windows)
       (let* ((status-buffer (enzuru-project-tab-status root))
+             (status-window (selected-window))
              (shell-window (split-window-right))
              (shell-buffer (with-current-buffer status-buffer
-                             (agent-shell--shell-buffer))))
+                             (agent-shell--shell-buffer)))
+             (terminal-window (split-window status-window nil 'below)))
         (set-window-buffer shell-window shell-buffer)
+        (select-window terminal-window)
+        (enzuru-project-tab-terminal root)
         (select-window shell-window)))))
 
 (defun enzuru-configure-project-tabs ()
