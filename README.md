@@ -27,10 +27,9 @@ Using [org-roam-ui](https://github.com/org-roam/org-roam-ui), you can [navigate 
 ## Quick start guide
 
 - Learn keystrokes via `M-x meow-tutor`
-- Open a project directory with `C-c P(roject)` (note it's a capital P) which creates a new project tab with `agent-shell` and `magit`
-- Open a terminal for the project with `C-c e(rminal)`
+- Open a project directory with `C-c P` or `SPC P` (note it's a capital P) which creates a new project tab with `agent-shell`, `magit`, and `ghostel`
 
-There are many more keystrokes below, but by using `meow`, `project.el`, `magit`, `agent-shell`, and `ghostel`, you get most of the value of this setup.
+There are many more keystrokes below, but by using `meow`, `agent-shell`, `magit`, `ghostel`, and `project.el` you get most of the value of this setup. Additionally, `which-key` and `helpful` will make learning this config introspective.
 
 ## Requirements
 
