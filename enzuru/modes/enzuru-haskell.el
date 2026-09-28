@@ -27,12 +27,12 @@
 
 ;; Packages
 
-(use-package haskell-mode
+(use-package haskell-ts-mode
   :ensure t
   :defer t
-  :hook ((haskell-mode . eglot-ensure))
-  :mode (("\\.hs$" . haskell-mode)
-         ("\\.lhs$" . haskell-mode))
+  :hook ((haskell-ts-mode . eglot-ensure))
+  :mode (("\\.hs$" . haskell-ts-mode)
+         ("\\.lhs$" . haskell-ts-mode))
   :bind ((:map haskell-mode-map
                ("C-c d" . enzuru-haskell-hoogle))))
 
