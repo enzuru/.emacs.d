@@ -33,16 +33,6 @@
   :ensure t
   :defer t)
 
-(use-package js2-mode
-  :ensure t
-  :defer t
-  :hook ((js2-mode . eglot-ensure))
-  :custom
-  (js2-basic-offset 2)
-  (js2-strict-trailing-comma-warning nil)
-  (js2-strict-missing-semi-warning nil)
-  (js-indent-level 2))
-
 (use-package mmm-mode
   :ensure t
   :defer t

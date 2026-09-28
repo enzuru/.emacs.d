@@ -71,14 +71,14 @@ The best supported developer environments are the Lisp languages. Since they hav
 
 Nix comes with pre-packaged language servers for these languages.
 
-| Language                                          | Mode                                                                  | REPL                                                                     | Eglot |
+| Language                                          | Mode                                                                 | REPL                                                                     | Eglot |
 |---------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------|-------|
 | [C](./enzuru/modes/enzuru-c.el)                   | `c-ts-mode`                                                          |                                                                          | Yes   |
 | [C++](./enzuru/modes/enzuru-cpp.el)               | `c++-ts-mode`                                                        |                                                                          | Yes   |
 | [Elixir](./enzuru/modes/enzuru-elixir.el)         | [Apprentice](https://github.com/Sasanidas/Apprentice)                | [inf-elixir](https://github.com/J3RN/inf-elixir/)                        | Yes   |
 | [Fish](./enzuru/modes/enzuru-fish.el)             | [fish-mode](https://github.com/wwwjfy/emacs-fish)                    | [fish-completion](https://github.com/lemonbreezes/emacs-fish-completion) | Yes   |
 | [GDScript](./enzuru/modes/enzuru-gdscript.el)     | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/) |                                                                          | Yes   |
-| [JavaScript](./enzuru/modes/enzuru-javascript.el) | [js2-mode](https://github.com/mooz/js2-mode)                         | [Indium](https://github.com/NicolasPetton/Indium/)                       | Yes   |
+| [JavaScript](./enzuru/modes/enzuru-javascript.el) | js2-ts-mode                                                          | [Indium](https://github.com/NicolasPetton/Indium/)                       | Yes   |
 | [Go](./enzuru/modes/enzuru-go.el)                 | `go-ts-mode`                                                         | [go-playground](https://github.com/grafov/go-playground)                 | Yes   |
 | [Haskell](./enzuru/modes/enzuru-haskell.el)       | [haskell-ts-mode](https://github.com/emacsmirror/haskell-ts-mode)    | `run-haskell`                                                            | Yes   |
 | [Python](./enzuru/modes/enzuru-python.el)         | `python-ts-mode`                                                     | `run-python`                                                             | Yes   |
@@ -90,14 +90,14 @@ Nix comes with pre-packaged language servers for these languages.
 
 Quite frankly, most of these languages are best used within their respective IDEs, or I rarely use them at all.
 
-| Language                                            | Mode                                                                          | REPL                                           | Eglot |
-|-----------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------|-------|
-| [Groovy](./enzuru/modes/enzuru-groovy.el)           | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/)     |                                                | No    |
-| [Java](./enzuru/modes/enzuru-java.el)               | `java-ts-mode`                                                               |                                                | No    |
-| [Kotlin](./enzuru/modes/enzuru-kotlin.el)           | [kotlin-mode](https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode/) |                                                | No    |
-| [Objective-C](./enzuru/modes/enzuru-objective-c.el) | `objc-mode`                                                                  |                                                | No    |
-| [Swift](./enzuru/modes/enzuru-swift.el)             | [swift-mode](https://github.com/swift-emacs/swift-mode/)                     |                                                | No    |
-| [SQL](./enzuru/modes/enzuru-sql.el)                 | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                          | [emacsql](https://github.com/magit/emacsql)    | No    |
+| Language                                            | Mode                                                                     | REPL                                        | Eglot |
+|-----------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------|-------|
+| [Groovy](./enzuru/modes/enzuru-groovy.el)           | [groovy-mode](https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/) |                                             | No    |
+| [Java](./enzuru/modes/enzuru-java.el)               | `java-ts-mode`                                                           |                                             | No    |
+| [Kotlin](./enzuru/modes/enzuru-kotlin.el)           | `kotlin-ts-mode`                                                         |                                             | No    |
+| [Objective-C](./enzuru/modes/enzuru-objective-c.el) | `objc-mode`                                                              |                                             | No    |
+| [Swift](./enzuru/modes/enzuru-swift.el)             | [swift-ts-mode](https://github.com/rechsteiner/swift-ts-mode)            |                                             | No    |
+| [SQL](./enzuru/modes/enzuru-sql.el)                 | [sql-mode](https://www.emacswiki.org/emacs/SqlMode)                      | [emacsql](https://github.com/magit/emacsql) | No    |
 
 ### Tools
 
