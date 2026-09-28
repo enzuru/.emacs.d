@@ -28,7 +28,6 @@
 ;; Packages
 
 (use-package haskell-ts-mode
-  :ensure t
   :defer t
   :hook ((haskell-ts-mode . eglot-ensure))
   :mode (("\\.hs$" . haskell-ts-mode)
