@@ -28,7 +28,6 @@
 ;; Packages
 
 (use-package which-key
-  :ensure t
   :config (enzuru-configure-which-key)
   :diminish which-key-mode)
 

@@ -27,7 +27,6 @@
 ;; Packages
 
 (use-package flymake
-  :ensure t
   :diminish (flymake-mode)
   :bind (("C-x n" . flymake-goto-next-error)
          ("C-x p" . flymake-goto-prev-error))

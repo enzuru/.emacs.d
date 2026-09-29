@@ -36,7 +36,6 @@
 ;; Packages
 
 (use-package org
-  :ensure t
   :defer t
   :hook ((org-mode . enzuru-hook-org-mode))
   :config (enzuru-configure-org)
