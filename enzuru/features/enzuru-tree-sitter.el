@@ -22,7 +22,6 @@
 ;; Configuration
 
 (use-package treesit
-  :ensure nil
   :custom (treesit-enabled-modes t))
 
 (provide 'enzuru-tree-sitter)

@@ -26,7 +26,6 @@
 ;;   :defer t)
 
 (use-package elixir-ts-mode
-  :ensure t
   :defer t
   :hook ((elixir-ts-mode . eglot-ensure)
          (elixir-ts-mode . apprentice)))
