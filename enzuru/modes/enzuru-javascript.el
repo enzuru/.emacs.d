@@ -38,8 +38,7 @@
   :defer t
   :config (enzuru-configure-mmm-mode))
 
-(use-package js
-  :ensure nil
+(use-package js-ts-mode
   :defer t
   :mode (("\\.jsx?\\'" . js-ts-mode))
   :hook ((js-ts-mode . eglot-ensure)))

@@ -21,10 +21,6 @@
 
 ;; Functions
 
-(defun enzuru-configure-rust-ts-mode ()
-  (add-to-list 'auto-mode-alist '("\\.rs$" . rust-ts-mode))
-  (add-hook 'rust-ts-mode-hook 'eglot-ensure))
-
 ;; Packages
 
 (use-package rust-playground
@@ -33,7 +29,9 @@
   :custom
   (rust-playground-basedir "~/"))
 
-(enzuru-configure-rust-ts-mode)
+(use-package rust-ts-mode
+  :mode (("\\.rs$\\'" . rust-ts-mode))
+  :hook ((rust-ts-mode . eglot-ensure)))
 
 (provide 'enzuru-rust)
 

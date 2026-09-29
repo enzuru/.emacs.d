@@ -25,7 +25,6 @@
 ;; Packages
 
 (use-package kotlin-ts-mode
-  :ensure t
   :defer t
   :mode (("\\.kts?\\'" . kotlin-ts-mode))
   :custom

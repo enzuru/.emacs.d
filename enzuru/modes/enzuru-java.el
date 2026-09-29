@@ -19,10 +19,8 @@
 
 ;;; Code:
 
-(defun enzuru-configure-java-ts-mode ()
-  (add-to-list 'auto-mode-alist '("\\.java$" . java-ts-mode)))
-
-(enzuru-configure-java-ts-mode)
+(use-package java-ts-mode
+  :mode (("\\.java$\\'" . java-ts-mode)))
 
 (provide 'enzuru-java)
 
