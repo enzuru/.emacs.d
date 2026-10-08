@@ -2,44 +2,4 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("The King James Bible"
- (position . 1)
- (location . "gemini://gemini.conman.org/king_james_bible.gemini")
- (handler . elpher-bookmark-jump))
-("Capcom"
- (position . 31)
- (location . "gemini://gemini.circumlunar.space/capcom/")
- (handler . elpher-bookmark-jump))
-("Medusae"
- (position . 1130)
- (location . "gemini://medusae.space/")
- (handler . elpher-bookmark-jump))
-("Gemini"
- (position . 1)
- (location . "gemini://geminiprotocol.net/")
- (handler . elpher-bookmark-jump))
-("Spacewalk"
- (position . 546)
- (location . "gemini://rawtext.club/~sloum/spacewalk.gmi")
- (handler . elpher-bookmark-jump)
- (annotation . "Midnight Pub"))
-("Explore"
- (position . 352)
- (location . "gemini://gemini.ctrl-c.club/~scientiac/capsules/explore.gmi")
- (handler . elpher-bookmark-jump)
- (annotation . "Midnight Pub"))
-("Search"
- (position . 1)
- (location . "gemini://geminispace.info/")
- (handler . elpher-bookmark-jump)
- (annotation . "Midnight Pub"))
-("Midnight"
- (position . 1)
- (location . "gemini://midnight.pub/")
- (handler . elpher-bookmark-jump)
- (annotation . "Midnight Pub"))
-("Gemipedia"
- (position . 1)
- (location . "gemini://gemi.dev/cgi-bin/wp.cgi/")
- (handler . elpher-bookmark-jump))
-)
+()
