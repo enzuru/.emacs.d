@@ -14,6 +14,7 @@ This means spicy choices like:
 - `meow` over `evil`
 - `lispy` over `paredit`
 - `sly` over `slime`
+- `tabspaces` over `activities` and `perspective`
 - `prism` over `rainbow-delimiters` and `rainbow-blocks`
 - `ghostel` over all the other terminal emulators
 - `agent-shell` over the dozens of other LLM clients
