@@ -122,12 +122,14 @@ Reuse the project's terminal when it already exists."
     (ghostel-project)))
 
 (defun enzuru-project-tab (directory)
-  "Switch to the tab dedicated to the project in DIRECTORY.
+  "Switch to the workspace dedicated to the project in DIRECTORY.
 
-The tab is named after the project.  The first visit creates the tab
-with three windows: the project status on the top left, the project's
-ghostel terminal below it, and the project's agent shell on the right.
-Later visits reuse the tab, its windows, its terminal and its shell.
+The workspace is a tabspaces workspace named after the project, so its
+buffer list holds the project's buffers and nothing else.  The first
+visit creates the workspace with three windows: the project status on
+the top left, the project's ghostel terminal below it, and the
+project's agent shell on the right.  Later visits reuse the workspace,
+its windows, its terminal and its shell.
 
 Interactively, prompt for a known project."
   (interactive (progn (require 'project)
@@ -135,9 +137,9 @@ Interactively, prompt for a known project."
   (let* ((project (project-current nil directory))
          (root (project-root project))
          (name (project-name project))
-         (fresh (not (enzuru-tab-exists-p name))))
+         (fresh (not (enzuru-workspace-exists-p name))))
     (project-remember-project project)
-    (tab-bar-switch-to-tab name)
+    (enzuru-workspace-switch-or-create name)
     (when fresh
       (delete-other-windows)
       (let* ((status-buffer (enzuru-project-tab-status root))
@@ -154,7 +156,7 @@ Interactively, prompt for a known project."
 (defun enzuru-configure-project-tabs ()
   (define-key project-prefix-map "a" #'enzuru-project-tab)
   (add-to-list 'project-switch-commands
-               '(enzuru-project-tab "Agent tab" "a") t))
+               '(enzuru-project-tab "Agent workspace" "a") t))
 
 (global-set-key (kbd "C-c P") #'enzuru-project-tab)
 

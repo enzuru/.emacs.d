@@ -129,7 +129,7 @@ This configuration ships with a great many helpful tools:
 | [Wikipedia editor](./enzuru/features/enzuru-wiki.el)                  | [mediawiki.el](https://github.com/hexmode/mediawiki-el)                                                                       |
 | [Window configuration](./enzuru/preferences/enzuru-frames.el)         | [winner-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)                              |
 | [Window movement](./enzuru/features/enzuru-movement.el)               | [windmove](https://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html)                                 |
-| [Workspace manager](./enzuru/features/enzuru-arrangements.el)         | [activities.el](https://github.com/alphapapa/activities.el)                                                                   |
+| [Workspace manager](./enzuru/features/enzuru-workspaces.el)           | [tabspaces](https://codeberg.org/mclear-tools/tabspaces)                                                                      |
 
 ### Themes
 

@@ -33,6 +33,7 @@
 (require 'enzuru-uname)
 (require 'enzuru-undo)
 (require 'enzuru-version-control)
+(require 'enzuru-workspaces)
 
 ;; Modes
 

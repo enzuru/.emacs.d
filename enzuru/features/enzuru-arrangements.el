@@ -21,10 +21,6 @@
 
 ;; Functions
 
-(defun enzuru-configure-activities ()
-  (activities-mode)
-  (activities-tabs-mode))
-
 (defun enzuru-tab-exists-p (tab-name)
   "Check if a tab exists with the given TAB-NAME."
   (catch 'tab-exists
@@ -107,14 +103,6 @@
       (split-window-vertically)
       (other-window 1)
       (switch-to-buffer eight))))
-
-;; Packages
-
-(use-package activities
-  :ensure (:host github :repo "alphapapa/activities.el")
-  :config (enzuru-configure-activities)
-  :custom
-  (activities-bookmark-store t))
 
 (provide 'enzuru-arrangements)
 
