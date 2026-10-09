@@ -79,7 +79,7 @@ Nix comes with pre-packaged language servers for these languages.
 | [Elixir](./enzuru/modes/enzuru-elixir.el)         | [Apprentice](https://github.com/Sasanidas/Apprentice)                | [inf-elixir](https://github.com/J3RN/inf-elixir/)             | Yes   |
 | [Fish](./enzuru/modes/enzuru-fish.el)             | [fish-mode](https://github.com/wwwjfy/emacs-fish)                    |                                                               | Yes   |
 | [GDScript](./enzuru/modes/enzuru-gdscript.el)     | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/) |                                                               | Yes   |
-| [JavaScript](./enzuru/modes/enzuru-javascript.el) | `js2-ts-mode`                                                        | [Indium](https://github.com/NicolasPetton/Indium/)            | Yes   |
+| [JavaScript](./enzuru/modes/enzuru-javascript.el) | `js-ts-mode`                                                        | [Indium](https://github.com/NicolasPetton/Indium/)            | Yes   |
 | [Go](./enzuru/modes/enzuru-go.el)                 | `go-ts-mode`                                                         | [go-playground](https://github.com/grafov/go-playground)      | Yes   |
 | [Haskell](./enzuru/modes/enzuru-haskell.el)       | `haskell-ts-mode`                                                    | `run-haskell`                                                 | Yes   |
 | [Python](./enzuru/modes/enzuru-python.el)         | `python-ts-mode`                                                     | `run-python`                                                  | Yes   |
