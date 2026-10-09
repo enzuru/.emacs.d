@@ -72,20 +72,20 @@ The best supported developer environments are the Lisp languages. Since they hav
 
 Nix comes with pre-packaged language servers for these languages.
 
-| Language                                          | Mode                                                                 | REPL                                                          | Eglot |
-|---------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------|-------|
-| [C](./enzuru/modes/enzuru-c.el)                   | `c-ts-mode`                                                          |                                                               | Yes   |
-| [C++](./enzuru/modes/enzuru-cpp.el)               | `c++-ts-mode`                                                        |                                                               | Yes   |
-| [Elixir](./enzuru/modes/enzuru-elixir.el)         | [Apprentice](https://github.com/Sasanidas/Apprentice)                | [inf-elixir](https://github.com/J3RN/inf-elixir/)             | Yes   |
-| [Fish](./enzuru/modes/enzuru-fish.el)             | [fish-mode](https://github.com/wwwjfy/emacs-fish)                    |                                                               | Yes   |
-| [GDScript](./enzuru/modes/enzuru-gdscript.el)     | [gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/) |                                                               | Yes   |
-| [JavaScript](./enzuru/modes/enzuru-javascript.el) | `js-ts-mode`                                                        | [Indium](https://github.com/NicolasPetton/Indium/)            | Yes   |
-| [Go](./enzuru/modes/enzuru-go.el)                 | `go-ts-mode`                                                         | [go-playground](https://github.com/grafov/go-playground)      | Yes   |
-| [Haskell](./enzuru/modes/enzuru-haskell.el)       | `haskell-ts-mode`                                                    | `run-haskell`                                                 | Yes   |
-| [Python](./enzuru/modes/enzuru-python.el)         | `python-ts-mode`                                                     | `run-python`                                                  | Yes   |
-| [Ruby](./enzuru/modes/enzuru-ruby.el)             | `ruby-ts-mode`                                                       | [inf-ruby](https://github.com/nonsequitur/inf-ruby)           | Yes   |
-| [Rust](./enzuru/modes/enzuru-rust.el)             | `rust-ts-mode`                                                       | [rust-playground](https://github.com/grafov/rust-playground/) | Yes   |
-| [TypeScript](./enzuru/modes/enzuru-typescript.el) | [Tide](https://github.com/ananthakumaran/tide)                       | [Indium](https://github.com/NicolasPetton/Indium/)            | Yes   |
+|Language                                         |Mode                                                                |REPL                                                         |Eglot|
+|-------------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------------|-----|
+|[C](./enzuru/modes/enzuru-c.el)                  |`c-ts-mode`                                                         |                                                             |Yes  |
+|[C++](./enzuru/modes/enzuru-cpp.el)              |`c++-ts-mode`                                                       |                                                             |Yes  |
+|[Elixir](./enzuru/modes/enzuru-elixir.el)        |[Apprentice](https://github.com/Sasanidas/Apprentice)               |[inf-elixir](https://github.com/J3RN/inf-elixir/)            |Yes  |
+|[Fish](./enzuru/modes/enzuru-fish.el)            |[fish-mode](https://github.com/wwwjfy/emacs-fish)                   |                                                             |Yes  |
+|[GDScript](./enzuru/modes/enzuru-gdscript.el)    |[gdscript-mode](https://github.com/godotengine/emacs-gdscript-mode/)|                                                             |Yes  |
+|[JavaScript](./enzuru/modes/enzuru-javascript.el)|`js-ts-mode`                                                        |[Indium](https://github.com/NicolasPetton/Indium/)           |Yes  |
+|[Go](./enzuru/modes/enzuru-go.el)                |`go-ts-mode`                                                        |[go-playground](https://github.com/grafov/go-playground)     |Yes  |
+|[Haskell](./enzuru/modes/enzuru-haskell.el)      |`haskell-ts-mode`                                                   |`run-haskell`                                                |Yes  |
+|[Python](./enzuru/modes/enzuru-python.el)        |`python-ts-mode`                                                    |`run-python`                                                 |Yes  |
+|[Ruby](./enzuru/modes/enzuru-ruby.el)            |`ruby-ts-mode`                                                      |[inf-ruby](https://github.com/nonsequitur/inf-ruby)          |Yes  |
+|[Rust](./enzuru/modes/enzuru-rust.el)            |`rust-ts-mode`                                                      |[rust-playground](https://github.com/grafov/rust-playground/)|Yes  |
+|[TypeScript](./enzuru/modes/enzuru-typescript.el)|[Tide](https://github.com/ananthakumaran/tide)                      |[Indium](https://github.com/NicolasPetton/Indium/)           |Yes  |
 
 #### Third class
 
